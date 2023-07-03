@@ -16,7 +16,7 @@ class Publi extends CI_Controller
         $this->form_validation->set_rules('nom_chat', 'Nom chat', 'trim|required');
         $this->form_validation->set_rules('age_chat', 'Age chat', 'required|trim');
         $this->form_validation->set_rules('sexe_chat', 'Sexe chat', 'trim|required|in_list[male,femelle]');
-        
+
 
         if (isConnected() == false) {
             $this->load->view('login');
@@ -36,7 +36,7 @@ class Publi extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('espace_assos/annonce2');
         } else {
-            redirect('Publi/annonce3');
+            redirect('Annonce/annonce3');
         }
     }
 
