@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class FormController extends CI_Controller
+class Famille extends CI_Controller
 {
     public function __construct()
     {
@@ -40,11 +40,6 @@ class FormController extends CI_Controller
             $_SESSION["tel_user"] = $_POST['tel_user'];
 
             redirect('Famille/step2');
-        }
-        if (isConnected() == false) {
-            $this->load->view('login');
-        } else {
-            $this->load->view('form/step1');
         }
     }
 
