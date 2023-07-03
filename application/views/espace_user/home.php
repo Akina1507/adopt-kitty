@@ -15,11 +15,11 @@ include(APPPATH . "views/include/header.php")
 			</a>
 			<br>
 			<a class="btn custom-btn" href="<?php
-											echo base_url("FormController/step1") ?>">Devenir famille d'accueil
+											echo base_url("Famille/step1") ?>">Devenir famille d'accueil
 			</a>
 			<br>
 			<a class="btn custom-btn" href="<?php
-											echo base_url("Pensionnaire/annonce") ?>">Poster une annonce
+											echo base_url("Annonce/annonce") ?>">Poster une annonce
 			</a>
 		</div>
 

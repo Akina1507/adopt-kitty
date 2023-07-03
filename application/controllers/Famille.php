@@ -39,7 +39,7 @@ class FormController extends CI_Controller
             $_SESSION["codepostal_user"] = $_POST['codepostal_user'];
             $_SESSION["tel_user"] = $_POST['tel_user'];
 
-            redirect('FormController/step2');
+            redirect('Famille/step2');
         }
         if (isConnected() == false) {
             $this->load->view('login');
@@ -76,7 +76,7 @@ class FormController extends CI_Controller
             $_SESSION["temps_activite"] = $_POST['temps_activite'];
             $_SESSION["raison_famille"] = $_POST['raison_famille'];
 
-            redirect('FormController/step3');
+            redirect('Famille/step3');
         }
     }
 
