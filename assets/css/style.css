@@ -1,0 +1,166 @@
+/* NAV BAR */
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	background-color: rgb(255, 255, 255);
+	width: auto;
+	height: 180px;
+}
+
+.logo {
+	justify-content: start;
+	align-items: center;
+	width: 80%;
+	height: 80%;
+}
+
+.background{
+	width: 25%;
+	height: auto;
+}
+
+
+
+/* fin nav bar */
+
+/* formulaire annonce et famille */
+.containerfamille {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.containerBox {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.inputBoxColumn {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.inputBox input[type="checkbox"],
+.inputBox label {
+	display: block;
+	margin: 5px;
+}
+
+.inputBox input {
+	position: relative;
+	justify-content: center;
+	width: 35%;
+	padding: 10px 15px;
+	outline: none;
+	border: 1px solid black;
+	font-size: 15px;
+	border-radius: 20px;
+	color: black;
+}
+
+.inputBox label {
+	text-align: center;
+	margin-right: 10px;
+}
+
+.inputBox input[type="checkbox"],
+.inputBox label {
+	margin-left: 0;
+}
+
+/* input placeholder */
+
+/* formulaire login */
+
+
+
+.body-login{
+	background: -webkit-linear-gradient(bottom, #636363, #bd9d6d);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+
+.container-login{
+	width: 330px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 80px 35px;
+	
+	justify-content: center;
+	align-items: center;
+}
+
+.container-login h3{
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+	margin: 0 0 30ox 0;
+}
+
+.container .form-group{
+	width: 100%;
+}
+
+.form-group .field{
+	height: auto;
+	width: 550px;
+	margin: 25px 0;
+	position: relative;
+	
+}
+
+.form-group .field .label{
+	position: absolute;
+	top: -30px;
+}
+
+
+.form-group .field input{
+	position: relative;
+	width: 60%;
+	padding: 10px 15px;
+	border: 1px solid black;
+	font-size: 15px;
+	border-radius: 10px;
+	color: black;
+}
+
+.group input{
+	width: 100%;
+	height: 45px;
+	font-size: 15px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: #bd9d6d;
+}
+
+/* formulaire login */
+
+
+/*Liste img chien/chat*/
+
+.image-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.image-container img {
+	width: 200px;
+	margin: 5px;
+}
+
+/* CCS de Online Tutorials : https://www.youtube.com/watch?v=LKIk_aCmw0U */

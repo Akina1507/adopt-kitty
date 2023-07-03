@@ -1,0 +1,59 @@
+.custom-btn:hover {
+	background-color: #7c6747;
+}
+
+.custom-btn {
+	color: black;
+	background-color: #bd9d6d;
+}
+
+.col-md-4 .send-btn {
+	color: black;
+	background-color: #bd9d6d;
+}
+
+.fond {
+	background-color: #7c6747;
+}
+
+.bordered {
+	border-radius: 10px;
+}
+
+
+.encadre-color {
+	box-shadow: #7c6747;
+	background-color: aliceblue;
+	padding: 20px; 
+}
+
+
+.full-height {
+	min-height: 100vh;
+  }
+
+.carousel-indicators {
+	color: black;
+	position: static;
+}
+
+.carousel-item {
+	float: none;
+
+
+}
+
+.carousel-control-ms button {
+	background-color: black;
+	color: black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	position: static;
+}
+
+.carousel-indicators [data-bs-target] {
+	height: 0;
+	text-indent: 0;
+}
