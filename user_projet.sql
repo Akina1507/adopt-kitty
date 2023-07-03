@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `annonce` (
 --
 
 INSERT INTO `annonce` (`id_chat`, `nom_chat`, `img_chat`, `age_chat`, `sexe_chat`, `race_chat`, `apparence`, `precision_apparence`, `activite`, `maladie`, `liste_maladie`, `puce_chat`, `disponible`, `description`, `id`) VALUES
-(8, 'Pamplemousse', 'miaou', '4', 'male', 'Europeen', '', '0', 'jouer a la balle, aller dans le jardin', 'oui', '', '098765432156475', 'disponible', 'fait des betises', 0),
+(8, 'Pamplemousse', 'miaous', '4', 'male', 'Europeen', '', '0', 'jouer a la balle, aller dans le jardin', 'oui', '', '098765432156475', 'disponible', 'fait des betises', 0),
 (9, 'Uranus', 'hfghf', '6', 'male', 'siamois', '', '0', 'cbvbd', 'oui', '', '324234', 'disponible', 'dbdb', 0);
 
 -- --------------------------------------------------------
