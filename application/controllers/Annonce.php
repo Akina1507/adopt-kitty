@@ -17,12 +17,7 @@ class Annonce extends CI_Controller
         $this->form_validation->set_rules('age_chat', 'Age chat', 'required|trim');
         $this->form_validation->set_rules('sexe_chat', 'Sexe chat', 'trim|required|in_list[male,femelle]');
 
-
-        if (isConnected() == false) {
-            $this->load->view('login');
-        } else {
-            $this->load->view('espace_assos/annonce1');
-        }
+        $this->load->view('espace_assos/annonce1');
     }
 
     public function annonce2()

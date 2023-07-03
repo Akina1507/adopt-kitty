@@ -4,7 +4,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-<?php echo form_open('form/step3'); ?>
+<?php echo form_open('Famille/step3'); ?>
 <div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="container">
         <div class="row justify-content-center">
