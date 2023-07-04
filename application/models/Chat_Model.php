@@ -13,4 +13,20 @@ class Chat_Model extends CI_Model
         $query = $this->db->insert('famille', $data);
         return $query;
     }
+
+    public function create_famille2($data)
+    {
+    $this->db->select_max('id');
+        $query = $this->db->get('famille');
+        $result = $query->row();
+        
+        $latestId = ($result) ? $result->id : 0;
+        $newId = $latestId + 1;
+        
+        $data['id'] = $newId;
+        
+        $this->db->insert('famille', $data);
+        
+        return $newId;
+    }
 }

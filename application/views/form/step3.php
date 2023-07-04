@@ -67,5 +67,5 @@
         </div>
     </div>
 </div>
-<script src="/projet-codeigniter/assets/js/script.js"></script>
 <?php echo form_close(); ?>
+<script src="/projet-codeigniter/assets/js/script.js"></script>

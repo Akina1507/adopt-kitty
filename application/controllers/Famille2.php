@@ -12,15 +12,17 @@ class Famille2 extends CI_Controller
     }
     public function step2()
     {
-       
+        if (isConnected() == false) {
+            redirect('Users/login');
+        }
        
         $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
         $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
-        $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim|required');
+        $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
         $this->form_validation->set_rules('situation_famille', 'Situation famille', 'trim|required');
         $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
-        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|required|exact_length[2]');
-        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim|required');
+        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|exact_length[2]');
+        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
         $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
@@ -28,6 +30,7 @@ class Famille2 extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('form/step2');
         } else {
+
             $this->session->set_userdata('type_logement', $this->input->post('type_logement'));
             $this->session->set_userdata('exterieur_user', $this->input->post('exterieur_user'));
             $this->session->set_userdata('type_exterieur', $this->input->post('type_exterieur'));
@@ -51,7 +54,9 @@ class Famille2 extends CI_Controller
                 'temps_activite' => $this->session->userdata('temps_activite'),
                 'raison_famille' => $this->session->userdata('raison_famille')
             );
+            $this->Chat_Model->create_famille2($data);
             redirect('Famille3/step3', $data);
+
         }
     }
 }

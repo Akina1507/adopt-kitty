@@ -36,27 +36,28 @@ class Famille1 extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('form/step1');
         } else {
-            // Reliage de session des 3 etapes du formulaire
-        $this->session->set_userdata('nom_user', $this->input->post('nom_user'));
-        $this->session->set_userdata('prenom_user', $this->input->post('prenom_user'));
-        $this->session->set_userdata('age_user', $this->input->post('age_user'));
-        $this->session->set_userdata('email_user', $this->input->post('email_user'));
-        $this->session->set_userdata('adresse_user', $this->input->post('adresse_user'));
-        $this->session->set_userdata('ville_user', $this->input->post('ville_user'));
-        $this->session->set_userdata('codepostal_user', $this->input->post('codepostal_user'));
-        $this->session->set_userdata('tel_user', $this->input->post('tel_user'));
-    
+
+            $nom = $this->input->post('nom_user');
+            $prenom = $this->input->post('prenom_user');
+            $age = $this->input->post('age_user');
+            $email = $this->input->post('email_user');
+            $adresse = $this->input->post('adresse_user');
+            $ville = $this->input->post('ville_user');
+            $codepostal = $this->input->post('codepostal_user');
+            $tel = $this->input->post('tel_user');
+
             $data = array(
-                'nom_user' => $this->session->userdata('nom_user'),
-                'prenom_user' => $this->session->userdata('prenom_user'),
-                'age_user' => $this->session->userdata('age_user'),
-                'email_user' => $this->session->userdata('email_user'),
-                'adresse_user' => $this->session->userdata('adresse_user'),
-                'ville_user' => $this->session->userdata('ville_user'),
-                'codepostal_user' => $this->session->userdata('codepostal_user'),
-                'tel_user' => $this->session->userdata('tel_user')
+                'nom_user' => $nom,
+                'prenom_user' => $prenom,
+                'age_user' => $age,
+                'email_user' => $email,
+                'adresse_user' => $adresse,
+                'ville_user' => $ville,
+                'codepostal_user' => $codepostal,
+                'tel_user' => $tel
             );
-            redirect('Famille2/step2', $data);
-        }
+            $this->Chat_Model->create_famille($data);
+            redirect('Famille2/step2');
         }
     }
+}
