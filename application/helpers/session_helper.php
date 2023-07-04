@@ -1,9 +1,9 @@
 <?php
-session_start();
 
 function isConnected()
 {
-    if (isset($_SESSION["pseudo"])) {
+    $CI = get_instance();
+    if ($CI->session->userdata('sid')) {
         return true;
     } else return false;
 }

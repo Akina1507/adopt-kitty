@@ -8,6 +8,7 @@ class Famille2 extends CI_Controller
         parent::__construct();
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
+
     }
     public function step2()
     {

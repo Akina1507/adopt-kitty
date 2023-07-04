@@ -36,11 +36,18 @@ class Users extends CI_Controller
 
             if ($this->form_validation->run() == true) {
                 if ($this->User_Model->cb_users($_POST["pseudo"], md5($_POST["mdp"])) == 1) {
-                    $data = array('pseudo' => $_POST["pseudo"]);
+                    $pseudo = $_POST["pseudo"];
+                    $data = array('pseudo' => $pseudo);
                     $user = $this->User_Model->get_user_by($data);
-                    $_SESSION["pseudo"] = $_POST['pseudo'];
-                    $_SESSION['id'] = $user->id;
 
+                if ($user) {
+                    $session_user = array(
+                        'id' => $user['id'],
+                        'pseudo'=> $pseudo
+                    );
+                }
+                
+                $this->session->set_userdata($session_user);
                     $data['popup'] = true;
                     $this->load->view('espace_user/login', $data);
                 } else {

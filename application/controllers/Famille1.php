@@ -46,7 +46,7 @@ class Famille1 extends CI_Controller
         $this->session->set_userdata('codepostal_user', $this->input->post('codepostal_user'));
         $this->session->set_userdata('tel_user', $this->input->post('tel_user'));
     
-            $userdata = array(
+            $data = array(
                 'nom_user' => $this->session->userdata('nom_user'),
                 'prenom_user' => $this->session->userdata('prenom_user'),
                 'age_user' => $this->session->userdata('age_user'),
@@ -56,10 +56,7 @@ class Famille1 extends CI_Controller
                 'codepostal_user' => $this->session->userdata('codepostal_user'),
                 'tel_user' => $this->session->userdata('tel_user')
             );
+            redirect('Famille2/step2', $data);
         }
-
-
-            redirect('Famille2/step2', $userdata);
         }
     }
-

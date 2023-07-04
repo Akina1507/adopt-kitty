@@ -77,7 +77,15 @@ class User_Model extends CI_Model
 
     public function get_user_by($data)
     {
-        $query = $this->db->get_where('users', $data);
-        return $query->row();
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where($data);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        }else {
+            return false;
+        }
     }
 }
