@@ -3,16 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Famille1 extends CI_Controller
 {
-    
+
     public function __construct()
     {
-        
+
         parent::__construct();
 
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
-
-
     }
 
     public function step1()
@@ -56,7 +54,7 @@ class Famille1 extends CI_Controller
                 'codepostal_user' => $codepostal,
                 'tel_user' => $tel
             );
-            $this->Chat_Model->create_famille($data);
+            $this->session->set_userdata('famille_id');
             redirect('Famille2/step2');
         }
     }

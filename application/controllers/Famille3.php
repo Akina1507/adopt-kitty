@@ -1,21 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Famille1 extends CI_Controller
+class Famille3 extends CI_Controller
 {
-    
+
     public function __construct()
     {
-        
+
         parent::__construct();
 
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
-
-
     }
 
-    public function step1()
+    public function step3()
     {
         if (isConnected() == false) {
             redirect('Users/login');
@@ -30,13 +28,6 @@ class Famille1 extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('form/step3');
         } else {
-            // Reliage de session des 3 etapes du formulaire
-        $this->session->set_userdata('animaux_famille', $this->input->post('animaux_famille'));
-        $this->session->set_userdata('animaux_vie', $this->input->post('animaux_vie'));
-        $this->session->set_userdata('nbr_animaux', $this->input->post('nbr_animaux'));
-        $this->session->set_userdata('age_animaux_vie', $this->input->post('age_animaux_vie'));
-        $this->session->set_userdata('detail_animaux_vie', $this->input->post('detail_animaux_vie'));
-        $this->session->set_userdata('disponible_veto', $this->input->post('disponible_veto'));
             $userdata = array(
                 'animaux_famille' => $this->session->userdata('animaux_famille'),
                 'animaux_vie' => $this->session->userdata('animaux_vie'),
@@ -45,9 +36,7 @@ class Famille1 extends CI_Controller
                 'detail_animaux_vie' => $this->session->userdata('detail_animaux_vie'),
                 'disponible_veto' => $this->session->userdata('disponible_veto'),
             );
-        }
-
-
             redirect('Users/login', $userdata);
         }
     }
+}
