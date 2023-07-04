@@ -8,6 +8,8 @@ class Famille1 extends CI_Controller
         parent::__construct();
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
+
+
     }
 
     public function step1()
@@ -31,7 +33,16 @@ class Famille1 extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('form/step1');
         } else {
-            
+            // Reliage de session des 3 etapes du formulaire
+        $this->session->set_userdata('nom_user', $this->input->post('nom_user'));
+        $this->session->set_userdata('prenom_user', $this->input->post('prenom_user'));
+        $this->session->set_userdata('age_user', $this->input->post('age_user'));
+        $this->session->set_userdata('email_user', $this->input->post('email_user'));
+        $this->session->set_userdata('adresse_user', $this->input->post('adresse_user'));
+        $this->session->set_userdata('ville_user', $this->input->post('ville_user'));
+        $this->session->set_userdata('codepostal_user', $this->input->post('codepostal_user'));
+        $this->session->set_userdata('tel_user', $this->input->post('tel_user'));
+
             $data = array(
                 'nom_user' => $this->session->userdata('nom_user'),
                 'prenom_user' => $this->session->userdata('prenom_user'),
@@ -43,14 +54,7 @@ class Famille1 extends CI_Controller
                 'tel_user' => $this->session->userdata('tel_user')
             );
 
-        $this->session->set_userdata('nom_user', $this->input->post('nom_user'));
-        $this->session->set_userdata('prenom_user', $this->input->post('prenom_user'));
-        $this->session->set_userdata('age_user', $this->input->post('age_user'));
-        $this->session->set_userdata('email_user', $this->input->post('email_user'));
-        $this->session->set_userdata('adresse_user', $this->input->post('adresse_user'));
-        $this->session->set_userdata('ville_user', $this->input->post('ville_user'));
-        $this->session->set_userdata('codepostal_user', $this->input->post('codepostal_user'));
-        $this->session->set_userdata('tel_user', $this->input->post('tel_user'));
+        
 
 
             redirect('Famille2/step2', $data);
