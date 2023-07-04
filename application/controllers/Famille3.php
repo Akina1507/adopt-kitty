@@ -8,7 +8,7 @@ class Famille3 extends CI_Controller
         parent::__construct();
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
-        
+
     }
     public function step3()
     {
@@ -39,9 +39,7 @@ class Famille3 extends CI_Controller
                 'disponible_veto' => $this->session->userdata('disponible_veto')
             );
         
-            redirect('Users');
+            redirect('Users',$data);
         }
-
-        redirect('Users', $data);
         }
     }
