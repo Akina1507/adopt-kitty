@@ -15,7 +15,7 @@ include(APPPATH . "views/include/header.php")
 			</a>
 			<br>
 			<a class="btn custom-btn" href="<?php
-											echo base_url("Famille/step1") ?>">Devenir famille d'accueil
+											echo base_url("Famille1/step1") ?>">Devenir famille d'accueil
 			</a>
 			<br>
 			<a class="btn custom-btn" href="<?php

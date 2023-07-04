@@ -9,10 +9,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6 pb-2 bg-white bordered">
                 <h2>Étape 3</h2>
-                <?php if (isset($popup) && $popup === true) { ?>
-                    <h5>Vous avez bien rempli votre formulaire pour devenir famille d'accueil.<br>Vous allez être redirigé vers notre page d'accueil</h5>
-                    <?php header('refresh:3;url=' . base_url('Users')); ?>
-                <?php } ?>
 
                 <div class="inputBox" id="animaux_famille_input">
                     <label for="animaux_famille">Avez vous déjà eu des animaux dans votre foyer ? :</label>

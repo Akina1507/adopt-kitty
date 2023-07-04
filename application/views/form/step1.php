@@ -6,7 +6,7 @@
 
 <!-- ... Formulaire de la première étape ... -->
 
-<?php echo form_open('Famille/step1'); ?>
+<?php echo form_open('Famille1/step1'); ?>
 
 <div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="container">
