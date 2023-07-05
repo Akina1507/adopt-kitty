@@ -55,7 +55,8 @@ class Famille1 extends CI_Controller
                 'tel_user' => $tel
             );
             $famille_id = $this->Chat_Model->create_famille($data);
-        $this->session->set_userdata('famille_id', $famille_id);
+            $this->session->set_userdata('famille_id', $famille_id);
+
             redirect('Famille2/step2');
         }
     }
