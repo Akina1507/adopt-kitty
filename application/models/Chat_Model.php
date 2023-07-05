@@ -21,9 +21,8 @@ class Chat_Model extends CI_Model
     public function update_famille2($famille_id, $data)
     {
         $this->db->where('id', $famille_id);
-        $this->db->insert('famille', $data);
+        $this->db->update('famille', $data);
     }
-
 
     public function create_famille3($data)
     {
