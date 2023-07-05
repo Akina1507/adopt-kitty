@@ -48,7 +48,6 @@ class Users extends CI_Controller
                 }
                 
                 $this->session->set_userdata($session_user);
-                    $data['popup'] = true;
                     $this->load->view('espace_user/login', $data);
                 } else {
                     $data['info_connexion'] = 'error';

@@ -36,6 +36,7 @@ class Famille3 extends CI_Controller
                 'detail_animaux_vie' => $this->session->userdata('detail_animaux_vie'),
                 'disponible_veto' => $this->session->userdata('disponible_veto'),
             );
+            $this->Chat_Model->create_famille3($data);
             redirect('Users/login', $userdata);
         }
     }

@@ -9,11 +9,6 @@
 
                     <h4 class="text-center">Connectez-vous</h4>
                     <br>
-
-                    <?php if (isset($popup) && $popup === true) { ?>
-                        <h5>Vous êtes bien connecté<br>Vous allez être redirigé vers notre page d'accueil</h5>
-                        <?php header('refresh:3;url=' . base_url('Users')); ?>
-                    <?php } ?>
                     <div class="form-group">
                         <div class="field">
                             <label class="label-login" for="pseudo">Pseudo</label>

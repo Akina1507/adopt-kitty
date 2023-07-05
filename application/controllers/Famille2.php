@@ -53,7 +53,9 @@ class Famille2 extends CI_Controller
                 'temps_activite' => $temps_activite,
                 'raison_famille' => $raison_famille
             );
-            $this->Chat_Model->create_famille2($data);
+            $famille_id = $this->session->userdata('famille_id'); // Récupère l'ID de la famille créée à l'étape 1 depuis la session
+        $this->Chat_Model->update_famille2($famille_id, $data);
+        
             redirect('Famille3/step3');
         }
     }
