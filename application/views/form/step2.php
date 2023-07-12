@@ -42,7 +42,7 @@
                     <h4><?= form_error('type_exterieur'); ?></h4>
                 </div>
                 <br>
-                <!-- Condition d'affichage pour type/info logement -->
+
                 <div class="inputBox" id="situation_foyer_input">
                     <label for="situation_foyer">Qu'elle est la situation de votre foyer ?</label>
                     <select name="situation_foyer" id="situation_foyer" required>
@@ -62,13 +62,13 @@
                     </select>
                     <h4><?= form_error('enfants_foyer'); ?></h4>
                 </div>
-                <br>
+                
                 <div id="nbr_enfants_input" style="display: none;">
                     <label for="nbr_enfants">Combien avez-vous d'enfants ?</label>
                     <input type="number" name="nbr_enfants" id="nbr_enfants">
                     <h4><?= form_error('nbr_enfants'); ?></h4>
                 </div>
-                <br>
+               
                 <div id="age_enfants_input" style="display: none;">
                     <label for="age_enfants">Quel âge ont vos enfants ?</label>
                     <input type="number" name="age_enfants" id="nbr_enfants">
@@ -84,7 +84,7 @@
                     </select>
                     <h4><?= form_error('activite_famille'); ?></h4>
                 </div>
-                <br>
+                
                 <div class="inputBox">
                     <label for="temps_activite">Combien de temps l'animal restera t'il seul ? :</label>
                     <input class="form-control" type="number" name="temps_activite" id="temps_activite" required>

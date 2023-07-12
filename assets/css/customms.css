@@ -20,40 +20,12 @@
 	border-radius: 10px;
 }
 
-
 .encadre-color {
 	box-shadow: #7c6747;
 	background-color: aliceblue;
-	padding: 20px; 
+	padding: 20px;
 }
-
 
 .full-height {
 	min-height: 100vh;
-  }
-
-.carousel-indicators {
-	color: black;
-	position: static;
-}
-
-.carousel-item {
-	float: none;
-
-
-}
-
-.carousel-control-ms button {
-	background-color: black;
-	color: black;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-	position: static;
-}
-
-.carousel-indicators [data-bs-target] {
-	height: 0;
-	text-indent: 0;
 }
