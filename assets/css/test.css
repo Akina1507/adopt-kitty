@@ -4,6 +4,7 @@
 .upe-mutistep-form .step-header .steplevel {
 	position: relative;
 	flex: 1;
+	padding-bottom: 30px;
 }
 .upe-mutistep-form .step-header .steplevel.active {
 	font-weight: 600;
@@ -25,10 +26,12 @@
 	border-radius: 50%;
 	border: 3px solid #ecf5f4;
 }
-.upe-mutistep-form .step-header .steplevel.active::before {
+.upe-mutistep-form .step-header .steplevel.active::before,
+.upe-mutistep-form .step-header .steplevel:hover::before {
 	background-color: #3fbdb4;
 	border: 3px solid #d5f9f6;
 }
+
 .upe-mutistep-form .step-header .steplevel.finish::before {
 	background-color: #3fbdb4;
 	border: 3px solid #3fbdb4;
@@ -50,4 +53,11 @@
 }
 .upe-mutistep-form .step-header .steplevel:last-child:after {
 	display: none;
+}
+
+.form-container {
+	background-color: rgb(118, 141, 218);
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
 }

@@ -9,8 +9,8 @@
         <div class="col-md-auto">
             <form class="upe-mutistep-form" id="Upemultistepsform" action="<?= site_url('Famille2/step2'); ?>" method="post">
                 <div class="step-header d-flex mb-2 justify-content-center">
-                    <span class="steplevel">Etape 1</span>
-                    <span class="steplevel active">Etape 2</span>
+                    <span class="steplevel active">Etape 1</span>
+                    <span class="steplevel">Etape 2</span>
                     <span class="steplevel">Etape 3</span>
                 </div>
                 <div class="step">
@@ -106,7 +106,7 @@
 
                 
                 <div class="step">
-                    <h6>Félicititation, vous avez bien rempli notre formulaire.
+                    <h6>Félitation, vous avez bien rempli notre formulaire.
                         <br>A présent vous aller être rediriger vers notre page d'accueil
                     </h6>
                 

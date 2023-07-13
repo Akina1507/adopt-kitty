@@ -38,3 +38,29 @@ function activelevel(n) {
 	}
 	x[n].className += " active";
 }
+$(document).ready(function () {
+	// Étape 1
+	$(".step-header .steplevel").eq(1).removeClass("active"); // Désactive l'étape 2 dans l'en-tête
+	$(".step").eq(0).show(); // Affiche l'étape 1
+
+	$("#suivBtn").click(function () {
+		// Vérifie si tous les champs de l'étape 1 sont valides
+		if (
+			$("#nom_user").val() &&
+			$("#prenom_user").val() &&
+			$("#age_user").val() &&
+			$("#email_user").val() &&
+			$("#adresse_user").val() &&
+			$("#ville_user").val() &&
+			$("#codepostal_user").val() &&
+			$("#tel_user").val()
+		) {
+			$(".step-header .steplevel").eq(1).addClass("active"); // Active l'étape 2 dans l'en-tête
+			$(".step").eq(0).hide(); // Masque l'étape 1
+			$(".step").eq(1).show(); // Affiche l'étape 2
+			$("#precBtn").show(); // Affiche le bouton "Précédent"
+		} else {
+			alert("Veuillez remplir tous les champs de l'étape 1."); // Affiche un message d'erreur si des champs sont vides
+		}
+	});
+});
