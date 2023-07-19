@@ -57,7 +57,7 @@ class Famille1 extends CI_Controller
             $famille_id = $this->Chat_Model->create_famille($data);
             $this->session->set_userdata('famille_id', $famille_id);
 
-            redirect('Famille2/step2');
+            redirect('Famille1/step2');
         }
     }
     public function step2()

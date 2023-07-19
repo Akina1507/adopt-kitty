@@ -8,6 +8,10 @@ $(document).ready(function () {
 		}
 	});
 
+	$("#nextBtn2").click(function () {
+		nextTab();
+	});
+
 	$("#prevBtn").click(function () {
 		prevTab();
 	});
@@ -19,18 +23,23 @@ $(document).ready(function () {
 
 		if (n === 0) {
 			$("#prevBtn").hide();
+			$("#nextBtn2").hide();
+			$("#nextBtn").show();
+		} else if (n === x.length - 1) {
+			$("#prevBtn").show();
+			$("#nextBtn").hide();
+			$("#nextBtn2").show();
 		} else {
 			$("#prevBtn").show();
-		}
-
-		if (n === x.length - 1) {
-			$("#nextBtn").text("Submit");
-		} else {
-			$("#nextBtn").text("Next");
+			$("#nextBtn").show();
+			$("#nextBtn2").hide();
 		}
 	}
 
 	function nextTab() {
+		if (currentTab === 1 && !validateForm()) {
+			return false;
+		}
 		currentTab++;
 		tabShow(currentTab);
 	}
