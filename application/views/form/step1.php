@@ -136,9 +136,9 @@
                         </div>
                     
                         <div class="d-flex btn-row">
-        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-        <button class="btn btn-primary fw-bold m-1" id="nextBtn2" onclick="nextPrev(1)" type="button">Next</button>
-                        </div>
+                    <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)"
+                            type="button">Next</button>
+                    </div>
                     </div>
                 </div>
 
