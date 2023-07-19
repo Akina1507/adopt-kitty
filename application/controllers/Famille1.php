@@ -11,6 +11,8 @@ class Famille1 extends CI_Controller
 
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
+        $this->load->helper('form');
+
     }
 
     public function step1()
@@ -54,6 +56,18 @@ class Famille1 extends CI_Controller
                 'codepostal_user' => $codepostal,
                 'tel_user' => $tel
             );
+
+            $validStep1 = $this->votre_condition($data);
+
+    if ($validStep1) {
+        $famille_id = $this->Chat_Model->create_famille($data);
+        $this->session->set_userdata('famille_id', $famille_id);
+        redirect('Famille1/step2');
+    } else {
+        $this->load->view('form/step1');
+    }
+    
+
             $famille_id = $this->Chat_Model->create_famille($data);
             $this->session->set_userdata('famille_id', $famille_id);
 
