@@ -54,10 +54,10 @@ class Famille1 extends CI_Controller
                 $nom_user = $this->input->post('nom_user');
                 $prenom_user = $this->input->post('prenom_user');
                 $age_user = $this->input->post('age_user');
-                $email_user = $this->input->post('email_user');
                 $adresse_user = $this->input->post('adresse_user');
                 $ville_user = $this->input->post('ville_user');
                 $codepostal_user = $this->input->post('codepostal_user');
+                $email_user = $this->input->post('email_user');
                 $tel_user = $this->input->post('tel_user');
                 $type_logement = $this->input->post('type_logement');
                 $exterieur_user = $this->input->post('exterieur_user');
@@ -80,10 +80,10 @@ class Famille1 extends CI_Controller
                     'nom_user' => $nom_user,
                     'prenom_user' => $prenom_user,
                     'age_user' => $age_user,
-                    'email_user' => $email_user,
                     'adresse_user' => $adresse_user,
                     'ville_user' => $ville_user,
                     'codepostal_user' => $codepostal_user,
+                    'email_user' => $email_user,
                     'tel_user' => $tel_user,
                     'type_logement' => $type_logement,
                     'exterieur_user' => $exterieur_user,
@@ -99,7 +99,7 @@ class Famille1 extends CI_Controller
                     'animaux_vie' => $animaux_vie,
                     'nbr_animaux' => $nbr_animaux,
                     'age_animaux_vie' => $age_animaux_vie,
-                    'detail_animaux_vie' => $detail_animaux_vie,
+                    'details_animaux_vie' => $detail_animaux_vie,
                     'disponible_veto' => $disponible_veto,
                 );
 
