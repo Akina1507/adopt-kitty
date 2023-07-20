@@ -107,7 +107,7 @@ class Famille1 extends CI_Controller
                 if ($result) {
                     echo ("Error");
                 } else {
-                    redirect('Famille1/step1');
+                    redirect('Users');
                 }
             } else {
                 $this->load->view('form/step1');
