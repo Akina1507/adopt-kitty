@@ -36,7 +36,7 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
         $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
         $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
-        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|exact_length[2]');
+        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
         $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
         $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
@@ -53,14 +53,14 @@ class Famille1 extends CI_Controller
             $this->load->view('form/step1');
         } else {
 
-            $nom = $this->input->post('nom_user');
-            $prenom = $this->input->post('prenom_user');
-            $age = $this->input->post('age_user');
-            $email = $this->input->post('email_user');
-            $adresse = $this->input->post('adresse_user');
-            $ville = $this->input->post('ville_user');
-            $codepostal = $this->input->post('codepostal_user');
-            $tel = $this->input->post('tel_user');
+            $nom_user = $this->input->post('nom_user');
+            $prenom_user = $this->input->post('prenom_user');
+            $age_user = $this->input->post('age_user');
+            $email_user = $this->input->post('email_user');
+            $adresse_user = $this->input->post('adresse_user');
+            $ville_user = $this->input->post('ville_user');
+            $codepostal_user = $this->input->post('codepostal_user');
+            $tel_user = $this->input->post('tel_user');
             $type_logement = $this->input->post('type_logement');
             $exterieur_user = $this->input->post('exterieur_user');
             $type_exterieur = $this->input->post('type_exterieur');
@@ -79,14 +79,14 @@ class Famille1 extends CI_Controller
             $disponible_veto = $this->input->post('disponible_veto');
 
             $data = array(
-                'nom_user' => $nom,
-                'prenom_user' => $prenom,
-                'age_user' => $age,
-                'email_user' => $email,
-                'adresse_user' => $adresse,
-                'ville_user' => $ville,
-                'codepostal_user' => $codepostal,
-                'tel_user' => $tel,
+                'nom_user' => $nom_user,
+                'prenom_user' => $prenom_user,
+                'age_user' => $age_user,
+                'email_user' => $email_user,
+                'adresse_user' => $adresse_user,
+                'ville_user' => $ville_user,
+                'codepostal_user' => $codepostal_user,
+                'tel_user' => $tel_user,
                 'type_logement' => $type_logement,
                 'exterieur_user' => $exterieur_user,
                 'type_exterieur' => $type_exterieur,
@@ -107,11 +107,7 @@ class Famille1 extends CI_Controller
 
         $this->Chat_Model->create_famille($data);
 
-        redirect('Users');
+        redirect('Famille1/step1');
         }
     }
 }
-
-
-
-
