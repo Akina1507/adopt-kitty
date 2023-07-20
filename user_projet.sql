@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 03 juil. 2023 à 15:42
+-- Généré le : jeu. 20 juil. 2023 à 07:57
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `prenom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `age_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `adresse_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `ville_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `codepostal_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -103,36 +103,32 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `tel_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type_logement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `exterieur_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `type_exterieur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_exterieur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `situation_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `enfants_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_enfants` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `raison_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `temps_activite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_vie` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `details_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_animaux_vie` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `disponible_veto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qst_steril` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qst-mld` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qst_steril` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qst-mld` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `famille`
 --
 
 INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `adresse_user`, `ville_user`, `codepostal_user`, `email_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `raison_famille`, `activite_famille`, `temps_activite`, `animaux_famille`, `nbr_animaux`, `animaux_vie`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`, `qst_steril`, `qst-mld`) VALUES
-(1, 'wilson', 'alice', '', '20 rue des chats', 'Reims', '3242', 'chat@gmail.com', '2323', 'maison', 'balcon', '', 'aucun', '0', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(2, 'Cross', 'marlon', '', '20 place des cubes', 'Los angeles', '23456', 'marlon.cross@gmail.com', '555098765', 'maison', 'jardin', '', 'seul', '0', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 'timousse', 'miaou', '', '20 rue des chatons', 'Reims', '476', 'chayt@gmail.com', '742904', 'maison', 'terrasse', '', 'seul', '0', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(4, 'sbdfbdf', 'dbdfbd', '', '20 rue des chiens', 'rouen', '24234', 'edbdef@dbdfibdof.com', '252525', 'maison', 'jardin', '', 'seul', '0', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 'montagnier', 'marlene', '', '98 place des hamsters', 'Amsterdam', '23456', 'marlene.martagnier@mail.com', '0976527348', 'maison', 'jardin', '', 'couple', 'oui', '3', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 'montagnier', 'marlene', '', '98 place des hamsters', 'Amsterdam', '23456', 'marlene.martagner@mail.com', '0976527348', 'maison', 'jardin', '', 'couple', 'oui', '3', '', '', '', '', '', '', '', '', '', '', '', '');
+(8, 'Wietrich', 'Marie', '19', '29 rue des chats', 'Reims', '51100', 'mswietrich1507@gmail.com', '0652980766', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'Lecour', 'Bastien', '20', '20 rue des chatons', 'Reims', '51100', 'bastien.lec@laposte.com', '0652832238', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -230,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `mdp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `recup_mdp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
@@ -238,9 +234,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `pseudo`, `email`, `mdp`, `recup_mdp`) VALUES
 (11, 'Marie', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
-(24, 'hhfdfchkh', 'fnfgfnf@fdfgnfgkgg.fr', '250cf8b51c773f3f8dc8b4be867a9a02', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
-(23, 'hhfchkh', 'fnfgfnf@fgnfgkgg.fr', '202cb962ac59075b964b07152d234b70', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
-(22, 'hhfch', 'fnfgfnf@fgnfg.fr', '81dc9bdb52d04dc20036dbd8313ed055', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
 (25, 'Marlon', 'bastien.lecour2025@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL);
 COMMIT;
 
