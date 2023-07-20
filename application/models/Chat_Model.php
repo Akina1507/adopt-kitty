@@ -12,4 +12,8 @@ class Chat_Model extends CI_Model
     {
         return $this->db->insert('famille', $data);
     }
+
+    public function search_famille($data){
+        $this->db->count
+    }
 }

@@ -4,21 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Famille1 extends CI_Controller
 {
 
-    public function __construct()
-    {
-
-        parent::__construct();
-
-        $this->load->model('Chat_Model');
-        $this->load->library('form_validation');
-        $this->load->helper('form');
-    }
 
     public function step1()
-    {
-        if (isConnected() == false) {
-            redirect('Users/login');
-        } else {
+    { 
             $this->form_validation->set_rules('nom_user', 'Nom user', 'trim|required');
             $this->form_validation->set_rules('prenom_user', 'Prenom user', 'trim|required');
             $this->form_validation->set_rules('age_user', 'Age user', 'trim|required');
@@ -103,15 +91,14 @@ class Famille1 extends CI_Controller
                     'disponible_veto' => $disponible_veto,
                 );
 
-                $result = $this->Chat_Model->create_famille($data);
-                if ($result) {
-                    echo ("Error");
-                } else {
-                    redirect('Users');
-                }
+                $this->Chat_Model->create_famille($data);{
+
+                $this->$nom_user
+
+                
             } else {
                 $this->load->view('form/step1');
             }
         }
     }
-}
+

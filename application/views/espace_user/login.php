@@ -1,7 +1,7 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
 <body>
-    <?php echo form_open() ?>
+    <?php echo form_open('Users/login') ?>
     <div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="container">
             <div class="row justify-content-center">
