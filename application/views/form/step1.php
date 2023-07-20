@@ -102,6 +102,11 @@
                             <?= form_error('situation_foyer'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="enfants_foyer">enfants_foyer ?</label>
+                            <input type="number" name="enfants_foyer" id="enfants_foyer">
+                            <?= form_error('enfants_foyer'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label for="nbr_enfants">Combien avez-vous d'enfants ?</label>
                             <input type="number" name="nbr_enfants" id="nbr_enfants">
                             <?= form_error('nbr_enfants'); ?>

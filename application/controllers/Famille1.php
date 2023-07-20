@@ -12,7 +12,6 @@ class Famille1 extends CI_Controller
         $this->load->model('Chat_Model');
         $this->load->library('form_validation');
         $this->load->helper('form');
-
     }
 
     public function step1()
@@ -27,10 +26,12 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('adresse_user', 'Adresse user', 'trim|required');
         $this->form_validation->set_rules('ville_user', 'Ville user', 'trim|required');
         $this->form_validation->set_rules('codepostal_user', 'Codepostal user', 'trim|required|exact_length[5]', array(
-            'exact_length' => 'Le code postal doit contenir 5 chiffres seulement.'));
+            'exact_length' => 'Le code postal doit contenir 5 chiffres seulement.'
+        ));
         $this->form_validation->set_rules('tel_user', 'Tel user', 'trim|required|regex_match[(06|07|08|09|03)]|exact_length[10]', array(
             'regex_match' => 'Le numéro de téléphone doit obligatoirement commencer par (06, 07, 08, 09 ou 03).',
-            'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'));
+            'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'
+        ));
         $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
         $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
         $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
@@ -42,12 +43,12 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
-        $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|required');
         $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim|required');
+        $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|required');
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim|required');
         $this->form_validation->set_rules('detail_animaux_vie', 'Detail animaux', 'trim|required');
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
-    
+
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('form/step1');
@@ -103,15 +104,11 @@ class Famille1 extends CI_Controller
                 'age_animaux_vie' => $age_animaux_vie,
                 'detail_animaux_vie' => $detail_animaux_vie,
                 'disponible_veto' => $disponible_veto,
-        );
+            );
 
-        $this->Chat_Model->create_famille($data);
+            $this->Chat_Model->create_famille($data);
 
-        redirect('Users');
+            redirect('Users');
         }
     }
 }
-
-
-
-
