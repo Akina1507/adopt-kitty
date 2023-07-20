@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 20 juil. 2023 à 07:57
+-- Généré le : jeu. 20 juil. 2023 à 09:34
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -117,8 +117,6 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `details_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qst_steril` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qst-mld` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -126,9 +124,9 @@ CREATE TABLE IF NOT EXISTS `famille` (
 -- Déchargement des données de la table `famille`
 --
 
-INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `adresse_user`, `ville_user`, `codepostal_user`, `email_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `raison_famille`, `activite_famille`, `temps_activite`, `animaux_famille`, `nbr_animaux`, `animaux_vie`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`, `qst_steril`, `qst-mld`) VALUES
-(8, 'Wietrich', 'Marie', '19', '29 rue des chats', 'Reims', '51100', 'mswietrich1507@gmail.com', '0652980766', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 'Lecour', 'Bastien', '20', '20 rue des chatons', 'Reims', '51100', 'bastien.lec@laposte.com', '0652832238', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `adresse_user`, `ville_user`, `codepostal_user`, `email_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `raison_famille`, `activite_famille`, `temps_activite`, `animaux_famille`, `nbr_animaux`, `animaux_vie`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`) VALUES
+(8, 'Wietrich', 'Marie', '19', '29 rue des chats', 'Reims', '51100', 'mswietrich1507@gmail.com', '0652980766', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'Lecour', 'Bastien', '20', '20 rue des chatons', 'Reims', '51100', 'bastien.lec@laposte.com', '0652832238', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
