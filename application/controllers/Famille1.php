@@ -8,22 +8,22 @@ class Famille1 extends CI_Controller
     public function step1()
     { 
         
-            $this->form_validation->set_rules('nom_user', 'Nom user', 'trim|required');
-            $this->form_validation->set_rules('prenom_user', 'Prenom user', 'trim|required');
-            $this->form_validation->set_rules('age_user', 'Age user', 'trim|required');
-            $this->form_validation->set_rules('email_user', 'Email user', 'trim|required|valid_email|is_unique[famille.email_user]');
-            $this->form_validation->set_rules('adresse_user', 'Adresse user', 'trim|required');
-            $this->form_validation->set_rules('ville_user', 'Ville user', 'trim|required');
-            $this->form_validation->set_rules('codepostal_user', 'Codepostal user', 'trim|required|exact_length[5]', array(
+            $this->form_validation->set_rules('nom_user', 'Nom', 'trim|required');
+            $this->form_validation->set_rules('prenom_user', 'Prenom', 'trim|required');
+            $this->form_validation->set_rules('age_user', 'Age', 'trim|required');
+            $this->form_validation->set_rules('email_user', 'Email', 'trim|required|valid_email|is_unique[famille.email_user]');
+            $this->form_validation->set_rules('adresse_user', 'Adresse', 'trim|required');
+            $this->form_validation->set_rules('ville_user', 'Ville', 'trim|required');
+            $this->form_validation->set_rules('codepostal_user', 'Code postal', 'trim|required|exact_length[5]', array(
                 'exact_length' => 'Le code postal doit contenir 5 chiffres seulement.'
             ));
-            $this->form_validation->set_rules('tel_user', 'Tel user', 'trim|required|regex_match[(06|07|08|09|03)]|exact_length[10]', array(
+            $this->form_validation->set_rules('tel_user', 'Téléphone', 'trim|required|regex_match[(06|07|08|09|03)]|exact_length[10]', array(
                 'regex_match' => 'Le numéro de téléphone doit obligatoirement commencer par (06, 07, 08, 09 ou 03).',
                 'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'
             ));
-            //  $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
-            //  $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
-            // $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
+              $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
+              $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
+              $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
             // $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
             // $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
             // $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
@@ -38,6 +38,7 @@ class Famille1 extends CI_Controller
             // $this->form_validation->set_rules('detail_animaux_vie', 'Detail animaux', 'trim|required');
             // $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
+            // Si le formulaire est valide ?
 
             if ($this->form_validation->run() === TRUE) {
                 $nom_user = $this->input->post('nom_user');
@@ -48,8 +49,8 @@ class Famille1 extends CI_Controller
                 $codepostal_user = $this->input->post('codepostal_user');
                 $email_user = $this->input->post('email_user');
                 $tel_user = $this->input->post('tel_user');
-                // $type_logement = $this->input->post('type_logement');
-                // $exterieur_user = $this->input->post('exterieur_user');
+                $type_logement = $this->input->post('type_logement');
+                $exterieur_user = $this->input->post('exterieur_user');
                 // $type_exterieur = $this->input->post('type_exterieur');
                 // $situation_foyer = $this->input->post('situation_foyer');
                 // $enfants_foyer = $this->input->post('enfants_foyer');
@@ -65,14 +66,17 @@ class Famille1 extends CI_Controller
                 // $detail_animaux_vie = $this->input->post('detail_animaux_vie');
                 // $disponible_veto = $this->input->post('disponible_veto');
 
+                //On charge le model pour envoyer les variables des colonnes dans la bdd
 
-                $this->Chat_Model->create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, $email_user, $tel_user);
-                
-               
-                
+                $this->Chat_Model->create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, 
+                $email_user, $tel_user, $type_logement, $exterieur_user, 
+            //$type_exterieur, $situation_foyer, $enfants_foyer, $nbr_enfants,
+            // $age_enfants, $activite_famille, $temps_activite, $raison_famille, $animaux_famille, $animaux_vie, $nbr_animaux, $age_animaux_vie,
+            // $detail_animaux_vie, $disponible_veto 
+        );
+
             }
             $this->load->view('form/step1');
-
         }
     }
     

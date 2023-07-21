@@ -57,21 +57,8 @@
                             <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone">
                             <?= form_error('tel_user'); ?>
                         </div>
-                    </div>
-                    <div class="d-flex btn-row"> 
-                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-                        <button type="submit">Envoyer</button>
-                    </div>
-                        <!-- <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div> -->
-                           
-                <!-- <div class="step">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="type_logement">Quel type de logement avez-vous ?</label>
-                            <select name="type_logement" id="type_logement" required>
+                        <label for="type_logement">Quel type de logement avez-vous ?</label>
+                            <select name="type_logement" id="type_logement">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="maison">Maison</option>
                                 <option value="appartement">Appartement</option>
@@ -89,7 +76,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="type_exterieur">Sélectionnez le type d'extérieur de votre habitation :</label>
-                            <select name="type_exterieur" id="type_exterieur" required>
+                            <select name="type_exterieur" id="type_exterieur">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="terrasse">Terrasse</option>
                                 <option value="jardin">Jardin</option>
@@ -98,9 +85,11 @@
                             </select>
                             <?= form_error('type_exterieur'); ?>
                         </div>
+
+
                         <div class="col-md-6 mb-3">
                             <label for="situation_foyer">Quelle est la situation de votre foyer ?</label>
-                            <select name="situation_foyer" id="situation_foyer" required>
+                            <select name="situation_foyer" id="situation_foyer">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="seul">Seul</option>
                                 <option value="couple">En couple</option>
@@ -124,7 +113,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="activite_famille">Avez-vous un emploi ?</label>
-                            <select name="activite_famille" id="activite_famille" required>
+                            <select name="activite_famille" id="activite_famille">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
@@ -133,26 +122,20 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="temps_activite">Combien de temps l'animal restera-t-il seul ?</label>
-                            <input class="form-control" type="number" name="temps_activite" id="temps_activite" required>
+                            <input class="form-control" type="number" name="temps_activite" id="temps_activite">
                             <?= form_error('temps_activite'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
-                            <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
+                            <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..."></textarea>
                             <?= form_error('raison_famille'); ?>
                         </div>
-                    </div>
-                    <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div>
 
-                <div class="step">
-                    <div class="row">
+
+
                         <div class="col-md-6 mb-3">
                             <label for="animaux_famille">Avez-vous déjà eu des animaux dans votre foyer ? :</label>
-                            <select name="animaux_famille" id="animaux_famille" required>
+                            <select name="animaux_famille" id="animaux_famille">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
@@ -161,12 +144,12 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="nbr_animaux">Combien avez-vous d'animaux dans votre foyer ?</label>
-                            <input class="form-control" type="number" name="nbr_animaux" id="nbr_animaux" required>
+                            <input class="form-control" type="number" name="nbr_animaux" id="nbr_animaux">
                             <?= form_error('nbr_animaux'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="age_animaux_vie">Quel âge ont vos animaux ?</label>
-                            <select name="age_animaux_vie" id="age_animaux_vie" required>
+                            <select name="age_animaux_vie" id="age_animaux_vie">
                                 <option value="">Sélectionnez</option>
                                 <option value="junior">Junior</option>
                                 <option value="adulte">Adulte</option>
@@ -176,18 +159,44 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="detail_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
-                            <textarea name="detail_animaux_vie" id="detail_animaux_vie" placeholder="races, activités, maladies..." required></textarea>
+                            <textarea name="detail_animaux_vie" id="detail_animaux_vie" placeholder="races, activités, maladies..."></textarea>
                             <?= form_error('detail_animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
-                            <select name="disponible_veto" id="disponible_veto" required>
+                            <select name="disponible_veto" id="disponible_veto">
                                 <option value="selectionnez">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
                             <?= form_error('disponible_veto'); ?>
                         </div>
+                    </div>
+                    <div class="d-flex btn-row"> 
+                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
+                        <button type="submit">Envoyer</button>
+                    </div>
+                        <!-- <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                    </div>
+                </div> -->
+                           
+                <!-- <div class="step">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            
+                        
+                        
+                    </div>
+                    <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="row">
+                        
                     </div> -->
                      
                 <!-- <div class="step">
