@@ -56,13 +56,10 @@
                             <?= form_error('tel_user'); ?>
                         </div>
                     </div>
-                    <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div>
+                    
 
-                <div class="step">
-                    <div class="row">
+             
+                
                         <div class="col-md-6 mb-3">
                             <label for="type_logement">Quel type de logement avez-vous ?</label>
                             <select name="type_logement" id="type_logement" required>
@@ -72,6 +69,11 @@
                             </select>
                             <?= form_error('type_logement'); ?>
                         </div>
+                        <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                    </div>
+                </div>
+                           <!-- 
                         <div class="col-md-6 mb-3">
                             <label for="exterieur_user">Avez-vous un extérieur dans votre logement ?</label>
                             <select name="exterieur_user" id="exterieur_user">
@@ -182,12 +184,8 @@
                             </select>
                             <?= form_error('disponible_veto'); ?>
                         </div>
-                    </div>
-                    <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div>
+                    </div>-->
+                     
                 <div class="step">
                     <h3>Terminé</h3>
                     <div class="d-flex btn-row">
