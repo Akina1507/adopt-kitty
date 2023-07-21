@@ -4,6 +4,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/adopt-kitty/assets/css/test.css">
 
+
+
 <div class="container form-container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
@@ -17,49 +19,56 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="nom_user">Nom :</label>
-                            <input class="form-control" type="text" name="nom_user" id="nom_user" placeholder="Votre nom" required>
+                            <input class="form-control" type="text" name="nom_user" id="nom_user" placeholder="Votre nom">
                             <?= form_error('nom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="prenom_user">Prénom :</label>
-                            <input class="form-control" type="text" name="prenom_user" id="prenom_user" placeholder="Votre prénom" required>
+                            <input class="form-control" type="text" name="prenom_user" id="prenom_user" placeholder="Votre prénom">
                             <?= form_error('prenom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="age_user">Age :</label>
-                            <input class="form-control" type="number" name="age_user" id="age_user" placeholder="Votre âge" required>
+                            <input class="form-control" type="number" name="age_user" id="age_user" placeholder="Votre âge">
                             <?= form_error('age_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="email_user">Email :</label>
-                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email" required>
+                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email">
                             <?= form_error('email_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="adresse_user">Adresse :</label>
-                            <input class="form-control" type="text" name="adresse_user" id="adresse_user" placeholder="Votre adresse" required>
+                            <input class="form-control" type="text" name="adresse_user" id="adresse_user" placeholder="Votre adresse">
                             <?= form_error('adresse_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="ville_user">Ville :</label>
-                            <input class="form-control" type="text" name="ville_user" id="ville_user" placeholder="Votre ville" required>
+                            <input class="form-control" type="text" name="ville_user" id="ville_user" placeholder="Votre ville">
                             <?= form_error('ville_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="codepostal_user">Code postal :</label>
-                            <input class="form-control" type="number" name="codepostal_user" id="codepostal_user" placeholder="Votre code postal" required>
+                            <input class="form-control" type="number" name="codepostal_user" id="codepostal_user" placeholder="Votre code postal">
                             <?= form_error('codepostal_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="tel_user">Téléphone :</label>
-                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone">
                             <?= form_error('tel_user'); ?>
                         </div>
                     </div>
-                    
-
-             
-                
+                    <div class="d-flex btn-row"> 
+                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
+                        <button type="submit">Envoyer</button>
+                    </div>
+                        <!-- <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                    </div>
+                </div> -->
+                           
+                <!-- <div class="step">
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="type_logement">Quel type de logement avez-vous ?</label>
                             <select name="type_logement" id="type_logement" required>
@@ -69,11 +78,6 @@
                             </select>
                             <?= form_error('type_logement'); ?>
                         </div>
-                        <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div>
-                           <!-- 
                         <div class="col-md-6 mb-3">
                             <label for="exterieur_user">Avez-vous un extérieur dans votre logement ?</label>
                             <select name="exterieur_user" id="exterieur_user">
@@ -184,14 +188,21 @@
                             </select>
                             <?= form_error('disponible_veto'); ?>
                         </div>
-                    </div>-->
+                    </div> -->
                      
-                <div class="step">
-                    <h3>Terminé</h3>
-                    <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-                        <button type="submit">Envoyer</button>
-                    </div>
+                <!-- <div class="step">
+                    <h3>Terminé</h3>-->
+                   
+
+
+
+
+
+
+
+
+
+
                 </div>
             </form>
         </div>

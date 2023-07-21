@@ -7,7 +7,7 @@ class Famille1 extends CI_Controller
 
     public function step1()
     { 
-        $this->load->model('Chat_Model');
+        
             $this->form_validation->set_rules('nom_user', 'Nom user', 'trim|required');
             $this->form_validation->set_rules('prenom_user', 'Prenom user', 'trim|required');
             $this->form_validation->set_rules('age_user', 'Age user', 'trim|required');
@@ -21,8 +21,8 @@ class Famille1 extends CI_Controller
                 'regex_match' => 'Le numéro de téléphone doit obligatoirement commencer par (06, 07, 08, 09 ou 03).',
                 'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'
             ));
-             $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
-            // $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
+            //  $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
+            //  $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
             // $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
             // $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
             // $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
@@ -48,7 +48,7 @@ class Famille1 extends CI_Controller
                 $codepostal_user = $this->input->post('codepostal_user');
                 $email_user = $this->input->post('email_user');
                 $tel_user = $this->input->post('tel_user');
-                 $type_logement = $this->input->post('type_logement');
+                // $type_logement = $this->input->post('type_logement');
                 // $exterieur_user = $this->input->post('exterieur_user');
                 // $type_exterieur = $this->input->post('type_exterieur');
                 // $situation_foyer = $this->input->post('situation_foyer');
@@ -65,47 +65,17 @@ class Famille1 extends CI_Controller
                 // $detail_animaux_vie = $this->input->post('detail_animaux_vie');
                 // $disponible_veto = $this->input->post('disponible_veto');
 
-                $data = array(
-                    'nom_user' => $nom_user,
-                    'prenom_user' => $prenom_user,
-                    'age_user' => $age_user,
-                    'adresse_user' => $adresse_user,
-                    'ville_user' => $ville_user,
-                    'codepostal_user' => $codepostal_user,
-                    'email_user' => $email_user,
-                    'tel_user' => $tel_user,
-                     'type_logement' => $type_logement,
-                    );
-                    // 'exterieur_user' => $exterieur_user,
-                    // 'type_exterieur' => $type_exterieur,
-                    // 'situation_foyer' => $situation_foyer,
-                    // 'enfants_foyer' => $enfants_foyer,
-                    // 'nbr_enfants' => $nbr_enfants,
-                    // 'age_enfants' => $age_enfants,
-                    // 'activite_famille' => $activite_famille,
-                    // 'temps_activite' => $temps_activite,
-                    // 'raison_famille' => $raison_famille,
-                    // 'animaux_famille' => $animaux_famille,
-                    // 'animaux_vie' => $animaux_vie,
-                    // 'nbr_animaux' => $nbr_animaux,
-                    // 'age_animaux_vie' => $age_animaux_vie,
-                    // 'details_animaux_vie' => $detail_animaux_vie,
-                    // 'disponible_veto' => $disponible_veto,
+
+                $this->Chat_Model->create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, $email_user, $tel_user);
                 
-
-                $result = $this->Chat_Model->create_famille($data);
-                if ($result) {
-                    redirect('Users');
-                } else {
-                    
-                    echo ("Error");
-                }
-            } else {
-                $this->load->view('form/step1');
+               
+                
             }
+            $this->load->view('form/step1');
 
+        }
     }
     
-}
+
 
 
