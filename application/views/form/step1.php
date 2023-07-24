@@ -57,6 +57,16 @@
                             <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone">
                             <?= form_error('tel_user'); ?>
                         </div>
+                        <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                        <div class="step">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                         <label for="type_logement">Quel type de logement avez-vous ?</label>
                             <select name="type_logement" id="type_logement">
                                 <option value="selectionnez">Sélectionnez</option>
@@ -138,7 +148,16 @@
                             <input class="form-control" type="number" name="temps_activite" id="temps_activite">
                             <?= form_error('temps_activite'); ?>
                         </div>
-                         
+                        <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
+                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="step">
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="animaux_famille">Avez-vous déjà eu des animaux dans votre foyer ? :</label>
                             <select name="animaux_famille" id="animaux_famille">
@@ -192,42 +211,6 @@
                         <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
                         <button type="submit">Envoyer</button>
                     </div>
-                        <!-- <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div> -->
-                           
-                <!-- <div class="step">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            
-                        
-                        
-                    </div>
-                    <div class="d-flex btn-row">
-                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
-                        <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="row">
-                        
-                    </div> -->
-                     
-                <!-- <div class="step">
-                    <h3>Terminé</h3>-->
-                   
-
-
-
-
-
-
-
-
-
-
                 </div>
             </form>
         </div>
