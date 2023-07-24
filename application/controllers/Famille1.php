@@ -26,17 +26,17 @@ class Famille1 extends CI_Controller
               $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
              $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
              $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
-            // $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
-            // $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
-            // $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
-            // $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
-            // $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
-            // $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
-            // $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim|required');
-            // $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|required');
-            // $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim|required');
-            // $this->form_validation->set_rules('detail_animaux_vie', 'Detail animaux', 'trim|required');
-            // $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
+             $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
+             $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
+             $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
+             $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
+             $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
+             $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
+             $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|required');
+             $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim|required');
+             $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim|required');
+             $this->form_validation->set_rules('details_animaux_vie', 'Detail animaux', 'trim|required');
+             $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
             // Si le formulaire est valide ?
 
@@ -54,26 +54,24 @@ class Famille1 extends CI_Controller
                  $type_exterieur = $this->input->post('type_exterieur');
                  $situation_foyer = $this->input->post('situation_foyer');
                  $enfants_foyer = $this->input->post('enfants_foyer');
-                // $nbr_enfants = $this->input->post('nbr_enfants');
-                // $age_enfants = $this->input->post('age_enfants');
-                // $activite_famille = $this->input->post('activite_famille');
-                // $temps_activite = $this->input->post('temps_activite');
-                // $raison_famille = $this->input->post('raison_famille');
-                // $animaux_famille = $this->input->post('animaux_famille');
-                // $animaux_vie = $this->input->post('animaux_vie');
-                // $nbr_animaux = $this->input->post('nbr_animaux');
-                // $age_animaux_vie = $this->input->post('age_animaux_vie');
-                // $detail_animaux_vie = $this->input->post('detail_animaux_vie');
-                // $disponible_veto = $this->input->post('disponible_veto');
+                 $nbr_enfants = $this->input->post('nbr_enfants');
+                 $age_enfants = $this->input->post('age_enfants');
+                 $raison_famille = $this->input->post('raison_famille');
+                 $activite_famille = $this->input->post('activite_famille');
+                 $temps_activite = $this->input->post('temps_activite');
+                 $animaux_famille = $this->input->post('animaux_famille');
+                 $animaux_vie = $this->input->post('animaux_vie');
+                 $nbr_animaux = $this->input->post('nbr_animaux');
+                 $age_animaux_vie = $this->input->post('age_animaux_vie');
+                 $details_animaux_vie = $this->input->post('details_animaux_vie');
+                 $disponible_veto = $this->input->post('disponible_veto');
 
                 //On charge le model pour envoyer les variables des colonnes dans la bdd
 
                 $this->Chat_Model->create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, 
                 $email_user, $tel_user, $type_logement, $exterieur_user, $type_exterieur,
-                  $situation_foyer,
-                  $enfants_foyer, // $nbr_enfants,
-            // $age_enfants, $activite_famille, $temps_activite, $raison_famille, $animaux_famille, $animaux_vie, $nbr_animaux, $age_animaux_vie,
-            // $detail_animaux_vie, $disponible_veto 
+                  $situation_foyer, $enfants_foyer,  $nbr_enfants, $age_enfants, $raison_famille,
+                  $activite_famille, $temps_activite,  $animaux_famille, $nbr_animaux, $animaux_vie,  $age_animaux_vie, $details_animaux_vie, $disponible_veto 
         );
 
             }

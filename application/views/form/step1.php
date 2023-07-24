@@ -106,16 +106,22 @@
                             </select>
                             <?= form_error('enfants_foyer'); ?>
                         </div>
-                         <!--
+                         
                         <div class="col-md-6 mb-3">
                             <label for="nbr_enfants">Combien avez-vous d'enfants ?</label>
                             <input type="number" name="nbr_enfants" id="nbr_enfants">
                             <?= form_error('nbr_enfants'); ?>
                         </div>
+                       
                         <div class="col-md-6 mb-3">
                             <label for="age_enfants">Quel âge ont vos enfants ?</label>
                             <input type="number" name="age_enfants" id="age_enfants">
                             <?= form_error('age_enfants'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
+                            <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..."></textarea>
+                            <?= form_error('raison_famille'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="activite_famille">Avez-vous un emploi ?</label>
@@ -126,19 +132,13 @@
                             </select>
                             <?= form_error('activite_famille'); ?>
                         </div>
+                       
                         <div class="col-md-6 mb-3">
                             <label for="temps_activite">Combien de temps l'animal restera-t-il seul ?</label>
                             <input class="form-control" type="number" name="temps_activite" id="temps_activite">
                             <?= form_error('temps_activite'); ?>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
-                            <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..."></textarea>
-                            <?= form_error('raison_famille'); ?>
-                        </div>
-
-
-
+                         
                         <div class="col-md-6 mb-3">
                             <label for="animaux_famille">Avez-vous déjà eu des animaux dans votre foyer ? :</label>
                             <select name="animaux_famille" id="animaux_famille">
@@ -149,10 +149,20 @@
                             <?= form_error('animaux_famille'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="animaux_vie">Vos animaux sont-ils toujours en vie ?</label>
+                            <select name="animaux_vie" id="animaux_vie">
+                                <option value="selectionnez">Sélectionnez</option>
+                                <option value="oui">Oui</option>
+                                <option value="non">Non</option>
+                            </select>
+                            <?= form_error('animaux_vie'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label for="nbr_animaux">Combien avez-vous d'animaux dans votre foyer ?</label>
                             <input class="form-control" type="number" name="nbr_animaux" id="nbr_animaux">
                             <?= form_error('nbr_animaux'); ?>
                         </div>
+                        
                         <div class="col-md-6 mb-3">
                             <label for="age_animaux_vie">Quel âge ont vos animaux ?</label>
                             <select name="age_animaux_vie" id="age_animaux_vie">
@@ -164,9 +174,9 @@
                             <?= form_error('age_animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="detail_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
-                            <textarea name="detail_animaux_vie" id="detail_animaux_vie" placeholder="races, activités, maladies..."></textarea>
-                            <?= form_error('detail_animaux_vie'); ?>
+                            <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
+                            <textarea name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..."></textarea>
+                            <?= form_error('details_animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
@@ -177,7 +187,7 @@
                             </select>
                             <?= form_error('disponible_veto'); ?>
                         </div>
-                    </div> -->
+                    </div> 
                     <div class="d-flex btn-row"> 
                         <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
                         <button type="submit">Envoyer</button>
