@@ -24,8 +24,8 @@ class Famille1 extends CI_Controller
               $this->form_validation->set_rules('type_logement', 'Type logement', 'trim|required');
               $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
               $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim');
-            // $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
-            // $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
+             $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
+             $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
             // $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
             // $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
             // $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
@@ -51,9 +51,9 @@ class Famille1 extends CI_Controller
                 $tel_user = $this->input->post('tel_user');
                 $type_logement = $this->input->post('type_logement');
                 $exterieur_user = $this->input->post('exterieur_user');
-                // $type_exterieur = $this->input->post('type_exterieur');
-                // $situation_foyer = $this->input->post('situation_foyer');
-                // $enfants_foyer = $this->input->post('enfants_foyer');
+                 $type_exterieur = $this->input->post('type_exterieur');
+                 $situation_foyer = $this->input->post('situation_foyer');
+                 $enfants_foyer = $this->input->post('enfants_foyer');
                 // $nbr_enfants = $this->input->post('nbr_enfants');
                 // $age_enfants = $this->input->post('age_enfants');
                 // $activite_famille = $this->input->post('activite_famille');
@@ -69,8 +69,9 @@ class Famille1 extends CI_Controller
                 //On charge le model pour envoyer les variables des colonnes dans la bdd
 
                 $this->Chat_Model->create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, 
-                $email_user, $tel_user, $type_logement, $exterieur_user, 
-            //$type_exterieur, $situation_foyer, $enfants_foyer, $nbr_enfants,
+                $email_user, $tel_user, $type_logement, $exterieur_user, $type_exterieur,
+                  $situation_foyer,
+                  $enfants_foyer, // $nbr_enfants,
             // $age_enfants, $activite_famille, $temps_activite, $raison_famille, $animaux_famille, $animaux_vie, $nbr_animaux, $age_animaux_vie,
             // $detail_animaux_vie, $disponible_veto 
         );

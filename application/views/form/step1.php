@@ -74,7 +74,7 @@
                             </select>
                             <?= form_error('exterieur_user'); ?>
                         </div>
-                        <div class="col-md-6 mb-3">
+                         <div class="col-md-6 mb-3">
                             <label for="type_exterieur">Sélectionnez le type d'extérieur de votre habitation :</label>
                             <select name="type_exterieur" id="type_exterieur">
                                 <option value="selectionnez">Sélectionnez</option>
@@ -96,11 +96,17 @@
                             </select>
                             <?= form_error('situation_foyer'); ?>
                         </div>
+                       
                         <div class="col-md-6 mb-3">
-                            <label for="enfants_foyer">enfants_foyer ?</label>
-                            <input type="number" name="enfants_foyer" id="enfants_foyer">
+                            <label for="enfants_foyer">Avez vous des enfants dans votre foyer ?</label>
+                            <select name="enfants_foyer" id="enfants_foyer">
+                                <option value="selectionnez">Sélectionnez</option>
+                                <option value="oui">Oui</option>
+                                <option value="non">Non</option>
+                            </select>
                             <?= form_error('enfants_foyer'); ?>
                         </div>
+                         <!--
                         <div class="col-md-6 mb-3">
                             <label for="nbr_enfants">Combien avez-vous d'enfants ?</label>
                             <input type="number" name="nbr_enfants" id="nbr_enfants">
@@ -171,7 +177,7 @@
                             </select>
                             <?= form_error('disponible_veto'); ?>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="d-flex btn-row"> 
                         <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
                         <button type="submit">Envoyer</button>
