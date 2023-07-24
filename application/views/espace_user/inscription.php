@@ -46,9 +46,6 @@
                         <div class="col">
                             <input class="btn send-btn" type="submit" name="connexion">
                         </div>
-                        <div class="col">
-                            <a class="btn send-btn" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
-                        </div>
                     </div>
 
                     <?php echo form_close(); ?>
