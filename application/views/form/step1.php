@@ -11,20 +11,21 @@
         <div class="col-md-auto">
             <form class="upe-mutistep-form" id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
                 <div class="step-header d-flex mb-2">
-                    <span class="steplevel active">Step 1</span>
-                    <span class="steplevel">Step 2</span>
-                    <span class="steplevel">Step 3</span>
+                    <span class="steplevel active">Etape 1</span>
+                    <span class="steplevel">Etape 2</span>
+                    <span class="steplevel">Etape 3</span>
                 </div>
                 <div class="step">
                     <div class="row">
+                        <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">
                             <label for="nom_user">Nom :</label>
-                            <input class="form-control" type="text" name="nom_user" id="nom_user" placeholder="Votre nom">
+                            <input class="form-control is-invalid" type="text" name="nom_user" id="nom_user" placeholder="Votre nom">
                             <?= form_error('nom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="prenom_user">Prénom :</label>
-                            <input class="form-control" type="text" name="prenom_user" id="prenom_user" placeholder="Votre prénom">
+                            <input class="form-control is-valid" type="text" name="prenom_user" id="prenom_user" placeholder="Votre prénom">
                             <?= form_error('prenom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -205,6 +206,11 @@
                                 <option value="non">Non</option>
                             </select>
                             <?= form_error('disponible_veto'); ?>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
                         </div>
                     </div> 
                     <div class="d-flex btn-row"> 
