@@ -92,7 +92,7 @@
                         <div class="col-md-6 mb-3 d-none" id="type_exterieur_div">
                             <label for="type_exterieur">Sélectionnez le type d'extérieur de votre habitation :</label>
                             <select class="form-select" name="type_exterieur" id="type_exterieur">
-                                <option selected disabled value="selectionnez">Sélectionnez</option>
+                                <option selected disabled value="">Sélectionnez</option>
                                 <option value="terrasse">Terrasse</option>
                                 <option value="jardin">Jardin</option>
                                 <option value="balcon" class="balcon-option">Balcon</option>
@@ -263,6 +263,7 @@
             if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
                 typeExterieurDiv.classList = 'col-md-6 mb-3 d-none';
                 typeExterieur.required = false;
+                typeExterieur.value = '';
             } else {
                 typeExterieurDiv.classList = 'col-md-6 mb-3 d-block';
                 typeExterieur.required = true;
