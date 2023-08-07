@@ -255,19 +255,22 @@
 
 
 
-
+    //MARCHE PAS input devient pas rouge !
     $(document).ready(function() {
-        // Ajoutez un écouteur d'événement sur le changement de la sélection de enfants_foyer
-        $('#type_exterieur').change(function() {
+        // Sélectionnez votre input par ID
+        const typeExterieurInput = document.getElementById('type_exterieur');
+
+        // Ajoutez un écouteur d'événement sur le changement de la sélection de type_exterieur
+        typeExterieurInput.addEventListener('change', function() {
             // Vérifiez si la valeur sélectionnée est valide (par exemple, différente de "selectionnez")
-            const selectedValue = $(this).val();
+            const selectedValue = this.value;
             const isValid = selectedValue !== 'selectionnez';
 
-            // Ajoutez ou supprimez la classe is-invalid ou is-valid en fonction de la validité
-            if (isValid) {
-                $(this).removeClass('is-invalid').addClass('is-valid');
+            // Utilisez setCustomValidity pour spécifier le message d'erreur
+            if (!isValid) {
+                this.setCustomValidity('Veuillez sélectionner une option valide.');
             } else {
-                $(this).removeClass('is-valid').addClass('is-invalid');
+                this.setCustomValidity('');
             }
         });
     });
