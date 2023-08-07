@@ -229,14 +229,29 @@ document.addEventListener('DOMContentLoaded', function() {
 	var typeExterieur = document.getElementById('type_exterieur_div');
 
 	exterieurUserSelect.addEventListener('change', function() {
-		exterieurUserSelect.value == '';
 		if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
-			typeExterieur.classList = 'd-none';
+			typeExterieur.classList = 'col-md-6 mb-3 d-none';
 		} else {
-			typeExterieur.classList = 'd-block';
+			typeExterieur.classList = 'col-md-6 mb-3 d-block';
 		}
 	});
 });
+
+//Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer
+document.addEventListener('DOMContentLoaded', function() {
+	var situationFoyerSelect = document.getElementById('situation_foyer');
+
+	var enfantsFoyer = document.getElementById('enfants_foyer_div');
+
+	situationFoyerSelect.addEventListener('change', function() {
+		if (situationFoyerSelect.value === '') {
+			enfantsFoyer.classList = 'col-md-6 mb-3 d-none';
+		} else {
+			enfantsFoyer.classList = 'col-md-6 mb-3 d-block';
+		}
+	});
+});
+
 
 
 
