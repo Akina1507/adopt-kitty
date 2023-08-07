@@ -96,7 +96,6 @@
                                 <option value="terrasse">Terrasse</option>
                                 <option value="jardin">Jardin</option>
                                 <option value="balcon" class="balcon-option">Balcon</option>
-                                <option value="aucun">Aucun</option>
                             </select>
                             <?= form_error('type_exterieur'); ?>
                         </div>
@@ -233,6 +232,7 @@
 
 
 <script>
+    //Icone error
     (() => {
         'use strict'
 
@@ -252,4 +252,22 @@
             }, false)
         })
     })()
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var exterieurUserSelect = document.getElementById('exterieur_user');
+
+        var typeExterieurDiv = document.getElementById('type_exterieur_div');
+        var typeExterieur = document.getElementById('type_exterieur');
+
+        exterieurUserSelect.addEventListener('change', function() {
+            if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
+                typeExterieurDiv.classList = 'col-md-6 mb-3 d-none';
+                typeExterieur.required = false;
+            } else {
+                typeExterieurDiv.classList = 'col-md-6 mb-3 d-block';
+                typeExterieur.required = true;
+
+            }
+        });
+    });
 </script>

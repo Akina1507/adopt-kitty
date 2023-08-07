@@ -223,19 +223,7 @@ function showFieldErrors() {
 }
 
 //Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
-document.addEventListener('DOMContentLoaded', function() {
-	var exterieurUserSelect = document.getElementById('exterieur_user');
 
-	var typeExterieur = document.getElementById('type_exterieur_div');
-
-	exterieurUserSelect.addEventListener('change', function() {
-		if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
-			typeExterieur.classList = 'col-md-6 mb-3 d-none';
-		} else {
-			typeExterieur.classList = 'col-md-6 mb-3 d-block';
-		}
-	});
-});
 
 //Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer
 document.addEventListener('DOMContentLoaded', function() {
