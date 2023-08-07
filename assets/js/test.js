@@ -174,6 +174,7 @@ function showFieldErrors() {
 		}
 	});
 
+
 	$(document).ready(function () {
 		$(".upe-mutistep-form").submit(function (e) {
 			e.preventDefault();
@@ -220,3 +221,26 @@ function showFieldErrors() {
 		return isValid;
 	}
 }
+
+//Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
+document.addEventListener('DOMContentLoaded', function() {
+	var exterieurUserSelect = document.getElementById('exterieur_user');
+
+	var typeExterieur = document.getElementById('type_exterieur_div');
+
+	exterieurUserSelect.addEventListener('change', function() {
+		exterieurUserSelect.value == '';
+		if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
+			typeExterieur.classList = 'd-none';
+		} else {
+			typeExterieur.classList = 'd-block';
+		}
+	});
+});
+
+
+
+
+
+
+
