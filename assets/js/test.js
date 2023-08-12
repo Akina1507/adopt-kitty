@@ -89,6 +89,7 @@ function validateStep2(currentStep) {
 	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
 	var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
 	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
+	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
 	var nbrEnfants = currentStep.find("input[name='nbr_enfants']").val().trim();
 	var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
 	var activiteFamille = currentStep
@@ -108,6 +109,9 @@ function validateStep2(currentStep) {
 		exterieurUser === "selectionnez" ||
 		typeExterieur === "selectionnez" ||
 		situationFoyer === "selectionnez" ||
+		enfantsFoyer === "selectionnez" ||
+		nbrEnfants === "" ||
+		ageEnfants === "" ||
 		activiteFamille === "selectionnez" ||
 		tempsActivite === "" ||
 		raisonFamille === ""

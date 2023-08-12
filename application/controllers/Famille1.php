@@ -67,7 +67,7 @@ class Famille1 extends CI_Controller
             $disponible_veto = $this->input->post('disponible_veto');
 
             if (empty($type_exterieur) || $type_exterieur === 'null' || $type_exterieur === '') {
-
+            } else {
                 $this->Chat_Model->create_famille(
                     $nom_user,
                     $prenom_user,
@@ -94,8 +94,6 @@ class Famille1 extends CI_Controller
                     $details_animaux_vie,
                     $disponible_veto
                 );
-            } else {
-                $this->load->view('form/step1');
             }
 
             //On charge le model pour envoyer les variables des colonnes dans la bdd
