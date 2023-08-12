@@ -74,7 +74,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="type_logement">Quel type de logement avez-vous ?</label>
                             <select class="form-select" name="type_logement" id="type_logement" required>
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="maison">Maison</option>
                                 <option value="appartement">Appartement</option>
                             </select>
@@ -83,7 +83,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="exterieur_user">Avez-vous un extérieur dans votre logement ?</label>
                             <select class="form-select" name="exterieur_user" id="exterieur_user" required>
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
@@ -92,7 +92,7 @@
                         <div class="col-md-6 mb-3 d-none" id="type_exterieur_div">
                             <label for="type_exterieur">Sélectionnez le type d'extérieur de votre habitation :</label>
                             <select class="form-select" name="type_exterieur" id="type_exterieur">
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="terrasse">Terrasse</option>
                                 <option value="jardin">Jardin</option>
                                 <option value="balcon" class="balcon-option">Balcon</option>
@@ -102,55 +102,81 @@
 
 
                         <div class="col-md-6 mb-3">
-                            <label for="situation_foyer">Quelle est la situation de votre foyer ?</label>
+                            <label for="situation_foyer">Quelle est la composition de votre foyer ?</label>
                             <select class="form-select" name="situation_foyer" id="situation_foyer" required>
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="seul">Seul</option>
                                 <option value="couple">En couple</option>
                             </select>
                             <?= form_error('situation_foyer'); ?>
                         </div>
 
+                        <div class="col-md-6 mb-3 d-none" id="activite_famille_div">
+                            <label for="activite_famille">Quelle est votre situation actuelle ?</label>
+                            <select class="form-select" name="activite_famille" id="activite_famille" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="sansemploi">Sans Emploi</option>
+                                <option value="Salarie">Salarié(e)</option>
+                                <option value="etudiant">Étudiant</option>
+                                <option value="handicape">handicapé</option>
+                            </select>
+                            <?= form_error('activite_famille'); ?>
+                        </div>
+
+                        <div class="col-md-6 mb-3 d-none" id="activite_conjoint_div">
+                            <label for="activite_conjoint">Quelle est la situation actuelle de votre conjoint(e) ?</label>
+                            <select class="form-select" name="activite_conjoint" id="activite_conjoint" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="sansemploi">Sans Emploi</option>
+                                <option value="Salarie">Salarié(e)</option>
+                                <option value="etudiant">Étudiant</option>
+                                <option value="handicape">handicapé</option>
+                            </select>
+                            <?= form_error('activite_conjoint'); ?>
+                        </div>
+
                         <div class="col-md-6 mb-3 d-none" id="enfants_foyer_div">
                             <label for="enfants_foyer">Avez vous des enfants dans votre foyer ?</label>
                             <select class="form-select" name="enfants_foyer" id="enfants_foyer">
-                                <option selected disabled value="selectionnez">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
                             <?= form_error('enfants_foyer'); ?>
                         </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3 d-none" id="nbr_enfants_div">
                             <label for="nbr_enfants">Combien avez-vous d'enfants ?</label>
-                            <input type="number" name="nbr_enfants" id="nbr_enfants">
+                            <select class="form-select" name="nbr_enfants" id="nbr_enfants">
+                                <option value="">Sélectionnez</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                             <?= form_error('nbr_enfants'); ?>
                         </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3 d-none" id="age_enfants_div">
                             <label for="age_enfants">Quel âge ont vos enfants ?</label>
-                            <input type="number" name="age_enfants" id="age_enfants">
+                            <input class="form-control" type="number" name="age_enfants" id="age_enfants">
                             <?= form_error('age_enfants'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="temps_activite">Combien de temps l'animal restera-t-il seul ?</label>
+                            <input class="form-control" type="number" name="temps_activite" id="temps_activite" required>
+                            <?= form_error('temps_activite'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
                             <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
                             <?= form_error('raison_famille'); ?>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="activite_famille">Avez-vous un emploi ?</label>
-                            <select class="form-select" name="activite_famille" id="activite_famille" required>
-                                <option selected disabled value="">Sélectionnez</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                            <?= form_error('activite_famille'); ?>
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label for="temps_activite">Combien de temps l'animal restera-t-il seul ?</label>
-                            <input class="form-control" type="number" name="temps_activite" id="temps_activite" required>
-                            <?= form_error('temps_activite'); ?>
                         </div>
                         <div class="d-flex btn-row">
                             <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
@@ -165,7 +191,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="animaux_famille">Avez-vous déjà eu des animaux dans votre foyer ? :</label>
                             <select class="form-select" name="animaux_famille" id="animaux_famille" required>
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
@@ -174,7 +200,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="animaux_vie">Vos animaux sont-ils toujours en vie ?</label>
                             <select name="animaux_vie" id="animaux_vie">
-                                <option selected disabled value="selectionnez">Sélectionnez</option>
+                                <option value="selectionnez">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
@@ -189,7 +215,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="age_animaux_vie">Quel âge ont vos animaux ?</label>
                             <select name="age_animaux_vie" id="age_animaux_vie">
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="junior">Junior</option>
                                 <option value="adulte">Adulte</option>
                                 <option value="senior">Sénior</option>
@@ -204,7 +230,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
                             <select class="form-select" name="disponible_veto" id="disponible_veto" required>
-                                <option selected disabled value="">Sélectionnez</option>
+                                <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
@@ -253,23 +279,4 @@
             }, false)
         })
     })()
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var exterieurUserSelect = document.getElementById('exterieur_user');
-
-        var typeExterieurDiv = document.getElementById('type_exterieur_div');
-        var typeExterieur = document.getElementById('type_exterieur');
-
-        exterieurUserSelect.addEventListener('change', function() {
-            if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
-                typeExterieurDiv.classList = 'col-md-6 mb-3 d-none';
-                typeExterieur.required = false;
-                typeExterieur.value = '';
-            } else {
-                typeExterieurDiv.classList = 'col-md-6 mb-3 d-block';
-                typeExterieur.required = true;
-
-            }
-        });
-    });
 </script>

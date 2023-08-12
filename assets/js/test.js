@@ -87,32 +87,32 @@ function validateStep1(currentStep) {
 function validateStep2(currentStep) {
 	var typeLogement = currentStep.find("select[name='type_logement']").val();
 	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
-	var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+
+	if (exterieurUser === 'oui') {
+		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+	}
+	
 	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
 	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
-	var nbrEnfants = currentStep.find("input[name='nbr_enfants']").val().trim();
-	var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
-	var activiteFamille = currentStep
-		.find("select[name='activite_famille']")
-		.val();
-	var tempsActivite = currentStep
-		.find("input[name='temps_activite']")
-		.val()
-		.trim();
-	var raisonFamille = currentStep
-		.find("textarea[name='raison_famille']")
-		.val()
-		.trim();
+
+	if (enfantsFoyer === 'oui') {
+		var nbrEnfants = currentStep.find("selec[name='nbr_enfants']").val();
+		var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
+	}
+
+	var activiteFamille = currentStep.find("select[name='activite_famille']").val();
+	var tempsActivite = currentStep.find("input[name='temps_activite']").val().trim();
+	var raisonFamille = currentStep.find("textarea[name='raison_famille']").val().trim();
 
 	if (
-		typeLogement === "selectionnez" ||
-		exterieurUser === "selectionnez" ||
-		typeExterieur === "selectionnez" ||
-		situationFoyer === "selectionnez" ||
-		enfantsFoyer === "selectionnez" ||
+		typeLogement === "" ||
+		exterieurUser === "" ||
+		typeExterieur === "" ||
+		situationFoyer === "" ||
+		enfantsFoyer === "" ||
 		nbrEnfants === "" ||
 		ageEnfants === "" ||
-		activiteFamille === "selectionnez" ||
+		activiteFamille === "" ||
 		tempsActivite === "" ||
 		raisonFamille === ""
 	) {
@@ -209,41 +209,94 @@ function showFieldErrors() {
 			errorMessage.hide();
 		}
 	}
-
-	function validateStep1(currentStep) {
-		var isValid = true;
-
-		currentStep.find("input, select, textarea").each(function () {
-			var field = $(this);
-			validateField(field);
-
-			if (field.hasClass("is-invalid")) {
-				isValid = false;
-			}
-		});
-
-		return isValid;
-	}
 }
 
 //Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
+document.addEventListener('DOMContentLoaded', function() {
+	var exterieurUserSelect = document.getElementById('exterieur_user');
 
+	var typeExterieurDiv = document.getElementById('type_exterieur_div');
+	var typeExterieur = document.getElementById('type_exterieur');
+
+	exterieurUserSelect.addEventListener('change', function() {
+		if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
+			typeExterieurDiv.classList = 'col-md-6 mb-3 d-none';
+			typeExterieur.required = false;
+			typeExterieur.value = '';
+		} else {
+			typeExterieurDiv.classList = 'col-md-6 mb-3 d-block';
+			typeExterieur.required = true;
+
+		}
+	});
+});
 
 //Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer
 document.addEventListener('DOMContentLoaded', function() {
 	var situationFoyerSelect = document.getElementById('situation_foyer');
 
-	var enfantsFoyer = document.getElementById('enfants_foyer_div');
+	var enfantsFoyerDiv = document.getElementById('enfants_foyer_div');
+	var enfantsFoyer = document.getElementById('enfants_foyer');
+
+	var activitefamilleDiv = document.getElementById('activite_famille_div');
+	var activitefamille = document.getElementById('activite_famille');
+
+	var activiteconjointDiv = document.getElementById('activite_conjoint_div');
+	var activiteconjoint = document.getElementById('activite_conjoint');
 
 	situationFoyerSelect.addEventListener('change', function() {
 		if (situationFoyerSelect.value === '') {
-			enfantsFoyer.classList = 'col-md-6 mb-3 d-none';
+			enfantsFoyerDiv.classList = 'col-md-6 mb-3 d-none';
+			enfantsFoyer.required = false;
+			enfantsFoyer.value = '';
+			
 		} else {
-			enfantsFoyer.classList = 'col-md-6 mb-3 d-block';
+			if (situationFoyerSelect.value === 'seul') {
+				activitefamilleDiv.classList = 'col-md-6 mb-3 d-block';
+				activitefamille.required = true;
+				activitefamille.value = '';
+			}else{
+				activitefamilleDiv.classList = 'col-md-6 mb-3 d-block';
+				activitefamille.required = true;
+				activitefamille.value = '';
+
+				activiteconjointDiv.classList = 'col-md-6 mb-3 d-block';
+				activiteconjoint.required = true;
+				activiteconjoint.value = '';
+			}
+			enfantsFoyerDiv.classList = 'col-md-6 mb-3 d-block';
+			enfantsFoyer.required = true;
 		}
 	});
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+	var enfantsFoyerSelect = document.getElementById('enfants_foyer');
+
+	var enfantsnbrDiv = document.getElementById('nbr_enfants_div');
+	var enfantsnbr = document.getElementById('nbr_enfants');
+
+	var ageenfantsDiv = document.getElementById('age_enfants_div');
+	var ageenfants = document.getElementById('age_enfants');
+
+	enfantsFoyerSelect.addEventListener('change', function() {
+		if (enfantsFoyerSelect.value === '' || enfantsFoyerSelect.value === 'non') {
+			enfantsnbrDiv.classList = 'col-md-6 mb-3 d-none';
+			ageenfantsDiv.classList = 'col-md-6 mb-3 d-none';
+			enfantsnbr.required = false;
+			enfantsnbr.value = '';
+			ageenfants.required = false;
+			ageenfants.value = '';
+			
+		} else {
+			enfantsnbrDiv.classList = 'col-md-6 mb-3 d-block';
+			ageenfantsDiv.classList = 'col-md-6 mb-3 d-block';
+			enfantsnbr.required = true;
+			ageenfants.required = true;
+		}
+	});
+});
 
 
 
