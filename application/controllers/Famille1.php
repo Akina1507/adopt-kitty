@@ -25,17 +25,17 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
         $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim|in_list[terrasse,jardin,balcon]');
         $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
-        $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
-        $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim|required');
+        $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim');
+        $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim');
         $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
-        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|required');
-        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim|required');
+        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
+        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
         $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim');
-        $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim|required');
-        $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim|required');
+        $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim');
+        $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim');
         $this->form_validation->set_rules('details_animaux_vie', 'Detail animaux', 'trim|required');
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 

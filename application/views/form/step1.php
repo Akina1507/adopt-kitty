@@ -113,7 +113,7 @@
 
                         <div class="col-md-6 mb-3 d-none" id="activite_famille_div">
                             <label for="activite_famille">Quelle est votre situation actuelle ?</label>
-                            <select class="form-select" name="activite_famille" id="activite_famille" required>
+                            <select class="form-select" name="activite_famille" id="activite_famille">
                                 <option value="">Sélectionnez</option>
                                 <option value="sansemploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
@@ -125,7 +125,7 @@
 
                         <div class="col-md-6 mb-3 d-none" id="activite_conjoint_div">
                             <label for="activite_conjoint">Quelle est la situation actuelle de votre conjoint(e) ?</label>
-                            <select class="form-select" name="activite_conjoint" id="activite_conjoint" required>
+                            <select class="form-select" name="activite_conjoint" id="activite_conjoint">
                                 <option value="">Sélectionnez</option>
                                 <option value="sansemploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
