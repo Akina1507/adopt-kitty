@@ -113,7 +113,7 @@
 
                         <div class="col-md-6 mb-3 d-none" id="activite_famille_div">
                             <label for="activite_famille">Quelle est votre situation actuelle ?</label>
-                            <select class="form-select" name="activite_famille" id="activite_famille">
+                            <select class="form-select" name="activite_famille" id="activite_famille" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="sansemploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
@@ -125,7 +125,7 @@
 
                         <div class="col-md-6 mb-3 d-none" id="activite_conjoint_div">
                             <label for="activite_conjoint">Quelle est la situation actuelle de votre conjoint(e) ?</label>
-                            <select class="form-select" name="activite_conjoint" id="activite_conjoint">
+                            <select class="form-select" name="activite_conjoint" id="activite_conjoint" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="sansemploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
@@ -280,3 +280,21 @@
         })
     })()
 </script>
+<!-- 
+<script>
+$(document).ready(function() {
+    $('#nbr_enfants').change(function() {
+        var numChildren = $(this).val();
+        var ageInputsHtml = '';
+
+        for (var i = 1; i <= numChildren; i++) {
+            ageInputsHtml += '<div class="col-md-6 mb-3">';
+            ageInputsHtml += '<label for="age_enfants' + i + '">Âge de l\'enfant ' + i + ' :</label>';
+            ageInputsHtml += '<input class="form-control" type="number" name="age_enfants' + i + '" id="age_enfants' + i + '">';
+            ageInputsHtml += '</div>';
+        }
+
+        $('#dynamicAgeInputs').html(ageInputsHtml);
+    });
+});
+</script> -->
