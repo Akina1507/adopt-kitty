@@ -282,20 +282,21 @@
 </script>
 
 
-<!-- <script>
+<script>
           $(document).ready(function() {
-            $('#nbr_enfants').change(function() {
-                var numChildren = $(this).val();
-                var ageInputsHtml = '';
+    $('#nbr_enfants').change(function() {
+        var numChildren = $(this).val();
+        var ageInputsHtml = '';
 
-                for (var i = 1; i <= numChildren; i++) {
-                    ageInputsHtml += '<div class="col-md-6 mb-3">';
-                    ageInputsHtml += '<label for="age_enfants' + i + '">Âge de l\'enfant ' + i + ' :</label>';
-                    ageInputsHtml += '<input class="form-control" type="number" name="age_enfants' + i + '" id="age_enfants' + i + '">';
-                    ageInputsHtml += '</div>';
-                }
+        for (var i = 1; i <= numChildren; i++) {
+            ageInputsHtml += '<div class="col-md-6 mb-3">';
+            ageInputsHtml += '<label for="age_enfants' + i + '">Âge de l\'enfant ' + i + ' :</label>';
+            ageInputsHtml += '<input class="form-control" type="number" name="age_enfants' + i + '" id="age_enfants' + i + '">';
+            ageInputsHtml += '</div>';
+        }
 
-                $('#dynamicAgeInputs').html(ageInputsHtml);
-            });
-        });
-    </script> -->
+        $('#age_enfants_div').html(ageInputsHtml);
+    });
+});
+
+    </script>
