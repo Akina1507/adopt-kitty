@@ -88,21 +88,29 @@ function validateStep2(currentStep) {
 	var typeLogement = currentStep.find("select[name='type_logement']").val();
 	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
 
-	if (exterieurUser === 'oui') {
+	if (exterieurUser === "oui") {
 		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
 	}
-	
+
 	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
 	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
 
-	if (enfantsFoyer === 'oui') {
+	if (enfantsFoyer === "oui") {
 		var nbrEnfants = currentStep.find("selec[name='nbr_enfants']").val();
 		var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
 	}
 
-	var activiteFamille = currentStep.find("select[name='activite_famille']").val();
-	var tempsActivite = currentStep.find("input[name='temps_activite']").val().trim();
-	var raisonFamille = currentStep.find("textarea[name='raison_famille']").val().trim();
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	var tempsActivite = currentStep
+		.find("input[name='temps_activite']")
+		.val()
+		.trim();
+	var raisonFamille = currentStep
+		.find("textarea[name='raison_famille']")
+		.val()
+		.trim();
 
 	if (
 		typeLogement === "" ||
@@ -128,6 +136,7 @@ function validateStep2(currentStep) {
 
 function validateStep3(currentStep) {
 	var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
+	var animauxVie = currentStep.find("select[name='animaux_vie']").val();
 	var nbrAnimaux = currentStep.find("input[name='nbr_animaux']").val().trim();
 	var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
 	var detailAnimauxVie = currentStep
@@ -138,6 +147,7 @@ function validateStep3(currentStep) {
 
 	if (
 		animauxFamille === "selectionnez" ||
+		animauxVie === "" ||
 		nbrAnimaux === "" ||
 		ageAnimauxVie === "" ||
 		detailAnimauxVie === "" ||
@@ -178,7 +188,6 @@ function showFieldErrors() {
 		}
 	});
 
-
 	$(document).ready(function () {
 		$(".upe-mutistep-form").submit(function (e) {
 			e.preventDefault();
@@ -212,95 +221,96 @@ function showFieldErrors() {
 }
 
 //Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
-document.addEventListener('DOMContentLoaded', function() {
-	var exterieurUserSelect = document.getElementById('exterieur_user');
+document.addEventListener("DOMContentLoaded", function () {
+	var exterieurUserSelect = document.getElementById("exterieur_user");
 
-	var typeExterieurDiv = document.getElementById('type_exterieur_div');
-	var typeExterieur = document.getElementById('type_exterieur');
+	var typeExterieurDiv = document.getElementById("type_exterieur_div");
+	var typeExterieur = document.getElementById("type_exterieur");
 
-	exterieurUserSelect.addEventListener('change', function() {
-		if (exterieurUserSelect.value === 'non' || exterieurUserSelect.value === '') {
-			typeExterieurDiv.classList = 'col-md-6 mb-3 d-none';
+	exterieurUserSelect.addEventListener("change", function () {
+		if (
+			exterieurUserSelect.value === "non" ||
+			exterieurUserSelect.value === ""
+		) {
+			typeExterieurDiv.classList = "col-md-6 mb-3 d-none";
 			typeExterieur.required = false;
-			typeExterieur.value = '';
+			typeExterieur.value = "";
 		} else {
-			typeExterieurDiv.classList = 'col-md-6 mb-3 d-block';
+			typeExterieurDiv.classList = "col-md-6 mb-3 d-block";
 			typeExterieur.required = true;
-
 		}
 	});
 });
 
 //Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer
-document.addEventListener('DOMContentLoaded', function() {
-	var situationFoyerSelect = document.getElementById('situation_foyer');
+document.addEventListener("DOMContentLoaded", function () {
+	var situationFoyerSelect = document.getElementById("situation_foyer");
 
-	var enfantsFoyerDiv = document.getElementById('enfants_foyer_div');
-	var enfantsFoyer = document.getElementById('enfants_foyer');
+	var enfantsFoyerDiv = document.getElementById("enfants_foyer_div");
+	var enfantsFoyer = document.getElementById("enfants_foyer");
 
-	var activitefamilleDiv = document.getElementById('activite_famille_div');
-	var activitefamille = document.getElementById('activite_famille');
+	var activitefamilleDiv = document.getElementById("activite_famille_div");
+	var activitefamille = document.getElementById("activite_famille");
 
-	var activiteconjointDiv = document.getElementById('activite_conjoint_div');
-	var activiteconjoint = document.getElementById('activite_conjoint');
+	var activiteconjointDiv = document.getElementById("activite_conjoint_div");
+	var activiteconjoint = document.getElementById("activite_conjoint");
 
-	situationFoyerSelect.addEventListener('change', function() {
-		if (situationFoyerSelect.value === '') {
-			enfantsFoyerDiv.classList = 'col-md-6 mb-3 d-none';
+	situationFoyerSelect.addEventListener("change", function () {
+		if (situationFoyerSelect.value === "") {
+			enfantsFoyerDiv.classList = "col-md-6 mb-3 d-none";
 			enfantsFoyer.required = false;
-			enfantsFoyer.value = '';
-			
-		} else {
-			if (situationFoyerSelect.value === 'seul') {
-				activitefamilleDiv.classList = 'col-md-6 mb-3 d-block';
-				activitefamille.required = true;
-				activitefamille.value = '';
-			}else{
-				activitefamilleDiv.classList = 'col-md-6 mb-3 d-block';
-				activitefamille.required = true;
-				activitefamille.value = '';
 
-				activiteconjointDiv.classList = 'col-md-6 mb-3 d-block';
-				activiteconjoint.required = true;
-				activiteconjoint.value = '';
+			activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
+			activiteconjoint.required = false;
+
+			activitefamilleDiv.classList = "col-md-6 mb-3 d-none";
+			activitefamille.required = false;
+			enfantsFoyer.value = "";
+		} else {
+			if (situationFoyerSelect.value === "seul") {
+				activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
+				activitefamille.required = true;
+				activitefamille.value = "";
+				activiteconjoint.required = false;
 			}
-			enfantsFoyerDiv.classList = 'col-md-6 mb-3 d-block';
+			if (situationFoyerSelect.value === "couple") {
+				activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
+				activitefamille.required = true;
+				activitefamille.value = "";
+
+				activiteconjointDiv.classList = "col-md-6 mb-3 d-block";
+				activiteconjoint.required = true;
+				activiteconjoint.value = "";
+			}
+			enfantsFoyerDiv.classList = "col-md-6 mb-3 d-block";
 			enfantsFoyer.required = true;
 		}
 	});
 });
 
+//Systeme pour apparaitre/dispparaitre enfants_foyer en fonction nbr_enfants_foyer
+document.addEventListener("DOMContentLoaded", function () {
+	var enfantsFoyerSelect = document.getElementById("enfants_foyer");
 
-document.addEventListener('DOMContentLoaded', function() {
-	var enfantsFoyerSelect = document.getElementById('enfants_foyer');
+	var enfantsnbrDiv = document.getElementById("nbr_enfants_div");
+	var enfantsnbr = document.getElementById("nbr_enfants");
 
-	var enfantsnbrDiv = document.getElementById('nbr_enfants_div');
-	var enfantsnbr = document.getElementById('nbr_enfants');
+	var ageenfantsDiv = document.getElementById("age_enfants_div");
+	var ageenfants = document.getElementById("age_enfants");
 
-	var ageenfantsDiv = document.getElementById('age_enfants_div');
-	var ageenfants = document.getElementById('age_enfants');
-
-	enfantsFoyerSelect.addEventListener('change', function() {
-		if (enfantsFoyerSelect.value === '' || enfantsFoyerSelect.value === 'non') {
-			enfantsnbrDiv.classList = 'col-md-6 mb-3 d-none';
-			ageenfantsDiv.classList = 'col-md-6 mb-3 d-none';
+	enfantsFoyerSelect.addEventListener("change", function () {
+		if (enfantsFoyerSelect.value === "" || enfantsFoyerSelect.value === "non") {
+			enfantsnbrDiv.classList = "col-md-6 mb-3 d-none";
+			ageenfantsDiv.classList = "col-md-6 mb-3 d-none";
 			enfantsnbr.required = false;
-			enfantsnbr.value = '';
+			enfantsnbr.value = "";
 			ageenfants.required = false;
-			ageenfants.value = '';
-			
+			ageenfants.value = "";
 		} else {
-			enfantsnbrDiv.classList = 'col-md-6 mb-3 d-block';
-			ageenfantsDiv.classList = 'col-md-6 mb-3 d-block';
+			enfantsnbrDiv.classList = "col-md-6 mb-3 d-block";
+			ageenfantsDiv.classList = "col-md-6 mb-3 d-block";
 			enfantsnbr.required = true;
 			ageenfants.required = true;
 		}
 	});
 });
-
-
-
-
-
-
-

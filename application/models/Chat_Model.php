@@ -11,8 +11,8 @@ class Chat_Model extends CI_Model
 
     // envoye des données vers la bdd = tableau des colonnes + variable
     public function create_famille($nom_user, $prenom_user, $age_user, $adresse_user,$codepostal_user, $ville_user, $email_user,
-     $tel_user, $type_logement, $exterieur_user, $type_exterieur, $situation_foyer, $enfants_foyer, $nbr_enfants,
-     $age_enfants, $raison_famille, $activite_famille, $temps_activite, $animaux_famille, $animaux_vie, $nbr_animaux, 
+     $tel_user, $type_logement, $exterieur_user, $type_exterieur, $situation_foyer, $activite_famille, $activite_conjoint, $enfants_foyer, $nbr_enfants,
+     $age_enfants, $raison_famille, $temps_activite, $animaux_famille, $animaux_vie, $nbr_animaux, 
      $age_animaux_vie, $details_animaux_vie, $disponible_veto
     )
     {
@@ -30,11 +30,12 @@ class Chat_Model extends CI_Model
             'exterieur_user' => $exterieur_user,
              'type_exterieur' => $type_exterieur,
              'situation_foyer' => $situation_foyer,
+             'activite_famille' => $activite_famille,
+             'activite_conjoint' => $activite_conjoint,
              'enfants_foyer' => $enfants_foyer,
              'nbr_enfants' => $nbr_enfants,
              'age_enfants' => $age_enfants,
               'raison_famille' => $raison_famille,
-             'activite_famille' => $activite_famille,
              'temps_activite' => $temps_activite,
              'animaux_famille' => $animaux_famille,
              'animaux_vie' => $animaux_vie,

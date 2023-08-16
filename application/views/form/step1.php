@@ -175,7 +175,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
-                            <textarea name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
+                            <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
                             <?= form_error('raison_famille'); ?>
                         </div>
                         <div class="d-flex btn-row">
@@ -199,8 +199,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="animaux_vie">Vos animaux sont-ils toujours en vie ?</label>
-                            <select name="animaux_vie" id="animaux_vie">
-                                <option value="selectionnez">Sélectionnez</option>
+                            <select class="form-select" name="animaux_vie" id="animaux_vie" required>
+                                <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
                             </select>
@@ -214,7 +214,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="age_animaux_vie">Quel âge ont vos animaux ?</label>
-                            <select name="age_animaux_vie" id="age_animaux_vie">
+                            <select class="form-select" name="age_animaux_vie" id="age_animaux_vie" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="junior">Junior</option>
                                 <option value="adulte">Adulte</option>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
-                            <textarea name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..."></textarea>
+                            <textarea class="form-control" name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..." required></textarea>
                             <?= form_error('details_animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
