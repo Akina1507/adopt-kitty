@@ -25,11 +25,11 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required');
         $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim|in_list[terrasse,jardin,balcon]');
         $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required');
-        $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim');
-        $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim');
+        $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|required');
+        $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim|required');
         $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required');
-        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim');
-        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim');
+        $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|required');
+        $this->form_validation->set_rules('age_enfants', 'Age enfants', 'trim|required');
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required');
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
@@ -68,9 +68,8 @@ class Famille1 extends CI_Controller
             $details_animaux_vie = $this->input->post('details_animaux_vie');
             $disponible_veto = $this->input->post('disponible_veto');
 
-
-
-          
+            if (empty($type_exterieur) || $type_exterieur === 'null' || $type_exterieur === '') {
+            } else {
                 $this->Chat_Model->create_famille(
                     $nom_user,
                     $prenom_user,
@@ -98,9 +97,10 @@ class Famille1 extends CI_Controller
                     $details_animaux_vie,
                     $disponible_veto
                 );
-            
+            }
 
+            //On charge le model pour envoyer les variables des colonnes dans la bdd
+        }
         $this->load->view('form/step1');
     }
-}
 }
