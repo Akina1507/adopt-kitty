@@ -29,3 +29,7 @@
 .full-height {
 	min-height: 100vh;
 }
+
+.error_form_red{
+	color: red;
+}

@@ -54,7 +54,7 @@ function validateForm() {
 function validateStep1(currentStep) {
 	var nomUser = currentStep.find("input[name='nom_user']").val().trim();
 	var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
-	var ageUser = currentStep.find("input[name='age_user']").val().trim();
+	var ageUser = currentStep.find("select[name='age_user']").val().trim();
 	var emailUser = currentStep.find("input[name='email_user']").val().trim();
 	var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
 	var villeUser = currentStep.find("input[name='ville_user']").val().trim();
@@ -96,34 +96,26 @@ function validateStep2(currentStep) {
 	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
 
 	if (enfantsFoyer === "oui") {
-		var nbrEnfants = currentStep
-			.find("select[name='nbr_enfants']")
-			.val()
-			.required();
-		var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
+		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
+
 	}
 
-	var activiteFamille = currentStep
-		.find("select[name='activite_famille']")
-		.val();
-	var tempsActivite = currentStep
-		.find("input[name='temps_activite']")
-		.val()
-		.trim();
-	var raisonFamille = currentStep
-		.find("textarea[name='raison_famille']")
-		.val()
-		.trim();
+	var activiteFamille = currentStep.find("select[name='activite_famille']").val();
+		if (situationFoyer == "couple") {
+			var activiteConjoint = currentStep.find("select[name='activite_conjoint']").val();
+		}
+	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
+	var raisonFamille = currentStep.find("textarea[name='raison_famille']").val().trim();
 
 	if (
 		typeLogement === "" ||
 		exterieurUser === "" ||
 		typeExterieur === "" ||
 		situationFoyer === "" ||
+		activiteFamille === "" ||
+		activiteConjoint === "" ||
 		enfantsFoyer === "" ||
 		nbrEnfants === "" ||
-		ageEnfants === "" ||
-		activiteFamille === "" ||
 		tempsActivite === "" ||
 		raisonFamille === ""
 	) {
@@ -275,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				activitefamille.required = true;
 				activitefamille.value = "";
 				activiteconjoint.required = false;
+				activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
 			}
 			if (situationFoyerSelect.value === "couple") {
 				activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
@@ -298,22 +291,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	var enfantsnbrDiv = document.getElementById("nbr_enfants_div");
 	var enfantsnbr = document.getElementById("nbr_enfants");
 
-	var ageenfantsDiv = document.getElementById("age_enfants_div");
-	var ageenfants = document.getElementById("age_enfants");
-
 	enfantsFoyerSelect.addEventListener("change", function () {
 		if (enfantsFoyerSelect.value === "" || enfantsFoyerSelect.value === "non") {
 			enfantsnbrDiv.classList = "col-md-6 mb-3 d-none";
-			ageenfantsDiv.classList = "col-md-6 mb-3 d-none";
 			enfantsnbr.required = false;
 			enfantsnbr.value = "";
-			ageenfants.required = false;
-			ageenfants.value = "";
+			
 		} else {
 			enfantsnbrDiv.classList = "col-md-6 mb-3 d-block";
-			ageenfantsDiv.classList = "col-md-6 mb-3 d-block";
 			enfantsnbr.required = true;
-			ageenfants.required = true;
+			
 		}
 	});
 });
