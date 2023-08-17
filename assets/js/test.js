@@ -96,7 +96,10 @@ function validateStep2(currentStep) {
 	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
 
 	if (enfantsFoyer === "oui") {
-		var nbrEnfants = currentStep.find("selec[name='nbr_enfants']").val();
+		var nbrEnfants = currentStep
+			.find("select[name='nbr_enfants']")
+			.val()
+			.required();
 		var ageEnfants = currentStep.find("input[name='age_enfants']").val().trim();
 	}
 

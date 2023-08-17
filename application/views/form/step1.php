@@ -23,48 +23,49 @@
                     <div class="row">
                         <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">
-                            <label for="nom_user">Nom :</label>
+                            <label for="nom_user">Nom* :</label>
                             <input class="form-control" type="text" name="nom_user" id="nom_user" placeholder="Votre nom" required>
                             <?= form_error('nom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="prenom_user">Prénom :</label>
+                            <label for="prenom_user">Prénom* :</label>
                             <input class="form-control" type="text" name="prenom_user" id="prenom_user" placeholder="Votre prénom" required>
                             <?= form_error('prenom_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="age_user">Age :</label>
-                            <input class="form-control" type="number" name="age_user" id="age_user" placeholder="Votre âge" required>
+                            <label for="age_user">Age* :</label>
+                            <input class="form-control" type="text" name="age_user" id="age_user" placeholder="Votre age" required>
                             <?= form_error('age_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="email_user">Email :</label>
+                            <label for="email_user">Email* :</label>
                             <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email" required>
                             <?= form_error('email_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="adresse_user">Adresse :</label>
+                            <label for="adresse_user">Adresse* :</label>
                             <input class="form-control" type="text" name="adresse_user" id="adresse_user" placeholder="Votre adresse" required>
                             <?= form_error('adresse_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="ville_user">Ville :</label>
+                            <label for="ville_user">Ville* :</label>
                             <input class="form-control" type="text" name="ville_user" id="ville_user" placeholder="Votre ville" required>
                             <?= form_error('ville_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="codepostal_user">Code postal :</label>
+                            <label for="codepostal_user">Code postal* :</label>
                             <input class="form-control" type="number" name="codepostal_user" id="codepostal_user" placeholder="Votre code postal" required>
                             <?= form_error('codepostal_user'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="tel_user">Téléphone :</label>
+                            <label for="tel_user">Téléphone* :</label>
                             <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
                             <?= form_error('tel_user'); ?>
                         </div>
                         <div class="d-flex btn-row">
                             <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
                         </div>
+                        <h6>* Le champ est obligatoire</h6>
                     </div>
                 </div>
 
@@ -72,7 +73,7 @@
                 <div class="step">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="type_logement">Quel type de logement avez-vous ?</label>
+                            <label for="type_logement">Quel type de logement avez-vous ?*</label>
                             <select class="form-select" name="type_logement" id="type_logement" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="maison">Maison</option>
@@ -81,7 +82,7 @@
                             <?= form_error('type_logement'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="exterieur_user">Avez-vous un extérieur dans votre logement ?</label>
+                            <label for="exterieur_user">Avez-vous un extérieur dans votre logement ?*</label>
                             <select class="form-select" name="exterieur_user" id="exterieur_user" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -102,7 +103,7 @@
 
 
                         <div class="col-md-6 mb-3">
-                            <label for="situation_foyer">Quelle est la composition de votre foyer ?</label>
+                            <label for="situation_foyer">Quelle est la composition de votre foyer ?*</label>
                             <select class="form-select" name="situation_foyer" id="situation_foyer" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="seul">Seul</option>
@@ -112,13 +113,13 @@
                         </div>
 
                         <div class="col-md-6 mb-3 d-none" id="activite_famille_div">
-                            <label for="activite_famille">Quelle est votre situation actuelle ?</label>
+                            <label for="activite_famille">Quelle est votre situation actuelle ?*</label>
                             <select class="form-select" name="activite_famille" id="activite_famille">
                                 <option value="">Sélectionnez</option>
-                                <option value="sansemploi">Sans Emploi</option>
+                                <option value="Sans Emploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
-                                <option value="etudiant">Étudiant</option>
-                                <option value="handicape">handicapé</option>
+                                <option value="Etudiant">Étudiant</option>
+                                <option value="Handicape">Handicapé</option>
                             </select>
                             <?= form_error('activite_famille'); ?>
                         </div>
@@ -127,16 +128,16 @@
                             <label for="activite_conjoint">Quelle est la situation actuelle de votre conjoint(e) ?</label>
                             <select class="form-select" name="activite_conjoint" id="activite_conjoint">
                                 <option value="">Sélectionnez</option>
-                                <option value="sansemploi">Sans Emploi</option>
+                                <option value="Sans Emploi">Sans Emploi</option>
                                 <option value="Salarie">Salarié(e)</option>
-                                <option value="etudiant">Étudiant</option>
-                                <option value="handicape">handicapé</option>
+                                <option value="Etudiant">Étudiant</option>
+                                <option value="Handicape">Handicapé</option>
                             </select>
                             <?= form_error('activite_conjoint'); ?>
                         </div>
 
                         <div class="col-md-6 mb-3 d-none" id="enfants_foyer_div">
-                            <label for="enfants_foyer">Avez vous des enfants dans votre foyer ?</label>
+                            <label for="enfants_foyer">Avez vous des enfants dans votre foyer ?*</label>
                             <select class="form-select" name="enfants_foyer" id="enfants_foyer">
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -162,19 +163,35 @@
                             </select>
                             <?= form_error('nbr_enfants'); ?>
                         </div>
-
-                        <div class="col-md-6 mb-3 d-none" id="age_enfants_div">
-                            <label for="age_enfants">Quel âge ont vos enfants ?</label>
-                            <input class="form-control" type="number" name="age_enfants" id="age_enfants">
-                            <?= form_error('age_enfants'); ?>
-                        </div>
                         <div class="col-md-6 mb-3">
-                            <label for="temps_activite">Combien de temps l'animal restera-t-il seul ?</label>
-                            <input class="form-control" type="number" name="temps_activite" id="temps_activite" required>
+                            <label for="foyer_animaux_now">avez vous d'autres animaux chez vous ?*</label>
+                            <input class="form-control" type="number" name="foyer_animaux_now" id="foyer_animaux_now" placeholder="1 heures, 2 heures.." required>
+                            <?= form_error('foyer_animaux_now'); ?>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                        <label for="temps_activite">Snouf.</label>
+                            <select class="form-select" name="temps_activite" id="temps_activite" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="time">1 à 3 heures</option>
+                                <option value="times">3 à 5 heures</option>
+                            </select>
                             <?= form_error('temps_activite'); ?>
                         </div>
+
                         <div class="col-md-6 mb-3">
-                            <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
+                            <label for="foyer_animaux_now">Avez d'autres animaux dans votre foyer ?*</label>
+                            <select class="form-select" name="foyer_animaux_now" id="foyer_animaux_now" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="chiens">Chiens</option>
+                                <option value="chats">Chats</option>
+                                <option value="oiseaux">Oiseaux</option>
+                                <option value="autres">Autres animaux ? Merci de préciser ci-dessous.</option>
+                            </select>
+                            <?= form_error('foyer_animaux_now'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?*</label>
                             <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
                             <?= form_error('raison_famille'); ?>
                         </div>
@@ -182,6 +199,7 @@
                             <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
                             <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Next</button>
                         </div>
+                        <h6>* Le champ est obligatoire</h6>
                     </div>
                 </div>
 
@@ -189,7 +207,7 @@
                 <div class="step">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="animaux_famille">Avez-vous déjà eu des animaux dans votre foyer ? :</label>
+                            <label for="animaux_famille">Avez-vous eu par le passé des animaux dans votre foyer ?*</label>
                             <select class="form-select" name="animaux_famille" id="animaux_famille" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -207,7 +225,7 @@
                             <?= form_error('animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="nbr_animaux">Combien avez-vous d'animaux dans votre foyer ?</label>
+                            <label for="nbr_animaux">Combien avez-vous d'animaux dans votre foyer ?*</label>
                             <input class="form-control" type="number" name="nbr_animaux" id="nbr_animaux" required>
                             <?= form_error('nbr_animaux'); ?>
                         </div>
@@ -228,7 +246,7 @@
                             <?= form_error('details_animaux_vie'); ?>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
+                            <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?*</label>
                             <select class="form-select" name="disponible_veto" id="disponible_veto" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -246,6 +264,7 @@
                         <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button>
                         <button type="submit">Envoyer</button>
                     </div>
+                    <h6>* Le champ est obligatoire</h6>
                 </div>
             </form>
         </div>
@@ -282,21 +301,54 @@
 </script>
 
 
+<!-- API code postal -->
 <script>
-          $(document).ready(function() {
-    $('#nbr_enfants').change(function() {
-        var numChildren = $(this).val();
-        var ageInputsHtml = '';
+$(document).ready(function () {
+    // Utilisez l'ID de votre champ de code postal
+    var codePostalInput = $("#codepostal_user");
 
-        for (var i = 1; i <= numChildren; i++) {
-            ageInputsHtml += '<div class="col-md-6 mb-3">';
-            ageInputsHtml += '<label for="age_enfants' + i + '">Âge de l\'enfant ' + i + ' :</label>';
-            ageInputsHtml += '<input class="form-control" type="number" name="age_enfants' + i + '" id="age_enfants' + i + '">';
-            ageInputsHtml += '</div>';
+    // Lorsque l'utilisateur commence à taper dans le champ
+    codePostalInput.on("input", function () {
+        var inputVal = codePostalInput.val().trim();
+        
+        if (inputVal.length >= 2) { // Recherche à partir du 2ème caractère
+            // Utilisez une API de service de code postal pour obtenir des suggestions
+            // Ici, vous pouvez appeler votre propre service ou utiliser une API tierce
+            // Exemple avec Adresse Data France (à titre d'illustration, nécessite un compte)
+            var apiUrl = "https://api-adresse.data.gouv.fr/search/?q=" + inputVal;
+
+            // Faites une requête AJAX à l'API de service de code postal
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                success: function (data) {
+                    // Traitez les données renvoyées par l'API
+                    var suggestions = data.features;
+
+                    // Affichez les suggestions dans une liste déroulante ou un autre format
+                    // par exemple, en utilisant Bootstrap dropdown
+                    var dropdown = $("#codepostal_suggestions");
+                    dropdown.empty();
+
+                    for (var i = 0; i < suggestions.length; i++) {
+                        var suggestion = suggestions[i].properties;
+                        var option = $("<a class='dropdown-item' href='#'>" + suggestion.postcode + " - " + suggestion.city + "</a>");
+                        option.click(function () {
+                            codePostalInput.val(suggestion.postcode);
+                            dropdown.empty(); // Efface les suggestions après avoir cliqué
+                        });
+                        dropdown.append(option);
+                    }
+
+                    dropdown.show();
+                },
+                error: function () {
+                    console.log("Erreur lors de la récupération des suggestions de code postal.");
+                }
+            });
+        } else {
+            $("#codepostal_suggestions").hide();
         }
-
-        $('#age_enfants_div').html(ageInputsHtml);
     });
 });
-
-    </script>
+</script>

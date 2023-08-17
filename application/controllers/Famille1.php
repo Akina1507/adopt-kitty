@@ -38,7 +38,8 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim');
         $this->form_validation->set_rules('details_animaux_vie', 'Detail animaux', 'trim|required');
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
-
+        $this->form_validation->set_rules('foyer_animaux_now', 'Animaux foyer', 'trim|required');
+        
         // Si le formulaire est valide ?
 
         if ($this->form_validation->run() === TRUE) {
@@ -67,9 +68,8 @@ class Famille1 extends CI_Controller
             $age_animaux_vie = $this->input->post('age_animaux_vie');
             $details_animaux_vie = $this->input->post('details_animaux_vie');
             $disponible_veto = $this->input->post('disponible_veto');
-
-            if (empty($type_exterieur) || $type_exterieur === 'null' || $type_exterieur === '') {
-            } else {
+            $foyer_animaux_now  = $this->input->post('$foyer_animaux_now');
+            
                 $this->Chat_Model->create_famille(
                     $nom_user,
                     $prenom_user,
@@ -95,11 +95,10 @@ class Famille1 extends CI_Controller
                     $animaux_vie,
                     $age_animaux_vie,
                     $details_animaux_vie,
-                    $disponible_veto
+                    $disponible_veto,
+                    $foyer_animaux_now
                 );
-            }
 
-            //On charge le model pour envoyer les variables des colonnes dans la bdd
         }
         $this->load->view('form/step1');
     }
