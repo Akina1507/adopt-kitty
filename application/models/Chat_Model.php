@@ -31,11 +31,13 @@ class Chat_Model extends CI_Model
         $temps_activite,
         $animaux_famille,
         $nbr_animaux,
+        $animaux_radio,
         $age_animaux_vie,
         $details_animaux_vie,
-        $disponible_veto,
+        $disponible_veto
 
-    ) {
+    ) 
+    {
 
         $data = array(
             'nom_user' => $nom_user,
@@ -58,6 +60,7 @@ class Chat_Model extends CI_Model
             'temps_activite' => $temps_activite,
             'animaux_famille' => $animaux_famille,
             'nbr_animaux' => $nbr_animaux,
+            'animaux_radio' => $animaux_radio,
             'age_animaux_vie' => $age_animaux_vie,
             'details_animaux_vie' => $details_animaux_vie,
             'disponible_veto' => $disponible_veto,
