@@ -97,15 +97,21 @@ function validateStep2(currentStep) {
 
 	if (enfantsFoyer === "oui") {
 		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
-
 	}
 
-	var activiteFamille = currentStep.find("select[name='activite_famille']").val();
-		if (situationFoyer == "couple") {
-			var activiteConjoint = currentStep.find("select[name='activite_conjoint']").val();
-		}
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	if (situationFoyer == "couple") {
+		var activiteConjoint = currentStep
+			.find("select[name='activite_conjoint']")
+			.val();
+	}
 	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
-	var raisonFamille = currentStep.find("textarea[name='raison_famille']").val().trim();
+	var raisonFamille = currentStep
+		.find("textarea[name='raison_famille']")
+		.val()
+		.trim();
 
 	if (
 		typeLogement === "" ||
@@ -131,7 +137,6 @@ function validateStep2(currentStep) {
 
 function validateStep3(currentStep) {
 	var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
-	var animauxVie = currentStep.find("select[name='animaux_vie']").val();
 	var nbrAnimaux = currentStep.find("input[name='nbr_animaux']").val().trim();
 	var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
 	var detailAnimauxVie = currentStep
@@ -142,7 +147,6 @@ function validateStep3(currentStep) {
 
 	if (
 		animauxFamille === "selectionnez" ||
-		animauxVie === "" ||
 		nbrAnimaux === "" ||
 		ageAnimauxVie === "" ||
 		detailAnimauxVie === "" ||
@@ -296,11 +300,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			enfantsnbrDiv.classList = "col-md-6 mb-3 d-none";
 			enfantsnbr.required = false;
 			enfantsnbr.value = "";
-			
 		} else {
 			enfantsnbrDiv.classList = "col-md-6 mb-3 d-block";
 			enfantsnbr.required = true;
-			
 		}
 	});
 });

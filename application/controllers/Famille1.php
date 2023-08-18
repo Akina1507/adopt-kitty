@@ -33,7 +33,6 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
 
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required|in_list[oui,non]');
-        $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|in_list[oui,non]');
         $this->form_validation->set_rules('nbr_animaux', 'Animaux foyer', 'trim|required|in_list[chiens,chats,oiseaux,autres]');
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim');
         $this->form_validation->set_rules('details_animaux_vie', 'Detail animaux', 'trim|required');
@@ -62,7 +61,6 @@ class Famille1 extends CI_Controller
             $raison_famille = $this->input->post('raison_famille');
             $temps_activite = $this->input->post('temps_activite');
             $animaux_famille = $this->input->post('animaux_famille');
-            $animaux_vie = $this->input->post('animaux_vie');
             $nbr_animaux = $this->input->post('nbr_animaux');
             $age_animaux_vie = $this->input->post('age_animaux_vie');
             $details_animaux_vie = $this->input->post('details_animaux_vie');
@@ -90,7 +88,6 @@ class Famille1 extends CI_Controller
                 $temps_activite,
                 $animaux_famille,
                 $nbr_animaux,
-                $animaux_vie,
                 $age_animaux_vie,
                 $details_animaux_vie,
                 $disponible_veto,

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 20 juil. 2023 à 09:34
+-- Généré le : ven. 18 août 2023 à 07:31
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -96,37 +96,37 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `nom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `prenom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `age_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `adresse_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `ville_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `codepostal_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tel_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type_logement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `exterieur_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type_exterieur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `situation_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `activite_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_conjoint` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `enfants_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `age_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `raison_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `temps_activite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `animaux_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foyer_animaux_now` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `details_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `famille`
 --
 
-INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `adresse_user`, `ville_user`, `codepostal_user`, `email_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `raison_famille`, `activite_famille`, `temps_activite`, `animaux_famille`, `nbr_animaux`, `animaux_vie`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`) VALUES
-(8, 'Wietrich', 'Marie', '19', '29 rue des chats', 'Reims', '51100', 'mswietrich1507@gmail.com', '0652980766', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 'Lecour', 'Bastien', '20', '20 rue des chatons', 'Reims', '51100', 'bastien.lec@laposte.com', '0652832238', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`, `adresse_user`, `ville_user`, `codepostal_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `activite_famille`, `activite_conjoint`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `temps_activite`, `raison_famille`, `animaux_famille`, `foyer_animaux_now`, `nbr_animaux`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`) VALUES
+(64, 'iuhiu', 'oiugj', '55', 'hjh@hhjhiukjhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sansemploi', '', 'oui', '1', '2', '2', 'vdvd', 'oui', '', 'oui', 'ddv', 'adulte', 'oui');
 
 -- --------------------------------------------------------
 

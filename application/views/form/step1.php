@@ -210,27 +210,119 @@
                             </select>
                             <h6 class="error_form_red"><?= form_error('animaux_famille'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="animaux_vie">Vos animaux sont-ils toujours en vie ?</label>
-                            <select class="form-select" name="animaux_vie" id="animaux_vie" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                            <h6 class="error_form_red"><?= form_error('animaux_vie'); ?></h6>
-                        </div>
+                        
 
                         <div class="col-md-6 mb-3">
                             <label for="nbr_animaux">Avez d'autres animaux dans votre foyer actuellement?</label>
                             <select class="form-select" name="nbr_animaux" id="nbr_animaux" required>
                                 <option value="">Sélectionnez</option>
-                                <option value="chiens">Chiens</option>
-                                <option value="chats">Chats</option>
-                                <option value="oiseaux">Oiseaux</option>
-                                <option value="autres">Autres animaux ? Merci de préciser ci-dessous.</option>
-                            </select>
+                                <option value="oui">Oui</option>
+                                <option value="non">Non</option>
+                                </select>
                             <h6 class="error_form_red"><?= form_error('nbr_animaux'); ?></h6>
                         </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="nbr_animaux">Chiens</label>
+                                <br>
+                            <input class="form-check-input" type="radio" name="dog_radio" id="dog_radio">
+                            <label class="form-check-label" for="dog_radio">
+                                 0
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="flexRadioDefault" id="dog_radio">
+                            <label class="form-check-label" for="dog_radio">
+                                 1
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="dog_radio" id="dog_radio">
+                            <label class="form-check-label" for="dog_radio">
+                                 2
+                            </label>
+                                    <br>
+                            <input class="form-check-input" type="radio" name="dog_radio" id="dog_radio">
+                            <label class="form-check-label" for="dog_radio">
+                                 3
+                            </label>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="cat_radio">Chats</label>
+                                <br>
+                            <input class="form-check-input" type="radio" name="cat_radio" id="cat_radio">
+                            <label class="form-check-label" for="cat_radio">
+                                 0
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="cat_radio" id="cat_radio">
+                            <label class="form-check-label" for="cat_radio">
+                                 1
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="cat_radio" id="cat_radio">
+                            <label class="form-check-label" for="cat_radio">
+                                 2
+                            </label>
+                                    <br>
+                            <input class="form-check-input" type="radio" name="cat_radio" id="cat_radio">
+                            <label class="form-check-label" for="cat_radio">
+                                 3
+                            </label>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="bird_radio">Oiseaux</label>
+                                <br>
+                            <input class="form-check-input" type="radio" name="bird_radio" id="bird_radio">
+                            <label class="form-check-label" for="bird_radio">
+                                 0
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="bird_radio" id="bird_radio">
+                            <label class="form-check-label" for="bird_radio">
+                                 1
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="bird_radio" id="bird_radio">
+                            <label class="form-check-label" for="bird_radio">
+                                 2
+                            </label>
+                                    <br>
+                            <input class="form-check-input" type="radio" name="bird_radio" id="bird_radio">
+                            <label class="form-check-label" for="bird_radio">
+                                 3
+                            </label>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="others_animaux_radio">Autres animaux ? Merci de préciser ci-dessous.</label>
+                                <br>
+                            <input class="form-check-input" type="radio" name="others_animaux_radio" id="others_animaux_radio">
+                            <label class="form-check-label" for="others_animaux_radio">
+                                 0
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="others_animaux_radio" id="others_animaux_radio">
+                            <label class="form-check-label" for="others_animaux_radio">
+                                 1
+                            </label>
+                                <br>
+                           <input class="form-check-input" type="radio" name="others_animaux_radio" id="others_animaux_radio">
+                            <label class="form-check-label" for="others_animaux_radio">
+                                 2
+                            </label>
+                                    <br>
+                            <input class="form-check-input" type="radio" name="others_animaux_radio" id="others_animaux_radio">
+                            <label class="form-check-label" for="others_animaux_radio">
+                                 3
+                            </label>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="others_animaux">Vos autres animaux :</label>
+                            <input class="form-control" name="others_animaux" id="others_animaux" placeholder="rongueurs, reptiles, poissons...">
+                            <h6 class="error_form_red"><?= form_error('others_animaux'); ?></h6>
+                        </div>
+
                         <div class="col-md-6 mb-3">
                             <label for="age_animaux_vie">Quel âge ont vos animaux ?</label>
                             <select class="form-select" name="age_animaux_vie" id="age_animaux_vie" required>
@@ -241,7 +333,7 @@
                             </select>
                             <h6 class="error_form_red"><?= form_error('age_animaux_vie'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-12">
                             <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
                             <textarea class="form-control" name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..." required></textarea>
                             <h6 class="error_form_red"><?= form_error('details_animaux_vie'); ?></h6>
