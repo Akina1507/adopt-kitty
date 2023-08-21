@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-//Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
+//Systeme pour apparaitre/dispparaitre nbr_animaux en fonction d'animaux_radio
 document.addEventListener("DOMContentLoaded", function () {
     var nbrAnimauxSelect = document.getElementById("nbr_animaux");
     var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
