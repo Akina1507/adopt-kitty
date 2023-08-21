@@ -311,19 +311,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
 document.addEventListener("DOMContentLoaded", function () {
-	var nbrAnimauxSelect = document.getElementById("nbr_animaux");
+    var nbrAnimauxSelect = document.getElementById("nbr_animaux");
+    var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
 
-	var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
-	var AnimauxRadio = document.getElementById("animaux_radio");
+    function toggleAnimauxRadio() {
+        if (nbrAnimauxSelect.value === "non" || nbrAnimauxSelect.value === "") {
+            AnimauxRadioDiv.classList.add("d-none");
+        } else if (nbrAnimauxSelect.value === "oui") {
+            AnimauxRadioDiv.classList.remove("d-none");
+        }
+    }
 
-	nbrAnimauxSelect.addEventListener("change", function () {
-		if (nbrAnimauxSelect.value === "non" || nbrAnimauxSelect.value === "") {
-			AnimauxRadioDiv.classList = "col-md-6 mb-3 d-none";
-			AnimauxRadio.required = false;
-			AnimauxRadio.value = "";
-		} else {
-			AnimauxRadioDiv.classList = "col-md-6 mb-3 d-block";
-			AnimauxRadio.required = true;
-		}
-	});
+    // Appliquer le traitement initial au chargement de la page
+    toggleAnimauxRadio();
+
+    nbrAnimauxSelect.addEventListener("change", toggleAnimauxRadio);
 });
+
+
