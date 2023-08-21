@@ -246,10 +246,12 @@
 
         <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
     
-<div class="d-flex justify-content-center">
+
+    <div class="d-flex justify-content-center">
         <label for="animaux_radio">Chats</label>
         <div class="row">
             <div class="col-md-6 mb-3">
+                
                 <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
                 <label class="form-check-label" for="animaux_radio_0">0</label>
             
@@ -264,13 +266,15 @@
                 <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
             </div>
         </div>
-</div>
+    </div>
+ 
         
 
-
-        <label for="animaux_radio">Oiseaux</label>
+<div>
+    <label for="animaux_radio">Oiseaux</label>
         <div class="row">
             <div class="col-md-6 mb-3">
+                
                 <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
                 <label class="form-check-label" for="animaux_radio_0">0</label>
             
@@ -285,11 +289,13 @@
                 <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
             </div>
         </div>
+    </div>
 
 
         <label for="animaux_radio">Autres animaux ?</label>
         <div class="row">
             <div class="col-md-6 mb-3">
+                
                 <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
                 <label class="form-check-label" for="animaux_radio_0">0</label>
             
@@ -304,7 +310,7 @@
                 <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
             </div>
         </div>
-        </div>
+   
     
 
                     
