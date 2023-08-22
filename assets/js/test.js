@@ -331,16 +331,16 @@ document.addEventListener("DOMContentLoaded", function () {
 //Systeme pour apparaitre/dispparaitre autres_animaux_radio en fonction d'others_animaux
 document.addEventListener("DOMContentLoaded", function () {
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
-    var othersAnimauxInput = document.getElementById("others_animaux");
+    var othersAnimauxInput = document.getElementById("others_animaux_div");
 
     for (var i = 0; i < autresRadioInputs.length; i++) {
         autresRadioInputs[i].addEventListener("change", function () {
             var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;
 
             if (selectedValue === "0" || !selectedValue) {
-                othersAnimauxInput.style.display = "none";
+                othersAnimauxInput.classList.add("d-none");
             } else {
-                othersAnimauxInput.style.display = "block";
+                othersAnimauxInput.classList.remove("d-none");
             }
         });
     }
