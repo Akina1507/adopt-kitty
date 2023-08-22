@@ -226,94 +226,94 @@
                 
 <div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
     <div class="animaux_radio">
-        <label for="animaux_radio">Chiens</label>
+        <label for="chien_radio">Chiens</label>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
-                <label class="form-check-label" for="animaux_radio_0">0</label>
+                <input class="form-check-input" type="radio" name="chien_radio" id="chien_radio_0">
+                <label class="form-check-label" for="chien_radio_0">0</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_1">
-                <label class="form-check-label" for="animaux_radio_1">1</label>
+                <input class="form-check-input" type="radio" name="chien_radio" id="chien_radio_1">
+                <label class="form-check-label" for="chien_radio_1">1</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_2">
-                <label class="form-check-label" for="animaux_radio_2">2</label>
+                <input class="form-check-input" type="radio" name="chien_radio" id="chien_radio_2">
+                <label class="form-check-label" for="chien_radio_2">2</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_3">
-                <label class="form-check-label" for="animaux_radio_3">3</label>
+                <input class="form-check-input" type="radio" name="chien_radio" id="chien_radio_3">
+                <label class="form-check-label" for="chien_radio_3">3</label>
             </div>
         </div>
     </div>
 
-        <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
+        <h6 class="error_form_red"><?= form_error('chien_radio'); ?></h6>
     
 <div>
     <div class="d-flex justify-content-center">
-        <label for="animaux_radio">Chats</label>
+        <label for="chats_radio">Chats</label>
         
         <div class="row">
             <div class="col-md-6">
                 <br>
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
-                <label class="form-check-label" for="animaux_radio_0">0</label>
+                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0">
+                <label class="form-check-label" for="chats_radio_0">0</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_1">
-                <label class="form-check-label" for="animaux_radio_1">1</label>
+                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_1">
+                <label class="form-check-label" for="chats_radio_1">1</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_2">
-                <label class="form-check-label" for="animaux_radio_2">2</label>
+                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_2">
+                <label class="form-check-label" for="chats_radio_2">2</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_3">
-                <label class="form-check-label" for="animaux_radio_3">3</label>
+                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3">
+                <label class="form-check-label" for="chats_radio_3">3</label>
             </div>
         </div>
-        <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
+        <h6 class="error_form_red"><?= form_error('chats_radio'); ?></h6>
     </div>
     </div>
 
         
 
     <div>
-    <label for="animaux_radio">Oiseaux</label>
+    <label for="oiseaux_radio">Oiseaux</label>
     <div class="row">
             <div class="col-md-6">
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
-                <label class="form-check-label" for="animaux_radio_0">0</label>
+                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_0">
+                <label class="form-check-label" for="oiseaux_radio_0">0</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_1">
-                <label class="form-check-label" for="animaux_radio_1">1</label>
+                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_1">
+                <label class="form-check-label" for="oiseaux_radio_1">1</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_2">
-                <label class="form-check-label" for="animaux_radio_2">2</label>
+                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_2">
+                <label class="form-check-label" for="oiseaux_radio_2">2</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_3">
-                <label class="form-check-label" for="animaux_radio_3">3</label>
+                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3">
+                <label class="form-check-label" for="oiseaux_radio_3">3</label>
             </div>
         </div>
         </div>
-        <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
+        <h6 class="error_form_red"><?= form_error('oiseaux_radio'); ?></h6>
     
 
     
 
 
-        <label for="animaux_radio">Autres</label>
+        <label for="autres_radio">Autres</label>
         <div class="row">
             <div class="col-md-6">
                 <br>
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_0">
-                <label class="form-check-label" for="animaux_radio_0">0</label>
+                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_0" value="0">
+                <label class="form-check-label" for="autres_radio_0">0</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_1">
-                <label class="form-check-label" for="animaux_radio_1">1</label>
+                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_1" value="1">
+                <label class="form-check-label" for="autres_radio_1">1</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_2">
-                <label class="form-check-label" for="animaux_radio_2">2</label>
+                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_2" value="2">
+                <label class="form-check-label" for="autres_radio_2">2</label>
             
-                <input class="form-check-input" type="radio" name="animaux_radio" id="animaux_radio_3">
-                <label class="form-check-label" for="animaux_radio_3">3</label>
+                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
+                <label class="form-check-label" for="autres_radio_3">3</label>
             </div>
         </div>
-        <h6 class="error_form_red"><?= form_error('animaux_radio'); ?></h6>
+        <h6 class="error_form_red"><?= form_error('autres_radio'); ?></h6>
     </div>
 
     
