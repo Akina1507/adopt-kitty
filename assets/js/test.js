@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nbrAnimauxSelect.addEventListener("change", toggleAnimauxRadio);
 });
 
-//Systeme pour apparaitre/dispparaitre autres_animaux_radio en fonction d'others_animaux
+//Systeme pour apparaitre/dispparaitre autres_radio en fonction d'others_animaux
 document.addEventListener("DOMContentLoaded", function () {
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
     var othersAnimauxInput = document.getElementById("others_animaux_div");

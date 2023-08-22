@@ -31,12 +31,15 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|in_list[1,2,3,4,5,6,7,8,9,10]');
         $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required|in_list[1h-3h,3h-5h,5h-7h,7h-ou-plus]');
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
-
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required|in_list[oui,non]');
-        $this->form_validation->set_rules('nbr_animaux', 'Animaux foyer', 'trim|required|in_list[chiens,chats,oiseaux,autres]');
-        $this->form_validation->set_rules('animaux_radio', 'Bouton radio animaux', 'trim');
+        $this->form_validation->set_rules('nbr_animaux', 'Animaux foyer', 'trim|required|in_list[oui,non]');
+        $this->form_validation->set_rules('chien_radio', 'Bouton chien', 'trim');
+        $this->form_validation->set_rules('chats_radio', 'Bouton chats', 'trim');
+        $this->form_validation->set_rules('oiseaux_radio', 'Bouton oiseaux', 'trim');
+        $this->form_validation->set_rules('autres_radio', 'Bouton autres', 'trim');
+        $this->form_validation->set_rules('others_animaux', 'Autres animaux', 'trim');
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim');
-        $this->form_validation->set_rules('details_animaux_vie', 'Detail animaux', 'trim|required');
+        $this->form_validation->set_rules('details_animaux_vie', 'Details animaux', 'trim|required');
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
 
@@ -63,7 +66,11 @@ class Famille1 extends CI_Controller
             $temps_activite = $this->input->post('temps_activite');
             $animaux_famille = $this->input->post('animaux_famille');
             $nbr_animaux = $this->input->post('nbr_animaux');
-            $animaux_radio = $this->input->post('animaux_radio');
+            $chien_radio = $this->input->post('chien_radio');
+            $chats_radio = $this->input->post('chats_radio');
+            $oiseaux_radio = $this->input->post('oiseaux_radio');
+            $autres_radio = $this->input->post('autres_radio');
+            $others_animaux = $this->input->post('others_animaux');
             $age_animaux_vie = $this->input->post('age_animaux_vie');
             $details_animaux_vie = $this->input->post('details_animaux_vie');
             $disponible_veto = $this->input->post('disponible_veto');
@@ -90,7 +97,11 @@ class Famille1 extends CI_Controller
                 $temps_activite,
                 $animaux_famille,
                 $nbr_animaux,
-                $animaux_radio,
+                $chien_radio,
+                $chats_radio,
+                $oiseaux_radio,
+                $autres_radio,
+                $others_animaux,
                 $age_animaux_vie,
                 $details_animaux_vie,
                 $disponible_veto,
