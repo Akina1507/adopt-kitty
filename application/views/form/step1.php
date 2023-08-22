@@ -224,7 +224,7 @@
                 
                 
                 
-<div class="col-md-6 mb-3 d-flex justify-content-center" id="chien_radio_div">
+<div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
     <div class="animaux_radio">
         <label for="chien_radio">Chiens</label>
         <div class="row">
@@ -322,7 +322,7 @@
                     
                         
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3" id="others_animaux_div">
                          <label for="others_animaux">Vos autres animaux :</label>
                             <input class="form-control" name="others_animaux" id="others_animaux" placeholder="rongueurs, reptiles, poissons...">
                             <h6 class="error_form_red"><?= form_error('others_animaux'); ?></h6>
