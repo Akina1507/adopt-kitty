@@ -174,7 +174,7 @@
 
 
                         <div class="col-md-6 mb-3">
-                            <label for="temps_activite">Combien de temps l'animal restera t'il seul</label>
+                            <label for="temps_activite">Quelle est la durée maximale où votre animal serait seul à votre domicile ?</label>
                             <select class="form-select" name="temps_activite" id="temps_activite" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="1h-3h">1 à 3 heures</option>
@@ -186,7 +186,7 @@
                         </div>
 
                         <div class="col-md-12 mb-3">
-                            <label for="raison_famille">Quelles sont les raisons qui vous poussent à devenir famille d'accueil ?</label>
+                            <label for="raison_famille">Pourquoi souhaitez-vous devenir famille d'accueil ?</label>
                             <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
                             <h6 class="error_form_red"><?= form_error('raison_famille'); ?></h6>
                         </div>
@@ -202,7 +202,7 @@
                 <div class="step">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="animaux_famille">Avez-vous eu par le passé des animaux dans votre foyer ?</label>
+                            <label for="animaux_famille">Avez-vous déjà eu des animaux domestiques ?</label>
                             <select class="form-select" name="animaux_famille" id="animaux_famille" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -213,7 +213,7 @@
                         
 
                         <div class="col-md-6 mb-3">
-                            <label for="nbr_animaux">Avez d'autres animaux dans votre foyer actuellement?</label>
+                            <label for="nbr_animaux">Avez-vous des animaux en ce moment dans votre foyer ?</label>
                             <select class="form-select" name="nbr_animaux" id="nbr_animaux" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
