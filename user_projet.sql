@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 18 août 2023 à 07:31
+-- Généré le : jeu. 24 août 2023 à 10:02
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -109,24 +109,28 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `activite_conjoint` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `enfants_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `temps_activite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `raison_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `animaux_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foyer_animaux_now` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiens_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chats_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `oiseaux_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `autres_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `others_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `details_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `famille`
 --
 
-INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`, `adresse_user`, `ville_user`, `codepostal_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `activite_famille`, `activite_conjoint`, `enfants_foyer`, `nbr_enfants`, `age_enfants`, `temps_activite`, `raison_famille`, `animaux_famille`, `foyer_animaux_now`, `nbr_animaux`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`) VALUES
-(64, 'iuhiu', 'oiugj', '55', 'hjh@hhjhiukjhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sansemploi', '', 'oui', '1', '2', '2', 'vdvd', 'oui', '', 'oui', 'ddv', 'adulte', 'oui');
+INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`, `adresse_user`, `ville_user`, `codepostal_user`, `tel_user`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `activite_famille`, `activite_conjoint`, `enfants_foyer`, `nbr_enfants`, `temps_activite`, `raison_famille`, `animaux_famille`, `nbr_animaux`, `chiens_radio`, `chats_radio`, `oiseaux_radio`, `autres_radio`, `others_animaux`, `details_animaux_vie`, `age_animaux_vie`, `disponible_veto`) VALUES
+(79, 'iuhiu', 'oiugj', '25-35ans', 'hjh@hhjhkjdf.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'b', 'oui', 'oui', '1', '1', '1', '0', '', 'vd', 'junior', 'oui'),
+(78, 'iuhiu', 'oiugj', '18-25ans', 'hjh@dvdhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'vdv', 'oui', 'oui', '1', '1', '1', '1', 'vdsvs', 'vdv', 'junior', 'oui');
 
 -- --------------------------------------------------------
 
