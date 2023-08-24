@@ -326,7 +326,15 @@ document.addEventListener("DOMContentLoaded", function () {
             AnimauxRadioDiv.classList.remove("d-none");
         }
     }
-
+	function toggleOthersAnimauxRequired() {
+        var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;
+        if (selectedValue === "0" || !selectedValue) {
+            othersAnimauxInput.removeAttribute("required");
+        } else {
+            othersAnimauxInput.setAttribute("required", "required");
+        }
+    }
+	
 // Masquer quand on select btn radio 0, si 1,2,3 input appararait
     function toggleOthersAnimaux() {
         var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;

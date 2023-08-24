@@ -33,10 +33,10 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('raison_famille', 'Raison famille', 'trim|required');
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required|in_list[oui,non]');
         $this->form_validation->set_rules('nbr_animaux', 'Animaux foyer', 'trim|required|in_list[oui,non]');
-        $this->form_validation->set_rules('chien_radio', 'Bouton chien', 'trim');
-        $this->form_validation->set_rules('chats_radio', 'Bouton chats', 'trim');
-        $this->form_validation->set_rules('oiseaux_radio', 'Bouton oiseaux', 'trim');
-        $this->form_validation->set_rules('autres_radio', 'Bouton autres', 'trim');
+        $this->form_validation->set_rules('chien_radio', 'Bouton chien', 'trim|required');
+        $this->form_validation->set_rules('chats_radio', 'Bouton chats', 'trim|required');
+        $this->form_validation->set_rules('oiseaux_radio', 'Bouton oiseaux', 'trim|required');
+        $this->form_validation->set_rules('autres_radio', 'Bouton autres', 'trim|required');
         $this->form_validation->set_rules('others_animaux', 'Autres animaux', 'trim');
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux', 'trim');
         $this->form_validation->set_rules('details_animaux_vie', 'Details animaux', 'trim|required');
