@@ -63,7 +63,10 @@ function validateStep1(currentStep) {
 		.val()
 		.trim();
 	var telUser = currentStep.find("input[name='tel_user']").val().trim();
-
+	chiensRadio = currentStep.find("input[name='chiens_radio']").val().trim();
+	chatsRadio = currentStep.find("input[name='chats_radio']").val().trim();
+	oiseauxRadio = currentStep.find("input[name='oiseaux_radio']").val().trim(); 
+	autresRadio = currentStep.find("input[name='autres_radio']").val().trim();
 	if (
 		nomUser === "" ||
 		prenomUser === "" ||
@@ -72,7 +75,11 @@ function validateStep1(currentStep) {
 		adresseUser === "" ||
 		villeUser === "" ||
 		codepostalUser === "" ||
-		telUser === ""
+		telUser === "" ||
+		chiensRadio === "" ||
+		chatsRadio === "" || 
+		oiseauxRadio === "" || 
+		autresRadio === "" 
 	) {
 		showFieldError(
 			currentStep,
@@ -310,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//Systeme pour apparaitre/dispparaitre animaux_radio en fonction de nbr_animaux
+/* //Systeme pour apparaitre/dispparaitre animaux_radio en fonction de nbr_animaux
 // Masquer others_animaux si selectionner,oui,non = que btn radio 0 mais pas 1,2,3
 document.addEventListener("DOMContentLoaded", function () {
     var nbrAnimauxSelect = document.getElementById("nbr_animaux");
@@ -360,3 +367,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+ */
