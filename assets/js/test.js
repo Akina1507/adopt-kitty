@@ -328,6 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 	
+	
 
 // Masquer quand on select btn radio 0, si 1,2,3 input appararait
     function toggleOthersAnimaux() {
@@ -356,4 +357,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
 

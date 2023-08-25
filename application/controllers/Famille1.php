@@ -68,19 +68,19 @@ class Famille1 extends CI_Controller
             $nbr_animaux = $this->input->post('nbr_animaux');
             $chiens_radio = $this->input->post('chiens_radio');
             if (empty($chiens_radio)) {
-                $chiens_radio = ''; // Valeur par défaut
+                $chiens_radio = 0; // Valeur par défaut
             }
             $chats_radio = $this->input->post('chats_radio');
             if (empty($chats_radio)) {
-                $chats_radio = ''; // Valeur par défaut
+                $chats_radio = 0; // Valeur par défaut
             }
             $oiseaux_radio = $this->input->post('oiseaux_radio');
             if (empty($oiseaux_radio)) {
-                $oiseaux_radio = ''; // Valeur par défaut
+                $oiseaux_radio = 0; // Valeur par défaut
             }
             $autres_radio = $this->input->post('autres_radio');
             if (empty($autres_radio)) {
-                $autres_radio = ''; // Valeur par défaut
+                $autres_radio = 0; // Valeur par défaut
             }
             $others_animaux = $this->input->post('others_animaux');
             $age_animaux_vie = $this->input->post('age_animaux_vie');
