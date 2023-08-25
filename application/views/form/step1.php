@@ -229,7 +229,7 @@
         <label for="chiens_radio">Chiens</label>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <input class="form-check-input" type="radio" name="chien_radio" id="chiens_radio_0" value="0">
+                <input class="form-check-input" type="radio" name="chiens_radio" id="chiens_radio_0" value="0">
                 <label class="form-check-label" for="chiens_radio_0">0</label>
             
                 <input class="form-check-input" type="radio" name="chien_radio" id="chiens_radio_1" value="1">
