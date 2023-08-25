@@ -1,3 +1,4 @@
+// Js pour l'animation de la barre entre les étapes
 var currentTab = 0;
 tabShow(currentTab);
 
@@ -22,6 +23,7 @@ function tabShow(n) {
 	}
 }
 
+// Pop up en cas d'echec de validation
 function nextPrev(n) {
 	var x = $(".step");
 	if (n === 1 && !validateForm()) {
@@ -30,7 +32,7 @@ function nextPrev(n) {
 	currentTab += n;
 	tabShow(currentTab);
 }
-
+// Pop-up assigné aux étapes en cas d'échec de validation
 function validateForm() {
 	var currentStep = $(".step").eq(currentTab);
 
@@ -51,46 +53,38 @@ function validateForm() {
 	return isValid;
 }
 
+// Pop up pour l'etape 1 qui enumère chaque input/select
 function validateStep1(currentStep) {
-	var nomUser = currentStep.find("input[name='nom_user']").val().trim();
-	var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
-	var ageUser = currentStep.find("select[name='age_user']").val().trim();
-	var emailUser = currentStep.find("input[name='email_user']").val().trim();
-	var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
-	var villeUser = currentStep.find("input[name='ville_user']").val().trim();
-	var codepostalUser = currentStep
-		.find("input[name='codepostal_user']")
-		.val()
-		.trim();
-	var telUser = currentStep.find("input[name='tel_user']").val().trim();
-	chiensRadio = currentStep.find("input[name='chiens_radio']").val().trim();
-	chatsRadio = currentStep.find("input[name='chats_radio']").val().trim();
-	oiseauxRadio = currentStep.find("input[name='oiseaux_radio']").val().trim(); 
-	autresRadio = currentStep.find("input[name='autres_radio']").val().trim();
-	if (
-		nomUser === "" ||
-		prenomUser === "" ||
-		ageUser === "" ||
-		emailUser === "" ||
-		adresseUser === "" ||
-		villeUser === "" ||
-		codepostalUser === "" ||
-		telUser === "" ||
-		chiensRadio === "" ||
-		chatsRadio === "" || 
-		oiseauxRadio === "" || 
-		autresRadio === "" 
-	) {
-		showFieldError(
-			currentStep,
-			"Veuillez remplir tous les champs de l'étape 1."
-		);
-		return false;
-	}
+    var nomUser = currentStep.find("input[name='nom_user']").val().trim();
+    var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
+    var ageUser = currentStep.find("select[name='age_user']").val().trim();
+    var emailUser = currentStep.find("input[name='email_user']").val().trim();
+    var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
+    var villeUser = currentStep.find("input[name='ville_user']").val().trim();
+    var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
+    var telUser = currentStep.find("input[name='tel_user']").val().trim();
+    
+    if (
+        nomUser === "" ||
+        prenomUser === "" ||
+        ageUser === "" ||
+        emailUser === "" ||
+        adresseUser === "" ||
+        villeUser === "" ||
+        codepostalUser === "" ||
+        telUser === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 1."
+        );
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
+// Pop up pour l'etape 2 qui enumère chaque input/select
 function validateStep2(currentStep) {
 	var typeLogement = currentStep.find("select[name='type_logement']").val();
 	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
@@ -141,36 +135,40 @@ function validateStep2(currentStep) {
 
 	return true;
 }
-
+// Pop up pour l'etape 3 qui enumère chaque input/select
 function validateStep3(currentStep) {
-	var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
-	var nbrAnimaux = currentStep.find("input[name='nbr_animaux']").val().trim();
-	var othersAnimaux = currentStep.find("input[name='others_animaux']").val();
-	var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
-	var detailAnimauxVie = currentStep
-		.find("textarea[name='detail_animaux_vie']")
-		.val()
-		.trim();
-	var disponibleVeto = currentStep.find("select[name='disponible_veto']").val();
+    var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
+    var nbrAnimaux = currentStep.find("select[name='nbr_animaux']").val();
+    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+    var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
+    var detailAnimauxVie = currentStep.find("textarea[name='details_animaux_vie']").val().trim();
+    var disponibleVeto = currentStep.find("select[name='disponible_veto']").val();
 
-	if (
-		animauxFamille === "selectionnez" ||
-		othersAnimaux === "" ||
-		nbrAnimaux === "" ||
-		ageAnimauxVie === "" ||
-		detailAnimauxVie === "" ||
-		disponibleVeto === "selectionnez"
-	) {
-		showFieldError(
-			currentStep,
-			"Veuillez remplir tous les champs de l'étape 3."
-		);
-		return false;
-	}
+    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+    
+    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+        animauxFamille === "" ||
+        nbrAnimaux === "" ||
+        othersAnimaux === "" ||
+        ageAnimauxVie === "" ||
+        detailAnimauxVie === "" ||
+        disponibleVeto === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 3."
+        );
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
+
+// A QUOI SA SERT ? JE SAIS PLUS
 function showFieldError(currentStep, errorMessage) {
 	alert(errorMessage);
 	currentStep.find(".is-invalid").removeClass("is-invalid");
@@ -180,7 +178,7 @@ function showFieldError(currentStep, errorMessage) {
 	currentStep.find(".is-invalid").removeClass("is-invalid");
 	currentStep.find(".error-message").show();
 }
-
+// A QUOI SA SERT ? JE SAIS PLUS
 function showFieldErrors() {
 	var currentStep = $(".step").eq(currentTab);
 	var errorMessages = currentStep.find(".error-message");
@@ -297,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-//Systeme pour apparaitre/dispparaitre enfants_foyer en fonction nbr_enfants_foyer
+//Systeme pour apparaitre/disparaitre enfants_foyer en fonction nbr_enfants_foyer
 document.addEventListener("DOMContentLoaded", function () {
 	var enfantsFoyerSelect = document.getElementById("enfants_foyer");
 
@@ -317,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* //Systeme pour apparaitre/dispparaitre animaux_radio en fonction de nbr_animaux
+ //Systeme pour apparaitre/dispparaitre animaux_radio en fonction de nbr_animaux
 // Masquer others_animaux si selectionner,oui,non = que btn radio 0 mais pas 1,2,3
 document.addEventListener("DOMContentLoaded", function () {
     var nbrAnimauxSelect = document.getElementById("nbr_animaux");
@@ -365,6 +363,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
-
- */
+//Prioriter a la pop up par rapport au btn envoyer : qui envoie les infos vers la bdd
+// Il verifie si les champs sont remplis avec la pop up et envoie a la bdd
+function submitForm() {
+    if (validateStep3($(".step").eq(2))) {
+        // Le formulaire est valide, vous pouvez soumettre les données à la base de données ici
+        $(".upe-mutistep-form").submit();
+    }
+}
