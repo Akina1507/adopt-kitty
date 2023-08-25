@@ -231,7 +231,7 @@
                             <h6 class="error_form_red"><?= form_error('nbr_animaux'); ?></h6>
                         </div>
                         
-                        <div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
+<div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
     <div class="animaux_radio">
         <label for="chiens_radio">Chiens</label>
         <div class="row">
@@ -250,11 +250,7 @@
             </div>
         </div>
     </div>
-
     <h6 class="error_form_red"><?= form_error('chiens_radio'); ?></h6>
-
-<!-- Répétez la structure similaire pour les autres types d'animaux -->
-
     
 <div>
     <div class="d-flex justify-content-center">
@@ -280,8 +276,6 @@
     </div>
     </div>
 
-        
-
     <div>
     <label for="oiseaux_radio">Oiseaux</label>
     <div class="row">
@@ -301,10 +295,6 @@
         </div>
         </div>
         <h6 class="error_form_red"><?= form_error('oiseaux_radio'); ?></h6>
-    
-
-    
-
 
         <label for="autres_radio">Autres</label>
         <div class="row">
@@ -325,15 +315,6 @@
         </div>
         <h6 class="error_form_red"><?= form_error('autres_radio'); ?></h6>
     </div>
-                
-                
-  
-
-    
-    
-
-                    
-                        
 
                         <div class="col-md-6 mb-3" id="others_animaux_div">
                          <label for="others_animaux">Vos autres animaux :</label>
@@ -374,7 +355,7 @@
                     <div class="d-flex btn-row">
                     <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
                     <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="submitForm()" type="button">Envoyer</button>
-                        </div>
+                    </div>
                 </div>
             </form>
         </div>
