@@ -315,53 +315,73 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
- //Systeme pour apparaitre/dispparaitre animaux_radio en fonction de nbr_animaux
-// Masquer others_animaux si selectionner,oui,non = que btn radio 0 mais pas 1,2,3
+//Systeme pour les variables [voir ci dessous] 
 document.addEventListener("DOMContentLoaded", function () {
     var nbrAnimauxSelect = document.getElementById("nbr_animaux");
     var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
     var othersAnimauxInput = document.getElementById("others_animaux_div");
+    var othersInput = document.getElementById("others_animaux");
 
-	
-	// Afficher quand on select "oui" et masquer si autre oui donc = non et selectionner
+    // Masquer et réinitialiser "others_animaux_div" et bouton radio "autres_radio" à l'arrivée sur la page
+    othersAnimauxInput.classList.add("d-none");
+    othersInput.value = "";
+    autresRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+
+    // Afficher/masquer les radios "animaux_radio_div" en fonction de "nbr_animaux"
     function toggleAnimauxRadio() {
         if (nbrAnimauxSelect.value === "non" || nbrAnimauxSelect.value === "") {
             AnimauxRadioDiv.classList.add("d-none");
+            othersInput.required = false;
+            othersInput.value = "";
+            othersAnimauxInput.classList.add("d-none");
+            autresRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
         } else if (nbrAnimauxSelect.value === "oui") {
             AnimauxRadioDiv.classList.remove("d-none");
         }
     }
-	
-	
 
-// Masquer quand on select btn radio 0, si 1,2,3 input appararait
+    // Masquer et réinitialiser "others_animaux_div" si aucune option 1, 2, ou 3 n'est sélectionnée
     function toggleOthersAnimaux() {
         var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;
 
-        if (selectedValue === "0" || !selectedValue) {
+        if (selectedValue === "0" || selectedValue === undefined) {
             othersAnimauxInput.classList.add("d-none");
+            othersInput.required = false;
+            othersInput.value = "";
         } else {
             othersAnimauxInput.classList.remove("d-none");
+            othersInput.required = true;
         }
     }
 
-    // Masquer quand on est sur la page
-    toggleAnimauxRadio();
-    toggleOthersAnimaux();  
-
-	// Masquer quand on est sur la page
+    // Appeler la fonction lorsqu'un changement est détecté dans "nbr_animaux"
     nbrAnimauxSelect.addEventListener("change", function () {
         toggleAnimauxRadio();
         toggleOthersAnimaux();
     });
 
-    for (var i = 0; i < autresRadioInputs.length; i++) {
-        autresRadioInputs[i].addEventListener("change", function () {
+    // Appeler la fonction pour afficher/masquer les radios "animaux_radio_div" au chargement initial
+    toggleAnimauxRadio();
+
+    // Appeler la fonction lorsqu'un changement est détecté dans les boutons radio "autres_radio"
+    autresRadioInputs.forEach(radio => {
+        radio.addEventListener("change", function () {
             toggleOthersAnimaux();
         });
-    }
+    });
 });
+
+
+
+
+
+
+
 
 //Prioriter a la pop up par rapport au btn envoyer : qui envoie les infos vers la bdd
 // Il verifie si les champs sont remplis avec la pop up et envoie a la bdd
