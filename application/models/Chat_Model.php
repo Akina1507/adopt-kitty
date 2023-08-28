@@ -9,7 +9,10 @@ class Chat_Model extends CI_Model
     }
 
 
-    // envoye des données vers la bdd = tableau des colonnes + variable
+  
+    /* ------------------------- */
+    /* Contenu des variables dans la bdd famille */
+    /* ------------------------- */
     public function create_famille(
         $nom_user,
         $prenom_user,
@@ -43,6 +46,10 @@ class Chat_Model extends CI_Model
     ) 
     {
 
+        
+    /* ------------------------- */
+    /* Contenu des tables famille relié aux variables */
+    /* ------------------------- */
         $data = array(
             'nom_user' => $nom_user,
             'prenom_user' => $prenom_user,

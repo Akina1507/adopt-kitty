@@ -4,7 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Users extends CI_Controller
 {
-
+       /* ------------------------- */
+     /* Ne doit plus exister => Config */
+       /* ------------------------- */
     public function __construct()
     {
         parent::__construct();
@@ -18,7 +20,7 @@ class Users extends CI_Controller
     }
 
     /* ----------------------- */
-    /* formulaire de connexion */
+    /* Formulaire de connexion */
     /* ----------------------- */
 
     public function login()
@@ -59,12 +61,8 @@ class Users extends CI_Controller
         }
     }
 
-
-
-
-
     /* ------------------------------- */
-    /* pour destroy la session d'users */
+       /* Détruire la session users */
     /* ------------------------------- */
 
     public function deconnect()
@@ -74,7 +72,7 @@ class Users extends CI_Controller
     }
 
     /* ------------------------- */
-    /* formulaire de inscription */
+    /* Formulaire de inscription */
     /* ------------------------- */
 
     public function inscription()
@@ -126,9 +124,8 @@ class Users extends CI_Controller
     }
 
     /* ---------------------------------------------------- */
-    /* Function pour l'envois d'email pour recuper sont mdp */
+           /* Envoi email pour recupérer le mdp */
     /* ---------------------------------------------------- */
-
     public function mail()
     {
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', array(
@@ -148,9 +145,9 @@ class Users extends CI_Controller
                 $config = array(
                     'protocol' => 'smtp',
                     'smtp_host' => 'mail.infomaniak.com',
-                    'smtp_port' => 587,
-                    'smtp_user' => 'trouduc@outil-web.fr',
-                    'smtp_pass' => 'Trouduc01!',
+                    'smtp_port' => 465,
+                    'smtp_user' => 'projet-pro@outil-web.fr',
+                    'smtp_pass' => 'TSA-corp69',
                     'mailtype' => 'html',
                     'charset' => 'utf-8',
                     'newline' => "\r\n"
@@ -160,15 +157,15 @@ class Users extends CI_Controller
                 $data = array('email' => $_POST["email"]);
                 $user = $this->User_Model->get_user_by($data);
                 $link = anchor('/codeigniterarthur/connexion/change_mdp/' . $user->id . '/' . $number, 'Reinitialiser votre mot de passe');
-
-                // FAIRE LA PAGE D'APERCU DU MAIL
-
+                
+                //Contenu du mail une fois envoyé
                 $this->email->initialize($config);
-                $this->email->from('trouduc@outil-web.fr', 'Akina');
+                $this->email->from('projet-pro@outil-web.fr', 'Adopt Kitty');
                 $this->email->to($email);
                 $this->email->subject('Mot de passe oublié');
-                $this->email->message('Bonjour, veuillez renseigner votre nouveau mot de passe svp via ce lien : ' . $link);
+                $this->email->message('Bonjour, veuillez renseigner votre nouveau mot de passe svp via ce lien : Adopt Kitty.' . $link);
 
+                //Pop up affiché une fois que l'email a été envoyé : true 
                 if ($this->email->send()) {
                     $popup = true;
                     $this->load->view('espace_user/mail', compact('popup'));
@@ -181,6 +178,10 @@ class Users extends CI_Controller
         }
     }
 
+    
+    /* ---------------------------------------------------- */
+         /* Recupération mdp par chiffres aléatoires */
+    /* ---------------------------------------------------- */
     public function change_mdp($id, $number = '')
     {
         if ($this->User_Model->number_exist($id, $number)) {

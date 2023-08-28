@@ -5,6 +5,9 @@ class Famille1 extends CI_Controller
 {
 
 
+    /* ------------------------- */
+      /* Validation formulaire */
+    /* ------------------------- */
     public function step1()
     {
 
@@ -43,7 +46,10 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
 
-        // Si le formulaire est valide ?
+       
+    /* ------------------------- */
+        /* Formulaire valide */
+    /* ------------------------- */
 
         if ($this->form_validation->run() === TRUE) {
             $nom_user = $this->input->post('nom_user');
@@ -68,19 +74,19 @@ class Famille1 extends CI_Controller
             $nbr_animaux = $this->input->post('nbr_animaux');
             $chiens_radio = $this->input->post('chiens_radio');
             if (empty($chiens_radio)) {
-                $chiens_radio = 0; // Valeur par défaut
+                $chiens_radio = 0; // Valeur par défaut bdd
             }
             $chats_radio = $this->input->post('chats_radio');
             if (empty($chats_radio)) {
-                $chats_radio = 0; // Valeur par défaut
+                $chats_radio = 0; // Valeur par défaut bdd
             }
             $oiseaux_radio = $this->input->post('oiseaux_radio');
             if (empty($oiseaux_radio)) {
-                $oiseaux_radio = 0; // Valeur par défaut
+                $oiseaux_radio = 0; // Valeur par défaut bdd
             }
             $autres_radio = $this->input->post('autres_radio');
             if (empty($autres_radio)) {
-                $autres_radio = 0; // Valeur par défaut
+                $autres_radio = 0; // Valeur par défaut bdd
             }
             $others_animaux = $this->input->post('others_animaux');
             $age_animaux_vie = $this->input->post('age_animaux_vie');
@@ -88,6 +94,9 @@ class Famille1 extends CI_Controller
             $disponible_veto = $this->input->post('disponible_veto');
 
 
+       /* ------------------------- */
+/* Variable chargé dans le model, Chat_Model */
+       /* ------------------------- */
             $this->Chat_Model->create_famille(
                 $nom_user,
                 $prenom_user,

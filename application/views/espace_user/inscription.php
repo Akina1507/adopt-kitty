@@ -1,16 +1,16 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
+<!--------------------------- 
+   Inscription utilisateurs + Pop up message succès 
+                        --------------------------->
 <body>
     <?php echo form_open() ?>
     <div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4 p-5 container-login bg-white bordered">
-
                     <h4 class="text-center">Inscrivez-vous</h4>
                     <br>
-
-
                     <?php if (isset($popup) && $popup === true) { ?>
                         <div class="popup">
                             <h5><?php echo $success_message; ?></h5>
@@ -40,20 +40,16 @@
                             <h4><?php echo form_error('email'); ?></h4>
                         </div>
                     </div>
-
                     <br>
                     <div class="row justify-content-between">
                         <div class="col">
                             <input class="btn send-btn" type="submit" name="connexion">
                         </div>
                     </div>
-
                     <?php echo form_close(); ?>
                     <?php echo form_error('formulaire'); ?>
-
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>

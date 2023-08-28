@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/projet-codeigniter/assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-   
-   
 
-
+    <!--------------------------- 
+     Vue Adoption + for each listes animaux 
+                --------------------------->
 <?php 
 include(APPPATH . "views/include/header.php")
 ?>
+<body>
     <h5>Je recherche un 
             <select name="list_choix" id="list_choix" required>
                 <option value="chat">Chat</option>
@@ -34,7 +35,6 @@ include(APPPATH . "views/include/header.php")
         Km
     </h5>
 </head>
-<body>
 <div class="col justify-content-center">
     <div class="image-container">
         <?php
@@ -50,6 +50,5 @@ include(APPPATH . "views/include/header.php")
         ?>
     </div>
 </div>
-
-	</body>
+</body>
 </html>
