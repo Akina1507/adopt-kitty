@@ -340,10 +340,11 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-                        </div>
-                    </div>
+    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+    <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
+    <div class="invalid-feedback">Vous devez accepter les conditions générales.</div>
+</div>
+                    
                     <div class="d-flex btn-row">
                     <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
                     <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="submitForm()" type="button">Envoyer</button>
@@ -358,18 +359,18 @@
 <script src="/adopt-kitty/assets/js/test.js"></script>
 
 <!--------------------------- 
-     A quoi ça sert deja ? 
-    --------------------------->
-<script>
-    //Icone error
+     Erreur icones bootstrap des champs 
+            --------------------------->
+            <script>
+    // Icône d'erreur
     (() => {
         'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        // Sélectionne tous les formulaires auxquels nous voulons appliquer des styles de validation Bootstrap personnalisés
         const forms = document.querySelectorAll('.needs-validation')
 
         const btn = document.getElementById('nextBtn')
-        // Loop over them and prevent submission
+        // Parcourt la liste et empêche la soumission
         Array.from(forms).forEach(form => {
             btn.addEventListener('click', event => {
                 if (!form.checkValidity()) {
@@ -381,4 +382,19 @@
             }, false)
         })
     })()
+</script>
+
+<script>
+    function submitForm() {
+        const invalidCheck = document.getElementById('invalidCheck');
+        
+        if (!invalidCheck.checked) {
+            // Afficher la pop-up si les conditions générales ne sont pas cochées
+            alert("Veuillez accepter les conditions générales.");
+            return; // Empêcher l'envoi du formulaire
+        }
+        
+        // Envoyer le formulaire à la base de données
+        document.getElementById('Upemultistepsform').submit();
+    }
 </script>

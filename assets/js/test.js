@@ -1,7 +1,7 @@
 // Js pour l'animation de la barre entre les étapes
 var currentTab = 0;
 tabShow(currentTab);
-
+// Mouvement des etapes 
 function tabShow(n) {
 	var x = $(".step");
 	x.hide();
@@ -168,6 +168,8 @@ function validateStep3(currentStep) {
 }
 
 
+
+
 // A QUOI SA SERT ? JE SAIS PLUS
 function showFieldError(currentStep, errorMessage) {
 	alert(errorMessage);
@@ -193,7 +195,7 @@ function showFieldErrors() {
 			errorMessage.show(); // Afficher le message d'erreur correspondant
 		}
 	});
-
+// SERT A QUOI ETAPE
 	$(document).ready(function () {
 		$(".upe-mutistep-form").submit(function (e) {
 			e.preventDefault();
@@ -398,14 +400,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-
-
-
-
-
 //Prioriter a la pop up par rapport au btn envoyer : qui envoie les infos vers la bdd
 // Il verifie si les champs sont remplis avec la pop up et envoie a la bdd
 function submitForm() {
@@ -414,3 +408,8 @@ function submitForm() {
         $(".upe-mutistep-form").submit();
     }
 }
+
+
+
+
+
