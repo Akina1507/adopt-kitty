@@ -342,13 +342,13 @@
                         <div class="col-md-6 mb-3">
     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
     <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-    <div class="invalid-feedback">Vous devez accepter les conditions générales.</div>
 </div>
                     
-                    <div class="d-flex btn-row">
-                    <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                    <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="submitForm()" type="button">Envoyer</button>
-                    </div>
+                    
+<div class="d-flex btn-row">
+    <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+    <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+</div>
                 </div>
             </form>
         </div>
@@ -362,15 +362,51 @@
      Erreur icones bootstrap des champs 
             --------------------------->
             <script>
-    // Icône d'erreur
+    // Validation et envoi du formulaire
+    function validateAndSubmit() {
+        const invalidCheck = document.getElementById('invalidCheck');
+        const requiredInputs = document.querySelectorAll('.needs-validation :required');
+
+        let allFieldsFilled = true;
+
+        // Vérifier si tous les champs obligatoires sont remplis
+        requiredInputs.forEach(input => {
+            if (input.value.trim() === '') {
+                allFieldsFilled = false;
+                input.classList.add('is-invalid');
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+        if (!invalidCheck.checked) {
+            // Afficher la pop-up si les conditions générales ne sont pas cochées
+            alert("Veuillez accepter les conditions générales.");
+        } else if (!allFieldsFilled) {
+            // Afficher la pop-up si des champs obligatoires ne sont pas remplis
+            alert("Veuillez remplir tous les champs obligatoires.");
+        } else {
+            // Envoyer le formulaire à la base de données si tout est valide
+            document.getElementById('Upemultistepsform').submit();
+        }
+    }
+
+    // Afficher la pop-up si les conditions générales ne sont pas cochées
+    function showPopup() {
+        const invalidCheck = document.getElementById('invalidCheck');
+        
+        if (!invalidCheck.checked) {
+            alert("Veuillez accepter les conditions générales.");
+        }
+    }
+
+    // Validation Bootstrap personnalisée
     (() => {
         'use strict'
 
-        // Sélectionne tous les formulaires auxquels nous voulons appliquer des styles de validation Bootstrap personnalisés
         const forms = document.querySelectorAll('.needs-validation')
-
         const btn = document.getElementById('nextBtn')
-        // Parcourt la liste et empêche la soumission
+
         Array.from(forms).forEach(form => {
             btn.addEventListener('click', event => {
                 if (!form.checkValidity()) {
@@ -381,20 +417,5 @@
                 form.classList.add('was-validated')
             }, false)
         })
-    })()
-</script>
-
-<script>
-    function submitForm() {
-        const invalidCheck = document.getElementById('invalidCheck');
-        
-        if (!invalidCheck.checked) {
-            // Afficher la pop-up si les conditions générales ne sont pas cochées
-            alert("Veuillez accepter les conditions générales.");
-            return; // Empêcher l'envoi du formulaire
-        }
-        
-        // Envoyer le formulaire à la base de données
-        document.getElementById('Upemultistepsform').submit();
-    }
-</script>
+    })();
+    </script>
