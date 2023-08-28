@@ -322,11 +322,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
     var othersAnimauxInput = document.getElementById("others_animaux_div");
     var othersInput = document.getElementById("others_animaux");
+    var chiensRadioInputs = document.querySelectorAll('input[name="chiens_radio"]');
+    var chatsRadioInputs = document.querySelectorAll('input[name="chats_radio"]');
+    var oiseauxRadioInputs = document.querySelectorAll('input[name="oiseaux_radio"]');
 
-    // Masquer et réinitialiser "others_animaux_div" et bouton radio "autres_radio" à l'arrivée sur la page
+    // Masquer et réinitialiser les champs et les boutons radio à l'arrivée sur la page
     othersAnimauxInput.classList.add("d-none");
     othersInput.value = "";
     autresRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    chiensRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    chatsRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    oiseauxRadioInputs.forEach(radio => {
         radio.checked = false;
     });
 
@@ -340,12 +352,22 @@ document.addEventListener("DOMContentLoaded", function () {
             autresRadioInputs.forEach(radio => {
                 radio.checked = false;
             });
+            chiensRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+            chatsRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+            oiseauxRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
         } else if (nbrAnimauxSelect.value === "oui") {
             AnimauxRadioDiv.classList.remove("d-none");
+            toggleOthersAnimaux();
         }
     }
 
-    // Masquer et réinitialiser "others_animaux_div" si aucune option 1, 2, ou 3 n'est sélectionnée
+    // Réinitialiser et masquer "others_animaux_div" si aucune option 1, 2, ou 3 n'est sélectionnée
     function toggleOthersAnimaux() {
         var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;
 
@@ -359,22 +381,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Appeler la fonction lorsqu'un changement est détecté dans "nbr_animaux"
+    // Appeler les fonctions lorsqu'un changement est détecté dans "nbr_animaux"
     nbrAnimauxSelect.addEventListener("change", function () {
         toggleAnimauxRadio();
-        toggleOthersAnimaux();
     });
 
     // Appeler la fonction pour afficher/masquer les radios "animaux_radio_div" au chargement initial
     toggleAnimauxRadio();
 
-    // Appeler la fonction lorsqu'un changement est détecté dans les boutons radio "autres_radio"
+    // Appeler les fonctions lorsqu'un changement est détecté dans les boutons radio "autres_radio"
     autresRadioInputs.forEach(radio => {
         radio.addEventListener("change", function () {
             toggleOthersAnimaux();
         });
     });
 });
+
+
 
 
 
