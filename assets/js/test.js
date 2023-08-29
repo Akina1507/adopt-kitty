@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//Systeme pour les variables [voir ci dessous] 
+//Systeme pour les variables nbr_animaux + btn [voir ci dessous] 
 document.addEventListener("DOMContentLoaded", function () {
     var nbrAnimauxSelect = document.getElementById("nbr_animaux");
     var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
@@ -398,7 +398,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
 
 //Prioriter a la pop up par rapport au btn envoyer : qui envoie les infos vers la bdd
 // Il verifie si les champs sont remplis avec la pop up et envoie a la bdd

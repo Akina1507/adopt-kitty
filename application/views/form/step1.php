@@ -324,13 +324,9 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('age_animaux_vie'); ?></h6>
                         </div>
-                        <div class="col-md-12">
-                            <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
-                            <textarea class="form-control" name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..." required></textarea>
-                            <h6 class="invalid-feedback"><?= form_error('details_animaux_vie'); ?></h6>
-                        </div>
+                        
                         <div class="col-md-6 mb-3">
-                            <label for="disponible_veto">Seriez-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
+                            <label for="disponible_veto">Etes-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
                             <select class="form-select" name="disponible_veto" id="disponible_veto" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
@@ -339,6 +335,11 @@
                             <h6 class="invalid-feedback"><?= form_error('disponible_veto'); ?></h6>
                         </div>
 
+                        <div class="col-md-12">
+                            <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
+                            <textarea class="form-control" name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..." required></textarea>
+                            <h6 class="invalid-feedback"><?= form_error('details_animaux_vie'); ?></h6>
+                        </div>
                         <div class="col-md-6 mb-3">
     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
     <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
@@ -354,6 +355,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <script src="/adopt-kitty/assets/js/test.js"></script>
