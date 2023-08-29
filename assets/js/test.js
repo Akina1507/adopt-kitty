@@ -327,6 +327,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var chiensRadioInputs = document.querySelectorAll('input[name="chiens_radio"]');
     var chatsRadioInputs = document.querySelectorAll('input[name="chats_radio"]');
     var oiseauxRadioInputs = document.querySelectorAll('input[name="oiseaux_radio"]');
+	var ageAnimauxVieDiv = document.getElementById("age_animaux_vie_div");
+	var ageAnimauxVie = document.getElementById("age_animaux_vie");
+	var DetailsAnimauxVieDiv = document.getElementById('details_animaux_vie_div');
+	var DetailsAnimauxVie = document.getElementById('details_animaux_vie');
 
     // Masquer et réinitialiser les champs et les boutons radio à l'arrivée sur la page
     othersAnimauxInput.classList.add("d-none");
@@ -363,8 +367,22 @@ document.addEventListener("DOMContentLoaded", function () {
             oiseauxRadioInputs.forEach(radio => {
                 radio.checked = false;
             });
+
+			DetailsAnimauxVieDiv.classList.add("d-none");
+            DetailsAnimauxVie.required = false;
+            DetailsAnimauxVie.value = "";
+
+			ageAnimauxVieDiv.classList.add("d-none");
+            ageAnimauxVie.required = false;
+            ageAnimauxVie.value = "";
+
         } else if (nbrAnimauxSelect.value === "oui") {
+			DetailsAnimauxVieDiv.classList.remove("d-none");
+			DetailsAnimauxVie.required = true;
             AnimauxRadioDiv.classList.remove("d-none");
+			ageAnimauxVieDiv.classList.remove("d-none");
+			ageAnimauxVie.required = true;
+			
             toggleOthersAnimaux();
         }
     }
