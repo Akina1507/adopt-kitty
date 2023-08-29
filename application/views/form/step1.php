@@ -364,32 +364,32 @@
             <script>
     // Validation et envoi du formulaire
     function validateAndSubmit() {
-        const invalidCheck = document.getElementById('invalidCheck');
-        const requiredInputs = document.querySelectorAll('.needs-validation :required');
+    const invalidCheck = document.getElementById('invalidCheck');
+    const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
 
-        let allFieldsFilled = true;
+    let allFieldsFilled = true;
 
-        // Vérifier si tous les champs obligatoires sont remplis
-        requiredInputs.forEach(input => {
-            if (input.value.trim() === '') {
-                allFieldsFilled = false;
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
-
-        if (!invalidCheck.checked) {
-            // Afficher la pop-up si les conditions générales ne sont pas cochées
-            alert("Veuillez accepter les conditions générales.");
-        } else if (!allFieldsFilled) {
-            // Afficher la pop-up si des champs obligatoires ne sont pas remplis
-            alert("Veuillez remplir tous les champs obligatoires.");
+    // Vérifier si tous les champs obligatoires sont remplis
+    requiredInputs.forEach(input => {
+        if (input.value.trim() === '') {
+            allFieldsFilled = false;
+            input.classList.add('is-invalid');
         } else {
-            // Envoyer le formulaire à la base de données si tout est valide
-            document.getElementById('Upemultistepsform').submit();
+            input.classList.remove('is-invalid');
         }
+    });
+
+    if (!allFieldsFilled) {
+        // Afficher la pop-up si des champs obligatoires ne sont pas remplis
+        alert("Veuillez remplir tous les champs obligatoires.");
+    } else if (!invalidCheck.checked) {
+        // Afficher la pop-up si les conditions générales ne sont pas cochées
+        alert("Veuillez accepter les conditions générales.");
+    } else {
+        // Envoyer le formulaire à la base de données si tout est valide
+        document.getElementById('Upemultistepsform').submit();
     }
+}
 
     // Afficher la pop-up si les conditions générales ne sont pas cochées
     function showPopup() {
