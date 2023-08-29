@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Famille1 extends CI_Controller
+class Annonce extends CI_Controller
 {
 
 
@@ -57,6 +57,6 @@ class Famille1 extends CI_Controller
 
             );
         }
-        $this->load->view('form/step1');
+        $this->load->view('espace_assos/announce');
     }
 }

@@ -99,46 +99,19 @@
                             <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité" required></textarea>
                             <h6 class="invalid-feedback"><?= form_error('description_animal'); ?></h6>
                         </div>
+                    </div>
 
 
-                        <div class="d-flex btn-row">
-                            <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
+                    </div>
+                    <div class="d-flex btn-row">
+                        <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+                        <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
                     </div>
                 </div>
-                <!--------------------------- 
-     Etape 2 du formulaire 
-    --------------------------->
-                <div class="step">
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <label for="raison_famille">Pourquoi souhaitez-vous devenir famille d'accueil ?</label>
-                            <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
-                            <h6 class="invalid-feedback"><?= form_error('raison_famille'); ?></h6>
-                        </div>
-                        <div class="d-flex btn-row">
-                            <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
-                        </div>
-                    </div>
-                </div>
-                <!--------------------------- 
-     Etape 3 du formulaire 
-    --------------------------->
-                <div class="step">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-                        </div>
-
-
-                        <div class="d-flex btn-row">
-                            <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
-                        </div>
-                    </div>
-            </form>
         </div>
+        </form>
     </div>
 </div>
