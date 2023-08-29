@@ -63,7 +63,7 @@
                             <h6 class="invalid-feedback"><?= form_error('adresse_user'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="ville_user">Ville :</label>
+                            <label for="ville_user">Commune :</label>
                             <input class="form-control" type="text" name="ville_user" id="ville_user" placeholder="Votre ville" required>
                             <h6 class="invalid-feedback"><?= form_error('ville_user'); ?></h6>
                         </div>

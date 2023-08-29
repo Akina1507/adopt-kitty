@@ -48,7 +48,7 @@ class Chat_Model extends CI_Model
 
         
     /* ------------------------- */
-    /* Contenu des tables famille relié aux variables */
+    /* Contenu des tables famille relié aux variables famille */
     /* ------------------------- */
         $data = array(
             'nom_user' => $nom_user,
@@ -84,4 +84,38 @@ class Chat_Model extends CI_Model
 
         $this->db->insert('famille', $data);
     }
-}
+
+
+    public function create_annonce(
+        
+        $nom_animal,
+        $puce_animal,
+        $img_animal,
+        $espece_animal,
+        $race_animal,
+        $naissance_animal,
+        $sexe_animal,
+        $lieu_animal,
+        $compatible_animal,
+        $description_animal,
+        )
+        {
+    /* ------------------------- */
+/* Contenu des tables famille relié aux variables annonce */
+    /* ------------------------- */
+        $data = array(
+            'nom_animal' => $nom_animal,
+            'puce_animal' => $puce_animal,
+            'img_animal' => $img_animal,
+            'espece_animal' => $espece_animal,
+            'race_animal' => $race_animal,
+            'naissance_animal' => $naissance_animal,
+            'sexe_animal' => $sexe_animal,
+            'lieu_animal' => $lieu_animal,
+            'compatible_animal' => $compatible_animal,
+            'description_animal' => $description_animal);
+        }
+        
+
+    }
+

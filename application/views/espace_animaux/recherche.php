@@ -14,6 +14,9 @@
 <?php 
 include(APPPATH . "views/include/header.php")
 ?>
+<a class="btn custom-btn" href="<?php
+											echo base_url("Famille1/step1") ?>">Rencontrer cet animal
+			</a>
 <body>
     <h5>Je recherche un 
             <select name="list_choix" id="list_choix" required>
