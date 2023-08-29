@@ -4,9 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Users extends CI_Controller
 {
-       /* ------------------------- */
-     /* Ne doit plus exister => Config */
-       /* ------------------------- */
+    /* ------------------------- */
+    /* Ne doit plus exister => Config */
+    /* ------------------------- */
     public function __construct()
     {
         parent::__construct();
@@ -42,15 +42,15 @@ class Users extends CI_Controller
                     $data = array('pseudo' => $pseudo);
                     $user = $this->User_Model->get_user_by($data);
 
-                if ($user) {
-                    $session_user = array(
-                        'id' => $user['id'],
-                        'pseudo'=> $pseudo
-                    );
-                }
-                
-                $this->session->set_userdata($session_user);
-                    $this->load->view('espace_user/login', $data);
+                    if ($user) {
+                        $session_user = array(
+                            'id' => $user['id'],
+                            'pseudo' => $pseudo
+                        );
+                    }
+
+                    $this->session->set_userdata($session_user);
+                    redirect("Users");
                 } else {
                     $data['info_connexion'] = 'error';
                     $this->load->view('espace_user/login', $data);
@@ -62,7 +62,7 @@ class Users extends CI_Controller
     }
 
     /* ------------------------------- */
-       /* Détruire la session users */
+    /* Détruire la session users */
     /* ------------------------------- */
 
     public function deconnect()
@@ -124,7 +124,7 @@ class Users extends CI_Controller
     }
 
     /* ---------------------------------------------------- */
-           /* Envoi email pour recupérer le mdp */
+    /* Envoi email pour recupérer le mdp */
     /* ---------------------------------------------------- */
     public function mail()
     {
@@ -157,7 +157,7 @@ class Users extends CI_Controller
                 $data = array('email' => $_POST["email"]);
                 $user = $this->User_Model->get_user_by($data);
                 $link = anchor('/codeigniterarthur/connexion/change_mdp/' . $user->id . '/' . $number, 'Reinitialiser votre mot de passe');
-                
+
                 //Contenu du mail une fois envoyé
                 $this->email->initialize($config);
                 $this->email->from('projet-pro@outil-web.fr', 'Adopt Kitty');
@@ -178,9 +178,9 @@ class Users extends CI_Controller
         }
     }
 
-    
+
     /* ---------------------------------------------------- */
-         /* Recupération mdp par chiffres aléatoires */
+    /* Recupération mdp par chiffres aléatoires */
     /* ---------------------------------------------------- */
     public function change_mdp($id, $number = '')
     {

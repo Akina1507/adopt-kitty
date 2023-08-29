@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
             oiseauxRadioInputs.forEach(radio => {
                 radio.checked = false;
             });
-
+//Masquer detail et age en fonction oui/non
 			DetailsAnimauxVieDiv.classList.add("d-none");
             DetailsAnimauxVie.required = false;
             DetailsAnimauxVie.value = "";

@@ -1,12 +1,63 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/adopt-kitty/assets/css/test.css">
 
 <style>
     .invalid-feedback {
         color: red;
+    }
+
+    body {
+        background-color: white
+    }
+
+    .card {
+        width: 350px;
+        border: none;
+        box-shadow: 5px 6px 6px 2px #e9ecef;
+        border-radius: 12px
+    }
+
+    .form {
+        display: all;
+        transition: all 2s
+    }
+
+    .invoice-btn {
+        height: 52px
+    }
+
+    .input-text {
+        height: 48px
+    }
+
+    .text-area {
+        resize: none
+    }
+
+    .display-none {
+        display: none;
+        transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out
+    }
+
+    .dots {
+        height: 50px;
+        width: 50px;
+        background-color: blue;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 29px;
+        display: inline-block
+    }
+
+    .btn:focus,
+    .form-check-input:focus,
+    .input-text:focus,
+    .text-area:focus {
+        box-shadow: none
     }
 </style>
 
@@ -14,8 +65,6 @@
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
-
-
 <div class="container form-container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
@@ -218,9 +267,8 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('nbr_animaux'); ?></h6>
                         </div>
-                        <!--------------------------- 
-     Boutons radio
-    --------------------------->
+                        <!--------------------------- Boutons radio
+                                                      --------------------------->
                         <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
                             <div class="animaux_radio">
                                 <label for="chiens_radio">Chiens</label>
@@ -424,4 +472,20 @@
             }, false)
         })
     })();
+
+
+
+
+
+
+    function myForm() {
+
+        var d = document.getElementById("form");
+        var sent = document.getElementById("sent");
+
+        d.classList.add('display-none');
+
+
+        sent.classList.remove('display-none');
+    }
 </script>
