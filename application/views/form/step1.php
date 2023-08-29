@@ -7,7 +7,7 @@
 <style>
     .invalid-feedback {
         color: red;
-}
+    }
 </style>
 
 
@@ -77,13 +77,13 @@
                             <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
                             <h6 class="invalid-feedback"><?= form_error('tel_user'); ?></h6>
                         </div>
-                        
+
                         <div class="d-flex btn-row">
                             <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
                 </div>
-<!--------------------------- 
+                <!--------------------------- 
      Etape 2 du formulaire 
     --------------------------->
                 <div class="step">
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-<!--------------------------- 
+                <!--------------------------- 
      Etape 3 du formulaire 
     --------------------------->
                 <div class="step">
@@ -215,101 +215,101 @@
                                 <option value="">Sélectionnez</option>
                                 <option value="oui">Oui</option>
                                 <option value="non">Non</option>
-                                </select>
+                            </select>
                             <h6 class="invalid-feedback"><?= form_error('nbr_animaux'); ?></h6>
                         </div>
-    <!--------------------------- 
+                        <!--------------------------- 
      Boutons radio
     --------------------------->
-<div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
-    <div class="animaux_radio">
-        <label for="chiens_radio">Chiens</label>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
-                <label class="form-check-label" for="chiens_radio_0">0</label>
-            
-                <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_1" value="1">
-                <label class="form-check-label" for="chiens_radio_1">1</label>
-            
-                <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_2" value="2">
-                <label class="form-check-label" for="chiens_radio_2">2</label>
-            
-                <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_3" value="3">
-                <label class="form-check-label" for="chiens_radio_3">3</label>
-            </div>
-        </div>
-    </div>
-    <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
-    
-<div>
-    <div class="d-flex justify-content-center">
-        <label for="chats_radio">Chats</label>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <br>
-                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
-                <label class="form-check-label" for="chats_radio_0">0</label>
-            
-                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_1"value="1">
-                <label class="form-check-label" for="chats_radio_1">1</label>
-            
-                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_2" value="2">
-                <label class="form-check-label" for="chats_radio_2">2</label>
-            
-                <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3" value="3">
-                <label class="form-check-label" for="chats_radio_3">3</label>
-            </div>
-        </div>
-        <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
-    </div>
-    </div>
+                        <div class="col-md-6 mb-3 d-flex justify-content-center" id="animaux_radio_div">
+                            <div class="animaux_radio">
+                                <label for="chiens_radio">Chiens</label>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
+                                        <label class="form-check-label" for="chiens_radio_0">0</label>
 
-    <div>
-    <label for="oiseaux_radio">Oiseaux</label>
-    <div class="row">
-            <div class="col-md-6">
-                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_0" value="0" required>
-                <label class="form-check-label" for="oiseaux_radio_0">0</label>
-            
-                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_1" value="1">
-                <label class="form-check-label" for="oiseaux_radio_1">1</label>
-            
-                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_2" value="2">
-                <label class="form-check-label" for="oiseaux_radio_2">2</label>
-            
-                <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
-                <label class="form-check-label" for="oiseaux_radio_3">3</label>
-            </div>
-        </div>
-        </div>
-        <h6 class="invalid-feedback"><?= form_error('oiseaux_radio'); ?></h6>
+                                        <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_1" value="1">
+                                        <label class="form-check-label" for="chiens_radio_1">1</label>
 
-        <label for="autres_radio">Autres</label>
-        <div class="row">
-            <div class="col-md-6">
-                <br>
-                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_0" value="0" required>
-                <label class="form-check-label" for="autres_radio_0">0</label>
-            
-                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_1" value="1">
-                <label class="form-check-label" for="autres_radio_1">1</label>
-            
-                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_2" value="2">
-                <label class="form-check-label" for="autres_radio_2">2</label>
-            
-                <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
-                <label class="form-check-label" for="autres_radio_3">3</label>
-            </div>
-        </div>
-        <h6 class="invalid-feedback"><?= form_error('autres_radio'); ?></h6>
-    </div>
-<!--------------------------- 
+                                        <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_2" value="2">
+                                        <label class="form-check-label" for="chiens_radio_2">2</label>
+
+                                        <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_3" value="3">
+                                        <label class="form-check-label" for="chiens_radio_3">3</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
+
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <label for="chats_radio">Chats</label>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <br>
+                                            <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
+                                            <label class="form-check-label" for="chats_radio_0">0</label>
+
+                                            <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_1" value="1">
+                                            <label class="form-check-label" for="chats_radio_1">1</label>
+
+                                            <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_2" value="2">
+                                            <label class="form-check-label" for="chats_radio_2">2</label>
+
+                                            <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3" value="3">
+                                            <label class="form-check-label" for="chats_radio_3">3</label>
+                                        </div>
+                                    </div>
+                                    <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="oiseaux_radio">Oiseaux</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_0" value="0" required>
+                                        <label class="form-check-label" for="oiseaux_radio_0">0</label>
+
+                                        <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_1" value="1">
+                                        <label class="form-check-label" for="oiseaux_radio_1">1</label>
+
+                                        <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_2" value="2">
+                                        <label class="form-check-label" for="oiseaux_radio_2">2</label>
+
+                                        <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
+                                        <label class="form-check-label" for="oiseaux_radio_3">3</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="invalid-feedback"><?= form_error('oiseaux_radio'); ?></h6>
+
+                            <label for="autres_radio">Autres</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_0" value="0" required>
+                                    <label class="form-check-label" for="autres_radio_0">0</label>
+
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_1" value="1">
+                                    <label class="form-check-label" for="autres_radio_1">1</label>
+
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_2" value="2">
+                                    <label class="form-check-label" for="autres_radio_2">2</label>
+
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
+                                    <label class="form-check-label" for="autres_radio_3">3</label>
+                                </div>
+                            </div>
+                            <h6 class="invalid-feedback"><?= form_error('autres_radio'); ?></h6>
+                        </div>
+                        <!--------------------------- 
      Suite Etape 3 du formulaire 
     ----------------------------->
                         <div class="col-md-6 mb-3" id="others_animaux_div">
-                         <label for="others_animaux">Vos autres animaux :</label>
+                            <label for="others_animaux">Vos autres animaux :</label>
                             <input class="form-control" name="others_animaux" id="others_animaux" placeholder="rongueurs, reptiles, poissons...">
                             <h6 class="invalid-feedback"><?= form_error('others_animaux'); ?></h6>
                         </div>
@@ -324,7 +324,7 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('age_animaux_vie'); ?></h6>
                         </div>
-                        
+
                         <div class="col-md-6 mb-3">
                             <label for="disponible_veto">Etes-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
                             <select class="form-select" name="disponible_veto" id="disponible_veto" required>
@@ -341,16 +341,16 @@
                             <h6 class="invalid-feedback"><?= form_error('details_animaux_vie'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
-    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-    <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-</div>
-                    
-                    
-<div class="d-flex btn-row">
-    <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-    <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
-</div>
-                </div>
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
+                        </div>
+
+
+                        <div class="d-flex btn-row">
+                            <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+                            <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+                        </div>
+                    </div>
             </form>
         </div>
     </div>
@@ -364,40 +364,40 @@
 <!--------------------------- 
      Erreur icones bootstrap des champs 
             --------------------------->
-            <script>
+<script>
     // Validation et envoi du formulaire
     function validateAndSubmit() {
-    const invalidCheck = document.getElementById('invalidCheck');
-    const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
+        const invalidCheck = document.getElementById('invalidCheck');
+        const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
 
-    let allFieldsFilled = true;
+        let allFieldsFilled = true;
 
-    // Vérifier si tous les champs obligatoires sont remplis
-    requiredInputs.forEach(input => {
-        if (input.value.trim() === '') {
-            allFieldsFilled = false;
-            input.classList.add('is-invalid');
+        // Vérifier si tous les champs obligatoires sont remplis
+        requiredInputs.forEach(input => {
+            if (input.value.trim() === '') {
+                allFieldsFilled = false;
+                input.classList.add('is-invalid');
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+        if (!allFieldsFilled) {
+            // Afficher la pop-up si des champs obligatoires ne sont pas remplis
+            alert("Veuillez remplir tous les champs obligatoires.");
+        } else if (!invalidCheck.checked) {
+            // Afficher la pop-up si les conditions générales ne sont pas cochées
+            alert("Veuillez accepter les conditions générales.");
         } else {
-            input.classList.remove('is-invalid');
+            // Envoyer le formulaire à la base de données si tout est valide
+            document.getElementById('Upemultistepsform').submit();
         }
-    });
-
-    if (!allFieldsFilled) {
-        // Afficher la pop-up si des champs obligatoires ne sont pas remplis
-        alert("Veuillez remplir tous les champs obligatoires.");
-    } else if (!invalidCheck.checked) {
-        // Afficher la pop-up si les conditions générales ne sont pas cochées
-        alert("Veuillez accepter les conditions générales.");
-    } else {
-        // Envoyer le formulaire à la base de données si tout est valide
-        document.getElementById('Upemultistepsform').submit();
     }
-}
 
     // Afficher la pop-up si les conditions générales ne sont pas cochées
     function showPopup() {
         const invalidCheck = document.getElementById('invalidCheck');
-        
+
         if (!invalidCheck.checked) {
             alert("Veuillez accepter les conditions générales.");
         }
@@ -421,4 +421,4 @@
             }, false)
         })
     })();
-    </script>
+</script>

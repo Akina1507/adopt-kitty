@@ -6,7 +6,7 @@ class Famille1 extends CI_Controller
 
 
     /* ------------------------- */
-      /* Validation formulaire */
+    /* Validation formulaire */
     /* ------------------------- */
     public function step1()
     {
@@ -46,10 +46,10 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
 
-       
-    /* ------------------------- */
+
+        /* ------------------------- */
         /* Formulaire valide */
-    /* ------------------------- */
+        /* ------------------------- */
 
         if ($this->form_validation->run() === TRUE) {
             $nom_user = $this->input->post('nom_user');
@@ -94,9 +94,9 @@ class Famille1 extends CI_Controller
             $disponible_veto = $this->input->post('disponible_veto');
 
 
-       /* ------------------------- */
-/* Variable chargé dans le model, Chat_Model */
-       /* ------------------------- */
+            /* ------------------------- */
+            /* Variable chargé dans le model, Chat_Model */
+            /* ------------------------- */
             $this->Chat_Model->create_famille(
                 $nom_user,
                 $prenom_user,

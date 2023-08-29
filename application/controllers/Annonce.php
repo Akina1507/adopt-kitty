@@ -6,7 +6,7 @@ class Famille1 extends CI_Controller
 
 
     /* ------------------------- */
-      /* Validation formulaire */
+    /* Validation formulaire */
     /* ------------------------- */
     public function announce()
     {
@@ -23,10 +23,10 @@ class Famille1 extends CI_Controller
         $this->form_validation->set_rules('description_animal', 'Description', 'trim|required');
 
 
-       
-    /* ------------------------- */
+
+        /* ------------------------- */
         /* Formulaire valide */
-    /* ------------------------- */
+        /* ------------------------- */
 
         if ($this->form_validation->run() === TRUE) {
             $nom_animal = $this->input->post('nom_animal');
@@ -40,9 +40,9 @@ class Famille1 extends CI_Controller
             $compatible_animal = $this->input->post('compatible_animal');
             $description_animal = $this->input->post('description_animal');
 
-       /* ------------------------- */
-/* Variable chargé dans le model, Chat_Model */
-       /* ------------------------- */
+            /* ------------------------- */
+            /* Variable chargé dans le model, Chat_Model */
+            /* ------------------------- */
             $this->Chat_Model->create_famille(
                 $nom_animal,
                 $puce_animal,

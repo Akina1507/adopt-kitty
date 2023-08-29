@@ -7,14 +7,14 @@
 <style>
     .invalid-feedback {
         color: red;
-}
+    }
 </style>
 
 
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
-    <?php echo form_open('Annonce/announce'); ?>
+<?php echo form_open('Annonce/announce'); ?>
 
 <div class="container form-container">
     <div class="row justify-content-md-center">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="img_animal">Image de l'animal :</label>
-					        <input type="file" name="img_animal" id="img_animal" required>
+                            <input type="file" name="img_animal" id="img_animal" required>
                             <h6 class="invalid-feedback"><?= form_error('img_animal'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -77,8 +77,8 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('sexe_animal'); ?></h6>
                         </div>
-                        
-                        
+
+
                         <div class="col-md-6 mb-3">
                             <label for="lieu_animal">Association ou il réside actuellement :</label>
                             <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Votre ville" required>
@@ -99,14 +99,14 @@
                             <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité" required></textarea>
                             <h6 class="invalid-feedback"><?= form_error('description_animal'); ?></h6>
                         </div>
-                        
-                        
+
+
                         <div class="d-flex btn-row">
                             <button class="btn btn-primary fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
                 </div>
-<!--------------------------- 
+                <!--------------------------- 
      Etape 2 du formulaire 
     --------------------------->
                 <div class="step">
@@ -122,28 +122,23 @@
                         </div>
                     </div>
                 </div>
-<!--------------------------- 
+                <!--------------------------- 
      Etape 3 du formulaire 
     --------------------------->
                 <div class="step">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-    <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-</div>
-                    
-                    
-<div class="d-flex btn-row">
-    <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-    <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
-</div>
-                </div>
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
+                        </div>
+
+
+                        <div class="d-flex btn-row">
+                            <button class="btn btn-primary fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+                            <button class="btn btn-primary fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+                        </div>
+                    </div>
             </form>
         </div>
     </div>
 </div>
-
-
-
-
-
