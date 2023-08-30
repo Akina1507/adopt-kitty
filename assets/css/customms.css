@@ -1,15 +1,22 @@
 .custom-btn:hover {
-	background-color: #7c4747;
+	background-color: #0b20da;
 }
 
 .custom-btn {
 	color: black;
-	background-color: #bd9d6d;
+	background-color: #510868;
 }
+
+
+.test-btn {
+	color: black;
+	background-color: #082e68;
+}
+
 
 .col-md-4 .send-btn {
 	color: black;
-	background-color: #bd9d6d;
+	background-color: #1d96ce;
 }
 
 .fond {

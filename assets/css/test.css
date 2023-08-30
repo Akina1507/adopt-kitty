@@ -56,8 +56,12 @@
 }
 
 .form-container {
-	background-color: #73bdad;
+	background-color: rgb(90, 155, 146);
 	padding: 20px;
 	margin-top: 20px;
 	border-radius: 5px;
+}
+
+.success-fond {
+    background-color: rgb(127, 194, 185);
 }

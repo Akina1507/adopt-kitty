@@ -14,7 +14,7 @@
 <?php 
 include(APPPATH . "views/include/header.php")
 ?>
-<a class="btn custom-btn" href="<?php
+<a class="btn header-btn" href="<?php
 											echo base_url("Famille1/step1") ?>">Rencontrer cet animal
 			</a>
 <body>
