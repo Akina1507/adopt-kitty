@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/projet-codeigniter/assets/css/customms.css">
+	<link rel="stylesheet" href="/adopt-kitty/assets/css/customms.css">
 	<title>Adopt'Kitty</title>
 </head>
 
@@ -18,7 +18,7 @@
 			<div class="col">
 				<div class="row">
 					<a href=<?php
-							echo base_url("Users") ?>><img class="logo" src="/projet-codeigniter/assets/img/LogoAdoptKitty" width="250" height="150"></a>
+							echo base_url("Users") ?>><img class="logo" src="/adopt-kitty/assets/img/LogoAdoptKitty" width="250" height="150"></a>
 				</div>
 			</div>
 
@@ -44,7 +44,7 @@
 								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
 								<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 							</svg>
-							<a class="btn test-btn" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>
+							<a class="btn custom-btn" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>
 						<?php } ?>
 
 					</div>

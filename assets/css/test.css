@@ -65,3 +65,8 @@
 .success-fond {
     background-color: rgb(127, 194, 185);
 }
+
+.custom-btn {
+	color: black;
+	background-color: #510868;
+}
