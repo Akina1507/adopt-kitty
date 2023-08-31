@@ -27,10 +27,10 @@
                     <br>
                     <div class="row justify-content-between">
                         <div class="col">
-                            <input class="btn send-btn" type="submit" name="envoyer">
+                            <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                         </div>
                         <div class="col">
-                            <a class="btn send-btn" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
+                            <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
                             <a href="<?= base_url("Users/inscription") ?>">Créer un compte</a>
                         </div>
                     </div>

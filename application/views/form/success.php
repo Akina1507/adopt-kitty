@@ -2,7 +2,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/adopt-kitty/assets/css/test.css">
+<link rel="stylesheet" href="/adopt-kitty/assets/css/customms.css">
 
 <div class="d-flex align-items-center justify-content-center text-center success-fond" style="min-height: 100vh;">
     <div>

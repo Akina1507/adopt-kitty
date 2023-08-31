@@ -18,19 +18,20 @@
 			<div class="col">
 				<div class="row">
 					<a href=<?php
-							echo base_url("Users") ?>><img class="logo" src="/adopt-kitty/assets/img/LogoAdoptKitty" width="250" height="150"></a>
+							echo base_url("Users") ?>><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>
 				</div>
 			</div>
 
-			<div class="col"></div>
-			<div class="col"></div>
-			<div class="col"></div>
+			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Users") ?>">Home</a></div>
+			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Pensionnaire/recherche") ?>">Adopter un animal</a></div>
+			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a></div>
+			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a> </div>
 			<div class="col d-flex align-items-center">
-				<div class="row justify-content-center ">
-					<a href="<?php echo base_url("Users") ?>">Home</a>
-					<a href="<?php echo base_url("Pensionnaire/recherche") ?>">Adopter un animal</a>
-					<a href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a>
-					<a href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a>
+				<div class="row justify-content-center text-center">
+					
+					
+					
+					
 					<!-- Colonnes : row = toujours 12 -->
 					<div class="col text-center ">
 
