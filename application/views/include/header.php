@@ -2,38 +2,39 @@
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/adopt-kitty/assets/css/customms.css">
-	<title>Adopt'Kitty</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/adopt-kitty/assets/css/customms.css">
+    <title>Adopt'Kitty</title>
 </head>
 
 <body>
-	<div>
-		<div class="row row-col-lg-5 g-2 g-lg-3">
+    <div class="container">
+	<div class="col d-flex justify-content-center align-items-center ">
 
-			<div class="col">
-				<div class="row">
-					<a href=<?php
-							echo base_url("Users") ?>><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>
-				</div>
+                <a href="<?php echo base_url("Users") ?>"><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>
+
+            <div class="col justify-content_center align-items-center text-center">
+                <a class="btn custom-btn" href="<?php echo base_url("Users") ?>">Accueil</a>
+                <a class="btn custom-btn" href="<?php echo base_url("Pensionnaire/recherche") ?>">Adopter un animal</a>
+                <a class="btn custom-btn" href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a>
+                <a class="btn custom-btn" href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a>
+            </div>
+
 			</div>
+    
 
-			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Users") ?>">Home</a></div>
-			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Pensionnaire/recherche") ?>">Adopter un animal</a></div>
-			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a></div>
-			<div class="col d-flex align-items-center"><a class="btn custom-btn" href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a> </div>
-			<div class="col d-flex align-items-center">
-				<div class="row justify-content-center text-center">
-					
+
+
+
 					
 					
 					
 					<!-- Colonnes : row = toujours 12 -->
-					<div class="col text-center ">
+					<div class="col d-flex justify-content-center align-items-center ">
 
 						<?php if (isConnected() == false) { ?>
 							<a class="btn custom-btn" href="<?php echo base_url("Users/login") ?>">Connexion / Inscription</a>
@@ -50,7 +51,5 @@
 
 					</div>
 				</div>
-			</div>
-
-		</div>
-	</div>
+			
+		
