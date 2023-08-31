@@ -60,7 +60,7 @@
 
 /*Couleur des btn*/
 .custom-btn:hover {
-	background-color: #3d5486;
+	background-color: #c0c0c0;
 }
 
 .custom-btn {
@@ -118,7 +118,10 @@
 	margin: 5px;
 }
 
-
+.nav-link{
+	color: black;
+	text-decoration: none;
+}
 
 
 
