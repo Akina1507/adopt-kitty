@@ -46,6 +46,7 @@ class Users extends CI_Controller
                         $session_user = array(
                             'id' => $user['id'],
                             'nom' => $user['nom'],
+                            'prenom' => $user['prenom'],
                             'pseudo' => $pseudo 
                         );
                     }
