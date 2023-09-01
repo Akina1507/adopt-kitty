@@ -1,59 +1,135 @@
+/*Couleur btn etape formulaire*/
+.upe-mutistep-form .step {
+	display: none;
+}
+.upe-mutistep-form .step-header .steplevel {
+	position: relative;
+	flex: 1;
+	padding-bottom: 30px;
+}
+.upe-mutistep-form .step-header .steplevel.active {
+	font-weight: 600;
+}
+.upe-mutistep-form .step-header .steplevel.finish {
+	font-weight: 600;
+	color: #009688;
+}
+.upe-mutistep-form .step-header .steplevel::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	z-index: 9;
+	width: 20px;
+	height: 20px;
+	background-color: #d5efed;
+	border-radius: 50%;
+	border: 3px solid #ecf5f4;
+}
+.upe-mutistep-form .step-header .steplevel.active::before,
+.upe-mutistep-form .step-header .steplevel:hover::before {
+	background-color: #3fbdb4;
+	border: 3px solid #d5f9f6;
+}
+
+.upe-mutistep-form .step-header .steplevel.finish::before {
+	background-color: #3fbdb4;
+	border: 3px solid #3fbdb4;
+}
+.upe-mutistep-form .step-header .steplevel::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 8px;
+	width: 100%;
+	height: 3px;
+	background-color: #f3f3f3;
+}
+.upe-mutistep-form .step-header .steplevel.active::after {
+	background-color: #a7ede8;
+}
+.upe-mutistep-form .step-header .steplevel.finish::after {
+	background-color: #009688;
+}
+.upe-mutistep-form .step-header .steplevel:last-child:after {
+	display: none;
+}
+
+
+
+/*Couleur des btn*/
 .custom-btn:hover {
-	background-color: #7c6747;
+	background-color: #c0c0c0;
 }
 
 .custom-btn {
 	color: black;
-	background-color: #bd9d6d;
+	background-color: #6591a5;
 }
 
 .col-md-4 .send-btn {
 	color: black;
-	background-color: #bd9d6d;
+	background-color: #1d96ce;
 }
 
 .fond {
-	background-color: #7c6747;
+	background: radial-gradient(circle, #6591a5, #c0c0c0);
+	/* Dégradé */
+}
+
+.form-container {
+	background: radial-gradient(circle, #6591a5, #c0c0c0);
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.success-fond {
+    background-color: rgb(127, 194, 185);
 }
 
 .bordered {
 	border-radius: 10px;
 }
 
-
 .encadre-color {
 	box-shadow: #7c6747;
 	background-color: aliceblue;
-	padding: 20px; 
+	padding: 20px;
 }
-
 
 .full-height {
 	min-height: 100vh;
-  }
+}
 
-.carousel-indicators {
+.invalid-feedback{
+	color: red;
+}
+
+.image-container {
+	flex-wrap: wrap;
+	margin: 0px 20px;
+}
+
+.image-container img {
+	width: 250px;
+	height: 550px;
+	margin: 5px;
+}
+
+.nav-link{
 	color: black;
-	position: static;
+	text-decoration: none;
 }
 
-.carousel-item {
-	float: none;
 
 
-}
 
-.carousel-control-ms button {
-	background-color: black;
-	color: black;
-}
 
-.carousel-control-prev,
-.carousel-control-next {
-	position: static;
-}
 
-.carousel-indicators [data-bs-target] {
-	height: 0;
-	text-indent: 0;
-}
+
+
+
+
+

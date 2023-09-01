@@ -147,7 +147,6 @@ class Pensionnaire extends CI_Controller
     {
         $this->load->view('espace_user/famille3');
         $this->form_validation->set_rules('animaux_famille', 'Animaux famille', 'trim|required');
-        $this->form_validation->set_rules('animaux_vie', 'Animaux vie', 'trim|required');
         $this->form_validation->set_rules('nbr_animaux', 'Nombre animaux', 'trim|required');
         $this->form_validation->set_rules('age_animaux_vie', 'Age animaux vie', 'trim|required');
         $this->form_validation->set_rules('details_animaux_vie', 'Details animaux vie', 'trim|required');

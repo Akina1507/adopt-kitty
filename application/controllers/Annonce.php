@@ -3,49 +3,60 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Annonce extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Chat_Model');
-        $this->load->library('form_validation');
-        //mettre form helper
-    }
 
-    public function annonce1()
-    {
-        $this->form_validation->set_rules('nom_chat', 'Nom chat', 'trim|required');
-        $this->form_validation->set_rules('age_chat', 'Age chat', 'required|trim');
-        $this->form_validation->set_rules('sexe_chat', 'Sexe chat', 'trim|required|in_list[male,femelle]');
 
-        $this->load->view('espace_assos/annonce1');
-    }
-
-    public function annonce2()
+    /* ------------------------- */
+    /* Validation formulaire */
+    /* ------------------------- */
+    public function announce()
     {
 
-        $this->form_validation->set_rules('race_chat', 'Race chat', 'trim|required');
-        $this->form_validation->set_rules('apparence', 'Apparence', 'trim|required');
-        $this->form_validation->set_rules('precision_apparence', 'Precision apparence', 'trim|required');
-        $this->form_validation->set_rules('description', 'Description', 'trim|required');
+        $this->form_validation->set_rules('nom_animal', 'Nom animal', 'trim|required');
+        $this->form_validation->set_rules('puce_animal', 'Puce animal', 'trim|required');
+        $this->form_validation->set_rules('img_animal', 'Image animal', 'trim|required|in_list[18-25ans,25-35ans,35-50ans,50-75ans,75-99ans,99-ou-plus]');
+        $this->form_validation->set_rules('espece_animal', 'Espece', 'trim|required|in_list[chat]');
+        $this->form_validation->set_rules('race_animal', 'Race/Type', 'trim|required');
+        $this->form_validation->set_rules('naissance_animal', 'Date de naissance animal', 'trim|required');
+        $this->form_validation->set_rules('sexe_animal', 'Sexe', 'trim|required|in_list[male,femelle]');
+        $this->form_validation->set_rules('lieu_animal', 'Lieu', 'trim|required');
+        $this->form_validation->set_rules('compatible_animal', 'Compatibilité', 'trim|required|in_list[chats,chiens,enfants]');
+        $this->form_validation->set_rules('description_animal', 'Description', 'trim|required');
 
-        if ($this->form_validation->run() === FALSE) {
-            $this->load->view('espace_assos/annonce2');
-        } else {
-            redirect('Annonce/annonce3');
+
+
+        /* ------------------------- */
+        /* Formulaire valide */
+        /* ------------------------- */
+
+        if ($this->form_validation->run() === TRUE) {
+            $nom_animal = $this->input->post('nom_animal');
+            $puce_animal = $this->input->post('puce_animal');
+            $img_animal = $this->input->post('img_animal');
+            $espece_animal = $this->input->post('espece_animal');
+            $race_animal = $this->input->post('race_animal');
+            $naissance_animal = $this->input->post('naissance_animal');
+            $sexe_animal = $this->input->post('sexe_animal');
+            $lieu_animal = $this->input->post('lieu_animal');
+            $compatible_animal = $this->input->post('compatible_animal');
+            $description_animal = $this->input->post('description_animal');
+
+            /* ------------------------- */
+            /* Variable chargé dans le model, Chat_Model */
+            /* ------------------------- */
+            $this->Chat_Model->create_famille(
+                $nom_animal,
+                $puce_animal,
+                $img_animal,
+                $espece_animal,
+                $race_animal,
+                $naissance_animal,
+                $sexe_animal,
+                $lieu_animal,
+                $compatible_animal,
+                $description_animal,
+
+            );
         }
-    }
-
-    public function annonce3()
-    {
-        $this->form_validation->set_rules('maladie_select', 'Maladie', 'trim|required|in_list[oui,non]');
-        $this->form_validation->set_rules('liste_maladie', 'Liste maladies', 'trim|required');
-        $this->form_validation->set_rules('puce_chat', 'Puce chat', 'trim|required|numeric');
-
-        if ($this->form_validation->run() === FALSE) {
-            $data['popup'] = true;
-            $this->load->view('espace_assos/annonce3', $data);
-        } else {
-            redirect('Users');
-        }
+        $this->load->view('espace_assos/announce');
     }
 }
