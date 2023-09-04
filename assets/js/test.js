@@ -170,7 +170,7 @@ function validateStep3(currentStep) {
 
 
 
-// A QUOI SA SERT ? JE SAIS PLUS
+//  Message d'erreur btn bootstrap valide
 function showFieldError(currentStep, errorMessage) {
 	alert(errorMessage);
 	currentStep.find(".is-invalid").removeClass("is-invalid");
@@ -180,7 +180,7 @@ function showFieldError(currentStep, errorMessage) {
 	currentStep.find(".is-invalid").removeClass("is-invalid");
 	currentStep.find(".error-message").show();
 }
-// A QUOI SA SERT ? JE SAIS PLUS
+//  Message d'erreur btn bootstrap non valide
 function showFieldErrors() {
 	var currentStep = $(".step").eq(currentTab);
 	var errorMessages = currentStep.find(".error-message");
@@ -195,7 +195,7 @@ function showFieldErrors() {
 			errorMessage.show(); // Afficher le message d'erreur correspondant
 		}
 	});
-// SERT A QUOI ETAPE
+// Validation champs formulaire
 	$(document).ready(function () {
 		$(".upe-mutistep-form").submit(function (e) {
 			e.preventDefault();
@@ -213,7 +213,7 @@ function showFieldErrors() {
 			}
 		});
 	});
-
+// Message d'erreur pour btn valide bootstrap
 	function validateField(field) {
 		var fieldValue = field.val().trim();
 		var errorMessage = field.siblings(".error-message");
@@ -228,7 +228,7 @@ function showFieldErrors() {
 	}
 }
 
-//Systeme pour apparaitre/dispparaitre type_exterieur en fonction d'exterieur_user
+//Systeme pour afficher/masquer type_exterieur en fonction d'exterieur_user
 document.addEventListener("DOMContentLoaded", function () {
 	var exterieurUserSelect = document.getElementById("exterieur_user");
 

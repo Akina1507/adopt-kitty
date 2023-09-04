@@ -16,16 +16,8 @@
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
-    <div class="container form-container">
-    <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
-                <div class="step-header d-flex mb-2">
-                    <span class="steplevel active d-flex justify-content-center">Etape 1</span>
-                    <span class="steplevel d-flex justify-content-center">Etape 2</span>
-                    <span class="steplevel d-flex justify-content-center">Etape 3</span>
-                </div>
-                <div class="step">
+            <div class="container form-container">
+                <form>
                     <div class="row">
                         <h3>Poster votre annonce</h3>
                         <div class="col-md-6 mb-3">
@@ -35,7 +27,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="puce_animal">Numéro d'identification :</label>
-                            <input class="form-control" type="number" name="puce_animal" id="puce_animal" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="number" name="puce_animal" id="puce_animal" placeholder="Numéro d'identification">
                             <h6 class="invalid-feedback"><?= form_error('puce_animal'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -55,14 +47,17 @@
                             <label for="race_animal">Races/Apparence</label>
                             <select class="form-select" name="race_animal" id="race_animal" required>
                                 <option value="">Sélectionnez</option>
-                                <option value="croise-autre">Croisé/Autre</option>
-                                <option value="europeen">Europeen</option>
+                                <?php
+                                    foreach ($races as $race) {
+                                        echo '<option value="' . $race['value'] . '">' . $race['races'] . '</option>';
+                                    }
+                                ?>
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('race_animal'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="naissance_animal">Date de naissance de l'animal (approximative) :</label>
-                            <input class="form-control" type="date" name="naissance_animal" id="naissance_animal" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="date" name="naissance_animal" id="naissance_animal" placeholder="date de naissance de l'animal" required>
                             <h6 class="invalid-feedback"><?= form_error('naissance_animal'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -78,7 +73,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="lieu_animal">Association ou il réside actuellement :</label>
-                            <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Votre ville" required>
+                            <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Nom de l'association" required>
                             <h6 class="invalid-feedback"><?= form_error('lieu_animal'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -92,31 +87,24 @@
                             <h6 class="invalid-feedback"><?= form_error('compatible_animal'); ?></h6>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="description_animal">Descritif de l'animal :</label>
-                            <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité" required></textarea>
+                            <label for="description_animal">Description de l'animal :</label>
+                            <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité..." required></textarea>
                             <h6 class="invalid-feedback"><?= form_error('description_animal'); ?></h6>
                         </div>
                     
 
 
-                    <div class="col-md-6 mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
-                    </div>
-                    <div class="d-flex btn-row">
+                        <div class="col-md-6 mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
+                        </div>
+                        <div class="d-flex btn-row">
                             <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
                             <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
                         </div>
                     </div>
-                </div>
-        </form>
-        </div>
-    </div>
-</div>
-
-
-
-
+                </form>
+            </div>
 <script src="/adopt-kitty/assets/js/test.js"></script>
 
 <!--------------------------- 
@@ -178,12 +166,7 @@
             }, false)
         })
     })();
-
-
-
-
-
-
+// c'est quoi ?
     function myForm() {
 
         var d = document.getElementById("form");
@@ -194,6 +177,34 @@
 
         sent.classList.remove('display-none');
     }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Ajoutez un écouteur d'événements pour le formulaire lorsqu'il est soumis
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Empêche la soumission du formulaire pour le moment
+
+        // Vérifiez la validation de chaque champ du formulaire
+        const formFields = document.querySelectorAll('.form-control');
+        let isValid = true;
+
+        formFields.forEach(function (field) {
+            if (!field.checkValidity()) {
+                field.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                field.classList.remove('is-invalid');
+                field.classList.add('is-valid');
+            }
+        });
+
+        // Si le formulaire est valide, vous pouvez continuer avec la soumission
+        if (isValid) {
+            this.submit();
+        }
+    });
+});
+
 </script>
 
 
