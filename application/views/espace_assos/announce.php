@@ -142,23 +142,48 @@
 <!--------------------------- 
      Erreur icones bootstrap des champs 
             --------------------------->
-<script>
-    // Validation et envoi du formulaire
-    function validateAndSubmit() {
+            <script>
+    // Validation et envoi du formulaire d'annonce
+    // Fonction pour valider et soumettre le formulaire d'annonce
+// Fonction pour valider et soumettre le formulaire d'annonce
+// Fonction pour valider et soumettre le formulaire d'annonce
+function validateAndSubmit() {
+    const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
+    let allFieldsFilled = true;
+
+    // Vérifier si tous les champs obligatoires sont remplis
+    requiredInputs.forEach(input => {
+        if (input.value.trim() === '') {
+            allFieldsFilled = false;
+            input.classList.add('is-invalid');
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    });
+
+    if (!allFieldsFilled) {
+        // Afficher la pop-up si des champs obligatoires ne sont pas remplis
+        alert("Veuillez remplir tous les champs obligatoires.");
+        return; // Empêcher l'envoi du formulaire si des champs sont vides
+    }
+
+    // Vérifier si les conditions générales ne sont pas cochées
+    const invalidCheck = document.getElementById('invalidCheck');
+    if (!invalidCheck.checked) {
+        // Afficher la pop-up des conditions générales si les conditions générales ne sont pas acceptées
+        alert("Veuillez accepter les conditions générales.");
+        return; // Empêcher l'envoi du formulaire si les conditions générales ne sont pas acceptées
+    }
+
+    // Envoyer le formulaire à la base de données si tout est valide
+    document.getElementById('Upemultistepsform').submit();
+}
+
+
+
+    // Afficher la pop-up si les conditions générales ne sont pas cochées
+    function showPopup() {
         const invalidCheck = document.getElementById('invalidCheck');
-        const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
-
-        let allFieldsFilled = true;
-
-        // Vérifier si tous les champs obligatoires sont remplis
-        requiredInputs.forEach(input => {
-            if (input.value.trim() === '') {
-                allFieldsFilled = false;
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
 
         if (!allFieldsFilled) {
             // Afficher la pop-up si des champs obligatoires ne sont pas remplis
@@ -166,20 +191,8 @@
         } else if (!invalidCheck.checked) {
             // Afficher la pop-up si les conditions générales ne sont pas cochées
             alert("Veuillez accepter les conditions générales.");
-        } else {
-            // Envoyer le formulaire à la base de données si tout est valide
-            document.getElementById('Upemultistepsform').submit();
-        }
     }
-
-    // Afficher la pop-up si les conditions générales ne sont pas cochées
-    function showPopup() {
-        const invalidCheck = document.getElementById('invalidCheck');
-
-        if (!invalidCheck.checked) {
-            alert("Veuillez accepter les conditions générales.");
-        }
-    }
+}
     // Validation Bootstrap personnalisée
     (() => {
         'use strict'
@@ -236,8 +249,4 @@
         }
     });
 });
-
 </script>
-
-
-
