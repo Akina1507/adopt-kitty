@@ -70,4 +70,18 @@ class Chat_Model extends CI_Model
     );
     $this->db->insert('annonce', $data);
     }
+
+
+
+    public function get_races()
+    {
+        $this->db->select('races, value');
+        $query = $this->db->get('races');
+
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array();
+        }
+}
 }

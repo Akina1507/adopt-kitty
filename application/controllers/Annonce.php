@@ -10,7 +10,11 @@ class Annonce extends CI_Controller
     /* ------------------------- */
     public function announce()
     {
+        if (isConnected() == false) {
+            redirect("Users/login");
+        } else {
 
+            $data['races'] = $this->Chat_Model->get_races();
         $this->form_validation->set_rules('nom_animal', 'Nom animal', 'trim|required');
         $this->form_validation->set_rules('puce_animal', 'Puce animal', 'trim|required');
         $this->form_validation->set_rules('img_animal', 'Image animal', 'trim|required|in_list[18-25ans,25-35ans,35-50ans,50-75ans,75-99ans,99-ou-plus]');
@@ -57,6 +61,12 @@ class Annonce extends CI_Controller
 
             );
         }
-        $this->load->view('espace_assos/announce');
+        $this->load->view('espace_assos/announce', $data);
+    }
+}
+    public function success()
+    {
+        /* header('refresh:10;url=' . base_url('Users')); */
+        $this->load->view('form/success');
     }
 }

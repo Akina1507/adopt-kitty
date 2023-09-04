@@ -1,166 +1,135 @@
-/* NAV BAR */
-
-body {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	margin: 0;
-	padding: 0;
+/*Couleur btn etape formulaire*/
+.upe-mutistep-form .step {
+	display: none;
 }
-
-.navbar {
-	background-color: rgb(255, 255, 255);
-	width: auto;
-	height: 180px;
-}
-
-.logo {
-	justify-content: start;
-	align-items: center;
-	width: 80%;
-	height: 80%;
-}
-
-.background{
-	width: 25%;
-	height: auto;
-}
-
-
-
-/* fin nav bar */
-
-/* formulaire annonce et famille */
-.containerfamille {
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
-
-.containerBox {
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.inputBoxColumn {
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
-
-.inputBox input[type="checkbox"],
-.inputBox label {
-	display: block;
-	margin: 5px;
-}
-
-.inputBox input {
+.upe-mutistep-form .step-header .steplevel {
 	position: relative;
-	justify-content: center;
-	width: 35%;
-	padding: 10px 15px;
-	outline: none;
-	border: 1px solid black;
-	font-size: 15px;
-	border-radius: 20px;
-	color: black;
+	flex: 1;
+	padding-bottom: 30px;
 }
-
-.inputBox label {
-	text-align: center;
-	margin-right: 10px;
-}
-
-.inputBox input[type="checkbox"],
-.inputBox label {
-	margin-left: 0;
-}
-
-/* input placeholder */
-
-/* formulaire login */
-
-
-
-.body-login{
-	background: -webkit-linear-gradient(bottom, #636363, #bd9d6d);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	margin: 0;
-	padding: 0;
-}
-
-
-.container-login{
-	width: 330px;
-	background-color: white;
-	border-radius: 5px;
-	padding: 80px 35px;
-	
-	justify-content: center;
-	align-items: center;
-}
-
-.container-login h3{
-	text-align: center;
-	font-size: 25px;
+.upe-mutistep-form .step-header .steplevel.active {
 	font-weight: 600;
-	margin: 0 0 30ox 0;
 }
-
-.container .form-group{
-	width: 100%;
+.upe-mutistep-form .step-header .steplevel.finish {
+	font-weight: 600;
+	color: #009688;
 }
-
-.form-group .field{
-	height: auto;
-	width: 550px;
-	margin: 25px 0;
-	position: relative;
-	
-}
-
-.form-group .field .label{
+.upe-mutistep-form .step-header .steplevel::before {
+	content: "";
 	position: absolute;
-	top: -30px;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	z-index: 9;
+	width: 20px;
+	height: 20px;
+	background-color: #d5efed;
+	border-radius: 50%;
+	border: 3px solid #ecf5f4;
+}
+.upe-mutistep-form .step-header .steplevel.active::before,
+.upe-mutistep-form .step-header .steplevel:hover::before {
+	background-color: #3fbdb4;
+	border: 3px solid #d5f9f6;
 }
 
-
-.form-group .field input{
-	position: relative;
-	width: 60%;
-	padding: 10px 15px;
-	border: 1px solid black;
-	font-size: 15px;
-	border-radius: 10px;
-	color: black;
+.upe-mutistep-form .step-header .steplevel.finish::before {
+	background-color: #3fbdb4;
+	border: 3px solid #3fbdb4;
 }
-
-.group input{
+.upe-mutistep-form .step-header .steplevel::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 8px;
 	width: 100%;
-	height: 45px;
-	font-size: 15px;
-	border: 1px solid black;
-	border-radius: 10px;
-	background-color: #bd9d6d;
+	height: 3px;
+	background-color: #f3f3f3;
+}
+.upe-mutistep-form .step-header .steplevel.active::after {
+	background-color: #a7ede8;
+}
+.upe-mutistep-form .step-header .steplevel.finish::after {
+	background-color: #009688;
+}
+.upe-mutistep-form .step-header .steplevel:last-child:after {
+	display: none;
 }
 
-/* formulaire login */
 
 
-/*Liste img chien/chat*/
+/*Couleur des btn*/
+.custom-btn:hover {
+	background-color: #c0c0c0;
+}
+
+.custom-btn {
+	color: black;
+	background-color: #6591a5;
+}
+
+.col-md-4 .send-btn {
+	color: black;
+	background-color: #1d96ce;
+}
+
+.fond {
+	background: radial-gradient(circle, #6591a5, #c0c0c0);
+	/* Dégradé */
+}
+
+.form-container {
+	background: radial-gradient(circle, #6591a5, #c0c0c0);
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.success-fond {
+    background-color: rgb(127, 194, 185);
+}
+
+.bordered {
+	border-radius: 10px;
+}
+
+.encadre-color {
+	box-shadow: #7c6747;
+	background-color: aliceblue;
+	padding: 20px;
+}
+
+.full-height {
+	min-height: 100vh;
+}
+
+.invalid-feedback{
+	color: red;
+}
 
 .image-container {
-	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	margin-top: 20px;
+	margin: 0px 20px;
 }
 
 .image-container img {
-	width: 200px;
+	width: 250px;
+	height: 550px;
 	margin: 5px;
 }
 
-/* CCS de Online Tutorials : https://www.youtube.com/watch?v=LKIk_aCmw0U */
+.nav-link{
+	color: black;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
