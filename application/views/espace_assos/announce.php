@@ -32,6 +32,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="img_animal">Image de l'animal :</label>
+                            <br>
                             <input type="file" name="img_animal" id="img_animal" required>
                             <h6 class="invalid-feedback"><?= form_error('img_animal'); ?></h6>
                         </div>
@@ -76,24 +77,55 @@
                             <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Nom de l'association" required>
                             <h6 class="invalid-feedback"><?= form_error('lieu_animal'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="compatible_animal">L'animal n'est pas compatible avec les animaux ou les jeunes enfants? :</label>
-                            <select class="form-select" name="compatible_animal" id="compatible_animal" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="chiens">Chiens</option>
-                                <option value="chats">Chats</option>
-                                <option value="enfants">Enfants</option>
-                            </select>
-                            <h6 class="invalid-feedback"><?= form_error('compatible_animal'); ?></h6>
+                        <!--------------------------- Boutons radio
+                                                      --------------------------->
+                    <div class="col-md-6 mb-3">
+                        <label for="nbr_animaux">L'animal a t'il des incompatibilités avec les animaux ou les jeunes enfants ?</label>
+                        <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
+                            <div class="animaux_radio">
+                                <label for="chiens_radio">Chiens</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
+                                    <label class="form-check-label" for="chiens_radio_0"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
+                            </div>
+
+                            <div>
+                                <label for="chats_radio">Chats</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
+                                    <label class="form-check-label" for="chats_radio_0"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
+                            </div>
+
+                            <div>
+                                <label for="enfants_radio">Enfants</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="enfants_radio" id="enfants_radio_0" value="0" required>
+                                    <label class="form-check-label" for="enfants_radio_0"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('enfants_radio'); ?></h6>
+                            </div>
+
+                            <div>
+                                <label for="non_radio">Non</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="non_radio" id="non_radio_0" value="0" required>
+                                    <label class="form-check-label" for="non_radio_0"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('non_radio'); ?></h6>
+                            </div>
                         </div>
+                    </div>
+
                         <div class="col-md-12 mb-3">
                             <label for="description_animal">Description de l'animal :</label>
                             <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité..." required></textarea>
                             <h6 class="invalid-feedback"><?= form_error('description_animal'); ?></h6>
                         </div>
                     
-
-
                         <div class="col-md-6 mb-3">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                             <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>

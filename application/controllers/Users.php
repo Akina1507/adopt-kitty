@@ -82,6 +82,12 @@ class Users extends CI_Controller
         if (isConnected() == true) {
             redirect('Users');
         } else {
+            $this->form_validation->set_rules('nom', 'Nom', 'trim|required', array(
+                'required' => 'Le nom doit être renseigné',
+            ));
+            $this->form_validation->set_rules('prenom', 'Prenom', 'trim|required', array(
+                'required' => 'Le prenom doit être renseigné',
+            ));
             $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required|is_unique[users.pseudo]', array(
                 'required' => 'Le pseudo doit être valide',
                 'is_unique' => 'Le pseudo existe déjà'
@@ -103,11 +109,15 @@ class Users extends CI_Controller
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('espace_user/inscription');
             } else {
+                $nom = $this->input->post('nom');
+                $prenom = $this->input->post('prenom');
                 $pseudo = $this->input->post('pseudo');
                 $mdp = md5($this->input->post('mdp'));
                 $email = ($this->input->post('email'));
 
                 $data = array(
+                    'nom' => $nom,
+                    'prenom' => $prenom,
                     'pseudo' => $pseudo,
                     'mdp' => $mdp,
                     'email' => $email

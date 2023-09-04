@@ -19,7 +19,15 @@
                     <?php } ?>
                     <div class="form-group">
                         <div class="field">
-                            <label class="label-login" for="pseudo">Pseudo</label>
+                        <label class="label-login" for="nom">Nom</label>
+                            <br>
+                            <input class="form-control" type="text" id="nom" name="nom" required>
+                            <h4><?php echo form_error('nom'); ?></h4>
+                            <label class="label-login" for="prenom">Prénom</label>
+                            <br>
+                            <input class="form-control" type="text" id="prenom" name="prenom" required>
+                            <h4><?php echo form_error('prenom'); ?></h4>
+                            <label class="label-login" for="prenom">Pseudo</label>
                             <br>
                             <input class="form-control" type="text" id="pseudo" name="pseudo" required>
                             <h4><?php echo form_error('pseudo'); ?></h4>
