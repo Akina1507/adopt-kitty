@@ -30,11 +30,11 @@
                 <a href="<?php echo base_url("Users") ?>"><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>
 
 
-	<?php if (isConnected() == false) { ?>
+
 	
 		<ul class="nav nav-tabs">
   <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url("Users") ?>">Accueil</a>
+  <a class="nav-link" href="<?php echo base_url("Users") ?>">Adopter un animal</a>
   </li>
 		<li class="nav-item">
   <a class="nav-link" href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a>
@@ -43,7 +43,7 @@
   <a class="nav-link" href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a>
   </li>
 </ul>
-<?php } ?>
+
   		
 
   			
