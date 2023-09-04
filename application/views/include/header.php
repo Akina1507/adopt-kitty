@@ -15,8 +15,6 @@
     .nav-link {
         color: black;
     }
-
-    /* Annule le style de survol par défaut de Bootstrap */
     .nav-link:hover {
         color: #3d5486;
 		background: linear-gradient(to right, #6591a5, #c0c0c0);
@@ -24,14 +22,9 @@
 </style>
 
 <body>
-    <div class="container">
+<div class="container">
 	<div class="col d-flex justify-content-center align-items-center ">
-
-                <a href="<?php echo base_url("Users") ?>"><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>
-
-
-
-	
+        <a href="<?php echo base_url("Users") ?>"><img class="logo" src="/adopt-kitty/assets/img/adopt-kitty-logo" width="200" height="180"></a>	
 		<ul class="nav nav-tabs">
   <li class="nav-item">
   <a class="nav-link" href="<?php echo base_url("Users") ?>">Adopter un animal</a>
@@ -44,17 +37,11 @@
   </li>
 </ul>
 
-  		
-
-  			
-			
-					<!-- Colonnes : row = toujours 12 -->
-					
-					<div class="col d-flex flex-column justify-content-center align-items-center ">
+		<div class="col d-flex flex-column justify-content-center align-items-center ">
 						<?php if (isConnected() == false) { ?>
 							<a class="btn custom-btn" href="<?php echo base_url("Users/login") ?>">Connexion / Inscription</a>
 						<?php } else { ?>
-							<div class=" align-items-center"> 
+			<div class=" align-items-center"> 
                 <!-- Icone connexion -->
                 <i class="bi bi-person-circle"></i>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -62,21 +49,14 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
             </div>
+            <?php
+echo $this->session->userdata("nom") . " " . $this->session->userdata("prenom");
+?>
 
-						
-                            <?=
-            $this->session->userdata("nom");
-            $this->session->userdata("prenom");
-            ?>
-            <h6></h6>
-
-							</div>
-							<a class="btn custom-btn" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>
-							
+		</div>
+							<a class="btn custom-btn" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>	
 						<?php } ?>
-
-					</div>
-				</div>
-				</div>
-			
+    </div>
+</div>
+</body>
 		
