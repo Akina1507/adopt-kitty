@@ -49,14 +49,17 @@
   </li>
 </ul>
 <?php } ?>
+  		
+
   			
 			
-      
-<div class="col d-flex flex-column justify-content-center align-items-center ">
-    <?php if (isConnected() == false) { ?>
-        <a class="btn custom-btn" href="<?php echo base_url("Users/login") ?>">Connexion / Inscription</a>
-    <?php } else { ?>
-            <div class="d-flex align-items-center"> 
+					<!-- Colonnes : row = toujours 12 -->
+					
+					<div class="col d-flex flex-column justify-content-center align-items-center ">
+						<?php if (isConnected() == false) { ?>
+							<a class="btn custom-btn" href="<?php echo base_url("Users/login") ?>">Connexion / Inscription</a>
+						<?php } else { ?>
+							<div class=" align-items-center"> 
                 <!-- Icone connexion -->
                 <i class="bi bi-person-circle"></i>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -64,13 +67,21 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
             </div>
-            <?=
+
+						
+                            <?=
             $this->session->userdata("nom");
             $this->session->userdata("prenom");
             ?>
             <h6></h6>
-       
-    </div>
-    <a class="btn btn-outline-dark m-1" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>
-    <?php } ?>
-</div>
+
+							</div>
+							<a class="btn custom-btn" href="<?php echo base_url("Users/deconnect") ?>">Deconnexion</a>
+							
+						<?php } ?>
+
+					</div>
+				</div>
+				</div>
+			
+		
