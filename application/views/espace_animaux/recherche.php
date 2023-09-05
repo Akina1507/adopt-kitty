@@ -40,6 +40,9 @@ include(APPPATH . "views/include/header.php")
 </head>
 <div class="col justify-content-center">
     <div class="image-container d-flex justify-content-center flex-wrap ">
+    <a class="btn btn-outline-dark m-1" href="<?php
+											echo base_url("Pensionnaire/adoption") ?>">Rencontrer cet animal
+			</a>
         <?php
         $images = array(
             'image2.jpg', 'image8.jpg', 'image11.jpg', 'image4.jpg',
