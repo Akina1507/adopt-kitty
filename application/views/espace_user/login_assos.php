@@ -15,7 +15,7 @@
                     <br>
                     <div class="form-group">
                         <div class="field">
-                            <label class="label-login" for="nom_assos">Nom de l'association</label>
+                            <label class="label-login" for="nom_assos">Nom de l'association ou email ?</label>
                             <br>
                             <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
                             <h4><?php echo form_error('nom_assos'); ?></h4>

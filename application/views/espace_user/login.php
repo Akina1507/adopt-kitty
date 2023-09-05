@@ -14,7 +14,7 @@
                     <h6 class="text-center">Utilisateurs</h6>
                     <div class="form-group">
                         <div class="field">
-                            <label class="label-login" for="pseudo">Pseudo</label>
+                            <label class="label-login" for="pseudo">Pseudo ou email ?</label>
                             <br>
                             <input class="form-control" type="text" id="pseudo" name="pseudo" required>
                             <h4><?php echo form_error('pseudo'); ?></h4>

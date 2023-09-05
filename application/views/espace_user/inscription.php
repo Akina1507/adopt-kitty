@@ -33,6 +33,10 @@
                             <input class="form-control" type="text" id="pseudo" name="pseudo" required>
                             <h4><?php echo form_error('pseudo'); ?></h4>
                             <br>
+                            <label class="label-login" for="email">Adresse email</label>
+                            <br>
+                            <input class="form-control" type="email" id="email" name="email" required>
+                            <h4><?php echo form_error('email'); ?></h4>
                             <label class="label-login" for="mdp">Mot de passe</label>
                             <br>
                             <input class="form-control" type="password" id="mdp" name="mdp" required>
@@ -43,10 +47,7 @@
                             <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
                             <h4><?php echo form_error('mdp_confirm'); ?></h4>
                             <br>
-                            <label class="label-login" for="email">Adresse email</label>
-                            <br>
-                            <input class="form-control" type="email" id="email" name="email" required>
-                            <h4><?php echo form_error('email'); ?></h4>
+                            
                         </div>
                     </div>
                     <br>

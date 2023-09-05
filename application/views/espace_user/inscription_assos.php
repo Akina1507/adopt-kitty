@@ -24,12 +24,27 @@
                             <br>
                             <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
                             <h4><?php echo form_error('nom_assos'); ?></h4>
-
-                            <label class="label-login" for="pseudo">Nom d'utilisateur</label>
+                            <label class="label-login" for="pseudo">Adresse</label>
                             <br>
-                            <input class="form-control" type="text" id="pseudo" name="pseudo" required>
-                            <h4><?php echo form_error('pseudo'); ?></h4>
+                            <input class="form-control" type="text" id="adresse_assos" name="adresse_assos" required>
+                            <h4><?php echo form_error('adresse_assos'); ?></h4>
+                            <label class="label-login" for="ville_assos">Ville</label>
                             <br>
+                            <input class="form-control" type="number" id="ville_assos" name="ville_assos" required>
+                            <h4><?php echo form_error('ville_assos'); ?></h4>
+                            <label class="label-login" for="codepostal_assos">Code postal</label>
+                            <br>
+                            <input class="form-control" type="text" id="codepostal_assos" name="codepostal_assos" required>
+                            <h4><?php echo form_error('codepostal_assos'); ?></h4>
+                            <label class="label-login" for="email">Adresse email</label>
+                            <br>
+                            <input class="form-control" type="email" id="email" name="email" required>
+                            <h4><?php echo form_error('email'); ?></h4>
+                            
+                            <label class="label-login" for="tel_assos">Numéro de téléphone</label>
+                            <br>
+                            <input class="form-control" type="text" id="tel_assos" name="tel_assos" required>
+                            <h4><?php echo form_error('tel_assos'); ?></h4>
                             <label class="label-login" for="mdp">Mot de passe</label>
                             <br>
                             <input class="form-control" type="password" id="mdp" name="mdp" required>
@@ -40,10 +55,7 @@
                             <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
                             <h4><?php echo form_error('mdp_confirm'); ?></h4>
                             <br>
-                            <label class="label-login" for="email">Adresse email</label>
                             <br>
-                            <input class="form-control" type="email" id="email" name="email" required>
-                            <h4><?php echo form_error('email'); ?></h4>
                         </div>
                     </div>
                     <br>
