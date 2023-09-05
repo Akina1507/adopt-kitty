@@ -10,24 +10,21 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 p-5 container-login bg-white bordered">
                     <h4 class="text-center">Inscription</h4>
-                    <h6 class="text-center">Utilisateurs</h6>
+                    <h6 class="text-center">Associations</h6>
                     <br>
                     <?php if (isset($popup) && $popup === true) { ?>
                         <div class="popup">
                             <h5><?php echo $success_message; ?></h5>
                         </div>
-                        <?php header('refresh:1;url=' . base_url('Users/login')); ?>
+                        <?php header('refresh:1;url=' . base_url('Users/login_assos')); ?>
                     <?php } ?>
                     <div class="form-group">
                         <div class="field">
-                        <label class="label-login" for="nom">Nom</label>
+                        <label class="label-login" for="nom_assos">Nom de l'association</label>
                             <br>
-                            <input class="form-control" type="text" id="nom" name="nom" required>
-                            <h4><?php echo form_error('nom'); ?></h4>
-                            <label class="label-login" for="prenom">Prénom</label>
-                            <br>
-                            <input class="form-control" type="text" id="prenom" name="prenom" required>
-                            <h4><?php echo form_error('prenom'); ?></h4>
+                            <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
+                            <h4><?php echo form_error('nom_assos'); ?></h4>
+
                             <label class="label-login" for="pseudo">Nom d'utilisateur</label>
                             <br>
                             <input class="form-control" type="text" id="pseudo" name="pseudo" required>

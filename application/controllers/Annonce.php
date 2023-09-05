@@ -11,7 +11,7 @@ class Annonce extends CI_Controller
     public function announce()
     {
         if (isConnected() == false) {
-            redirect("Users/login");
+            redirect("Users/home");
         } else {
 
             $data['races'] = $this->Chat_Model->get_races();
@@ -66,7 +66,7 @@ class Annonce extends CI_Controller
 }
     public function success()
     {
-        /* header('refresh:10;url=' . base_url('Users')); */
+         header('refresh:10;url=' . base_url('Users'));
         $this->load->view('form/success');
     }
 }
