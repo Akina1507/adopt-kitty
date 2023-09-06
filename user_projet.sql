@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 04 sep. 2023 à 09:18
+-- Généré le : mer. 06 sep. 2023 à 11:46
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `user_projet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adoption`
+--
+
+DROP TABLE IF EXISTS `adoption`;
+CREATE TABLE IF NOT EXISTS `adoption` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `civile_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -118,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `famille`
@@ -128,7 +143,8 @@ INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`
 (114, 'iuhiu', 'oiugj', '25-35ans', 'hlkijhjh@hhjhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'j', 'oui', 'oui', '2', '2', '2', '2', 'kj', 'khjk', 'junior', 'oui'),
 (115, 'iuhiu', 'oiugj', '50-75ans', 'hjh@gfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'ji', 'oui', 'oui', '1', '1', '1', '1', 'lkn', 'lkn', 'junior', 'non'),
 (116, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'j', 'oui', 'oui', '1', '1', '1', '1', 'k', 'kn', 'junior', 'oui'),
-(117, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhjhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'f', 'oui', 'oui', '1', '1', '1', '1', 'poisson,souris,hamster', 'fe', 'junior', 'oui');
+(117, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhjhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'f', 'oui', 'oui', '1', '1', '1', '1', 'poisson,souris,hamster', 'fe', 'junior', 'oui'),
+(118, 'iuhiu', 'oiugj', '18-25ans', 'hkgjh@uihuigfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'c', 'oui', 'oui', '1', '1', '1', '1', 'd', 'd', 'junior', 'oui');
 
 -- --------------------------------------------------------
 
@@ -229,15 +245,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `mdp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `recup_mdp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `nom`, `prenom`, `email`, `mdp`, `recup_mdp`) VALUES
-(11, 'Marie', '', '', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
-(25, 'Marlon', '', '', 'bastien.lecour2025@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL);
+(11, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
+(28, 'miaou', 'Chouchou', 'Ronron', 'chouchou.loulou@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
