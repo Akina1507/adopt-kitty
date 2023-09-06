@@ -47,7 +47,7 @@ class Annonce extends CI_Controller
             /* ------------------------- */
             /* Variable chargé dans le model, Chat_Model */
             /* ------------------------- */
-            $this->Chat_Model->create_famille(
+            $this->Chat_Model->create_annonce(
                 $nom_animal,
                 $puce_animal,
                 $img_animal,
