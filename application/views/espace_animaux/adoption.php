@@ -29,13 +29,13 @@
                     <div class="row">
                         <h3>Procédure d'adoption</h3>
                         <div class="col-md-6 mb-3">
-                            <label for="situation_foyer">Civilité</label>
-                            <select class="form-select" name="situation_foyer" id="situation_foyer" required>
+                            <label for="civile_user">Civilité</label>
+                            <select class="form-select" name="civile_user" id="civile_user" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="monsieur">Monsieur</option>
                                 <option value="madame">Madame</option>
                             </select>
-                            <h6 class="invalid-feedback"><?= form_error('situation_foyer'); ?></h6>
+                            <h6 class="invalid-feedback"><?= form_error('civile_user'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="nom_user">Nom :</label>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="email_user">Email :</label>
-                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email" required>
+                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="votreadresse@email.com" required>
                             <h6 class="invalid-feedback"><?= form_error('email_user'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -83,43 +83,182 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="tel_user">Téléphone :</label>
-                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="+33" required>
                             <h6 class="invalid-feedback"><?= form_error('tel_user'); ?></h6>
                         </div>
                         
-                            <h6 class="invalid-feedback"><?= form_error('raison_famille'); ?></h6>
-                        </div>
                         <div class="d-flex btn-row">
                             <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
                 </div>
+                
                 <!--------------------------- 
      Etape 2 du formulaire 
     --------------------------->
-                <div class="step">
-                    <div class="row">
-                    <div class="col-md-12 mb-3">
-                            <label for="raison_famille">Pourquoi souhaitez-vous adopter un animal ?</label>
-                            <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
-                            <h6 class="invalid-feedback"><?= form_error('raison_famille'); ?></h6>
-                        </div>
+        <div class="step">
+            <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label for="raison_famille">Quel type d'animal souhaitez-vous accueillir ?</label>
-                            <select class="form-select" name="exterieur_user" id="exterieur_user" required>
+                            <label for="raison_adopt">Pourquoi souhaitez-vous adopter un animal ?</label>
+                            <textarea class="form-control" name="raison_adopt" id="raison_adopt" placeholder="Votre message..." required></textarea>
+                            <h6 class="invalid-feedback"><?= form_error('raison_adopt'); ?></h6>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="accueil_animaux">Quel type d'animal souhaitez-vous accueillir ?</label>
+                            <select class="form-select" name="accueil_animaux" id="accueil_animaux" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="chat">Chat</option>
                             </select>
-                            <div class="col-md-6 mb-3 d-none" id="age_animaux_vie_div">
-                            <label for="age_animaux_vie">Age de préference?</label>
-                            <select class="form-select" name="age_animaux_vie" id="age_animaux_vie">
+                             <h6 class="invalid-feedback"><?= form_error('raison_famille'); ?></h6>
+                        </div>
+                            <div class="col-md-6 mb-3 d-none" id="age_animaux_div">
+                            <label for="age_animaux">Quel age de preférence souhaitez vous ?</label>
+                            <select class="form-select" name="age_animaux" id="age_animaux">
                                 <option value="">Sélectionnez</option>
                                 <option value="junior">Junior</option>
                                 <option value="adulte">Adulte</option>
                                 <option value="senior">Sénior</option>
                             </select>
-                            <h6 class="invalid-feedback"><?= form_error('age_animaux_vie'); ?></h6>
+                            <h6 class="invalid-feedback"><?= form_error('age_animaux'); ?></h6>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="animaux_foyer">Avez-vous des animaux en ce moment dans votre foyer ?</label>
+                            <select class="form-select" name="animaux_foyer" id="animaux_foyer" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="oui">Oui</option>
+                                <option value="non">Non</option>
+                            </select>
+                            <h6 class="invalid-feedback"><?= form_error('animaux_foyer'); ?></h6>
+                        </div>
+                        <!--------------------------- Boutons radio
+                                                      --------------------------->
+                    <div class="col-md-6 mb-3 d-flex" id="animaux_radio_div">
+                            <div class="animaux_radio">
+                                <label for="chiens_radio">Chiens</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
+                                    <label class="form-check-label" for="chiens_radio_0">0</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_1" value="1">
+                                    <label class="form-check-label" for="chiens_radio_1">1</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_2" value="2">
+                                    <label class="form-check-label" for="chiens_radio_2">2</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_3" value="3">
+                                    <label class="form-check-label" for="chiens_radio_3">3</label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
+                            </div>
+
+                            <div>
+                                <label for="chats_radio">Chats</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
+                                    <label class="form-check-label" for="chats_radio_0">0</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_1" value="1">
+                                    <label class="form-check-label" for="chats_radio_1">1</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_2" value="2">
+                                    <label class="form-check-label" for="chats_radio_2">2</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3" value="3">
+                                    <label class="form-check-label" for="chats_radio_3">3</label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
+                            </div>
+
+                            <div>
+                                <label for="oiseaux_radio">Oiseaux</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_0" value="0" required>
+                                    <label class="form-check-label" for="oiseaux_radio_0">0</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_1" value="1">
+                                    <label class="form-check-label" for="oiseaux_radio_1">1</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_2" value="2">
+                                    <label class="form-check-label" for="oiseaux_radio_2">2</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
+                                    <label class="form-check-label" for="oiseaux_radio_3">3</label>
+                                </div>
+                            </div>
+                            <h6 class="invalid-feedback"><?= form_error('oiseaux_radio'); ?></h6>
+
+
+                            <div>
+                                <label for="autres_radio">Autres</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_0" value="0" required>
+                                    <label class="form-check-label" for="autres_radio_0">0</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_1" value="1">
+                                    <label class="form-check-label" for="autres_radio_1">1</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_2" value="2">
+                                    <label class="form-check-label" for="autres_radio_2">2</label>
+                                </div>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
+                                    <label class="form-check-label" for="autres_radio_3">3</label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('autres_radio'); ?></h6>
+                            </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3" id="others_animaux_div">
+                            <label for="others_animaux">Vos autres animaux :</label>
+                            <input class="form-control" name="others_animaux" id="others_animaux" placeholder="rongueurs, reptiles, poissons...">
+                            <h6 class="invalid-feedback"><?= form_error('others_animaux'); ?></h6>
+                        </div>
+                            <div class="col-md-6 mb-3">
+                            <label for="animaux_domestiques">Avez-vous déjà eu des animaux domestiques ?</label>
+                            <select class="form-select" name="animaux_domestiques" id="animaux_domestiques" required>
+                                <option value="">Sélectionnez</option>
+                                <option value="chiens">Chiens</option>
+                                <option value="chats">Chats</option>
+                                <option value="oiseaux">Oiseaux</option>
+                                <option value="autres">Autres</option>
+                                <option value="non">Non</option>
+                            </select>
+                            <h6 class="invalid-feedback"><?= form_error('animaux_domestiques'); ?></h6>
+                        </div>
+                        
+                        <div class="col-md-12 d-none" id="exp_animaux_div">
+                            <label for="exp_animaux">Pourriez-vous nous dire vos expériences avec les animaux domestiques (caractéristiques, comportement, maladies...)</label>
+                            <textarea class="form-control" name="exp_animaux" id="details_animaux_vie" placeholder="Votre message..."></textarea>
+                            <h6 class="invalid-feedback"><?= form_error('exp_animaux'); ?></h6>
+                        </div>
+                        <br>
+                    <div class="d-flex btn-row">
+                            <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+                            <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
+                        </div>
+                </div>
+            </div>
+        
+
+
+
+<!--------------------------- 
+     Etape 3 du formulaire 
+    --------------------------->
+
+            <div class="step">
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="type_logement">Quel type de logement avez-vous ?</label>
                             <select class="form-select" name="type_logement" id="type_logement" required>
@@ -216,156 +355,7 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('temps_activite'); ?></h6>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="raison_famille">Pourquoi souhaitez-vous adopter un animal ?</label>
-                            <textarea class="form-control" name="raison_famille" id="raison_famille" placeholder="Pourquoi devenir famille d'accueil..." required></textarea>
-                            <h6 class="invalid-feedback"><?= form_error('raison_famille'); ?></h6>
-                        </div>
-                        <div class="d-flex btn-row">
-                            <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
-                        </div>
-                    </div>
-                </div>
-                <!--------------------------- 
-     Etape 3 du formulaire 
-    --------------------------->
-                <div class="step">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="animaux_famille">Avez-vous déjà eu des animaux domestiques ?</label>
-                            <select class="form-select" name="animaux_famille" id="animaux_famille" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                            <h6 class="invalid-feedback"><?= form_error('animaux_famille'); ?></h6>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="nbr_animaux">Avez-vous des animaux en ce moment dans votre foyer ?</label>
-                            <select class="form-select" name="nbr_animaux" id="nbr_animaux" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                            <h6 class="invalid-feedback"><?= form_error('nbr_animaux'); ?></h6>
-                        </div>
-                        <!--------------------------- Boutons radio
-                                                      --------------------------->
-                        <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
-                            <div class="animaux_radio">
-                                <label for="chiens_radio">Chiens</label>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
-                                    <label class="form-check-label" for="chiens_radio_0">0</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_1" value="1">
-                                    <label class="form-check-label" for="chiens_radio_1">1</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_2" value="2">
-                                    <label class="form-check-label" for="chiens_radio_2">2</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_3" value="3">
-                                    <label class="form-check-label" for="chiens_radio_3">3</label>
-                                </div>
-                                <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
-                            </div>
-
-
-                            <div>
-                                <label for="chats_radio">Chats</label>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
-                                    <label class="form-check-label" for="chats_radio_0">0</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_1" value="1">
-                                    <label class="form-check-label" for="chats_radio_1">1</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_2" value="2">
-                                    <label class="form-check-label" for="chats_radio_2">2</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3" value="3">
-                                    <label class="form-check-label" for="chats_radio_3">3</label>
-                                </div>
-                                <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
-                            </div>
-
-                            <div>
-                                <label for="oiseaux_radio">Oiseaux</label>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_0" value="0" required>
-                                    <label class="form-check-label" for="oiseaux_radio_0">0</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_1" value="1">
-                                    <label class="form-check-label" for="oiseaux_radio_1">1</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_2" value="2">
-                                    <label class="form-check-label" for="oiseaux_radio_2">2</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
-                                    <label class="form-check-label" for="oiseaux_radio_3">3</label>
-                                </div>
-                            </div>
-                            <h6 class="invalid-feedback"><?= form_error('oiseaux_radio'); ?></h6>
-
-
-                            <div>
-                                <label for="autres_radio">Autres</label>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_0" value="0" required>
-                                    <label class="form-check-label" for="autres_radio_0">0</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_1" value="1">
-                                    <label class="form-check-label" for="autres_radio_1">1</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_2" value="2">
-                                    <label class="form-check-label" for="autres_radio_2">2</label>
-                                </div>
-                                <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
-                                    <label class="form-check-label" for="autres_radio_3">3</label>
-                                </div>
-                                <h6 class="invalid-feedback"><?= form_error('autres_radio'); ?></h6>
-                            </div>
-                        </div>
-                        <!--------------------------- 
-     Suite Etape 3 du formulaire 
-    ----------------------------->
-                        <div class="col-md-6 mb-3" id="others_animaux_div">
-                            <label for="others_animaux">Vos autres animaux :</label>
-                            <input class="form-control" name="others_animaux" id="others_animaux" placeholder="rongueurs, reptiles, poissons...">
-                            <h6 class="invalid-feedback"><?= form_error('others_animaux'); ?></h6>
-                        </div>
-
-                        
-
-                        <div class="col-md-6 mb-3">
-                            <label for="disponible_veto">Etes-vous capable de prendre en charge les soins vétérinaires de l'animal ?</label>
-                            <select class="form-select" name="disponible_veto" id="disponible_veto" required>
-                                <option value="">Sélectionnez</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                            <h6 class="invalid-feedback"><?= form_error('disponible_veto'); ?></h6>
-                        </div>
-
-                        <div class="col-md-12 d-none" id="details_animaux_vie_div">
-                            <label for="details_animaux_vie">Pourriez-vous nous donner des détails sur vos animaux ?</label>
-                            <textarea class="form-control" name="details_animaux_vie" id="details_animaux_vie" placeholder="races, activités, maladies..."></textarea>
-                            <h6 class="invalid-feedback"><?= form_error('details_animaux_vie'); ?></h6>
-                        </div>
-                        <div class="col-md-6 mb-3">
+                         <div class="col-md-6 mb-3">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                             <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
                         </div>
@@ -375,20 +365,35 @@
                             <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
                             <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
                         </div>
-                    </div>
+                </div>
             </form>
-        </div>
+            </div>
+        </div>      
     </div>
 </div>
+           
+                        
+                        
+                        
+                       
+   
+                    
+
+
+                        
+                       
+                    
+           
+   
 
 
 
 
 <script src="/adopt-kitty/assets/js/test.js"></script>
 
-<!--------------------------- 
+<!-- ------------------------- 
      Erreur icones bootstrap des champs 
-            --------------------------->
+            -------------------------- -->
 <script>
     // Validation et envoi du formulaire
     function validateAndSubmit() {
@@ -446,12 +451,6 @@
             }, false)
         })
     })();
-
-
-
-
-
-
     function myForm() {
 
         var d = document.getElementById("form");
@@ -462,4 +461,123 @@
 
         sent.classList.remove('display-none');
     }
+
+
+
+
+    // Pop up pour l'etape 1 qui enumère chaque input/select
+function validateStep1(currentStep) {
+    var civileUser = currentStep.find("select[name='civile_user']").val().trim();
+    var nomUser = currentStep.find("input[name='nom_user']").val().trim();
+    var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
+    var ageUser = currentStep.find("select[name='age_user']").val().trim();
+    var emailUser = currentStep.find("input[name='email_user']").val().trim();
+    var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
+    var villeUser = currentStep.find("input[name='ville_user']").val().trim();
+    var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
+    var telUser = currentStep.find("input[name='tel_user']").val().trim();
+    
+    if (
+        civileUser === "" ||
+        nomUser === "" ||
+        prenomUser === "" ||
+        ageUser === "" ||
+        emailUser === "" ||
+        adresseUser === "" ||
+        villeUser === "" ||
+        codepostalUser === "" ||
+        telUser === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 1."
+        );
+        return false;
+    }
+
+    return true;
+}
+    // Pop up pour l'etape 2 qui enumère chaque input/select
+function validateStep2(currentStep) {
+    var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
+    var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
+    var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
+    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+    var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
+    var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
+    var animaux_domestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
+   
+    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+    
+    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+        raisonAdopt === "" ||
+        accueilAnimaux === "" ||
+        animauxFoyer === "" ||
+        othersAnimaux === "" ||
+        ageAnimaux === "" ||
+        expAnimaux === "" ||
+        animauxDomestiques === "" 
+
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 2."
+        );
+        return false;
+    }
+
+    return true;
+}
+// Pop up pour l'etape 3 qui enumère chaque input/select
+function validateStep3(currentStep) {
+	var typeLogement = currentStep.find("select[name='type_logement']").val();
+	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
+
+	if (exterieurUser === "oui") {
+		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+	}
+
+	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
+	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
+
+	if (enfantsFoyer === "oui") {
+		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
+	}
+
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	if (situationFoyer == "couple") {
+		var activiteConjoint = currentStep
+			.find("select[name='activite_conjoint']")
+			.val();
+	}
+	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
+	
+
+	if (
+		typeLogement === "" ||
+		exterieurUser === "" ||
+		typeExterieur === "" ||
+		situationFoyer === "" ||
+		activiteFamille === "" ||
+		activiteConjoint === "" ||
+		enfantsFoyer === "" ||
+		nbrEnfants === "" ||
+		tempsActivite === "" 
+		
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 3."
+		);
+		return false;
+	}
+
+	return true;
+}
+
 </script>

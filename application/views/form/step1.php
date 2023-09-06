@@ -367,6 +367,128 @@
      Erreur icones bootstrap des champs 
             --------------------------->
 <script>
+
+// Pop up pour l'etape 1 qui enumère chaque input/select
+function validateStep1(currentStep) {
+    var nomUser = currentStep.find("input[name='nom_user']").val().trim();
+    var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
+    var ageUser = currentStep.find("select[name='age_user']").val().trim();
+    var emailUser = currentStep.find("input[name='email_user']").val().trim();
+    var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
+    var villeUser = currentStep.find("input[name='ville_user']").val().trim();
+    var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
+    var telUser = currentStep.find("input[name='tel_user']").val().trim();
+    
+    if (
+        nomUser === "" ||
+        prenomUser === "" ||
+        ageUser === "" ||
+        emailUser === "" ||
+        adresseUser === "" ||
+        villeUser === "" ||
+        codepostalUser === "" ||
+        telUser === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 1."
+        );
+        return false;
+    }
+
+    return true;
+}
+
+// Pop up pour l'etape 2 qui enumère chaque input/select
+function validateStep2(currentStep) {
+	var typeLogement = currentStep.find("select[name='type_logement']").val();
+	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
+
+	if (exterieurUser === "oui") {
+		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+	}
+
+	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
+	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
+
+	if (enfantsFoyer === "oui") {
+		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
+	}
+
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	if (situationFoyer == "couple") {
+		var activiteConjoint = currentStep
+			.find("select[name='activite_conjoint']")
+			.val();
+	}
+	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
+	var raisonFamille = currentStep
+		.find("textarea[name='raison_famille']")
+		.val()
+		.trim();
+
+	if (
+		typeLogement === "" ||
+		exterieurUser === "" ||
+		typeExterieur === "" ||
+		situationFoyer === "" ||
+		activiteFamille === "" ||
+		activiteConjoint === "" ||
+		enfantsFoyer === "" ||
+		nbrEnfants === "" ||
+		tempsActivite === "" ||
+		raisonFamille === ""
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 2."
+		);
+		return false;
+	}
+
+	return true;
+}
+// Pop up pour l'etape 3 qui enumère chaque input/select
+function validateStep3(currentStep) {
+    var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
+    var nbrAnimaux = currentStep.find("select[name='nbr_animaux']").val();
+    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+    var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
+    var detailAnimauxVie = currentStep.find("textarea[name='details_animaux_vie']").val().trim();
+    var disponibleVeto = currentStep.find("select[name='disponible_veto']").val();
+
+    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+    
+    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+        animauxFamille === "" ||
+        nbrAnimaux === "" ||
+        othersAnimaux === "" ||
+        ageAnimauxVie === "" ||
+        detailAnimauxVie === "" ||
+        disponibleVeto === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 3."
+        );
+        return false;
+    }
+
+    return true;
+}
+
+
+
+
+
+
+
+
     // Validation et envoi du formulaire
     function validateAndSubmit() {
         const invalidCheck = document.getElementById('invalidCheck');
