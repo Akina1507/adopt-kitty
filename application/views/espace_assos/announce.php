@@ -17,7 +17,7 @@
      Mise en page + étape 1 
     --------------------------->
             <div class="container form-container">
-                <form>
+            <?= form_open_multipart('Annonce/announce')?>
                     <div class="row">
                         <h3>Poster votre annonce</h3>
                         <div class="col-md-6 mb-3">
@@ -130,123 +130,9 @@
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                             <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
                         </div>
-                        <div class="d-flex btn-row">
-                            <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
+                        
                             <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
-                        </div>
+                        
                     </div>
-                </form>
-            </div>
-<script src="/adopt-kitty/assets/js/test.js"></script>
-
-<!--------------------------- 
-     Erreur icones bootstrap des champs 
-            --------------------------->
-            <script>
-    // Validation et envoi du formulaire d'annonce
-    // Fonction pour valider et soumettre le formulaire d'annonce
-// Fonction pour valider et soumettre le formulaire d'annonce
-// Fonction pour valider et soumettre le formulaire d'annonce
-function validateAndSubmit() {
-    const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
-    let allFieldsFilled = true;
-
-    // Vérifier si tous les champs obligatoires sont remplis
-    requiredInputs.forEach(input => {
-        if (input.value.trim() === '') {
-            allFieldsFilled = false;
-            input.classList.add('is-invalid');
-        } else {
-            input.classList.remove('is-invalid');
-        }
-    });
-
-    if (!allFieldsFilled) {
-        // Afficher la pop-up si des champs obligatoires ne sont pas remplis
-        alert("Veuillez remplir tous les champs obligatoires.");
-        return; // Empêcher l'envoi du formulaire si des champs sont vides
-    }
-
-    // Vérifier si les conditions générales ne sont pas cochées
-    const invalidCheck = document.getElementById('invalidCheck');
-    if (!invalidCheck.checked) {
-        // Afficher la pop-up des conditions générales si les conditions générales ne sont pas acceptées
-        alert("Veuillez accepter les conditions générales.");
-        return; // Empêcher l'envoi du formulaire si les conditions générales ne sont pas acceptées
-    }
-
-    // Envoyer le formulaire à la base de données si tout est valide
-    document.getElementById('Upemultistepsform').submit();
-}
-
-
-
-    // Afficher la pop-up si les conditions générales ne sont pas cochées
-    function showPopup() {
-        const invalidCheck = document.getElementById('invalidCheck');
-
-        if (!allFieldsFilled) {
-            // Afficher la pop-up si des champs obligatoires ne sont pas remplis
-            alert("Veuillez remplir tous les champs obligatoires.");
-        } else if (!invalidCheck.checked) {
-            // Afficher la pop-up si les conditions générales ne sont pas cochées
-            alert("Veuillez accepter les conditions générales.");
-    }
-}
-    // Validation Bootstrap personnalisée
-    (() => {
-        'use strict'
-
-        const forms = document.querySelectorAll('.needs-validation')
-        const btn = document.getElementById('nextBtn')
-
-        Array.from(forms).forEach(form => {
-            btn.addEventListener('click', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })();
-// c'est quoi ?
-    function myForm() {
-
-        var d = document.getElementById("form");
-        var sent = document.getElementById("sent");
-
-        d.classList.add('display-none');
-
-
-        sent.classList.remove('display-none');
-    }
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-    // Ajoutez un écouteur d'événements pour le formulaire lorsqu'il est soumis
-    document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Empêche la soumission du formulaire pour le moment
-
-        // Vérifiez la validation de chaque champ du formulaire
-        const formFields = document.querySelectorAll('.form-control');
-        let isValid = true;
-
-        formFields.forEach(function (field) {
-            if (!field.checkValidity()) {
-                field.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                field.classList.remove('is-invalid');
-                field.classList.add('is-valid');
-            }
-        });
-
-        // Si le formulaire est valide, vous pouvez continuer avec la soumission
-        if (isValid) {
-            this.submit();
-        }
-    });
-});
-</script>
+                <?= form_close();?>
+                </div>

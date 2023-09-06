@@ -17,7 +17,7 @@ class Annonce extends CI_Controller
             $data['races'] = $this->Chat_Model->get_races();
         $this->form_validation->set_rules('nom_animal', 'Nom animal', 'trim|required');
         $this->form_validation->set_rules('puce_animal', 'Puce animal', 'trim|required');
-        $this->form_validation->set_rules('img_animal', 'Image animal', 'trim|required|in_list[18-25ans,25-35ans,35-50ans,50-75ans,75-99ans,99-ou-plus]');
+        $this->form_validation->set_rules('img_animal', 'Image animal', 'required');
         $this->form_validation->set_rules('espece_animal', 'Espece', 'trim|required|in_list[chat]');
         $this->form_validation->set_rules('race_animal', 'Race/Type', 'trim|required');
         $this->form_validation->set_rules('naissance_animal', 'Date de naissance animal', 'trim|required');
