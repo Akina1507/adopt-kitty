@@ -29,7 +29,7 @@
                     <div class="row">
                         <h3>Procédure d'adoption</h3>
                         <div class="col-md-6 mb-3">
-                            <label for="civile_user">Civilité</label>
+                            <label for="civile_user">Civilité :</label>
                             <select class="form-select" name="civile_user" id="civile_user" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="monsieur">Monsieur</option>
