@@ -77,47 +77,53 @@
             <h6 class="invalid-feedback"><?= form_error('lieu_animal'); ?></h6>
         </div>
         <!--------------------------- Boutons radio
-                                                      --------------------------->
-        <div class="col-md-6 mb-3">
-            <label for="nbr_animaux">L'animal a t'il des incompatibilités avec les animaux ou les jeunes enfants ?</label>
-            <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
-                <div class="animaux_radio">
-                    <label for="chiens_radio">Chiens</label>
-                    <div class="col-mb-12">
-                        <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_0" value="0" required>
-                        <label class="form-check-label" for="chiens_radio_0"></label>
-                    </div>
-                    <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
-                </div>
+                                      --------------------------->
+                                      <div class="col-md-6 mb-3">
+                                      <label for="animaux_radio">L'animal a t'il des incompatibilités avec les animaux ou les jeunes enfants ?</label>
+           
+                        <div class="col-md-6 mb-3 d-flex justify-content-around mx-5 p-3" id="animaux_radio_div">
+                        
+                            <div class="animaux_radio">
+                                <label for="chiens_radio">Chiens</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio" value="0">
+                                    <label class="form-check-label" for="chiens_radio"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
+                            </div>
 
-                <div>
-                    <label for="chats_radio">Chats</label>
-                    <div class="col-mb-12">
-                        <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_0" value="0" required>
-                        <label class="form-check-label" for="chats_radio_0"></label>
-                    </div>
-                    <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
-                </div>
 
-                <div>
-                    <label for="enfants_radio">Enfants</label>
-                    <div class="col-mb-12">
-                        <input class="form-check-input" type="radio" name="enfants_radio" id="enfants_radio_0" value="0" required>
-                        <label class="form-check-label" for="enfants_radio_0"></label>
-                    </div>
-                    <h6 class="invalid-feedback"><?= form_error('enfants_radio'); ?></h6>
-                </div>
+                            <div>
+                                <label for="chats_radio">Chats</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio" value="0">
+                                    <label class="form-check-label" for="chats_radio"></label>
+                                </div>
+                                
+                                <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
+                            </div>
 
-                <div>
-                    <label for="non_radio">Non</label>
-                    <div class="col-mb-12">
-                        <input class="form-check-input" type="radio" name="non_radio" id="non_radio_0" value="0" required>
-                        <label class="form-check-label" for="non_radio_0"></label>
-                    </div>
-                    <h6 class="invalid-feedback"><?= form_error('non_radio'); ?></h6>
-                </div>
-            </div>
-        </div>
+                            <div>
+                                <label for="enfants_radio">Enfants</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="enfants_radio" id="enfants_radio" value="0">
+                                    <label class="form-check-label" for="enfants_radio"></label>
+                                </div>
+                            </div>
+                            <h6 class="invalid-feedback"><?= form_error('enfants_radio'); ?></h6>
+
+
+                            <div>
+                                <label for="non_radio">Non</label>
+                                <div class="col-mb-12">
+                                    <input class="form-check-input" type="radio" name="non_radio" id="non_radio" value="0">
+                                    <label class="form-check-label" for="non_radio"></label>
+                                </div>
+                                <h6 class="invalid-feedback"><?= form_error('non_radio'); ?></h6>
+                            </div>
+                        </div>
+                        </div>
+                        
 
         <div class="col-md-12 mb-3">
             <label for="description_animal">Description de l'animal :</label>
@@ -130,8 +136,9 @@
             <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
         </div>
 
-        <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="submit">Envoyer</button>
-
+        <div class="d-flex btn-row">
+            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="submit">Envoyer</button>
+        </div>
     </div>
     <?= form_close(); ?>
 </div>

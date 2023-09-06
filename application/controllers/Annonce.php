@@ -15,11 +15,16 @@ class Annonce extends CI_Controller
         } else {
 
             $data['races'] = $this->Chat_Model->get_races();
+
+            foreach ($data['races'] as $race) {
+                $race_values[] = $race['value'];
+            }
+
             $this->form_validation->set_rules('nom_animal', 'Nom animal', 'trim|required');
             $this->form_validation->set_rules('puce_animal', 'Puce animal', 'trim|required');
             $this->form_validation->set_rules('img_animal', 'Image animal', 'required');
             $this->form_validation->set_rules('espece_animal', 'Espece', 'trim|required|in_list[chat]');
-            $this->form_validation->set_rules('race_animal', 'Race/Type', 'trim|required');
+            $this->form_validation->set_rules('race_animal', 'Race/Type', 'trim|required|in_list[' . implode(',', $race_values) . ']');
             $this->form_validation->set_rules('naissance_animal', 'Date de naissance animal', 'trim|required');
             $this->form_validation->set_rules('sexe_animal', 'Sexe', 'trim|required|in_list[male,femelle]');
             $this->form_validation->set_rules('lieu_animal', 'Lieu', 'trim|required');
