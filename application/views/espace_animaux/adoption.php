@@ -121,7 +121,7 @@
                             </select>
                             <h6 class="invalid-feedback"><?= form_error('age_animaux'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3" id="animaux_foyer_div">
                             <label for="animaux_foyer">Avez-vous des animaux en ce moment dans votre foyer ?</label>
                             <select class="form-select" name="animaux_foyer" id="animaux_foyer" required>
                                 <option value="">Sélectionnez</option>
@@ -395,6 +395,7 @@
      Erreur icones bootstrap des champs 
             -------------------------- -->
 <script>
+    // A VERIFIER 
     // Validation et envoi du formulaire
     function validateAndSubmit() {
         const invalidCheck = document.getElementById('invalidCheck');
@@ -461,6 +462,7 @@
 
         sent.classList.remove('display-none');
     }
+
 
 
 
@@ -579,5 +581,202 @@ function validateStep3(currentStep) {
 
 	return true;
 }
+
+
+
+
+
+//Systeme pour afficher/masquer type_exterieur en fonction d'exterieur_user
+document.addEventListener("DOMContentLoaded", function () {
+	var exterieurUserSelect = document.getElementById("exterieur_user");
+
+	var typeExterieurDiv = document.getElementById("type_exterieur_div");
+	var typeExterieur = document.getElementById("type_exterieur");
+
+	exterieurUserSelect.addEventListener("change", function () {
+		if (
+			exterieurUserSelect.value === "non" ||
+			exterieurUserSelect.value === ""
+		) {
+			typeExterieurDiv.classList = "col-md-6 mb-3 d-none";
+			typeExterieur.required = false;
+			typeExterieur.value = "";
+		} else {
+			typeExterieurDiv.classList = "col-md-6 mb-3 d-block";
+			typeExterieur.required = true;
+		}
+	});
+});
+
+//Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer & activite_conjoint + famille
+document.addEventListener("DOMContentLoaded", function () {
+	var situationFoyerSelect = document.getElementById("situation_foyer");
+
+	var enfantsFoyerDiv = document.getElementById("enfants_foyer_div");
+	var enfantsFoyer = document.getElementById("enfants_foyer");
+
+	var activitefamilleDiv = document.getElementById("activite_famille_div");
+	var activitefamille = document.getElementById("activite_famille");
+
+	var activiteconjointDiv = document.getElementById("activite_conjoint_div");
+	var activiteconjoint = document.getElementById("activite_conjoint");
+
+	situationFoyerSelect.addEventListener("change", function () {
+		if (situationFoyerSelect.value === "") {
+			enfantsFoyerDiv.classList = "col-md-6 mb-3 d-none";
+			enfantsFoyer.required = false;
+
+			activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
+			activiteconjoint.required = false;
+
+			activitefamilleDiv.classList = "col-md-6 mb-3 d-none";
+			activitefamille.required = false;
+			enfantsFoyer.value = "";
+		} else {
+			if (situationFoyerSelect.value === "seul") {
+				activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
+				activitefamille.required = true;
+				activitefamille.value = "";
+				activiteconjoint.required = false;
+				activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
+			}
+			if (situationFoyerSelect.value === "couple") {
+				activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
+				activitefamille.required = true;
+				activitefamille.value = "";
+
+				activiteconjointDiv.classList = "col-md-6 mb-3 d-block";
+				activiteconjoint.required = true;
+				activiteconjoint.value = "";
+			}
+			enfantsFoyerDiv.classList = "col-md-6 mb-3 d-block";
+			enfantsFoyer.required = true;
+		}
+	});
+});
+
+//Systeme pour apparaitre/disparaitre enfants_foyer en fonction nbr_enfants_foyer
+document.addEventListener("DOMContentLoaded", function () {
+	var enfantsFoyerSelect = document.getElementById("enfants_foyer");
+
+	var enfantsnbrDiv = document.getElementById("nbr_enfants_div");
+	var enfantsnbr = document.getElementById("nbr_enfants");
+
+	enfantsFoyerSelect.addEventListener("change", function () {
+		if (enfantsFoyerSelect.value === "" || enfantsFoyerSelect.value === "non") {
+			enfantsnbrDiv.classList = "col-md-6 mb-3 d-none";
+			enfantsnbr.required = false;
+			enfantsnbr.value = "";
+		} else {
+			enfantsnbrDiv.classList = "col-md-6 mb-3 d-block";
+			enfantsnbr.required = true;
+		}
+	});
+});
+
+
+
+
+
+
+//Systeme pour les variables nbr_animaux + btn [voir ci dessous] 
+document.addEventListener("DOMContentLoaded", function () {
+    var animauxFoyerSelect = document.getElementById('select[name="animaux_foyer"]');
+    var AnimauxRadioDiv = document.getElementById("animaux_radio_div");
+    var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
+    var othersAnimauxInput = document.getElementById("others_animaux_div");
+    var othersInput = document.getElementById("others_animaux");
+    var chiensRadioInputs = document.querySelectorAll('input[name="chiens_radio"]');
+    var chatsRadioInputs = document.querySelectorAll('input[name="chats_radio"]');
+    var oiseauxRadioInputs = document.querySelectorAll('input[name="oiseaux_radio"]');
+	var ageAnimauxDiv = document.getElementById("age_animaux_div");
+	var ageAnimaux = document.getElementById("age_animaux");
+	var expAnimauxDiv = document.getElementById('exp_animaux_div');
+	var expAnimaux = document.getElementById('exp_animaux');
+
+    // Masquer et réinitialiser les champs et les boutons radio à l'arrivée sur la page
+    othersAnimauxInput.classList.add("d-none");
+    othersInput.value = "";
+    autresRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    chiensRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    chatsRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+    oiseauxRadioInputs.forEach(radio => {
+        radio.checked = false;
+    });
+
+    // Afficher/masquer les radios "animaux_radio_div" en fonction de "nbr_animaux"
+    function toggleAnimauxRadio() {
+        if (animauxFoyerSelect.value === "non" || animauxFoyerSelect.value === "") {
+            AnimauxRadioDiv.classList.add("d-none");
+            othersInput.required = false;
+            othersInput.value = "";
+            othersAnimauxInput.classList.add("d-none");
+            autresRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+            chiensRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+            chatsRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+            oiseauxRadioInputs.forEach(radio => {
+                radio.checked = false;
+            });
+//Masquer detail et age en fonction oui/non
+            expAnimauxDiv.classList.add("d-none");
+            expAnimaux.required = false;
+            expAnimaux.value = "";
+
+			ageAnimauxDiv.classList.add("d-none");
+            ageAnimaux.required = false;
+            ageAnimaux.value = "";
+
+        } else if (nbrAnimauxSelect.value === "oui") {
+			expAnimauxDiv.classList.remove("d-none");
+			expAnimaux.required = true;
+            AnimauxRadioDiv.classList.remove("d-none");
+			ageAnimauxDiv.classList.remove("d-none");
+			ageAnimaux.required = true;
+			
+            toggleOthersAnimaux();
+        }
+    }
+
+    // Réinitialiser et masquer "others_animaux_div" si aucune option 1, 2, ou 3 n'est sélectionnée
+    function toggleOthersAnimaux() {
+        var selectedValue = document.querySelector('input[name="autres_radio"]:checked')?.value;
+
+        if (selectedValue === "0" || selectedValue === undefined) {
+            othersAnimauxInput.classList.add("d-none");
+            othersInput.required = false;
+            othersInput.value = "";
+        } else {
+            othersAnimauxInput.classList.remove("d-none");
+            othersInput.required = true;
+        }
+    }
+
+    // Appeler les fonctions lorsqu'un changement est détecté dans "nbr_animaux"
+    animauxFoyerSelect.addEventListener("change", function () {
+        toggleAnimauxRadio();
+    });
+
+    // Appeler la fonction pour afficher/masquer les radios "animaux_radio_div" au chargement initial
+    toggleAnimauxRadio();
+
+    // Appeler les fonctions lorsqu'un changement est détecté dans les boutons radio "autres_radio"
+    autresRadioInputs.forEach(radio => {
+        radio.addEventListener("change", function () {
+            toggleOthersAnimaux();
+        });
+    });
+});
 
 </script>

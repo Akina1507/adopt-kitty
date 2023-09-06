@@ -71,7 +71,7 @@ class Chat_Model extends CI_Model
     $this->db->insert('annonce', $data);
     }
 
-
+    public function create_adoption() {}
 
     public function get_races()
     {

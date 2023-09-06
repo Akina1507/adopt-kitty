@@ -12,7 +12,7 @@ class Famille1 extends CI_Controller
     {
 
         if (isConnected() == false) {
-            redirect("Users/home");
+            redirect("Users/login");
         } else {
 
 
@@ -143,7 +143,7 @@ class Famille1 extends CI_Controller
 
     public function success()
     {
-        header('refresh:10;url=' . base_url('Users'));
+        /* header('refresh:10;url=' . base_url('Users')); */
         $this->load->view('form/success');
     }
 }
