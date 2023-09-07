@@ -316,4 +316,29 @@ function submitForm() {
 
 
 
+/* Pour annouce */
+$(document).ready(function() {
+	// Lorsque le bouton radio "Non" est cliqué
+	$('#non_radio').click(function() {
+		// Inverse l'état (active/désactive) des autres boutons radio
+		$('input[type="radio"]').not(this).prop('disabled', function(i, val) {
+			return !val;
+		});
+
+		// Si "Non" est sélectionné, décochez les autres boutons radio
+		if ($(this).prop('checked')) {
+			$('input[type="radio"]').not(this).prop('checked', false);
+		}
+	});
+
+	// Lorsque l'utilisateur clique sur un autre bouton radio
+	$('input[type="radio"]').not('#non_radio').click(function() {
+		// Décochez le bouton radio "Non" s'il est sélectionné
+		$('#non_radio').prop('checked', false);
+	});
+});
+
+
+
+
 
