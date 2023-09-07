@@ -33,7 +33,7 @@
   <a class="nav-link" href="<?php echo base_url("Famille1/step1") ?>">Devenir famille d'accueil</a>
   </li>
   <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url("Annonce/announce") ?>">Poster une annonce</a>
+  <a class="nav-link" href="<?php echo base_url("Annonce/annonce") ?>">Poster une annonce</a>
   </li>
 </ul>
 

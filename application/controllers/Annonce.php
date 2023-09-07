@@ -8,7 +8,7 @@ class Annonce extends CI_Controller
     /* ------------------------- */
     /* Validation formulaire */
     /* ------------------------- */
-    public function announce()
+    public function annonce()
     {
         if (isConnected() == false) {
             redirect("Users/home");
@@ -28,7 +28,10 @@ class Annonce extends CI_Controller
             $this->form_validation->set_rules('naissance_animal', 'Date de naissance animal', 'trim|required');
             $this->form_validation->set_rules('sexe_animal', 'Sexe', 'trim|required|in_list[male,femelle]');
             $this->form_validation->set_rules('lieu_animal', 'Lieu', 'trim|required');
-            $this->form_validation->set_rules('compatible_animal', 'Compatibilité', 'trim|required|in_list[chats,chiens,enfants]');
+            $this->form_validation->set_rules('chiens_radio', 'Chiens', 'trim|required|in_list[chiens]');
+            $this->form_validation->set_rules('chats_radio', 'Chats', 'trim|required|in_list[chats]');
+            $this->form_validation->set_rules('enfants_radio', 'Enfants', 'trim|required|in_list[enfants]');
+            $this->form_validation->set_rules('non_radio', 'Non', 'trim|required|in_list[non]');
             $this->form_validation->set_rules('description_animal', 'Description', 'trim|required');
 
 
@@ -46,7 +49,10 @@ class Annonce extends CI_Controller
                 $naissance_animal = $this->input->post('naissance_animal');
                 $sexe_animal = $this->input->post('sexe_animal');
                 $lieu_animal = $this->input->post('lieu_animal');
-                $compatible_animal = $this->input->post('compatible_animal');
+                $chiens_radio = $this->input->post('chiens_radio');
+                $chats_radio = $this->input->post('chats_radio');
+                $enfants_radio = $this->input->post('enfants_radio');
+                $non_radio = $this->input->post('non_radio');
                 $description_animal = $this->input->post('description_animal');
 
                 /* ------------------------- */
@@ -61,14 +67,19 @@ class Annonce extends CI_Controller
                     $naissance_animal,
                     $sexe_animal,
                     $lieu_animal,
-                    $compatible_animal,
+                    $chiens_radio,
+                    $chats_radio,
+                    $enfants_radio,
+                    $non_radio,
                     $description_animal,
 
                 );
+                redirect("Annonce/success");
             }
-            $this->load->view('espace_assos/announce', $data);
+            $this->load->view('espace_assos/annonce', $data);
         }
     }
+
     public function success()
     {
         header('refresh:10;url=' . base_url('Users'));

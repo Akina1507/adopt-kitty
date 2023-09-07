@@ -17,6 +17,7 @@
      Mise en page + étape 1 
     --------------------------->
 <div class="container form-container">
+<?= form_open_multipart('Famille1/step1') ?>
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
@@ -356,6 +357,7 @@
             </form>
         </div>
     </div>
+    <?= form_close(); ?>
 </div>
 
 

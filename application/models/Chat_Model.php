@@ -13,7 +13,8 @@ class Chat_Model extends CI_Model
     /* ------------------------- */
     /* Contenu des variables dans la bdd famille */
     /* ------------------------- */
-    public function create_famille($nom_user,
+    public function create_famille(
+    $nom_user,
     $prenom_user,
     $age_user,
     $adresse_user,
@@ -92,7 +93,10 @@ class Chat_Model extends CI_Model
         $naissance_animal,
         $sexe_animal,
         $lieu_animal,
-        $compatible_animal,
+        $chiens_radio,
+        $chats_radio,
+        $enfants_radio,
+        $non_radio,
         $description_animal
         ) {
     $data = array(
@@ -104,13 +108,20 @@ class Chat_Model extends CI_Model
         'naissance_animal' => $naissance_animal,
         'sexe_animal' => $sexe_animal,
         'lieu_animal' => $lieu_animal,
-        'compatible_animal' => $compatible_animal,
+        'chiens_radio' => $chiens_radio,
+        'chats_radio' => $chats_radio,
+        'enfants_radio' => $enfants_radio,
+        'non_radio' => $non_radio,
         'description_animal' => $description_animal
     );
     $this->db->insert('annonce', $data);
     }
 
+
+
+
     public function create_adoption() {}
+
 
     public function get_races()
     {

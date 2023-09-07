@@ -16,7 +16,7 @@
      Mise en page + étape 1 
     --------------------------->
 <div class="container form-container">
-    <?= form_open_multipart('Annonce/announce') ?>
+    <?= form_open_multipart('Annonce/annonce') ?>
     <div class="row">
         <h3>Poster votre annonce</h3>
         <div class="col-md-6 mb-3">
@@ -86,7 +86,7 @@
                             <div class="animaux_radio">
                                 <label for="chiens_radio">Chiens</label>
                                 <div class="col-mb-12">
-                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio" value="0">
+                                    <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio" value="chiens">
                                     <label class="form-check-label" for="chiens_radio"></label>
                                 </div>
                                 <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
@@ -96,7 +96,7 @@
                             <div>
                                 <label for="chats_radio">Chats</label>
                                 <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio" value="0">
+                                    <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio" value="chats">
                                     <label class="form-check-label" for="chats_radio"></label>
                                 </div>
                                 
@@ -106,7 +106,7 @@
                             <div>
                                 <label for="enfants_radio">Enfants</label>
                                 <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="enfants_radio" id="enfants_radio" value="0">
+                                    <input class="form-check-input" type="radio" name="enfants_radio" id="enfants_radio" value="enfants">
                                     <label class="form-check-label" for="enfants_radio"></label>
                                 </div>
                             </div>
@@ -116,13 +116,13 @@
                             <div>
                                 <label for="non_radio">Non</label>
                                 <div class="col-mb-12">
-                                    <input class="form-check-input" type="radio" name="non_radio" id="non_radio" value="0">
+                                    <input class="form-check-input" type="radio" name="non_radio" id="non_radio" value="non">
                                     <label class="form-check-label" for="non_radio"></label>
                                 </div>
                                 <h6 class="invalid-feedback"><?= form_error('non_radio'); ?></h6>
                             </div>
                         </div>
-                        </div>
+                    </div>
                         
 
         <div class="col-md-12 mb-3">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 06 sep. 2023 à 11:48
+-- Généré le : jeu. 07 sep. 2023 à 09:55
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `adoption` (
 
 DROP TABLE IF EXISTS `annonce`;
 CREATE TABLE IF NOT EXISTS `annonce` (
-  `id_animal` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nom_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `puce_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -55,18 +55,13 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `naissance_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sexe_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `lieu_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `compatible_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiens_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chats_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `enfants_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `non_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_animal`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `annonce`
---
-
-INSERT INTO `annonce` (`id_animal`, `nom_animal`, `puce_animal`, `img_animal`, `espece_animal`, `race_animal`, `naissance_animal`, `sexe_animal`, `lieu_animal`, `compatible_animal`, `description_animal`) VALUES
-(8, 'Pamplemousse', '098765432156475', 'miaous', '', 'Europeen', '4', 'male', '0', '', 'fait des betises'),
-(9, 'Uranus', '324234', 'hfghf', '', 'siamois', '6', 'male', '0', '', 'dbdb');
 
 -- --------------------------------------------------------
 
