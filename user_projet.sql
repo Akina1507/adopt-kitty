@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `adoption` (
 
 DROP TABLE IF EXISTS `annonce`;
 CREATE TABLE IF NOT EXISTS `annonce` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id_animal` int NOT NULL AUTO_INCREMENT,
   `nom_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `puce_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,

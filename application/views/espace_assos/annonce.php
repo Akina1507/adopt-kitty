@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-6 mb-3">
             <label for="puce_animal">Numéro d'identification :</label>
-            <input class="form-control" type="number" name="puce_animal" id="puce_animal" placeholder="Numéro d'identification">
+            <input class="form-control" type="number" name="puce_animal" id="puce_animal" placeholder="Numéro d'identification" required>
             <h6 class="invalid-feedback"><?= form_error('puce_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
@@ -142,3 +142,6 @@
     </div>
     <?= form_close(); ?>
 </div>
+
+
+
