@@ -83,22 +83,24 @@ class Annonce extends CI_Controller
             }
         }
     }
-
+// Librairie upload des images chats
+// field_name : fichier de l'image, upload_path : chemin 
     function upload_image_chat($field_name = '', $upload_path = '')
     {
+        // type de fichier, poids maxi, ne se dédouble pas
         $config['upload_path'] = $upload_path;
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size'] = 30720;
         $config['overwrite'] = true;
-
+// on charge la librairie avec la config
         $this->load->library('upload', $config);
-
+// On upload l'image dans la bdd
         if ($this->upload->do_upload($field_name)) {
             $upload_data = $this->upload->data();
 
-            // Calculer la somme de hachage SHA-1 du contenu de l'image en  40 caratères
+            // Calculer la somme de hachage SHA-1 du contenu de l'image en 40 caratères aléatoires
             $hash = sha1_file($upload_data['full_path']);
-
+// Systeme pour renomer l'image ?
             $image_nom =  $hash . '.jpg';
             $new_file_path = $config['upload_path'] . $image_nom;
             rename($upload_data['full_path'], $new_file_path);
