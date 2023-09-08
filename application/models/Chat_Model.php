@@ -13,7 +13,36 @@ class Chat_Model extends CI_Model
     /* ------------------------- */
     /* Contenu des variables dans la bdd famille */
     /* ------------------------- */
-    public function create_famille() {
+    public function create_famille(
+        $nom_user,
+        $prenom_user,
+        $age_user,
+        $adresse_user,
+        $codepostal_user,
+        $ville_user,
+        $email_user,
+        $tel_user,
+        $type_logement,
+        $exterieur_user,
+        $type_exterieur,
+        $situation_foyer,
+        $activite_famille,
+        $activite_conjoint,
+        $enfants_foyer,
+        $nbr_enfants,
+        $raison_famille,
+        $temps_activite,
+        $animaux_famille,
+        $nbr_animaux,
+        $chiens_radio,
+        $chats_radio,
+        $oiseaux_radio,
+        $autres_radio,
+        $others_animaux,
+        $age_animaux_vie,
+        $details_animaux_vie,
+        $disponible_veto
+    ) {
 
 
         /* ------------------------- */
@@ -55,19 +84,28 @@ class Chat_Model extends CI_Model
     }
 
 
-    public function create_annonce() {
-    $data = array(
-        'nom_animal' => $nom_animal,
-        'puce_animal' => $puce_animal,
-        'img_animal' => $img_animal,
-        'espece_animal' => $espece_animal,
-        'race_animal' => $race_animal,
-        'naissance_animal' => $naissance_animal,
-        'sexe_animal' => $sexe_animal,
-        'lieu_animal' => $lieu_animal,
-        'compatible_animal' => $compatible_animal,
-        'description_animal' => $description_animal
-    );
-    $this->db->insert('annonce', $data);
+    public function create_annonce($data)
+    {
+        $this->db->insert('annonce', $data);
+    }
+
+
+
+
+    public function create_adoption()
+    {
+    }
+
+
+    public function get_races()
+    {
+        $this->db->select('races, value');
+        $query = $this->db->get('races');
+
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array();
+        }
     }
 }

@@ -1,9 +1,5 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/adopt-kitty/assets/css/customms.css">
-
 <div class="d-flex align-items-center justify-content-center text-center success-fond" style="min-height: 100vh;">
     <div>
         <h3 class="text-dark">Félicitations !</h3>
@@ -16,3 +12,5 @@
         </svg>
     </div>
 </div>
+
+<?php include(APPPATH . "views/include/footer.php") ?>
