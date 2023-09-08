@@ -28,12 +28,12 @@
             <h6 class="error"><?= form_error('puce_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
-            <label for="image_chat">Image du chat</label>
+            <label for="image_chat">Image de l'animal</label>
             <input class="form-control" type="file" name="image_chat" id="image_chat" required>
             <h6 class="invalid-from-error"><?= form_error('image_chat'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
-            <label for="espece_animal">Espèce</label>
+            <label for="espece_animal">Espèces</label>
             <select class="form-select" name="espece_animal" id="espece_animal" required>
                 <option value="">Sélectionnez</option>
                 <option value="chat">Chat</option>
@@ -69,7 +69,7 @@
 
 
         <div class="col-md-6 mb-3">
-            <label for="lieu_animal">Association ou il réside actuellement :</label>
+            <label for="lieu_animal">L'adresse où se trouve actuellement l'animal :</label>
             <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Nom de l'association" required>
             <h6 class="invalid-from-error"><?= form_error('lieu_animal'); ?></h6>
         </div>
@@ -77,7 +77,7 @@
         <!-- Boutons radio -->
 
         <div class="col-md-6 mb-3">
-            <label for="animaux_radio">L'animal a t'il des incompatibilités avec les animaux ou les jeunes enfants ?</label>
+            <label for="animaux_radio">L'animal présente-t-il des incompatibilités avec des animaux ou des jeunes enfants ?</label>
 
             <div class="col-md-6 mb-3 d-flex justify-content-around mx-5 p-3" id="animaux_radio_div">
 
@@ -141,4 +141,4 @@
     <?= form_close(); ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/adopt-kitty/assets/js/test.js"></script>
+<script src="/adopt-kitty/assets/js/script.js"></script>
