@@ -1,15 +1,6 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/adopt-kitty/assets/css/style.css">
 
-<style>
-    .invalid-from-error {
-        color: red;
-    }
-</style>
 
 
 <!--------------------------- 
@@ -92,10 +83,10 @@
                     </div>
                 </div>
 
-                <!--------------------------- 
-     Etape 2 du formulaire 
-    --------------------------->
-                <div class="step">
+                
+    <!--  Etape 2 du formulaire  -->
+    
+               <!--  <div class="step">
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="raison_adopt">Pourquoi souhaitez-vous adopter un animal ?</label>
@@ -129,8 +120,9 @@
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('animaux_foyer'); ?></h6>
                         </div>
-                        <!--------------------------- Boutons radio
-                                                      --------------------------->
+                    -->
+                        <!-- Boutons radio -->
+                          <!--                            
                         <div class="col-md-6 mb-3 d-flex" id="animaux_radio_div">
                             <div class="animaux_radio">
                                 <label for="chiens_radio">Chiens</label>
@@ -247,14 +239,14 @@
                             <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
 
 
-                <!--------------------------- 
-     Etape 3 du formulaire 
-    --------------------------->
+               
+     <!-- Etape 3 du formulaire  -->
+   
 
                 <div class="step">
                     <div class="row">
@@ -371,30 +363,11 @@
 </div>
 </div>
 
+<?php include(APPPATH . "views/include/footer.php") ?>
+<script src="/adopt-kitty/assets/js/script.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/adopt-kitty/assets/js/test.js"></script>
-
-<!-- ------------------------- 
-     Erreur icones bootstrap des champs 
-            -------------------------- -->
 <script>
-    // A VERIFIER 
     // Validation et envoi du formulaire
     function validateAndSubmit() {
         const invalidCheck = document.getElementById('invalidCheck');
