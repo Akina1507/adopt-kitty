@@ -92,7 +92,7 @@ class Annonce extends CI_Controller
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size'] = 30720;
         $config['overwrite'] = true;
-// on charge la librairie avec la config
+ // on charge la librairie avec la config
         $this->load->library('upload', $config);
 // On upload l'image dans la bdd
         if ($this->upload->do_upload($field_name)) {
@@ -100,7 +100,7 @@ class Annonce extends CI_Controller
 
             // Calculer la somme de hachage SHA-1 du contenu de l'image en 40 caratères aléatoires
             $hash = sha1_file($upload_data['full_path']);
-// Systeme pour renomer l'image ?
+ // Systeme pour hasher l'image et ajouter une extension puis renommer l'image
             $image_nom =  $hash . '.jpg';
             $new_file_path = $config['upload_path'] . $image_nom;
             rename($upload_data['full_path'], $new_file_path);
