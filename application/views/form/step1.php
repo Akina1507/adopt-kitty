@@ -355,3 +355,25 @@
 <!--------------------------- 
      Erreur icones bootstrap des champs 
             --------------------------->
+<script>
+    
+
+    // Validation Bootstrap personnalisée
+    (() => {
+        'use strict'
+
+        const forms = document.querySelectorAll('.needs-validation')
+        const btn = document.getElementById('nextBtn')
+
+        Array.from(forms).forEach(form => {
+            btn.addEventListener('click', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })();
+</script>
