@@ -388,7 +388,7 @@
 
 
 
-<script src="/adopt-kitty/assets/js/script.js"></script>
+<script src="/adopt-kitty/assets/js/test.js"></script>
 
 <!-- ------------------------- 
      Erreur icones bootstrap des champs 
