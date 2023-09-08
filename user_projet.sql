@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 sep. 2023 à 07:05
+-- Généré le : ven. 08 sep. 2023 à 07:49
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -61,36 +61,28 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `non_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'oui',
   `description_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `annonce`
+--
+
+INSERT INTO `annonce` (`id`, `nom_animal`, `puce_animal`, `image_chat`, `espece_animal`, `race_animal`, `naissance_animal`, `sexe_animal`, `lieu_animal`, `chiens_radio`, `chats_radio`, `enfants_radio`, `non_radio`, `description_animal`) VALUES
+(10, 'oiugj iuhiu', '3553', 'f3b525b0c6cfd1730e4df7292c12fb11ab74180e.jpg', 'chat', 'norvegien', '2023-08-30', 'male', 'miaou', 'non', 'non', 'enfants', 'oui', 'fdbvd');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `apparences`
+-- Structure de la table `associations`
 --
 
-DROP TABLE IF EXISTS `apparences`;
-CREATE TABLE IF NOT EXISTS `apparences` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `apparences` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `apparences`
---
-
-INSERT INTO `apparences` (`id`, `apparences`, `value`) VALUES
-(1, 'Beige', 'beige'),
-(2, 'Blanc', 'blanc'),
-(3, 'Chocolat', 'chocolat'),
-(4, 'Crème', 'creme'),
-(5, 'Gris', 'gris'),
-(6, 'Noir', 'noir'),
-(7, 'Roux', 'roux'),
-(8, 'Tigré', 'tigre'),
-(9, 'Tricolore', 'tricolore');
+DROP TABLE IF EXISTS `associations`;
+CREATE TABLE IF NOT EXISTS `associations` (
+  `id` int NOT NULL,
+  `nom_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mdp_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -142,53 +134,6 @@ INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`
 (116, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'j', 'oui', 'oui', '1', '1', '1', '1', 'k', 'kn', 'junior', 'oui'),
 (117, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhjhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'f', 'oui', 'oui', '1', '1', '1', '1', 'poisson,souris,hamster', 'fe', 'junior', 'oui'),
 (118, 'iuhiu', 'oiugj', '18-25ans', 'hkgjh@uihuigfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'c', 'oui', 'oui', '1', '1', '1', '1', 'd', 'd', 'junior', 'oui');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `maladies`
---
-
-DROP TABLE IF EXISTS `maladies`;
-CREATE TABLE IF NOT EXISTS `maladies` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `maladies` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `maladies`
---
-
-INSERT INTO `maladies` (`id`, `maladies`, `value`) VALUES
-(1, 'Allergies', 'allergies'),
-(2, 'Alopécie', 'alopecie'),
-(3, 'Asthme félin', 'asthme felin'),
-(4, 'Calculs urinaires', 'calculs urinaires'),
-(5, 'Chlamydiose', 'chlamydiose'),
-(6, 'Conjonctivite', 'conjonctivite'),
-(7, 'Coryza', 'coryza'),
-(8, 'Cystite', 'cystite'),
-(9, 'Dermatite', 'dermatite'),
-(10, 'Diabète', 'diabete'),
-(11, 'Herpès', 'herpes'),
-(12, 'Hyperthyroïdie', 'hyperthyroidie'),
-(13, 'Immunodéficience féline', 'immunodeficience feline'),
-(14, 'Insuffisance cardiaque', 'insuffisance cardiaque'),
-(15, 'Insuffisance rénale', 'insuffisance renale'),
-(16, 'Leucémie féline', 'leucemie feline'),
-(17, 'Leucose féline', 'leucose feline'),
-(18, 'Maladies dentaires', 'maladies dentaires'),
-(19, 'Maladies des gencives', 'maladies des gencives'),
-(20, 'Maladies respiratoires', 'maladies respiratoires'),
-(21, 'Otite', 'otite'),
-(22, 'Parasites intestinaux', 'parasites intestinaux'),
-(23, 'Rhinotrachéite Virale Féline (RVF)', 'rvf'),
-(24, 'Rhinite féline', 'rhinite feline'),
-(25, 'FIV', 'fiv'),
-(26, 'Tumeurs', ''),
-(27, 'Typhus', '');
 
 -- --------------------------------------------------------
 
