@@ -167,7 +167,10 @@ class Users extends CI_Controller
                 $this->email->from($from, 'Adopt Kitty');
                 $this->email->to($email);
                 $this->email->subject('Mot de passe oublié');
-                $this->email->message('Bonjour, veuillez renseigner votre nouveau mot de passe svp via ce lien : Adopt Kitty.' . $link);
+                $this->email->message('Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty. <br> 
+                <img src="assets/img/adopt-kitty-logo.png" alt="Logo Adopt Kitty">');
+ 
+
 
                 //Pop up affiché une fois que l'email a été envoyé : true 
                 if ($this->email->send()) {

@@ -13,8 +13,8 @@ include(APPPATH . "views/include/header.php")
                 <h4 class="text-center">Récupération<br>de votre mot de passe</h4>
                 <br>
                 <?php if (isset($popup) && $popup === true) { ?>
-                    <h5>Vous allez recevoir votre nouveau mot de passe sur votre boite email !<br>Vous allez etre redirigé sur le formulaire de connexion</h5>
-                     <?php /* header('refresh:1;url=' . base_url('Users/login')); */ ?>
+                    <h6>Vous allez recevoir un lien pour votre nouveau mot de passe sur votre boite mail !<br> <br>Vous pouvez dès maintenant vous connecter avec votre nouveau mot de passe</h6>
+                     <?php header('refresh:10;url=' . base_url('Users/login')); ?>
                 <?php } ?>
                 <?php if (isset($popupError) && $popupError === true) { ?>
                     <h5>L'email saisi n'existe pas dans la base de données, Réessayez.</h5>
