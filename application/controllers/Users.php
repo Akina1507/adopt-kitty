@@ -154,25 +154,17 @@ class Users extends CI_Controller
                 $number = bin2hex(random_bytes(30));
                 $this->User_Model->new_number($number, $email);
 
-                $config = array(
-                    'protocol' => 'smtp',
-                    'smtp_host' => 'mail.infomaniak.com',
-                    'smtp_port' => 465,
-                    'smtp_user' => 'projet-pro@outil-web.fr',
-                    'smtp_pass' => 'TSA-corp69',
-                    'mailtype' => 'html',
-                    'charset' => 'utf-8',
-                    'newline' => "\r\n"
-                );
+
+                $this->load->config('email');
+                $from = $this->config->item('smtp_user');
+
 
                 //config de l'envoi du mail avec form validation
-                $data = array('email' => $_POST["email"]);
-                $user = $this->User_Model->get_user_by($data);
-                $link = anchor('/codeigniterarthur/connexion/change_mdp/' . $user->id . '/' . $number, 'Reinitialiser votre mot de passe');
+
+                $link = anchor('/codeigniterarthur/connexion/change_mdp/'  . $number, 'Reinitialiser votre mot de passe');
 
                 //Contenu du mail une fois envoyé
-                $this->email->initialize($config);
-                $this->email->from('projet-pro@outil-web.fr', 'Adopt Kitty');
+                $this->email->from($from, 'Adopt Kitty');
                 $this->email->to($email);
                 $this->email->subject('Mot de passe oublié');
                 $this->email->message('Bonjour, veuillez renseigner votre nouveau mot de passe svp via ce lien : Adopt Kitty.' . $link);
@@ -194,9 +186,9 @@ class Users extends CI_Controller
     /* ---------------------------------------------------- */
     /* Recupération mdp par chiffres aléatoires */
     /* ---------------------------------------------------- */
-    public function change_mdp($id, $number = '')
+    public function change_mdp($number = '')
     {
-        if ($this->User_Model->number_exist($id, $number)) {
+        if ($this->User_Model->number_exist( $number)) {
             $this->form_validation->set_rules('mdp', 'changement mdp', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est pas renseigné'

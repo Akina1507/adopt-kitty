@@ -14,7 +14,7 @@ include(APPPATH . "views/include/header.php")
                 <br>
                 <?php if (isset($popup) && $popup === true) { ?>
                     <h5>Vous allez recevoir votre nouveau mot de passe sur votre boite email !<br>Vous allez etre redirigé sur le formulaire de connexion</h5>
-                    <?php header('refresh:1;url=' . base_url('Users/login')); ?>
+                     <?php /* header('refresh:1;url=' . base_url('Users/login')); */ ?>
                 <?php } ?>
                 <?php if (isset($popupError) && $popupError === true) { ?>
                     <h5>L'email saisi n'existe pas dans la base de données, Réessayez.</h5>
