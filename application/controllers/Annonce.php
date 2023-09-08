@@ -25,7 +25,7 @@ class Annonce extends CI_Controller
             $this->form_validation->set_rules('naissance_animal', 'Date de naissance animal', 'trim|required');
             $this->form_validation->set_rules('sexe_animal', 'Sexe', 'trim|required|in_list[male,femelle]');
             $this->form_validation->set_rules('lieu_animal', 'Lieu', 'trim|required');
-            $this->form_validation->set_rules('image_chat', 'Image du chat', 'required');
+            $this->form_validation->set_rules('image_chat', 'Image du chat');
             if (!empty($_POST['chiens_radio'])) {
                 $this->form_validation->set_rules('chiens_radio', 'Chiens', 'trim|required|in_list[chiens]');
             }

@@ -6,11 +6,10 @@
 <link rel="stylesheet" href="/adopt-kitty/assets/css/style.css">
 
 <style>
-    .invalid-feedback {
+    .invalid-from-error {
         color: red;
     }
 </style>
-
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
@@ -21,17 +20,17 @@
         <div class="col-md-6 mb-3">
             <label for="nom_animal">Nom de l'animal :</label>
             <input class="form-control" type="text" name="nom_animal" id="nom_animal" placeholder="Nom de l'animal" required>
-            <h6 class="invalid-feedback"><?= form_error('nom_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('nom_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="puce_animal">Numéro d'identification :</label>
             <input class="form-control" type="number" name="puce_animal" id="puce_animal" placeholder="Numéro d'identification">
-            <h6 class="invalid-feedback"><?= form_error('puce_animal'); ?></h6>
+            <h6 class="error"><?= form_error('puce_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="image_chat">Image du chat</label>
-            <input class="form-control" type="file" name="image_chat" id="image_chat">
-            <h6 class="invalid-feedback"><?= form_error('image_chat'); ?></h6>
+            <input class="form-control" type="file" name="image_chat" id="image_chat" required>
+            <h6 class="invalid-from-error"><?= form_error('image_chat'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="espece_animal">Espèce</label>
@@ -39,7 +38,7 @@
                 <option value="">Sélectionnez</option>
                 <option value="chat">Chat</option>
             </select>
-            <h6 class="invalid-feedback"><?= form_error('espece_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('espece_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="race_animal">Races/Apparence</label>
@@ -51,12 +50,12 @@
                 }
                 ?>
             </select>
-            <h6 class="invalid-feedback"><?= form_error('race_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('race_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="naissance_animal">Date de naissance de l'animal (approximative) :</label>
             <input class="form-control" type="date" name="naissance_animal" id="naissance_animal" placeholder="date de naissance de l'animal" required>
-            <h6 class="invalid-feedback"><?= form_error('naissance_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('naissance_animal'); ?></h6>
         </div>
         <div class="col-md-6 mb-3">
             <label for="sexe_animal">Sexe de l'animal</label>
@@ -65,14 +64,14 @@
                 <option value="male">Mâle</option>
                 <option value="femelle">Femelle</option>
             </select>
-            <h6 class="invalid-feedback"><?= form_error('sexe_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('sexe_animal'); ?></h6>
         </div>
 
 
         <div class="col-md-6 mb-3">
             <label for="lieu_animal">Association ou il réside actuellement :</label>
             <input class="form-control" type="text" name="lieu_animal" id="lieu_animal" placeholder="Nom de l'association" required>
-            <h6 class="invalid-feedback"><?= form_error('lieu_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('lieu_animal'); ?></h6>
         </div>
 
         <!-- Boutons radio -->
@@ -88,7 +87,7 @@
                         <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio" value="chiens">
                         <label class="form-check-label" for="chiens_radio"></label>
                     </div>
-                    <h6 class="invalid-feedback"><?= form_error('chiens_radio'); ?></h6>
+                    <h6 class="invalid-from-error"><?= form_error('chiens_radio'); ?></h6>
                 </div>
 
 
@@ -99,7 +98,7 @@
                         <label class="form-check-label" for="chats_radio"></label>
                     </div>
 
-                    <h6 class="invalid-feedback"><?= form_error('chats_radio'); ?></h6>
+                    <h6 class="invalid-from-error"><?= form_error('chats_radio'); ?></h6>
                 </div>
 
                 <div>
@@ -109,7 +108,7 @@
                         <label class="form-check-label" for="enfants_radio"></label>
                     </div>
                 </div>
-                <h6 class="invalid-feedback"><?= form_error('enfants_radio'); ?></h6>
+                <h6 class="invalid-from-error"><?= form_error('enfants_radio'); ?></h6>
 
 
                 <div>
@@ -118,7 +117,7 @@
                         <input class="form-check-input" type="radio" name="non_radio" id="non_radio" value="oui">
                         <label class="form-check-label" for="non_radio"></label>
                     </div>
-                    <h6 class="invalid-feedback"><?= form_error('non_radio'); ?></h6>
+                    <h6 class="invalid-from-error"><?= form_error('non_radio'); ?></h6>
                 </div>
             </div>
         </div>
@@ -127,7 +126,7 @@
         <div class="col-md-12 mb-3">
             <label for="description_animal">Description de l'animal :</label>
             <textarea class="form-control" name="description_animal" id="description_animal" placeholder="Comportement, maladie, compatibilité..." required></textarea>
-            <h6 class="invalid-feedback"><?= form_error('description_animal'); ?></h6>
+            <h6 class="invalid-from-error"><?= form_error('description_animal'); ?></h6>
         </div>
 
         <div class="col-md-6 mb-3">
