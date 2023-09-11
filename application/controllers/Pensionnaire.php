@@ -67,7 +67,6 @@ class Pensionnaire extends CI_Controller
                         $activite_conjoint = $this->input->post('activite_conjoint');
                         $enfants_foyer = $this->input->post('enfants_foyer');
                         $nbr_enfants = $this->input->post('nbr_enfants');
-                        $raison_famille = $this->input->post('raison_famille');
                         $temps_activite = $this->input->post('temps_activite');
                         $raison_adopt = $this->input->post('raison_adopt');
                         $accueil_animaux = $this->input->post('accueil_animaux');
@@ -125,7 +124,6 @@ class Pensionnaire extends CI_Controller
                             $activite_conjoint,
                             $enfants_foyer,
                             $nbr_enfants,
-                            $raison_famille,
                             $temps_activite,
                         );
                         

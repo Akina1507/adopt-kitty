@@ -121,7 +121,6 @@ class Chat_Model extends CI_Model
         $activite_conjoint,
         $enfants_foyer,
         $nbr_enfants,
-        $raison_famille,
         $temps_activite
     )
     {
@@ -157,7 +156,6 @@ class Chat_Model extends CI_Model
             'activite_conjoint' => $activite_conjoint,
             'enfants_foyer' => $enfants_foyer,
             'nbr_enfants' => $nbr_enfants,
-            'raison_famille' => $raison_famille,
             'temps_activite' => $temps_activite,
             
         );

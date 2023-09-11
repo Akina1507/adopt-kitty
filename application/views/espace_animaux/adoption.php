@@ -99,7 +99,7 @@
                                 <option value="">Sélectionnez</option>
                                 <option value="chat">Chat</option>
                             </select>
-                            <h6 class="invalid-from-error"><?= form_error('raison_famille'); ?></h6>
+                            <h6 class="invalid-from-error"><?= form_error('accueil_animaux'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3" id="age_animaux">
                             <label for="age_animaux">Quel age de preférence souhaitez vous ?</label>
