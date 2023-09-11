@@ -539,6 +539,24 @@ function showPopup() {
 	}
 }
 
+// Affichage des icones pour la validation Bootstrap personnalisée 
+(() => {
+		'use strict'
+	
+		const forms = document.querySelectorAll('.needs-validation')
+		const btn = document.getElementById('nextBtn')
+	
+		Array.from(forms).forEach(form => {
+			btn.addEventListener('click', event => {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+	
+				form.classList.add('was-validated')
+			}, false)
+		})
+	})();
 
 // Pop up pour l'etape 3 qui enumère chaque input/select
 function validateStep3(currentStep) {
@@ -589,5 +607,33 @@ function validateStep3(currentStep) {
 	return true;
 }
 
+// Affichage/masquer others_radio en fonction de autres_radio + required
+document.addEventListener("DOMContentLoaded", function () {
+    var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
+    var othersAnimauxInput = document.getElementById("others_animaux_div");
+
+    // Fonction pour gérer la visibilité et le statut required de others_animaux
+    function handleOthersAnimaux() {
+        var selectedValue = document.querySelector('input[name="autres_radio"]:checked').value;
+        if (selectedValue === "0") {
+            othersAnimauxInput.classList.add("d-none");
+            othersAnimauxInput.querySelector("input").removeAttribute("required");
+        } else {
+            othersAnimauxInput.classList.remove("d-none");
+            othersAnimauxInput.querySelector("input").setAttribute("required", "required");
+        }
+    }
+
+    // Masquer le champ others_animaux_div au chargement initial
+    othersAnimauxInput.classList.add("d-none");
+
+    // Ajouter un gestionnaire d'événements change à chaque input de type radio "autres_radio"
+    autresRadioInputs.forEach(function (radio) {
+        radio.addEventListener("change", handleOthersAnimaux);
+    });
+
+    // Au chargement de la page, exécutez la fonction pour gérer l'état initial
+    handleOthersAnimaux();
+});
 
 
