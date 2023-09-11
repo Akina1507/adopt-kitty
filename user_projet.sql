@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 sep. 2023 à 07:49
+-- Généré le : lun. 11 sep. 2023 à 09:59
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -35,6 +35,33 @@ CREATE TABLE IF NOT EXISTS `adoption` (
   `civile_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prenom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_adopt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `accueil_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiens_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chats_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `oiseaux_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `autres_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `others_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_domestiques` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exp_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_logement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exterieur_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_exterieur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `situation_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_conjoint` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `enfants_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nbr_enfants` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `temps_activite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -194,8 +221,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `nom`, `prenom`, `email`, `mdp`, `recup_mdp`) VALUES
-(11, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '7a1118708aa702d9edb5f999bff4286da2c7c83736459388e6d189c547e4'),
-(28, 'miaou', 'Chouchou', 'Ronron', 'chouchou.loulou@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL);
+(11, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2fc98dbfb799366ad1fc1fe53626683ab5f7f5aa3c8a48c04e27a33bf7ca'),
+(28, 'miaou', 'Chouchou', 'Ronron', 'chouchou.loulou@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2fc98dbfb799366ad1fc1fe53626683ab5f7f5aa3c8a48c04e27a33bf7ca');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

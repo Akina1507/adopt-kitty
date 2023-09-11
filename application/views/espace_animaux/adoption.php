@@ -1,15 +1,6 @@
 <?php include(APPPATH . "views/include/header.php") ?>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/adopt-kitty/assets/css/style.css">
 
-<style>
-    .invalid-from-error {
-        color: red;
-    }
-</style>
 
 
 <!--------------------------- 
@@ -18,7 +9,7 @@
 <div class="container form-container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
-            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
+            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Pensionnaire/adoption'); ?>" method="post">
                 <div class="step-header d-flex mb-2">
                     <span class="steplevel active d-flex justify-content-center">Etape 1</span>
                     <span class="steplevel d-flex justify-content-center">Etape 2</span>
@@ -92,10 +83,10 @@
                     </div>
                 </div>
 
-                <!--------------------------- 
-     Etape 2 du formulaire 
-    --------------------------->
-                <div class="step">
+                
+    <!--  Etape 2 du formulaire  -->
+    
+                 <div class="step">
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="raison_adopt">Pourquoi souhaitez-vous adopter un animal ?</label>
@@ -108,11 +99,11 @@
                                 <option value="">Sélectionnez</option>
                                 <option value="chat">Chat</option>
                             </select>
-                            <h6 class="invalid-from-error"><?= form_error('raison_famille'); ?></h6>
+                            <h6 class="invalid-from-error"><?= form_error('accueil_animaux'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3 d-none" id="age_animaux">
+                        <div class="col-md-6 mb-3" id="age_animaux">
                             <label for="age_animaux">Quel age de preférence souhaitez vous ?</label>
-                            <select class="form-select" name="age_animaux" id="age_animaux">
+                            <select class="form-select" name="age_animaux" id="age_animaux" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="junior">Junior</option>
                                 <option value="adulte">Adulte</option>
@@ -120,7 +111,7 @@
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('age_animaux'); ?></h6>
                         </div>
-                        <div class="col-md-6 mb-3" id="animaux_foyer_div">
+                        <div class="col-md-6 mb-3">
                             <label for="animaux_foyer">Avez-vous des animaux en ce moment dans votre foyer ?</label>
                             <select class="form-select" name="animaux_foyer" id="animaux_foyer" required>
                                 <option value="">Sélectionnez</option>
@@ -129,9 +120,10 @@
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('animaux_foyer'); ?></h6>
                         </div>
-                        <!--------------------------- Boutons radio
-                                                      --------------------------->
-                        <div class="col-md-6 mb-3 d-flex" id="animaux_radio_div">
+                    
+                        <!-- Boutons radio -->
+                                                   
+                        <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
                             <div class="animaux_radio">
                                 <label for="chiens_radio">Chiens</label>
                                 <div class="col-mb-12">
@@ -192,9 +184,9 @@
                                     <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
                                     <label class="form-check-label" for="oiseaux_radio_3">3</label>
                                 </div>
+                                <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
-                            <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
-
+                            
 
                             <div>
                                 <label for="autres_radio">Autres</label>
@@ -236,9 +228,9 @@
                             <h6 class="invalid-from-error"><?= form_error('animaux_domestiques'); ?></h6>
                         </div>
 
-                        <div class="col-md-12 d-none" id="exp_animaux">
+                        <div class="col-md-12" id="exp_animaux">
                             <label for="exp_animaux">Pourriez-vous nous dire vos expériences avec les animaux domestiques (caractéristiques, comportement, maladies...)</label>
-                            <textarea class="form-control" name="exp_animaux" id="exp_animaux" placeholder="Votre message..."></textarea>
+                            <textarea class="form-control" name="exp_animaux" id="exp_animaux" placeholder="Votre message..." required></textarea>
                             <h6 class="invalid-from-error"><?= form_error('exp_animaux'); ?></h6>
                         </div>
                         <br>
@@ -247,14 +239,14 @@
                             <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
-                </div>
+                </div> 
 
 
 
 
-                <!--------------------------- 
-     Etape 3 du formulaire 
-    --------------------------->
+               
+     <!-- Etape 3 du formulaire  -->
+   
 
                 <div class="step">
                     <div class="row">
@@ -371,306 +363,50 @@
 </div>
 </div>
 
+<?php include(APPPATH . "views/include/footer.php") ?>
+<script src="/adopt-kitty/assets/js/script.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/adopt-kitty/assets/js/test.js"></script>
-
-<!-- ------------------------- 
-     Erreur icones bootstrap des champs 
-            -------------------------- -->
 <script>
-    // A VERIFIER 
-    // Validation et envoi du formulaire
-    function validateAndSubmit() {
-        const invalidCheck = document.getElementById('invalidCheck');
-        const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
+// Pop up pour les champs non rempli etape 2
+function validateStep2(currentStep) {
+    var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
+    var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
+    var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
+    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+    var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
+    var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
+    var animauxDomestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
 
-        let allFieldsFilled = true;
+    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
 
-        // Vérifier si tous les champs obligatoires sont remplis
-        requiredInputs.forEach(input => {
-            if (input.value.trim() === '') {
-                allFieldsFilled = false;
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
-
-        if (!allFieldsFilled) {
-            // Afficher la pop-up si des champs obligatoires ne sont pas remplis
-            alert("Veuillez remplir tous les champs obligatoires.");
-        } else if (!invalidCheck.checked) {
-            // Afficher la pop-up si les conditions générales ne sont pas cochées
-            alert("Veuillez accepter les conditions générales.");
-        } else {
-            // Envoyer le formulaire à la base de données si tout est valide
-            document.getElementById('Upemultistepsform').submit();
-        }
+    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+        raisonAdopt === "" ||
+        accueilAnimaux === "" ||
+        animauxFoyer === "" ||
+        othersAnimaux === "" ||
+        ageAnimaux === "" ||
+        expAnimaux === "" ||
+        animauxDomestiques === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 2."
+        );
+        return false;
     }
 
-    // Afficher la pop-up si les conditions générales ne sont pas cochées
-    function showPopup() {
-        const invalidCheck = document.getElementById('invalidCheck');
-
-        if (!invalidCheck.checked) {
-            alert("Veuillez accepter les conditions générales.");
-        }
-    }
-
-    // Validation Bootstrap personnalisée
-    (() => {
-        'use strict'
-
-        const forms = document.querySelectorAll('.needs-validation')
-        const btn = document.getElementById('nextBtn')
-
-        Array.from(forms).forEach(form => {
-            btn.addEventListener('click', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })();
-
-    function myForm() {
-
-        var d = document.getElementById("form");
-        var sent = document.getElementById("sent");
-
-        d.classList.add('display-none');
-
-
-        sent.classList.remove('display-none');
-    }
-
-
-
-
-
-    // Pop up pour l'etape 1 qui enumère chaque input/select
-    function validateStep1(currentStep) {
-        var civileUser = currentStep.find("select[name='civile_user']").val().trim();
-        var nomUser = currentStep.find("input[name='nom_user']").val().trim();
-        var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
-        var ageUser = currentStep.find("select[name='age_user']").val().trim();
-        var emailUser = currentStep.find("input[name='email_user']").val().trim();
-        var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
-        var villeUser = currentStep.find("input[name='ville_user']").val().trim();
-        var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
-        var telUser = currentStep.find("input[name='tel_user']").val().trim();
-
-        if (
-            civileUser === "" ||
-            nomUser === "" ||
-            prenomUser === "" ||
-            ageUser === "" ||
-            emailUser === "" ||
-            adresseUser === "" ||
-            villeUser === "" ||
-            codepostalUser === "" ||
-            telUser === ""
-        ) {
-            showFieldError(
-                currentStep,
-                "Veuillez remplir tous les champs de l'étape 1."
-            );
-            return false;
-        }
-
-        return true;
-    }
-    // Pop up pour l'etape 2 qui enumère chaque input/select
-    function validateStep2(currentStep) {
-        var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
-        var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
-        var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
-        var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
-        var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
-        var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
-        var animaux_domestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
-
-        var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
-        var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
-        var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
-        var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
-
-        if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
-            raisonAdopt === "" ||
-            accueilAnimaux === "" ||
-            animauxFoyer === "" ||
-            othersAnimaux === "" ||
-            ageAnimaux === "" ||
-            expAnimaux === "" ||
-            animauxDomestiques === ""
-
-        ) {
-            showFieldError(
-                currentStep,
-                "Veuillez remplir tous les champs de l'étape 2."
-            );
-            return false;
-        }
-
-        return true;
-    }
-    // Pop up pour l'etape 3 qui enumère chaque input/select
-    function validateStep3(currentStep) {
-        var typeLogement = currentStep.find("select[name='type_logement']").val();
-        var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
-
-        if (exterieurUser === "oui") {
-            var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
-        }
-
-        var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
-        var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
-
-        if (enfantsFoyer === "oui") {
-            var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
-        }
-
-        var activiteFamille = currentStep
-            .find("select[name='activite_famille']")
-            .val();
-        if (situationFoyer == "couple") {
-            var activiteConjoint = currentStep
-                .find("select[name='activite_conjoint']")
-                .val();
-        }
-        var tempsActivite = currentStep.find("select[name='temps_activite']").val();
-
-
-        if (
-            typeLogement === "" ||
-            exterieurUser === "" ||
-            typeExterieur === "" ||
-            situationFoyer === "" ||
-            activiteFamille === "" ||
-            activiteConjoint === "" ||
-            enfantsFoyer === "" ||
-            nbrEnfants === "" ||
-            tempsActivite === ""
-
-        ) {
-            showFieldError(
-                currentStep,
-                "Veuillez remplir tous les champs de l'étape 3."
-            );
-            return false;
-        }
-
-        return true;
-    }
-
-
-
-
-
-    //Systeme pour afficher/masquer type_exterieur en fonction d'exterieur_user
-    document.addEventListener("DOMContentLoaded", function() {
-        var exterieurUserSelect = document.getElementById("exterieur_user");
-
-        var typeExterieurDiv = document.getElementById("type_exterieur_div");
-        var typeExterieur = document.getElementById("type_exterieur");
-
-        exterieurUserSelect.addEventListener("change", function() {
-            if (
-                exterieurUserSelect.value === "non" ||
-                exterieurUserSelect.value === ""
-            ) {
-                typeExterieurDiv.classList = "col-md-6 mb-3 d-none";
-                typeExterieur.required = false;
-                typeExterieur.value = "";
-            } else {
-                typeExterieurDiv.classList = "col-md-6 mb-3 d-block";
-                typeExterieur.required = true;
-            }
-        });
-    });
-
-    //Systeme pour apparaitre/dispparaitre situation_foyer en fonction d'enfants_foyer & activite_conjoint + famille
-    document.addEventListener("DOMContentLoaded", function() {
-        var situationFoyerSelect = document.getElementById("situation_foyer");
-
-        var enfantsFoyerDiv = document.getElementById("enfants_foyer_div");
-        var enfantsFoyer = document.getElementById("enfants_foyer");
-
-        var activitefamilleDiv = document.getElementById("activite_famille_div");
-        var activitefamille = document.getElementById("activite_famille");
-
-        var activiteconjointDiv = document.getElementById("activite_conjoint_div");
-        var activiteconjoint = document.getElementById("activite_conjoint");
-
-        situationFoyerSelect.addEventListener("change", function() {
-            if (situationFoyerSelect.value === "") {
-                enfantsFoyerDiv.classList = "col-md-6 mb-3 d-none";
-                enfantsFoyer.required = false;
-
-                activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
-                activiteconjoint.required = false;
-
-                activitefamilleDiv.classList = "col-md-6 mb-3 d-none";
-                activitefamille.required = false;
-                enfantsFoyer.value = "";
-            } else {
-                if (situationFoyerSelect.value === "seul") {
-                    activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
-                    activitefamille.required = true;
-                    activitefamille.value = "";
-                    activiteconjoint.required = false;
-                    activiteconjointDiv.classList = "col-md-6 mb-3 d-none";
-                }
-                if (situationFoyerSelect.value === "couple") {
-                    activitefamilleDiv.classList = "col-md-6 mb-3 d-block";
-                    activitefamille.required = true;
-                    activitefamille.value = "";
-
-                    activiteconjointDiv.classList = "col-md-6 mb-3 d-block";
-                    activiteconjoint.required = true;
-                    activiteconjoint.value = "";
-                }
-                enfantsFoyerDiv.classList = "col-md-6 mb-3 d-block";
-                enfantsFoyer.required = true;
-            }
-        });
-    });
-
-    //Systeme pour apparaitre/disparaitre enfants_foyer en fonction nbr_enfants_foyer
-    document.addEventListener("DOMContentLoaded", function() {
-        var enfantsFoyerSelect = document.getElementById("enfants_foyer");
-
-        var enfantsnbrDiv = document.getElementById("nbr_enfants_div");
-        var enfantsnbr = document.getElementById("nbr_enfants");
-
-        enfantsFoyerSelect.addEventListener("change", function() {
-            if (enfantsFoyerSelect.value === "" || enfantsFoyerSelect.value === "non") {
-                enfantsnbrDiv.classList = "col-md-6 mb-3 d-none";
-                enfantsnbr.required = false;
-                enfantsnbr.value = "";
-            } else {
-                enfantsnbrDiv.classList = "col-md-6 mb-3 d-block";
-                enfantsnbr.required = true;
-            }
-        });
-    });
+    return true;
+}
 </script>
+
+
+
+
+
+
+    

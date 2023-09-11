@@ -8,10 +8,7 @@ class Pensionnaire extends CI_Controller
             /* ------------------------- */
             public function adoption()
             {
-        
                 
-        
-        
                     $this->form_validation->set_rules('civile_user', 'Civilite', 'trim|required|in_list[monsieur,madame]');
                     $this->form_validation->set_rules('nom_user', 'Nom', 'trim|required');
                     $this->form_validation->set_rules('prenom_user', 'Prenom', 'trim|required');
@@ -28,7 +25,7 @@ class Pensionnaire extends CI_Controller
                     ));
                     $this->form_validation->set_rules('raison_adopt', 'Raison adoption', 'trim|required');
                     $this->form_validation->set_rules('accueil_animaux', 'Accueil animaux', 'trim|required|in_list[chat]');
-                    $this->form_validation->set_rules('age_animaux', 'Age animaux', 'trim|in_list[junion,adulte,senior]');
+                    $this->form_validation->set_rules('age_animaux', 'Age animaux', 'trim|in_list[junior,adulte,senior]');
                     $this->form_validation->set_rules('animaux_foyer', 'Animaux foyer', 'trim|in_list[oui,non]');
                     $this->form_validation->set_rules('chiens_radio', 'Bouton chien', 'trim|in_list[0,1,2,3]');
                     $this->form_validation->set_rules('chats_radio', 'Bouton chats', 'trim|in_list[0,1,2,3]');
@@ -48,8 +45,6 @@ class Pensionnaire extends CI_Controller
                     $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|in_list[1,2,3,4,5,6,7,8,9,10]');
                     $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required|in_list[1h-3h,3h-5h,5h-7h,7h-ou-plus]');
         
-        
-        
                     /* ------------------------- */
                     /* Formulaire valide */
                     /* ------------------------- */
@@ -64,8 +59,6 @@ class Pensionnaire extends CI_Controller
                         $codepostal_user = $this->input->post('codepostal_user');
                         $email_user = $this->input->post('email_user');
                         $tel_user = $this->input->post('tel_user');
-                        
-                        
                         $type_logement = $this->input->post('type_logement');
                         $exterieur_user = $this->input->post('exterieur_user');
                         $type_exterieur = $this->input->post('type_exterieur');
@@ -74,11 +67,7 @@ class Pensionnaire extends CI_Controller
                         $activite_conjoint = $this->input->post('activite_conjoint');
                         $enfants_foyer = $this->input->post('enfants_foyer');
                         $nbr_enfants = $this->input->post('nbr_enfants');
-                        $raison_famille = $this->input->post('raison_famille');
                         $temps_activite = $this->input->post('temps_activite');
-                        
-                        
-                        
                         $raison_adopt = $this->input->post('raison_adopt');
                         $accueil_animaux = $this->input->post('accueil_animaux');
                         $age_animaux = $this->input->post('age_animaux');
@@ -116,20 +105,6 @@ class Pensionnaire extends CI_Controller
                             $ville_user,
                             $email_user,
                             $tel_user,
-                            
-                            
-                            $type_logement,
-                            $exterieur_user,
-                            $type_exterieur,
-                            $situation_foyer,
-                            $activite_famille,
-                            $activite_conjoint,
-                            $enfants_foyer,
-                            $nbr_enfants,
-                            $raison_famille,
-                            $temps_activite,
-                            
-                            
                             $raison_adopt,
                             $accueil_animaux,
                             $chiens_radio,
@@ -141,12 +116,25 @@ class Pensionnaire extends CI_Controller
                             $animaux_foyer,
                             $animaux_domestiques,
                             $exp_animaux,
+                            $type_logement,
+                            $exterieur_user,
+                            $type_exterieur,
+                            $situation_foyer,
+                            $activite_famille,
+                            $activite_conjoint,
+                            $enfants_foyer,
+                            $nbr_enfants,
+                            $temps_activite,
                         );
-        
+                        
                         redirect("Pensionnaire/success");
-                    }
+                    } else {
                     $this->load->view('espace_animaux/adoption');
                 }
+            }
+        
+                
+            
             
         
             public function success()

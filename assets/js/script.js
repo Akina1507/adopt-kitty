@@ -314,6 +314,8 @@ function submitForm() {
 }
 
 
+
+
 /* Pour famille d'accueil */
  // Pop up pour l'etape 1 qui enumère chaque input/select
  function validateStep1(currentStep) {
@@ -472,6 +474,7 @@ function showPopup() {
 
 /* --------- */
 /* Pour annonce */
+// Bouton caché bootstrap (disabled)
 $(document).ready(function() {
 	// Lorsque le bouton radio "Non" est cliqué
 	$('#non_radio').click(function() {
@@ -495,5 +498,142 @@ $(document).ready(function() {
 
 
 
+/* --------- */
+/* Pour adoption */
+
+// Validation et envoi du formulaire
+function validateAndSubmit() {
+	const invalidCheck = document.getElementById('invalidCheck');
+	const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
+
+	let allFieldsFilled = true;
+
+	// Vérifier si tous les champs obligatoires sont remplis
+	requiredInputs.forEach(input => {
+		if (input.value.trim() === '') {
+			allFieldsFilled = false;
+			input.classList.add('is-invalid');
+		} else {
+			input.classList.remove('is-invalid');
+		}
+	});
+
+	if (!allFieldsFilled) {
+		// Afficher la pop-up si des champs obligatoires ne sont pas remplis
+		alert("Veuillez remplir tous les champs obligatoires.");
+	} else if (!invalidCheck.checked) {
+		// Afficher la pop-up si les conditions générales ne sont pas cochées
+		alert("Veuillez accepter les conditions générales.");
+	} else {
+		// Envoyer le formulaire à la base de données si tout est valide
+		document.getElementById('Upemultistepsform').submit();
+	}
+}
+
+// Afficher la pop-up si les conditions générales ne sont pas cochées
+function showPopup() {
+	const invalidCheck = document.getElementById('invalidCheck');
+
+	if (!invalidCheck.checked) {
+		alert("Veuillez accepter les conditions générales.");
+	}
+}
+
+// Affichage des icones pour la validation Bootstrap personnalisée 
+(() => {
+		'use strict'
+	
+		const forms = document.querySelectorAll('.needs-validation')
+		const btn = document.getElementById('nextBtn')
+	
+		Array.from(forms).forEach(form => {
+			btn.addEventListener('click', event => {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+	
+				form.classList.add('was-validated')
+			}, false)
+		})
+	})();
+
+// Pop up pour l'etape 3 qui enumère chaque input/select
+function validateStep3(currentStep) {
+	var typeLogement = currentStep.find("select[name='type_logement']").val();
+	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
+
+	if (exterieurUser === "oui") {
+		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+	}
+
+	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
+	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
+
+	if (enfantsFoyer === "oui") {
+		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
+	}
+
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	if (situationFoyer == "couple") {
+		var activiteConjoint = currentStep
+			.find("select[name='activite_conjoint']")
+			.val();
+	}
+	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
+
+
+	if (
+		typeLogement === "" ||
+		exterieurUser === "" ||
+		typeExterieur === "" ||
+		situationFoyer === "" ||
+		activiteFamille === "" ||
+		activiteConjoint === "" ||
+		enfantsFoyer === "" ||
+		nbrEnfants === "" ||
+		tempsActivite === ""
+
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 3."
+		);
+		return false;
+	}
+
+	return true;
+}
+
+// Affichage/masquer others_radio en fonction de autres_radio + required
+document.addEventListener("DOMContentLoaded", function () {
+    var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
+    var othersAnimauxInput = document.getElementById("others_animaux_div");
+
+    // Fonction pour gérer la visibilité et le statut required de others_animaux
+    function handleOthersAnimaux() {
+        var selectedValue = document.querySelector('input[name="autres_radio"]:checked').value;
+        if (selectedValue === "0") {
+            othersAnimauxInput.classList.add("d-none");
+            othersAnimauxInput.querySelector("input").removeAttribute("required");
+        } else {
+            othersAnimauxInput.classList.remove("d-none");
+            othersAnimauxInput.querySelector("input").setAttribute("required", "required");
+        }
+    }
+
+    // Masquer le champ others_animaux_div au chargement initial
+    othersAnimauxInput.classList.add("d-none");
+
+    // Ajouter un gestionnaire d'événements change à chaque input de type radio "autres_radio"
+    autresRadioInputs.forEach(function (radio) {
+        radio.addEventListener("change", handleOthersAnimaux);
+    });
+
+    // Au chargement de la page, exécutez la fonction pour gérer l'état initial
+    handleOthersAnimaux();
+});
 
 
