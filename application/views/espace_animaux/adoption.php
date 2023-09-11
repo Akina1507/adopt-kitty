@@ -388,25 +388,37 @@
 	})
 })();
 
-// Masquer input others_radio en fonction des btn autres_radio
 document.addEventListener("DOMContentLoaded", function () {
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
     var othersAnimauxInput = document.getElementById("others_animaux_div");
+
+    // Fonction pour gérer la visibilité et le statut required de others_animaux
+    function handleOthersAnimaux() {
+        var selectedValue = document.querySelector('input[name="autres_radio"]:checked').value;
+        if (selectedValue === "0") {
+            othersAnimauxInput.classList.add("d-none");
+            othersAnimauxInput.querySelector("input").removeAttribute("required");
+        } else {
+            othersAnimauxInput.classList.remove("d-none");
+            othersAnimauxInput.querySelector("input").setAttribute("required", "required");
+        }
+    }
 
     // Masquer le champ others_animaux_div au chargement initial
     othersAnimauxInput.classList.add("d-none");
 
     // Ajouter un gestionnaire d'événements change à chaque input de type radio "autres_radio"
     autresRadioInputs.forEach(function (radio) {
-        radio.addEventListener("change", function () {
-            if (radio.value === "0") {
-                othersAnimauxInput.classList.add("d-none");
-            } else {
-                othersAnimauxInput.classList.remove("d-none");
-            }
-        });
+        radio.addEventListener("change", handleOthersAnimaux);
     });
+
+    // Au chargement de la page, exécutez la fonction pour gérer l'état initial
+    handleOthersAnimaux();
 });
+
+
+
+
 
 
 // Pop up pour les champs non rempli etape 2
