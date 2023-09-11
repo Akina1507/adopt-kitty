@@ -369,7 +369,27 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    // Affichage des icones pour la validation Bootstrap personnalisée 
+(() => {
+	'use strict'
+
+	const forms = document.querySelectorAll('.needs-validation')
+	const btn = document.getElementById('nextBtn')
+
+	Array.from(forms).forEach(form => {
+		btn.addEventListener('click', event => {
+			if (!form.checkValidity()) {
+				event.preventDefault()
+				event.stopPropagation()
+			}
+
+			form.classList.add('was-validated')
+		}, false)
+	})
+})();
+
+// Masquer input others_radio en fonction des btn autres_radio
+document.addEventListener("DOMContentLoaded", function () {
     var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
     var othersAnimauxInput = document.getElementById("others_animaux_div");
 
@@ -389,7 +409,39 @@
 });
 
 
+// Pop up pour les champs non rempli etape 2
+function validateStep2(currentStep) {
+    var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
+    var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
+    var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
+    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+    var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
+    var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
+    var animauxDomestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
 
+    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+
+    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+        raisonAdopt === "" ||
+        accueilAnimaux === "" ||
+        animauxFoyer === "" ||
+        othersAnimaux === "" ||
+        ageAnimaux === "" ||
+        expAnimaux === "" ||
+        animauxDomestiques === ""
+    ) {
+        showFieldError(
+            currentStep,
+            "Veuillez remplir tous les champs de l'étape 2."
+        );
+        return false;
+    }
+
+    return true;
+}
 
 
 </script>

@@ -539,72 +539,7 @@ function showPopup() {
 	}
 }
 
-// Pop up pour l'etape 1 qui enumère chaque input/select
-function validateStep1(currentStep) {
-	var civileUser = currentStep.find("select[name='civile_user']").val().trim();
-	var nomUser = currentStep.find("input[name='nom_user']").val().trim();
-	var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
-	var ageUser = currentStep.find("select[name='age_user']").val().trim();
-	var emailUser = currentStep.find("input[name='email_user']").val().trim();
-	var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
-	var villeUser = currentStep.find("input[name='ville_user']").val().trim();
-	var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
-	var telUser = currentStep.find("input[name='tel_user']").val().trim();
 
-	if (
-		civileUser === "" ||
-		nomUser === "" ||
-		prenomUser === "" ||
-		ageUser === "" ||
-		emailUser === "" ||
-		adresseUser === "" ||
-		villeUser === "" ||
-		codepostalUser === "" ||
-		telUser === ""
-	) {
-		showFieldError(
-			currentStep,
-			"Veuillez remplir tous les champs de l'étape 1."
-		);
-		return false;
-	}
-
-	return true;
-}
-// Pop up pour l'etape 2 qui enumère chaque input/select
-function validateStep2(currentStep) {
-	var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
-	var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
-	var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
-	var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
-	var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
-	var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
-	var animaux_domestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
-
-	var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
-	var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
-	var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
-	var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
-
-	if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
-		raisonAdopt === "" ||
-		accueilAnimaux === "" ||
-		animauxFoyer === "" ||
-		othersAnimaux === "" ||
-		ageAnimaux === "" ||
-		expAnimaux === "" ||
-		animauxDomestiques === ""
-
-	) {
-		showFieldError(
-			currentStep,
-			"Veuillez remplir tous les champs de l'étape 2."
-		);
-		return false;
-	}
-
-	return true;
-}
 // Pop up pour l'etape 3 qui enumère chaque input/select
 function validateStep3(currentStep) {
 	var typeLogement = currentStep.find("select[name='type_logement']").val();
@@ -653,41 +588,6 @@ function validateStep3(currentStep) {
 
 	return true;
 }
-// Validation Bootstrap personnalisée icones
-(() => {
-	'use strict'
 
-	const forms = document.querySelectorAll('.needs-validation')
-	const btn = document.getElementById('nextBtn')
 
-	Array.from(forms).forEach(form => {
-		btn.addEventListener('click', event => {
-			if (!form.checkValidity()) {
-				event.preventDefault()
-				event.stopPropagation()
-			}
 
-			form.classList.add('was-validated')
-		}, false)
-	})
-})();
-
-// Masquer input others_radio en fonction des btn autres_radio
-document.addEventListener("DOMContentLoaded", function () {
-    var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
-    var othersAnimauxInput = document.getElementById("others_animaux_div");
-
-    // Masquer le champ others_animaux_div au chargement initial
-    othersAnimauxInput.classList.add("d-none");
-
-    // Ajouter un gestionnaire d'événements change à chaque input de type radio "autres_radio"
-    autresRadioInputs.forEach(function (radio) {
-        radio.addEventListener("change", function () {
-            if (radio.value === "0") {
-                othersAnimauxInput.classList.add("d-none");
-            } else {
-                othersAnimauxInput.classList.remove("d-none");
-            }
-        });
-    });
-});

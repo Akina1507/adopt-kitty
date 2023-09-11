@@ -25,7 +25,7 @@ class Pensionnaire extends CI_Controller
                     ));
                     $this->form_validation->set_rules('raison_adopt', 'Raison adoption', 'trim|required');
                     $this->form_validation->set_rules('accueil_animaux', 'Accueil animaux', 'trim|required|in_list[chat]');
-                    $this->form_validation->set_rules('age_animaux', 'Age animaux', 'trim|in_list[junion,adulte,senior]');
+                    $this->form_validation->set_rules('age_animaux', 'Age animaux', 'trim|in_list[junior,adulte,senior]');
                     $this->form_validation->set_rules('animaux_foyer', 'Animaux foyer', 'trim|in_list[oui,non]');
                     $this->form_validation->set_rules('chiens_radio', 'Bouton chien', 'trim|in_list[0,1,2,3]');
                     $this->form_validation->set_rules('chats_radio', 'Bouton chats', 'trim|in_list[0,1,2,3]');
