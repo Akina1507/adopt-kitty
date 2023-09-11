@@ -1,5 +1,5 @@
 <?php include(APPPATH . "views/include/header.php") ?>
-<link rel="stylesheet" href="/adopt-kitty/assets/css/style.css">
+
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
@@ -14,6 +14,7 @@
                     <span class="steplevel d-flex justify-content-center">Etape 3</span>
                 </div>
                 <div class="step">
+                    <div class="row">
                     <div class="row">
                         <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">

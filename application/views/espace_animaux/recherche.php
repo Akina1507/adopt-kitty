@@ -30,14 +30,15 @@ include(APPPATH . "views/include/header.php")
         <a class="btn btn-outline-dark m-1" href="<?php
                                                     echo base_url("Pensionnaire/adoption") ?>">Rencontrer cet animal
         </a>
+        <div class="custom-btn">
         <?php
         $images = array(
             'image2.jpg', 'image8.jpg', 'image11.jpg', 'image4.jpg',
             'image5.jpg', 'image6.jpg', 'image7.jpg', 'image1.jpg',
             'image9.jpg', 'image10.jpg', 'image3.jpg', 'image12.jpg'
         );
-        $numColumns = 4;
 
+        $numColumns = 4;
         foreach (array_chunk($images, $numColumns) as $row) {
             echo '<div class="row">';
             foreach ($row as $image) {
@@ -48,6 +49,7 @@ include(APPPATH . "views/include/header.php")
             echo '</div>';
         }
         ?>
+        </div>
     </div>
 </div>
 
