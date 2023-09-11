@@ -361,7 +361,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <?php include(APPPATH . "views/include/footer.php") ?>
 <script src="/adopt-kitty/assets/js/script.js"></script>

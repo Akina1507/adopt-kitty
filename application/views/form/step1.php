@@ -1,5 +1,5 @@
 <?php include(APPPATH . "views/include/header.php") ?>
-
+<link rel="stylesheet" href="/adopt-kitty/assets/css/style.css">
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
@@ -270,8 +270,9 @@
                                     <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
                                     <label class="form-check-label" for="oiseaux_radio_3">3</label>
                                 </div>
+                                <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
-                            <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
+                            
 
 
                             <div>
@@ -352,28 +353,24 @@
 
 <script src="/adopt-kitty/assets/js/script.js"></script>
 
-<!--------------------------- 
-     Erreur icones bootstrap des champs 
-            --------------------------->
+
 <script>
-    
-
-    // Validation Bootstrap personnalisée
-    (() => {
-        'use strict'
-
-        const forms = document.querySelectorAll('.needs-validation')
-        const btn = document.getElementById('nextBtn')
-
-        Array.from(forms).forEach(form => {
-            btn.addEventListener('click', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })();
+ // Affichage des icones pour la validation Bootstrap personnalisée 
+(() => {
+		'use strict'
+	
+		const forms = document.querySelectorAll('.needs-validation')
+		const btn = document.getElementById('nextBtn')
+	
+		Array.from(forms).forEach(form => {
+			btn.addEventListener('click', event => {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+	
+				form.classList.add('was-validated')
+			}, false)
+		})
+	})();
 </script>

@@ -399,75 +399,7 @@ function validateStep2(currentStep) {
 
 	return true;
 }
-// Pop up pour l'etape 3 qui enumère chaque input/select
-function validateStep3(currentStep) {
-	var animauxFamille = currentStep.find("select[name='animaux_famille']").val();
-	var nbrAnimaux = currentStep.find("select[name='nbr_animaux']").val();
-	var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
-	var ageAnimauxVie = currentStep.find("select[name='age_animaux_vie']").val();
-	var detailAnimauxVie = currentStep.find("textarea[name='details_animaux_vie']").val().trim();
-	var disponibleVeto = currentStep.find("select[name='disponible_veto']").val();
 
-	var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
-	var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
-	var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
-	var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
-
-	if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
-		animauxFamille === "" ||
-		nbrAnimaux === "" ||
-		othersAnimaux === "" ||
-		ageAnimauxVie === "" ||
-		detailAnimauxVie === "" ||
-		disponibleVeto === ""
-	) {
-		showFieldError(
-			currentStep,
-			"Veuillez remplir tous les champs de l'étape 3."
-		);
-		return false;
-	}
-
-	return true;
-}
-
-// Validation et verification champs + pop up champs & conditionG
-function validateAndSubmit() {
-	const invalidCheck = document.getElementById('invalidCheck');
-	const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
-
-	let allFieldsFilled = true;
-
-	// Vérifier si tous les champs obligatoires sont remplis
-	requiredInputs.forEach(input => {
-		if (input.value.trim() === '') {
-			allFieldsFilled = false;
-			input.classList.add('is-invalid');
-		} else {
-			input.classList.remove('is-invalid');
-		}
-	});
-
-	if (!allFieldsFilled) {
-		// Afficher la pop-up si des champs obligatoires ne sont pas remplis
-		alert("Veuillez remplir tous les champs obligatoires.");
-	} else if (!invalidCheck.checked) {
-		// Afficher la pop-up si les conditions générales ne sont pas cochées
-		alert("Veuillez accepter les conditions générales.");
-	} else {
-		// Envoyer le formulaire à la base de données si tout est valide
-		document.getElementById('Upemultistepsform').submit();
-	}
-}
-
-// Afficher la pop-up si les conditions générales ne sont pas cochées
-function showPopup() {
-	const invalidCheck = document.getElementById('invalidCheck');
-
-	if (!invalidCheck.checked) {
-		alert("Veuillez accepter les conditions générales.");
-	}
-}
 
 
 
@@ -516,8 +448,8 @@ function validateAndSubmit() {
 		} else {
 			input.classList.remove('is-invalid');
 		}
-	});
-
+	});}
+/* 
 	if (!allFieldsFilled) {
 		// Afficher la pop-up si des champs obligatoires ne sont pas remplis
 		alert("Veuillez remplir tous les champs obligatoires.");
@@ -537,7 +469,7 @@ function showPopup() {
 	if (!invalidCheck.checked) {
 		alert("Veuillez accepter les conditions générales.");
 	}
-}
+} */
 
 // Affichage des icones pour la validation Bootstrap personnalisée 
 (() => {
