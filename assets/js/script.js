@@ -314,6 +314,8 @@ function submitForm() {
 }
 
 
+
+
 /* Pour famille d'accueil */
  // Pop up pour l'etape 1 qui enumère chaque input/select
  function validateStep1(currentStep) {
@@ -472,6 +474,7 @@ function showPopup() {
 
 /* --------- */
 /* Pour annonce */
+// Bouton caché bootstrap (disabled)
 $(document).ready(function() {
 	// Lorsque le bouton radio "Non" est cliqué
 	$('#non_radio').click(function() {
@@ -495,5 +498,196 @@ $(document).ready(function() {
 
 
 
+/* --------- */
+/* Pour adoption */
+
+// Validation et envoi du formulaire
+function validateAndSubmit() {
+	const invalidCheck = document.getElementById('invalidCheck');
+	const requiredInputs = document.querySelectorAll('.needs-validation :required:not(.form-check-input)');
+
+	let allFieldsFilled = true;
+
+	// Vérifier si tous les champs obligatoires sont remplis
+	requiredInputs.forEach(input => {
+		if (input.value.trim() === '') {
+			allFieldsFilled = false;
+			input.classList.add('is-invalid');
+		} else {
+			input.classList.remove('is-invalid');
+		}
+	});
+
+	if (!allFieldsFilled) {
+		// Afficher la pop-up si des champs obligatoires ne sont pas remplis
+		alert("Veuillez remplir tous les champs obligatoires.");
+	} else if (!invalidCheck.checked) {
+		// Afficher la pop-up si les conditions générales ne sont pas cochées
+		alert("Veuillez accepter les conditions générales.");
+	} else {
+		// Envoyer le formulaire à la base de données si tout est valide
+		document.getElementById('Upemultistepsform').submit();
+	}
+}
+
+// Afficher la pop-up si les conditions générales ne sont pas cochées
+function showPopup() {
+	const invalidCheck = document.getElementById('invalidCheck');
+
+	if (!invalidCheck.checked) {
+		alert("Veuillez accepter les conditions générales.");
+	}
+}
+
+// Pop up pour l'etape 1 qui enumère chaque input/select
+function validateStep1(currentStep) {
+	var civileUser = currentStep.find("select[name='civile_user']").val().trim();
+	var nomUser = currentStep.find("input[name='nom_user']").val().trim();
+	var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
+	var ageUser = currentStep.find("select[name='age_user']").val().trim();
+	var emailUser = currentStep.find("input[name='email_user']").val().trim();
+	var adresseUser = currentStep.find("input[name='adresse_user']").val().trim();
+	var villeUser = currentStep.find("input[name='ville_user']").val().trim();
+	var codepostalUser = currentStep.find("input[name='codepostal_user']").val().trim();
+	var telUser = currentStep.find("input[name='tel_user']").val().trim();
+
+	if (
+		civileUser === "" ||
+		nomUser === "" ||
+		prenomUser === "" ||
+		ageUser === "" ||
+		emailUser === "" ||
+		adresseUser === "" ||
+		villeUser === "" ||
+		codepostalUser === "" ||
+		telUser === ""
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 1."
+		);
+		return false;
+	}
+
+	return true;
+}
+// Pop up pour l'etape 2 qui enumère chaque input/select
+function validateStep2(currentStep) {
+	var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
+	var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
+	var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
+	var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+	var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
+	var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
+	var animaux_domestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
+
+	var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+	var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+	var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+	var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+
+	if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+		raisonAdopt === "" ||
+		accueilAnimaux === "" ||
+		animauxFoyer === "" ||
+		othersAnimaux === "" ||
+		ageAnimaux === "" ||
+		expAnimaux === "" ||
+		animauxDomestiques === ""
+
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 2."
+		);
+		return false;
+	}
+
+	return true;
+}
+// Pop up pour l'etape 3 qui enumère chaque input/select
+function validateStep3(currentStep) {
+	var typeLogement = currentStep.find("select[name='type_logement']").val();
+	var exterieurUser = currentStep.find("select[name='exterieur_user']").val();
+
+	if (exterieurUser === "oui") {
+		var typeExterieur = currentStep.find("select[name='type_exterieur']").val();
+	}
+
+	var situationFoyer = currentStep.find("select[name='situation_foyer']").val();
+	var enfantsFoyer = currentStep.find("select[name='enfants_foyer']").val();
+
+	if (enfantsFoyer === "oui") {
+		var nbrEnfants = currentStep.find("select[name='nbr_enfants']").val();
+	}
+
+	var activiteFamille = currentStep
+		.find("select[name='activite_famille']")
+		.val();
+	if (situationFoyer == "couple") {
+		var activiteConjoint = currentStep
+			.find("select[name='activite_conjoint']")
+			.val();
+	}
+	var tempsActivite = currentStep.find("select[name='temps_activite']").val();
 
 
+	if (
+		typeLogement === "" ||
+		exterieurUser === "" ||
+		typeExterieur === "" ||
+		situationFoyer === "" ||
+		activiteFamille === "" ||
+		activiteConjoint === "" ||
+		enfantsFoyer === "" ||
+		nbrEnfants === "" ||
+		tempsActivite === ""
+
+	) {
+		showFieldError(
+			currentStep,
+			"Veuillez remplir tous les champs de l'étape 3."
+		);
+		return false;
+	}
+
+	return true;
+}
+// Validation Bootstrap personnalisée icones
+(() => {
+	'use strict'
+
+	const forms = document.querySelectorAll('.needs-validation')
+	const btn = document.getElementById('nextBtn')
+
+	Array.from(forms).forEach(form => {
+		btn.addEventListener('click', event => {
+			if (!form.checkValidity()) {
+				event.preventDefault()
+				event.stopPropagation()
+			}
+
+			form.classList.add('was-validated')
+		}, false)
+	})
+})();
+
+// Masquer input others_radio en fonction des btn autres_radio
+document.addEventListener("DOMContentLoaded", function () {
+    var autresRadioInputs = document.querySelectorAll('input[name="autres_radio"]');
+    var othersAnimauxInput = document.getElementById("others_animaux_div");
+
+    // Masquer le champ others_animaux_div au chargement initial
+    othersAnimauxInput.classList.add("d-none");
+
+    // Ajouter un gestionnaire d'événements change à chaque input de type radio "autres_radio"
+    autresRadioInputs.forEach(function (radio) {
+        radio.addEventListener("change", function () {
+            if (radio.value === "0") {
+                othersAnimauxInput.classList.add("d-none");
+            } else {
+                othersAnimauxInput.classList.remove("d-none");
+            }
+        });
+    });
+});
