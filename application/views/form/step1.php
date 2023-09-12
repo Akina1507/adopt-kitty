@@ -4,7 +4,6 @@
      Mise en page + étape 1 
     --------------------------->
 <div class="container form-container">
-    <?= form_open_multipart('Famille1/step1') ?>
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
@@ -14,6 +13,7 @@
                     <span class="steplevel d-flex justify-content-center">Etape 3</span>
                 </div>
                 <div class="step">
+
                     <div class="row">
                         <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">
@@ -270,8 +270,9 @@
                                     <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
                                     <label class="form-check-label" for="oiseaux_radio_3">3</label>
                                 </div>
+                                <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
-                            <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
+
 
 
                             <div>
@@ -338,27 +339,20 @@
 
                         <div class="d-flex btn-row">
                             <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="submit">Envoyer</button>
                         </div>
                     </div>
+                </div>
             </form>
         </div>
     </div>
-    <?= form_close(); ?>
 </div>
 
 <?php include(APPPATH . "views/include/footer.php") ?>
 
 
-<script src="/adopt-kitty/assets/js/script.js"></script>
-
-<!--------------------------- 
-     Erreur icones bootstrap des champs 
-            --------------------------->
 <script>
-    
-
-    // Validation Bootstrap personnalisée
+    // Affichage des icones pour la validation Bootstrap personnalisée 
     (() => {
         'use strict'
 
