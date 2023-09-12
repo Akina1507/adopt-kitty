@@ -83,10 +83,10 @@
                     </div>
                 </div>
 
-                
-    <!--  Etape 2 du formulaire  -->
-    
-                 <div class="step">
+
+                <!--  Etape 2 du formulaire  -->
+
+                <div class="step">
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="raison_adopt">Pourquoi souhaitez-vous adopter un animal ?</label>
@@ -120,9 +120,9 @@
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('animaux_foyer'); ?></h6>
                         </div>
-                    
+
                         <!-- Boutons radio -->
-                                                   
+
                         <div class="col-md-6 mb-3 d-flex justify-content-around" id="animaux_radio_div">
                             <div class="animaux_radio">
                                 <label for="chiens_radio">Chiens</label>
@@ -186,7 +186,7 @@
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
-                            
+
 
                             <div>
                                 <label for="autres_radio">Autres</label>
@@ -239,14 +239,14 @@
                             <button class="btn btn-outline-dark fw-bold m-1" id="nextBtn" onclick="nextPrev(1)" type="button">Suivant</button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
 
 
 
-               
-     <!-- Etape 3 du formulaire  -->
-   
+
+                <!-- Etape 3 du formulaire  -->
+
 
                 <div class="step">
                     <div class="row">
@@ -364,49 +364,41 @@
 
 
 <?php include(APPPATH . "views/include/footer.php") ?>
-<script src="/adopt-kitty/assets/js/script.js"></script>
 
 
 
 <script>
-// Pop up pour les champs non rempli etape 2
-function validateStep2(currentStep) {
-    var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
-    var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
-    var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
-    var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
-    var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
-    var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
-    var animauxDomestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
+    // Pop up pour les champs non rempli etape 2
+    function validateStep2(currentStep) {
+        var raisonAdopt = currentStep.find("textarea[name='raison_adopt']").val();
+        var accueilAnimaux = currentStep.find("select[name='accueil_animaux']").val();
+        var animauxFoyer = currentStep.find("select[name='animaux_foyer']").val();
+        var othersAnimaux = currentStep.find("input[name='others_animaux']").val().trim();
+        var ageAnimaux = currentStep.find("select[name='age_animaux']").val();
+        var expAnimaux = currentStep.find("textarea[name='exp_animaux']").val().trim();
+        var animauxDomestiques = currentStep.find("select[name='animaux_domestiques']").val().trim();
 
-    var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
-    var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
-    var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
-    var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
+        var chiensRadio = currentStep.find("input[name='chiens_radio']:checked").val();
+        var chatsRadio = currentStep.find("input[name='chats_radio']:checked").val();
+        var oiseauxRadio = currentStep.find("input[name='oiseaux_radio']:checked").val();
+        var autresRadio = currentStep.find("input[name='autres_radio']:checked").val();
 
-    if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
-        raisonAdopt === "" ||
-        accueilAnimaux === "" ||
-        animauxFoyer === "" ||
-        othersAnimaux === "" ||
-        ageAnimaux === "" ||
-        expAnimaux === "" ||
-        animauxDomestiques === ""
-    ) {
-        showFieldError(
-            currentStep,
-            "Veuillez remplir tous les champs de l'étape 2."
-        );
-        return false;
+        if (!chiensRadio || !chatsRadio || !oiseauxRadio || !autresRadio ||
+            raisonAdopt === "" ||
+            accueilAnimaux === "" ||
+            animauxFoyer === "" ||
+            othersAnimaux === "" ||
+            ageAnimaux === "" ||
+            expAnimaux === "" ||
+            animauxDomestiques === ""
+        ) {
+            showFieldError(
+                currentStep,
+                "Veuillez remplir tous les champs de l'étape 2."
+            );
+            return false;
+        }
+
+        return true;
     }
-
-    return true;
-}
 </script>
-
-
-
-
-
-
-    

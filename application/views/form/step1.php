@@ -4,7 +4,6 @@
      Mise en page + étape 1 
     --------------------------->
 <div class="container form-container">
-    <?= form_open_multipart('Famille1/step1') ?>
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
             <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille1/step1'); ?>" method="post">
@@ -14,7 +13,7 @@
                     <span class="steplevel d-flex justify-content-center">Etape 3</span>
                 </div>
                 <div class="step">
-                    
+
                     <div class="row">
                         <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">
@@ -273,7 +272,7 @@
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
-                            
+
 
 
                             <div>
@@ -340,39 +339,35 @@
 
                         <div class="d-flex btn-row">
                             <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="submit">Envoyer</button>
                         </div>
                     </div>
-                    </div>
+                </div>
             </form>
         </div>
     </div>
-    <?= form_close(); ?>
 </div>
 
 <?php include(APPPATH . "views/include/footer.php") ?>
 
 
-<script src="/adopt-kitty/assets/js/script.js"></script> 
-
-
 <script>
- // Affichage des icones pour la validation Bootstrap personnalisée 
-(() => {
-		'use strict'
-	
-		const forms = document.querySelectorAll('.needs-validation')
-		const btn = document.getElementById('nextBtn')
-	
-		Array.from(forms).forEach(form => {
-			btn.addEventListener('click', event => {
-				if (!form.checkValidity()) {
-					event.preventDefault()
-					event.stopPropagation()
-				}
-	
-				form.classList.add('was-validated')
-			}, false)
-		})
-	})();
+    // Affichage des icones pour la validation Bootstrap personnalisée 
+    (() => {
+        'use strict'
+
+        const forms = document.querySelectorAll('.needs-validation')
+        const btn = document.getElementById('nextBtn')
+
+        Array.from(forms).forEach(form => {
+            btn.addEventListener('click', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })();
 </script>
