@@ -14,7 +14,7 @@
                     <span class="steplevel d-flex justify-content-center">Etape 3</span>
                 </div>
                 <div class="step">
-                    <div class="row">
+                    
                     <div class="row">
                         <h3>Devenir famille d'accueil</h3>
                         <div class="col-md-6 mb-3">
@@ -343,6 +343,7 @@
                             <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
                         </div>
                     </div>
+                    </div>
             </form>
         </div>
     </div>
@@ -352,7 +353,7 @@
 <?php include(APPPATH . "views/include/footer.php") ?>
 
 
-<script src="/adopt-kitty/assets/js/script.js"></script>
+<script src="/adopt-kitty/assets/js/script.js"></script> 
 
 
 <script>
