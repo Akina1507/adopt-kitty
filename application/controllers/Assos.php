@@ -36,7 +36,7 @@ class Assos extends CI_Controller
                     );
                 }
 
-                $this->session->set_assos($session_assos);
+                $this->session->set_userdata($session_assos);
                 redirect("Assos/deconnect");
             } else {
                 $data['info_connexion'] = 'error';
