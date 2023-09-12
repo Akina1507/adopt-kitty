@@ -1,5 +1,6 @@
 <?php
 //Formulaire de connexion 
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Users extends CI_Controller
@@ -167,8 +168,14 @@ class Users extends CI_Controller
                 $this->email->from($from, 'Adopt Kitty');
                 $this->email->to($email);
                 $this->email->subject('Mot de passe oublié');
-                $this->email->message('Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty. <br> 
-                <img src="assets/img/adopt-kitty-logo.png" alt="Logo Adopt Kitty">');
+                $this->email->set_mailtype('html');
+                $img_url = base_url('assets/img/adopt-kitty-logo.png');
+                $this->email->attach($img_url);
+                $message = '<html><body>';
+                $message .= '<h4>Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty.</h4>';
+                $message .= '<img src="cid:' . basename($img_url) . '" alt="Image">';
+                $message .= '</body></html>';
+                $this->email->message($message);
 
 
 

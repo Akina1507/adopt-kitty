@@ -26,16 +26,15 @@
                 </div>
                 <br>
                 <div class="row justify-content-between">
-                    <div class="col">
+                    <div class="col d-flex justify-content-between">
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
-                    <div class="col text-center">
-                        <a class="btn btn-outline-dark fw-bold m-1" style="font-size: 15px;" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
-                        <a href="<?= base_url("Users/inscription") ?>">Créer un compte</a>
-                    </div>
                 </div>
-                <div class="col">
-                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                <br>
+                <div class="col d-flex justify-content-between text-center">
+                    <a href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
+                    <a href="<?= base_url("Users/inscription") ?>">Créer un compte</a>
                 </div>
                 <?php echo form_close(); ?>
                 <?= form_error('formulaire'); ?>

@@ -5,8 +5,9 @@ include(APPPATH . "views/include/header.php")
 <!--------------------------- 
      Vue home bouton + lien 
     --------------------------->
-<div class="row">
-	<div class="bottom-0 start-0  padding-10-20 d-flex flex-column justify-content-center align-items-center">
+<div class="col-12 fond" style="height: 85vh;">
+
+	<div class=" d-flex p-5 flex-column justify-content-center">
 		<h4 class="p-5 text-center">Je suis..</h4>
 		<div class="d-flex p-2 text-center justify-content-center bordered">
 			<div class="mx-5">
@@ -24,6 +25,7 @@ include(APPPATH . "views/include/header.php")
 		</div>
 	</div>
 </div>
+
 
 <?php
 include(APPPATH . "views/include/footer.php")

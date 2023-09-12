@@ -4,7 +4,7 @@
    Inscription utilisateurs + Pop up message succès 
                         --------------------------->
 <?php echo form_open() ?>
-<div class="fond d-flex align-items-center justify-content-center" style="height: 150vh;">
+<div class="fond d-flex align-items-center justify-content-center" style="height: 130vh;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 p-5 container-login bg-white bordered">
@@ -23,28 +23,32 @@
                         <br>
                         <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
                         <h6><?php echo form_error('nom_assos'); ?></h6>
+                        <br>
                         <label class="label-login" for="pseudo">Adresse</label>
                         <br>
                         <input class="form-control" type="text" id="adresse_assos" name="adresse_assos" required>
                         <h6><?php echo form_error('adresse_assos'); ?></h6>
+                        <br>
                         <label class="label-login" for="ville_assos">Ville</label>
                         <br>
                         <input class="form-control" type="number" id="ville_assos" name="ville_assos" required>
                         <h6><?php echo form_error('ville_assos'); ?></h6>
+                        <br>
                         <label class="label-login" for="codepostal_assos">Code postal</label>
                         <br>
                         <input class="form-control" type="text" id="codepostal_assos" name="codepostal_assos" required>
                         <h6><?php echo form_error('codepostal_assos'); ?></h6>
+                        <br>
                         <label class="label-login" for="email_assos">Adresse email</label>
                         <br>
                         <input class="form-control" type="email_assos" id="email_assos" name="email_assos" required>
                         <h6><?php echo form_error('email_assos'); ?></h6>
-
+                        <br>
                         <label class="label-login" for="tel_assos">Numéro de téléphone</label>
                         <br>
                         <input class="form-control" type="text" id="tel_assos" name="tel_assos" required>
                         <h6><?php echo form_error('tel_assos'); ?></h6>
-
+                        <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp_assos" name="mdp_assos" required>
@@ -59,21 +63,18 @@
                     </div>
                 </div>
                 <br>
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="connexion">
+                <div class="row">
+                    <div class="col d-flex justify-content-between">
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                        <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
+                    <?php echo form_close(); ?>
                 </div>
-                <div class="col">
-                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
-                </div>
-                <?php echo form_close(); ?>
+                <?php echo form_error('formulaire'); ?>
             </div>
-            <?php echo form_error('formulaire'); ?>
         </div>
     </div>
-</div>
 
-<?php
-include(APPPATH . "views/include/footer.php")
-?>
+    <?php
+    include(APPPATH . "views/include/footer.php")
+    ?>
