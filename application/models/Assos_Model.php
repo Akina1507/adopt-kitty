@@ -6,7 +6,7 @@ class Assos_Model extends CI_Model
     {
         $query = $this->db->where('nom_assos', $nom_assos)
             ->where('mdp_assos', $mdp_assos)
-            ->from($this->table)
+            ->from('associations')
             ->count_all_results();
 
         return $query;
@@ -39,14 +39,13 @@ class Assos_Model extends CI_Model
 
         if ($query->num_rows() > 0) {
             return $query->row_array();
-        }else {
+        } else {
             return false;
         }
-}
+    }
 
-public function create_assos($data)
+    public function create_assos($data)
     {
         return $this->db->insert('associations', $data);
     }
-
 }
