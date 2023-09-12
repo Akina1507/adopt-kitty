@@ -27,7 +27,7 @@ class Assos extends CI_Controller
             if ($this->Assos_Model->cb_assos($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
                 $nom_assos = $_POST["nom_assos"];
                 $data = array('nom_assos' => $nom_assos);
-                $user = $this->Assos_Model->get_assos_by($data);
+                $user = $this->assos_model->get_assos_by($data);
 
                 if ($user) {
                     $session_assos = array(
