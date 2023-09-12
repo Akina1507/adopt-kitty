@@ -5,17 +5,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Assos extends CI_Controller
 {
 
-    public function index()
-    {
-        $this->load->view('espace_animaux/recherche');
-    }
+
 
     public function login_assos()
     {
         if (isConnected() == true) {
-            redirect('Assos');
+            redirect('Users');
         } else {
-            $this->form_validation->set_rules('nom_assos', 'nom associations', 'trim|required', array(
+            $this->form_validation->set_rules('email_assos', 'Email', 'trim|required', array(
                 'required' => 'le nom de l\'association n\'est renseigné'
             ));
             $this->form_validation->set_rules('mdp_assos', 'Mot de passe', 'trim|required', array(
@@ -24,20 +21,22 @@ class Assos extends CI_Controller
             ));
         }
         if ($this->form_validation->run() == true) {
-            if ($this->Assos_Model->cb_assos($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
-                $nom_assos = $_POST["nom_assos"];
-                $data = array('nom_assos' => $nom_assos);
+            if ($this->Assos_Model->cb_assos($_POST["email_assos"], md5($_POST["mdp_assos"])) == 1) {
+                $email_assos = $_POST["email_assos"];
+                $data = array('email_assos' => $email_assos);
                 $user = $this->Assos_Model->get_assos_by($data);
 
                 if ($user) {
-                    $session_assos = array(
+                    $session_user = array(
                         'id' => $user['id_assos'],
-                        'nom_assos' => $user['nom_assos'],
+                        'nom' => $user['nom_assos'],
+                        'email_assos' => $user['email_assos']
                     );
                 }
 
-                $this->session->set_userdata($session_assos);
-                redirect("Assos/deconnect");
+
+                $this->session->set_userdata($session_user);
+                redirect("Users");
             } else {
                 $data['info_connexion'] = 'error';
                 $this->load->view('espace_user/login_assos', $data);
@@ -47,22 +46,6 @@ class Assos extends CI_Controller
         }
     }
 
-    /* ------------------------------- */
-    /* Home */
-    /* ------------------------------- */
-    public function home()
-    {
-        $this->load->view('espace_user/home');
-    }
-    /* ------------------------------- */
-    /* Détruire la session users */
-    /* ------------------------------- */
-
-    public function deconnect()
-    {
-        session_destroy();
-        redirect('Assos');
-    }
 
     /* ------------------------- */
     /* Formulaire de inscription */

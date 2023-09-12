@@ -2,9 +2,9 @@
 
 class Assos_Model extends CI_Model
 {
-    public function cb_assos($nom_assos, $mdp_assos)
+    public function cb_assos($email_assos, $mdp_assos)
     {
-        $query = $this->db->where('nom_assos', $nom_assos)
+        $query = $this->db->where('email_assos', $email_assos)
             ->where('mdp_assos', $mdp_assos)
             ->from('associations')
             ->count_all_results();

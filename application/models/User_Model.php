@@ -4,9 +4,9 @@ class User_Model extends CI_Model
 {
 
     protected $table = 'users';
-    public function cb_users($pseudo, $mdp)
+    public function cb_users($email, $mdp)
     {
-        $query = $this->db->where('pseudo', $pseudo)
+        $query = $this->db->where('email', $email)
             ->where('mdp', $mdp)
             ->from($this->table)
             ->count_all_results();
@@ -84,7 +84,7 @@ class User_Model extends CI_Model
 
         if ($query->num_rows() > 0) {
             return $query->row_array();
-        }else {
+        } else {
             return false;
         }
     }

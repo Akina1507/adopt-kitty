@@ -28,8 +28,8 @@ class Users extends CI_Controller
         if (isConnected() == true) {
             redirect('Users');
         } else {
-            $this->form_validation->set_rules('pseudo', 'pseudo', 'trim|required', array(
-                'required' => 'le pseudo n\'est renseigné'
+            $this->form_validation->set_rules('email', 'email', 'trim|required', array(
+                'required' => 'L\'email n\'est renseigné'
             ));
             $this->form_validation->set_rules('mdp', 'Mot de passe', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
@@ -37,9 +37,9 @@ class Users extends CI_Controller
             ));
 
             if ($this->form_validation->run() == true) {
-                if ($this->User_Model->cb_users($_POST["pseudo"], md5($_POST["mdp"])) == 1) {
-                    $pseudo = $_POST["pseudo"];
-                    $data = array('pseudo' => $pseudo);
+                if ($this->User_Model->cb_users($_POST["email"], md5($_POST["mdp"])) == 1) {
+                    $email = $_POST["email"];
+                    $data = array('email' => $email);
                     $user = $this->User_Model->get_user_by($data);
 
                     if ($user) {
@@ -47,7 +47,7 @@ class Users extends CI_Controller
                             'id' => $user['id'],
                             'nom' => $user['nom'],
                             'prenom' => $user['prenom'],
-                            'pseudo' => $pseudo 
+                            'email' => $email
                         );
                     }
 
@@ -169,7 +169,7 @@ class Users extends CI_Controller
                 $this->email->subject('Mot de passe oublié');
                 $this->email->message('Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty. <br> 
                 <img src="assets/img/adopt-kitty-logo.png" alt="Logo Adopt Kitty">');
- 
+
 
 
                 //Pop up affiché une fois que l'email a été envoyé : true 
@@ -191,7 +191,7 @@ class Users extends CI_Controller
     /* ---------------------------------------------------- */
     public function change_mdp($number = '')
     {
-        if ($this->User_Model->number_exist( $number)) {
+        if ($this->User_Model->number_exist($number)) {
             $this->form_validation->set_rules('mdp', 'changement mdp', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est pas renseigné'
@@ -214,11 +214,10 @@ class Users extends CI_Controller
         }
     }
 
-    
+
 
     public function home()
     {
         $this->load->view('espace_user/home');
     }
 }
-

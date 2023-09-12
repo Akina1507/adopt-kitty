@@ -3,9 +3,8 @@
 <!--------------------------- 
    Inscription utilisateurs + Pop up message succès 
                         --------------------------->
-
 <?php echo form_open() ?>
-<div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
+<div class="fond d-flex align-items-center justify-content-center" style="height: 150vh;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 p-5 container-login bg-white bordered">
@@ -69,11 +68,12 @@
                     <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
                 </div>
                 <?php echo form_close(); ?>
-                <?php echo form_error('formulaire'); ?>
             </div>
+            <?php echo form_error('formulaire'); ?>
         </div>
     </div>
 </div>
+
 <?php
 include(APPPATH . "views/include/footer.php")
 ?>
