@@ -2,7 +2,7 @@
 
 class Assos_Model extends CI_Model
 {
-    public function cb_users($nom_assos, $mdp_assos)
+    public function cb_assos($nom_assos, $mdp_assos)
     {
         $query = $this->db->where('nom_assos', $nom_assos)
             ->where('mdp_assos', $mdp_assos)
@@ -12,13 +12,13 @@ class Assos_Model extends CI_Model
         return $query;
     }
 
-    public function get_user($nom_assos, $mdp_assos, $email, $number, $adresse_assos, $codepostal_assos, $ville_assos, $tel_assos)
+    public function get_assos($nom_assos, $mdp_assos, $email_assos, $number, $adresse_assos, $codepostal_assos, $ville_assos, $tel_assos)
     {
         $query = $this->db->select("*")
-            ->where('pseudo', $pseudo)
-            ->where('mdp', $mdp)
-            ->where('email', $email)
-            ->where('mdp_recup', $number)
+            ->where('nom_assos', $nom_assos)
+            ->where('mdp_assos', $mdp_assos)
+            ->where('email_assos', $email_assos)
+            ->where('mdp_recup_assos', $number)
             ->where('adresse_assos', $adresse_assos)
             ->where('ville_assos', $ville_assos)
             ->where('codepostal_assos', $codepostal_assos)
@@ -29,4 +29,24 @@ class Assos_Model extends CI_Model
 
         return $query;
     }
+
+    public function get_assos_by($data)
+    {
+        $this->db->select('*');
+        $this->db->from('associations');
+        $this->db->where($data);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        }else {
+            return false;
+        }
+}
+
+public function create_assos($data)
+    {
+        return $this->db->insert('associations', $data);
+    }
+
 }

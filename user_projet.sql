@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 11 sep. 2023 à 09:59
+-- Généré le : mar. 12 sep. 2023 à 08:29
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -60,10 +60,18 @@ CREATE TABLE IF NOT EXISTS `adoption` (
   `activite_conjoint` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `enfants_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nbr_enfants` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `raison_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `temps_activite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `adoption`
+--
+
+INSERT INTO `adoption` (`id`, `civile_user`, `nom_user`, `prenom_user`, `age_user`, `adresse_user`, `codepostal_user`, `ville_user`, `email_user`, `tel_user`, `raison_adopt`, `accueil_animaux`, `chiens_radio`, `chats_radio`, `oiseaux_radio`, `autres_radio`, `others_animaux`, `age_animaux`, `animaux_foyer`, `animaux_domestiques`, `exp_animaux`, `type_logement`, `exterieur_user`, `type_exterieur`, `situation_foyer`, `activite_famille`, `activite_conjoint`, `enfants_foyer`, `nbr_enfants`, `temps_activite`) VALUES
+(1, 'madame', 'iuhiu', 'oiugj', '18-25ans', 'hiuhk', '87654', 'hkjhbkj', 'hjh@hgfngffhtfgcbfhdbnhjhkj.com', '0987675567', 'bf', 'chat', '1', '1', '1', '1', 'dvdv', 'junior', 'oui', 'chiens', 'vd', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h'),
+(2, 'monsieur', 'iuhiu', 'oiugj', '25-35ans', 'hiuhk', '87654', 'hkjhbkj', 'hjh@hhyhykj.com', '0987675567', 'hrf', 'chat', '1', '1', '1', '2', 'vdsvs', 'junior', 'oui', 'chiens', 'fe', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h'),
+(3, 'monsieur', 'iuhiu', 'oiugj', '18-25ans', 'hiuhk', '87654', 'hkjhbkj', 'hjh@hhjdvvdhkj.com', '0987675567', 'dvd', 'chat', '1', '1', '1', '1', 'fvb', 'junior', 'oui', 'oui', 'fd', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h');
 
 -- --------------------------------------------------------
 
@@ -105,10 +113,16 @@ INSERT INTO `annonce` (`id`, `nom_animal`, `puce_animal`, `image_chat`, `espece_
 
 DROP TABLE IF EXISTS `associations`;
 CREATE TABLE IF NOT EXISTS `associations` (
-  `id` int NOT NULL,
+  `id_assos` int NOT NULL AUTO_INCREMENT,
   `nom_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mdp_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `tel_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mdp_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `recup_mdp_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_assos`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -149,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `famille` (
   `age_animaux_vie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `disponible_veto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `famille`
@@ -160,7 +174,8 @@ INSERT INTO `famille` (`id`, `nom_user`, `prenom_user`, `age_user`, `email_user`
 (115, 'iuhiu', 'oiugj', '50-75ans', 'hjh@gfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'ji', 'oui', 'oui', '1', '1', '1', '1', 'lkn', 'lkn', 'junior', 'non'),
 (116, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'j', 'oui', 'oui', '1', '1', '1', '1', 'k', 'kn', 'junior', 'oui'),
 (117, 'iuhiu', 'oiugj', '35-50ans', 'hjh@hhjhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'f', 'oui', 'oui', '1', '1', '1', '1', 'poisson,souris,hamster', 'fe', 'junior', 'oui'),
-(118, 'iuhiu', 'oiugj', '18-25ans', 'hkgjh@uihuigfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'c', 'oui', 'oui', '1', '1', '1', '1', 'd', 'd', 'junior', 'oui');
+(118, 'iuhiu', 'oiugj', '18-25ans', 'hkgjh@uihuigfhhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'c', 'oui', 'oui', '1', '1', '1', '1', 'd', 'd', 'junior', 'oui'),
+(119, 'iuhiu', 'oiugj', '35-50ans', 'hlihhjjh@hhkj.com', 'hiuhk', 'hkjhbkj', '87654', '0987675567', 'maison', 'oui', 'terrasse', 'seul', 'sans-emploi', '', 'oui', '1', '1h-3h', 'f', 'oui', 'oui', '1', '1', '1', '1', 'f', 'f', 'junior', 'oui');
 
 -- --------------------------------------------------------
 

@@ -38,22 +38,23 @@
                         <h4><?php echo form_error('codepostal_assos'); ?></h4>
                         <label class="label-login" for="email">Adresse email</label>
                         <br>
-                        <input class="form-control" type="email" id="email" name="email" required>
-                        <h4><?php echo form_error('email'); ?></h4>
+                        <input class="form-control" type="email_assos" id="email_assos" name="email_assos" required>
+                        <h4><?php echo form_error('email_assos'); ?></h4>
 
                         <label class="label-login" for="tel_assos">Numéro de téléphone</label>
                         <br>
                         <input class="form-control" type="text" id="tel_assos" name="tel_assos" required>
                         <h4><?php echo form_error('tel_assos'); ?></h4>
-                        <label class="label-login" for="mdp">Mot de passe</label>
+
+                        <label class="label-login" for="mdp_assos">Mot de passe</label>
                         <br>
-                        <input class="form-control" type="password" id="mdp" name="mdp" required>
-                        <h4><?php echo form_error('mdp'); ?></h4>
+                        <input class="form-control" type="password" id="mdp_assos" name="mdp_assos" required>
+                        <h4><?php echo form_error('mdp_assos'); ?></h4>
                         <br>
-                        <label class="label-login" for="mdp_confirm">Confirmation de votre mot de passe</label>
+                        <label class="label-login" for="mdp_confirm_assos">Confirmation de votre mot de passe</label>
                         <br>
-                        <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
-                        <h4><?php echo form_error('mdp_confirm'); ?></h4>
+                        <input class="form-control" type="password" id="mdp_confirm_assos" name="mdp_confirm_assos" required>
+                        <h4><?php echo form_error('mdp_confirm_assos'); ?></h4>
                         <br>
                         <br>
                     </div>

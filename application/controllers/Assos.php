@@ -4,10 +4,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Assos extends CI_Controller
 {
+
+    public function index()
+    {
+        $this->load->view('espace_user/inscription_assos');
+    }
+
     public function login_assos()
     {
         if (isConnected() == true) {
-            redirect('Users');
+            redirect('Assos');
         } else {
             $this->form_validation->set_rules('nom_assos', 'nom associations', 'trim|required', array(
                 'required' => 'le nom de l\'association n\'est renseigné'
@@ -18,20 +24,20 @@ class Assos extends CI_Controller
             ));
         }
         if ($this->form_validation->run() == true) {
-            if ($this->Assos_Model->cb_users($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
+            if ($this->Assos_Model->cb_assos($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
                 $nom_assos = $_POST["nom_assos"];
                 $data = array('nom_assos' => $nom_assos);
-                $user = $this->Assos_Model->get_user_by($data);
+                $assos = $this->Assos_Model->get_assos_by($data);
 
-                if ($user) {
-                    $session_user = array(
-                        'id' => $user['id'],
-                        'nom_assos' => $user['nom_assos'], 
+                if ($assos) {
+                    $session_assos = array(
+                        'id' => $assos['id'],
+                        'nom_assos' => $assos['nom_assos'], 
                     );
                 }
 
-                $this->session->set_userdata($session_user);
-                redirect("Users");
+                $this->session->set_userdata($session_assos);
+                redirect("Assos/login_assos");
             } else {
                 $data['info_connexion'] = 'error';
                 $this->load->view('espace_user/login_assos', $data);
@@ -48,32 +54,32 @@ class Assos extends CI_Controller
     public function inscription_assos()
     {
         if (isConnected() == true) {
-            redirect('Assos');
+            redirect('Users');
         } else {
             $this->form_validation->set_rules('nom_assos', 'Nom association', 'trim|required', array(
                 'required' => 'Le nom doit être renseigné',
             ));
-            $this->form_validation->set_rules('adresse_asso', 'Adresse association', 'trim|required', array(
+            $this->form_validation->set_rules('adresse_assos', 'Adresse association', 'trim|required', array(
                 'required' => 'L\'adresse doit être renseigné',
             ));
-            $this->form_validation->set_rules('ville_asso', 'Ville association', 'trim|required', array(
+            $this->form_validation->set_rules('ville_assos', 'Ville association', 'trim|required', array(
                 'required' => 'Le nom de ville doit être renseigné',
             ));
-            $this->form_validation->set_rules('codepostal_asso', 'Code postal association', 'trim|required', array(
+            $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required', array(
                 'required' => 'Le code postal doit être renseigné',
             ));
-            $this->form_validation->set_rules('email', 'Email association', 'trim|required|valid_email|is_unique[users.email]', array(
+            $this->form_validation->set_rules('email', 'Email association', 'trim|required|valid_email|is_unique[assos.email]', array(
                 'valid_email' => 'L\'email doit être valide',
                 'is_unique' => 'L\'email existe déjà'
             ));
             $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required', array(
                 'required' => 'Le numero de telephone doit être renseigné',
             ));
-            $this->form_validation->set_rules('mdp', 'Mot de passe', 'trim|required', array(
+            $this->form_validation->set_rules('mdp_assos', 'Mot de passe', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est pas renseigné'
             ));
-            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]', array(
+            $this->form_validation->set_rules('mdp_confirm_assos', 'Confirmation du mot de passe', 'trim|required|matches[mdp]', array(
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est renseigné',
                 'matches' => 'Le mot de passe n\'est pas le même'

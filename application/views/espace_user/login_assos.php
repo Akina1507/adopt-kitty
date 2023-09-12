@@ -3,7 +3,7 @@
 <!--------------------------- 
          Vue Connexion 
     --------------------------->
-<?php echo form_open('Users/login_assos') ?>
+<?php echo form_open('Assos/login_assos') ?>
 <div class="fond d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="container">
         <div class="row justify-content-center">
@@ -19,10 +19,10 @@
                         <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
                         <h4><?php echo form_error('nom_assos'); ?></h4>
                         <br>
-                        <label class="label-login" for="mdp">Mot de passe</label>
+                        <label class="label-login" for="mdp_assos">Mot de passe</label>
                         <br>
-                        <input class="form-control" type="password" id="mdp" name="mdp" required>
-                        <h4><?php echo form_error('mdp'); ?></h4>
+                        <input class="form-control" type="password" id="mdp_assos" name="mdp_assos" required>
+                        <h4><?php echo form_error('mdp_assos'); ?></h4>
                     </div>
                 </div>
                 <br>
@@ -32,11 +32,11 @@
                     </div>
                     <div class="col">
                         <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
-                        <a href="<?= base_url("Users/inscription_assos") ?>">Créer un compte</a>
+                        <a href="<?= base_url("Assos/inscription_assos") ?>">Créer un compte</a>
                     </div>
                 </div>
                 <div class="col">
-                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users") ?>">Retour</a>
                 </div>
                 <?php echo form_close(); ?>
                 <?php echo form_error('formulaire'); ?>
