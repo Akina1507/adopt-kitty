@@ -17,12 +17,12 @@
                         <label class="label-login" for="nom_assos">Nom de l'association ou email ?</label>
                         <br>
                         <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
-                        <h4><?php echo form_error('nom_assos'); ?></h4>
+                        <h6><?php echo form_error('nom_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp_assos" name="mdp_assos" required>
-                        <h4><?php echo form_error('mdp_assos'); ?></h4>
+                        <h6><?php echo form_error('mdp_assos'); ?></h6>
                     </div>
                 </div>
                 <br>

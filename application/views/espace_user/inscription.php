@@ -23,29 +23,29 @@
                         <label class="label-login" for="nom">Nom</label>
                         <br>
                         <input class="form-control" type="text" id="nom" name="nom" required>
-                        <h4><?php echo form_error('nom'); ?></h4>
+                        <h6><?php echo form_error('nom'); ?></h6>
                         <label class="label-login" for="prenom">Prénom</label>
                         <br>
                         <input class="form-control" type="text" id="prenom" name="prenom" required>
-                        <h4><?php echo form_error('prenom'); ?></h4>
+                        <h6><?php echo form_error('prenom'); ?></h6>
                         <label class="label-login" for="pseudo">Nom d'utilisateur</label>
                         <br>
                         <input class="form-control" type="text" id="pseudo" name="pseudo" required>
-                        <h4><?php echo form_error('pseudo'); ?></h4>
+                        <h6><?php echo form_error('pseudo'); ?></h6>
                         <br>
                         <label class="label-login" for="email">Adresse email</label>
                         <br>
                         <input class="form-control" type="email" id="email" name="email" required>
-                        <h4><?php echo form_error('email'); ?></h4>
+                        <h6><?php echo form_error('email'); ?></h6>
                         <label class="label-login" for="mdp">Mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp" name="mdp" required>
-                        <h4><?php echo form_error('mdp'); ?></h4>
+                        <h6><?php echo form_error('mdp'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_confirm">Confirmation de votre mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
-                        <h4><?php echo form_error('mdp_confirm'); ?></h4>
+                        <h6><?php echo form_error('mdp_confirm'); ?></h6>
                         <br>
 
                     </div>

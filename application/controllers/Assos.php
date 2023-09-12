@@ -27,12 +27,12 @@ class Assos extends CI_Controller
             if ($this->Assos_Model->cb_assos($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
                 $nom_assos = $_POST["nom_assos"];
                 $data = array('nom_assos' => $nom_assos);
-                $assos = $this->Assos_Model->get_assos_by($data);
+                $user = $this->Assos_Model->get_assos_by($data);
 
-                if ($assos) {
+                if ($user) {
                     $session_assos = array(
-                        'id' => $assos['id'],
-                        'nom_assos' => $assos['nom_assos'], 
+                        'id' => $user['id'],
+                        'nom_assos' => $user['nom_assos'], 
                     );
                 }
 
@@ -68,9 +68,8 @@ class Assos extends CI_Controller
             $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required', array(
                 'required' => 'Le code postal doit être renseigné',
             ));
-            $this->form_validation->set_rules('email', 'Email association', 'trim|required|valid_email|is_unique[assos.email]', array(
-                'valid_email' => 'L\'email doit être valide',
-                'is_unique' => 'L\'email existe déjà'
+            $this->form_validation->set_rules('email_assos', 'Email association', 'trim|required|valid_email', array(
+                'valid_email' => 'L\'email doit être valide'
             ));
             $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required', array(
                 'required' => 'Le numero de telephone doit être renseigné',
@@ -79,7 +78,7 @@ class Assos extends CI_Controller
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est pas renseigné'
             ));
-            $this->form_validation->set_rules('mdp_confirm_assos', 'Confirmation du mot de passe', 'trim|required|matches[mdp]', array(
+            $this->form_validation->set_rules('mdp_confirm_assos', 'Confirmation du mot de passe', 'trim|required|matches[mdp_assos]', array(
                 'trim' => 'Le mot de passe doit être valide',
                 'required' => 'Le mot de passe n\'est renseigné',
                 'matches' => 'Le mot de passe n\'est pas le même'
@@ -92,9 +91,9 @@ class Assos extends CI_Controller
                 $adresse_assos = $this->input->post('adresse_assos');
                 $ville_assos = $this->input->post('ville_assos');
                 $codepostal_assos = $this->input->post('codepostal_assos');
-                $email = ($this->input->post('email'));
+                $email_assos = ($this->input->post('email_assos'));
                 $tel_assos = ($this->input->post('tel_assos'));
-                $mdp = md5($this->input->post('mdp'));
+                $mdp_assos = md5($this->input->post('mdp_assos'));
                 
 
                 $data = array(
@@ -102,9 +101,9 @@ class Assos extends CI_Controller
                     'adresse_assos' => $adresse_assos,
                     'ville_assos' => $ville_assos,
                     'codepostal_assos' => $codepostal_assos,
-                    'email' => $email,
+                    'email_assos' => $email_assos,
                     'tel_assos' => $tel_assos,
-                    'mdp' => $mdp
+                    'mdp_assos' => $mdp_assos
                     
                 );
                 $result = $this->Assos_Model->create_assos($data);

@@ -17,12 +17,12 @@
                         <label class="label-login" for="pseudo">Pseudo ou email ?</label>
                         <br>
                         <input class="form-control" type="text" id="pseudo" name="pseudo" required>
-                        <h4><?php echo form_error('pseudo'); ?></h4>
+                        <h6><?php echo form_error('pseudo'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp">Mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp" name="mdp" required>
-                        <h4><?php echo form_error('mdp'); ?></h4>
+                        <h6><?php echo form_error('mdp'); ?></h6>
                     </div>
                 </div>
                 <br>
