@@ -7,7 +7,7 @@ class Assos extends CI_Controller
 
     public function index()
     {
-        $this->load->view('espace_user/inscription_assos');
+        $this->load->view('espace_animaux/recherche');
     }
 
     public function login_assos()
@@ -27,17 +27,17 @@ class Assos extends CI_Controller
             if ($this->Assos_Model->cb_assos($_POST["nom_assos"], md5($_POST["mdp_assos"])) == 1) {
                 $nom_assos = $_POST["nom_assos"];
                 $data = array('nom_assos' => $nom_assos);
-                $user = $this->assos_model->get_assos_by($data);
+                $user = $this->Assos_Model->get_assos_by($data);
 
                 if ($user) {
                     $session_assos = array(
-                        'id' => $user['id'],
+                        'id' => $user['id_assos'],
                         'nom_assos' => $user['nom_assos'], 
                     );
                 }
 
                 $this->session->set_userdata($session_assos);
-                redirect("Assos/login_assos");
+                redirect("Assos/deconnect");
             } else {
                 $data['info_connexion'] = 'error';
                 $this->load->view('espace_user/login_assos', $data);
@@ -47,6 +47,23 @@ class Assos extends CI_Controller
         }
     }
 
+    /* ------------------------------- */
+    /* Home */
+    /* ------------------------------- */
+    public function home()
+    {
+        $this->load->view('espace_user/home');
+    }
+    /* ------------------------------- */
+    /* Détruire la session users */
+    /* ------------------------------- */
+
+    public function deconnect()
+    {
+        session_destroy();
+        redirect('Assos');
+    }
+    
     /* ------------------------- */
     /* Formulaire de inscription */
     /* ------------------------- */
@@ -115,6 +132,7 @@ class Assos extends CI_Controller
                 } else {
                     redirect('Assos/inscription_assos');
                 }
+                
             }
         }
     }

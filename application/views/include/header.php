@@ -41,9 +41,11 @@
                     </div>
                     <?= $this->session->userdata("nom") . " " . $this->session->userdata("prenom");
                     ?>
+                    <?= $this->session->userdata("nom_assos");
+                    ?>
 
-            </div>
-            <a class="btn custom-btn" href="<?= base_url("Users/deconnect") ?>">Deconnexion</a>
+                </div>
+                    <a class="btn custom-btn" href="<?= base_url("Users/deconnect") ?>">Deconnexion</a>
         <?php } ?>
         </div>
     </div>
