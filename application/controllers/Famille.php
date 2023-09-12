@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Famille1 extends CI_Controller
+class Famille extends CI_Controller
 {
 
 
     /* ------------------------- */
     /* Validation formulaire */
     /* ------------------------- */
-    public function step1()
+    public function formfamille()
     {
 
         if (isConnected() == false) {
@@ -135,9 +135,9 @@ class Famille1 extends CI_Controller
 
                 );
 
-                redirect("Famille1/success");
+                redirect("Famille/success");
             }
-            $this->load->view('form/step1');
+            $this->load->view('form/formfamille');
         }
     }
 

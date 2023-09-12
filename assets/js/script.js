@@ -43,7 +43,7 @@ function validateForm() {
 	var isValid = true;
 
 	if (currentTab === 0) {
-		isValid = validateStep1(currentStep);
+		isValid = validateformfamille(currentStep);
 	} else if (currentTab === 1) {
 		isValid = validateStep2(currentStep);
 	} else if (currentTab === 2) {
@@ -95,7 +95,7 @@ function showFieldErrors() {
 		});
 
 		$("#nextBtn").click(function () {
-			if (validateStep1($(".step").eq(0))) {
+			if (validateformfamille($(".step").eq(0))) {
 				nextPrev(1);
 			}
 		});
@@ -318,7 +318,7 @@ function submitForm() {
 
 /* Pour famille d'accueil */
  // Pop up pour l'etape 1 qui enumère chaque input/select
- function validateStep1(currentStep) {
+ function validateformfamille(currentStep) {
 	var nomUser = currentStep.find("input[name='nom_user']").val().trim();
 	var prenomUser = currentStep.find("input[name='prenom_user']").val().trim();
 	var ageUser = currentStep.find("select[name='age_user']").val().trim();
