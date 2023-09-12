@@ -32,11 +32,11 @@ class Assos extends CI_Controller
                 if ($user) {
                     $session_assos = array(
                         'id' => $user['id_assos'],
-                        'nom_assos' => $user['nom_assos'], 
+                        'nom_assos' => $user['nom_assos'],
                     );
                 }
 
-                $this->session->set_userdata($session_assos);
+                $this->session->set_assos($session_assos);
                 redirect("Assos/deconnect");
             } else {
                 $data['info_connexion'] = 'error';
@@ -63,7 +63,7 @@ class Assos extends CI_Controller
         session_destroy();
         redirect('Assos');
     }
-    
+
     /* ------------------------- */
     /* Formulaire de inscription */
     /* ------------------------- */
@@ -111,7 +111,7 @@ class Assos extends CI_Controller
                 $email_assos = ($this->input->post('email_assos'));
                 $tel_assos = ($this->input->post('tel_assos'));
                 $mdp_assos = md5($this->input->post('mdp_assos'));
-                
+
 
                 $data = array(
                     'nom_assos' => $nom_assos,
@@ -121,7 +121,7 @@ class Assos extends CI_Controller
                     'email_assos' => $email_assos,
                     'tel_assos' => $tel_assos,
                     'mdp_assos' => $mdp_assos
-                    
+
                 );
                 $result = $this->Assos_Model->create_assos($data);
 
@@ -132,7 +132,6 @@ class Assos extends CI_Controller
                 } else {
                     redirect('Assos/inscription_assos');
                 }
-                
             }
         }
     }
