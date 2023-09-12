@@ -17,7 +17,7 @@ include(APPPATH . "views/include/header.php")
 			</div>
 			<div class="mx-5">
 				<a class="btn btn-outline-dark m-1" href="<?php
-															echo base_url("Users/login_assos") ?>">Associations
+															echo base_url("Assos/login_assos") ?>">Associations
 					<img src="/adopt-kitty/assets/img/icons_assos" alt="">
 				</a>
 			</div>

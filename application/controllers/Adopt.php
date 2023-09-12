@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pensionnaire extends CI_Controller
+class Adopt extends CI_Controller
 {       
             /* ------------------------- */
             /* Validation formulaire */
@@ -127,7 +127,7 @@ class Pensionnaire extends CI_Controller
                             $temps_activite,
                         );
                         
-                        redirect("Pensionnaire/success");
+                        redirect("Adopt/success");
                     } else {
                     $this->load->view('espace_animaux/adoption');
                 }

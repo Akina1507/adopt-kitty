@@ -58,7 +58,7 @@ class Annonce extends CI_Controller
 //Formulaire de connexion 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pensionnaire extends CI_Controller
+class Adopt extends CI_Controller
 {
 
     public function __construct()
@@ -79,7 +79,7 @@ class Pensionnaire extends CI_Controller
         $this->load->view('espace_animaux/recherche');
     }
 
-    public function famille1()
+    public function Famille()
     {
         if (isConnected() == false) {
             redirect('Users/login');
@@ -99,7 +99,7 @@ class Pensionnaire extends CI_Controller
             ));
 
             if ($this->form_validation->run() == TRUE) {
-                $this->load->view('form/step1');
+                $this->load->view('form/formfamille');
             } else {
                 $nom_user = $this->input->post('nom_user');
                 $prenom_user =  $this->input->post('prenom_user');
@@ -132,7 +132,7 @@ class Pensionnaire extends CI_Controller
                     } else {
                         // Afficher les erreurs de validation
                         echo validation_errors();
-                        redirect('Pensionnaire/annonce');
+                        redirect('Adopt/annonce');
                     }
                 }
             }
@@ -192,7 +192,7 @@ class Pensionnaire extends CI_Controller
             } else {
                 // Afficher les erreurs de validation
                 echo validation_errors();
-                redirect('Pensionnaire/annonce');
+                redirect('Adopt/annonce');
             }
         }
     }
@@ -238,7 +238,7 @@ class Pensionnaire extends CI_Controller
             } else {
                 // Afficher les erreurs de validation
                 echo validation_errors();
-                redirect('Pensionnaire/annonce1');
+                redirect('Adopt/annonce1');
             }
         }
     }
