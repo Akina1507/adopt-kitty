@@ -10,20 +10,18 @@
             <div class="col-md-4 p-5 container-login bg-white bordered">
                 
             
-                <h4 class="text-center">Connexion</h4>
-                <h6 class="text-center">Utilisateurs</h6>
+                <h4 class="text-center">Modifiez votre mot de passe</h4>
                 <div class="form-group">
-                
+                <br>
                     <div class="field">
-                        <label class="label-login" for="email">Email</label>
-                        <br>
-                        <input class="form-control" type="text" id="email" name="email" required>
-                        <h6><?php echo form_error('email'); ?></h6>
-                        <br>
-                        <label class="label-login" for="mdp">Mot de passe</label>
+                        <label class="label-login" for="mdp">Nouveau mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp" name="mdp" required>
                         <h6><?php echo form_error('mdp'); ?></h6>
+                        <label class="label-login" for="mdp_confirm">Confirmation de votre mot de passe</label>
+                        <br>
+                        <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
+                        <h6><?php echo form_error('mdp_confirm'); ?></h6>
                     </div>
                 </div>
                 <br>
@@ -32,11 +30,6 @@
                         <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
-                </div>
-                <br>
-                <div class="col d-flex justify-content-between text-center">
-                    <a href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
-                    <a href="<?= base_url("Users/inscription") ?>">Créer un compte</a>
                 </div>
                 <?php echo form_close(); ?>
                 <?= form_error('formulaire'); ?>

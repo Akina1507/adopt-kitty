@@ -162,7 +162,7 @@ class Users extends CI_Controller
 
                 //config de l'envoi du mail avec form validation
 
-                $link = anchor('/codeigniterarthur/connexion/change_mdp/'  . $number, 'Reinitialiser votre mot de passe');
+                $link = anchor('/Users/mdp_recup/'  . $number, 'Reinitialiser votre mot de passe');
 
                 //Contenu du mail une fois envoyé
                 $this->email->from($from, 'Adopt Kitty');
@@ -227,4 +227,43 @@ class Users extends CI_Controller
     {
         $this->load->view('espace_user/home');
     }
-}
+
+    public function mdp_recup()
+    {
+            $this->form_validation->set_rules('mdp', 'mdp', 'trim|required', array(
+                'required' => 'Le mot de passe doit être renseigné',
+            ));
+            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]', array(
+                'trim' => 'Le mot de passe doit être valide',
+                'required' => 'Le mot de passe n\'est renseigné',
+                'matches' => 'Le mot de passe n\'est pas le même'
+            ));
+            
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('espace_user/mdp_recup');
+            } else {
+                $mdp = md5($this->input->post('mdp'));
+                $mdp_confirm = md5($this->input->post('mdp_confirm'));
+
+                $data = array(
+                    'mdp' => $mdp,
+                    'mdp_confirm' => $mdp_confirm,
+                    
+                );
+                $result = $this->User_Model->create_user($data);
+
+                if ($result) {
+                    $data['popup'] = true;
+                    $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
+                    $this->load->view('espace_user/mdp_recup', $data);
+                } else {
+                    redirect('Users/inscription');
+                }
+            }
+        }
+        
+    }
+
+    
+
