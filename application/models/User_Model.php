@@ -51,9 +51,13 @@ class User_Model extends CI_Model
     /* savoir si le mail existe */
     /* ------------------------ */
 
-    public function new_number($number)
+    public function new_number($number, $email)
     {
-        $data = array('recup_mdp' => $number);
+        $data = array(
+            'recup_mdp' => $number
+        );
+
+        $this->db->where('email', $email);
         $this->db->update('users', $data);
     }
     /* -------------------------------------------------------------------- */
@@ -87,5 +91,20 @@ class User_Model extends CI_Model
         } else {
             return false;
         }
+    }
+
+
+    /* ------------------------ */
+    /* Update de l'ancien mdp en nouveau */
+    /* ------------------------ */
+    public function update_mdp($mdp, $mdp_recup)
+    {
+        $data = array(
+            'mdp' => $mdp,
+            'recup_mdp' => NULL
+        );
+
+        $this->db->where('recup_mdp', $mdp_recup);
+        $this->db->where('users', $data);
     }
 }
