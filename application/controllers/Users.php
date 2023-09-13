@@ -20,6 +20,12 @@ class Users extends CI_Controller
         $this->load->view('espace_animaux/recherche');
     }
 
+
+    public function home()
+    {
+        $this->load->view('espace_user/home');
+    }
+
     /* ----------------------- */
     /* Formulaire de connexion */
     /* ----------------------- */
@@ -196,76 +202,30 @@ class Users extends CI_Controller
     /* ---------------------------------------------------- */
     /* Recupération mdp par chiffres aléatoires */
     /* ---------------------------------------------------- */
-    public function change_mdp($number = '')
-    {
-        if ($this->User_Model->number_exist($number)) {
-            $this->form_validation->set_rules('mdp', 'changement mdp', 'trim|required', array(
-                'trim' => 'Le mot de passe doit être valide',
-                'required' => 'Le mot de passe n\'est pas renseigné'
-            ));
 
-            if ($this->form_validation->run() == TRUE) {
-                $mdp = md5($this->input->post('mdp'));
-
-                if ($this->User_Model->change_mdp($mdp, $number)) {
-                    echo 'La requête est valide';
-                } else {
-                    echo ('La requête est invalide');
-                }
-            } else {
-                $this->load->view('espace_user/change_mdp');
-            }
-        } else {
-            header('refresh:5;url=' . base_url('Users'));
-            echo 'La clé de récupération n\'est pas valide';
-        }
-    }
-
-
-
-    public function home()
-    {
-        $this->load->view('espace_user/home');
-    }
 
     public function mdp_recup($mdp_recup = '')
     {
         if ($this->User_Model->number_exist($mdp_recup)) {
-            $this->form_validation->set_rules('mdp', 'mdp', 'trim|required', array(
-                'required' => 'Le mot de passe doit être renseigné',
-            ));
-            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]', array(
-                'trim' => 'Le mot de passe doit être valide',
-                'required' => 'Le mot de passe n\'est renseigné',
-                'matches' => 'Le mot de passe n\'est pas le même'
-            ));
-        
+            $this->form_validation->set_rules('mdp', 'mdp', 'trim|required');
+            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]');
+
 
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('espace_user/mdp_recup');
             } else {
                 $mdp = md5($this->input->post('mdp'));
 
-                $result = $this->User_Model->update_mdp($mdp, $mdp_recup);
+                $this->User_Model->update_mdp($mdp, $mdp_recup);
 
-                if ($result) {
-                    $data['popup'] = true;
-                    $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
-                    $this->load->view('espace_user/mdp_recup', $data);
-                } else {
-                    /* redirect('Users/inscription'); */
-                }
-            
-            
+
+                $data['popup'] = true;
+                $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
+                $this->load->view('espace_user/mdp_recup', $data);
             }
         } else {
             header('refresh:5;url=' . base_url('Users'));
             echo 'La clé de récupération n\'est pas valide';
-        
         }
-        
     }
 }
-
-    
-

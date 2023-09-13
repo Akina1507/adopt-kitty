@@ -70,13 +70,6 @@ class User_Model extends CI_Model
         return $query->num_rows() == 1;
     }
 
-    public function change_mdp($number, $mdp)
-    {
-        $data = array('mdp' => $mdp);
-        $this->db->where('recup_mdp', $number);
-        $this->db->update('users', $data);
-    }
-
 
 
     public function get_user_by($data)
@@ -105,6 +98,6 @@ class User_Model extends CI_Model
         );
 
         $this->db->where('recup_mdp', $mdp_recup);
-        $this->db->where('users', $data);
+        $this->db->update('users', $data);
     }
 }
