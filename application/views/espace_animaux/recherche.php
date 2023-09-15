@@ -30,7 +30,7 @@ include(APPPATH . "views/include/header.php")
         <a class="btn btn-outline-dark m-1" href="<?php
                                                     echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
         </a>
-        <div class="custom-btn">
+        <div>
         <?php
         $images = array(
             'image2.jpg', 'image8.jpg', 'image11.jpg', 'image4.jpg',

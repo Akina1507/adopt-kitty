@@ -121,6 +121,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_famille'); ?></h6>
                         </div>
@@ -132,6 +133,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_conjoint'); ?></h6>
                         </div>

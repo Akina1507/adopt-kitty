@@ -34,8 +34,8 @@ class Famille extends CI_Controller
             $this->form_validation->set_rules('exterieur_user', 'Exterieur user', 'trim|required|in_list[oui,non]');
             $this->form_validation->set_rules('type_exterieur', 'Type exterieur', 'trim|in_list[terrasse,jardin,balcon]');
             $this->form_validation->set_rules('situation_foyer', 'Situation foyer', 'trim|required|in_list[seul,couple]');
-            $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|in_list[sans-emploi,salarie,etudiant,handicape]');
-            $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim|in_list[sans-emploi,salarie,etudiant,handicape]');
+            $this->form_validation->set_rules('activite_famille', 'Activite famille', 'trim|in_list[sans-emploi,salarie,etudiant,handicape,retraite]');
+            $this->form_validation->set_rules('activite_conjoint', 'Activite conjoint', 'trim|in_list[sans-emploi,salarie,etudiant,handicape,retraite]');
             $this->form_validation->set_rules('enfants_foyer', 'Enfants foyer', 'trim|required|in_list[oui,non]');
             $this->form_validation->set_rules('nbr_enfants', 'Nombre enfants', 'trim|in_list[1,2,3,4,5,6,7,8,9,10]');
             $this->form_validation->set_rules('temps_activite', 'Temps activite', 'trim|required|in_list[1h-3h,3h-5h,5h-7h,7h-ou-plus]');

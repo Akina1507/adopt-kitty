@@ -4,7 +4,7 @@
    Inscription utilisateurs + Pop up message succès 
                         --------------------------->
 <?php echo form_open() ?>
-<div class="fond d-flex align-items-center justify-content-center" style="height: 130vh;">
+<div class="fond d-flex align-items-center justify-content-center" style="height: 170vh;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 p-5 container-login bg-white bordered">
@@ -24,29 +24,29 @@
                         <input class="form-control" type="text" id="nom_assos" name="nom_assos" required>
                         <h6><?php echo form_error('nom_assos'); ?></h6>
                         <br>
-                        <label class="label-login" for="pseudo">Adresse</label>
+                        <label class="label-login" for="adresse_assos">Adresse</label>
                         <br>
                         <input class="form-control" type="text" id="adresse_assos" name="adresse_assos" required>
                         <h6><?php echo form_error('adresse_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="ville_assos">Ville</label>
                         <br>
-                        <input class="form-control" type="number" id="ville_assos" name="ville_assos" required>
+                        <input class="form-control" type="text" id="ville_assos" name="ville_assos" required>
                         <h6><?php echo form_error('ville_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="codepostal_assos">Code postal</label>
                         <br>
-                        <input class="form-control" type="text" id="codepostal_assos" name="codepostal_assos" required>
+                        <input class="form-control" type="number" id="codepostal_assos" name="codepostal_assos" required>
                         <h6><?php echo form_error('codepostal_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="email_assos">Adresse email</label>
                         <br>
-                        <input class="form-control" type="email_assos" id="email_assos" name="email_assos" required>
+                        <input class="form-control" type="email" id="email_assos" name="email_assos" required>
                         <h6><?php echo form_error('email_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="tel_assos">Numéro de téléphone</label>
                         <br>
-                        <input class="form-control" type="text" id="tel_assos" name="tel_assos" required>
+                        <input class="form-control" type="number" id="tel_assos" name="tel_assos" required>
                         <h6><?php echo form_error('tel_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>
