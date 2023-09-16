@@ -99,7 +99,7 @@ class Adopt extends CI_Controller
             ));
 
             if ($this->form_validation->run() == TRUE) {
-                $this->load->view('form/formfamille');
+                $this->load->view('form/etapes');
             } else {
                 $nom_user = $this->input->post('nom_user');
                 $prenom_user =  $this->input->post('prenom_user');

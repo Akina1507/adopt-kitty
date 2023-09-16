@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 15 sep. 2023 à 14:32
+-- Généré le : sam. 16 sep. 2023 à 14:12
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -32,35 +32,35 @@ USE `user_projet`;
 DROP TABLE IF EXISTS `adoption`;
 CREATE TABLE IF NOT EXISTS `adoption` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `civile_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prenom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adresse_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `codepostal_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ville_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `raison_adopt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `accueil_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chiens_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chats_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `oiseaux_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `autres_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `others_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_domestiques` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exp_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_logement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exterieur_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_exterieur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `situation_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_conjoint` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `enfants_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nbr_enfants` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `temps_activite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `civile_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_adopt` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `accueil_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiens_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chats_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `oiseaux_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `autres_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `others_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_domestiques` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exp_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_logement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exterieur_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_exterieur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `situation_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_conjoint` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `enfants_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nbr_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `temps_activite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -120,14 +120,14 @@ INSERT INTO `annonce` (`id`, `nom_animal`, `puce_animal`, `image_chat`, `espece_
 DROP TABLE IF EXISTS `associations`;
 CREATE TABLE IF NOT EXISTS `associations` (
   `id_assos` int NOT NULL AUTO_INCREMENT,
-  `nom_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adresse_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ville_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `codepostal_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `mdp_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `recup_mdp_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `recup_mdp_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_assos`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `associations` (
 
 INSERT INTO `associations` (`id_assos`, `nom_assos`, `adresse_assos`, `ville_assos`, `codepostal_assos`, `email_assos`, `tel_assos`, `mdp_assos`, `recup_mdp_assos`) VALUES
 (1, 'Ronron Association', '122 bis rue du Barbâtre', 'Reims', '51100', 'ronronassociation@gmail.com', '0789546734', 'd7d6c0ef4c0eee70a4d4b910d8366bc7', ''),
-(2, 'Refuge SPA de Laon', 'Chemin de la Croix de Chivy', 'Laon', '02000', 'refuge.spa-laon@free.fr', '0323204254', '558a4bb107bed9c54e4edd25fbf36e14', ''),
+(2, 'Refuge SPA de Laon', 'Chemin de la Croix de Chivy', 'Laon', '02000', 'choupachoups223@gmail.com', '0323204254', '558a4bb107bed9c54e4edd25fbf36e14', ''),
 (3, 'SNPA Rouen', '7 bis Avenue Jacques Chastellain Île Lacroix', 'Rouen', '76000', 'snpa2@orange.fr', '0235702036', '142b1c0a181ada4fd4d7e0e7a6e210d9', '');
 
 -- --------------------------------------------------------
@@ -237,7 +237,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `prenom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mdp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -250,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `nom`, `prenom`, `email`, `mdp`, `recup_mdp`) VALUES
-(1, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL),
+(1, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'be5d9ba998a9412a49a6e9d4fcedf931', NULL),
 (2, 'Lucie Lefevre', 'lefevre', 'Lucie', 'lefevre.lucie0509@outlook.com', 'f3349e834612f39a29db3711368d5adb', NULL),
 (3, 'aMillier', 'Millier', 'Adrien', 'adrien.millier9867@gmail.com', '31624c3cd83c63243d74c03bb005d4ad', NULL),
 (4, 'cmaxime', 'Chevalier', 'Maxiem', 'chvlier-maxime@orange.fr', 'c403bcce7a1faedcb8cc45ad8478d73c', NULL),

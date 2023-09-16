@@ -8,15 +8,12 @@ class Famille extends CI_Controller
     /* ------------------------- */
     /* Validation formulaire */
     /* ------------------------- */
-    public function formfamille()
+    public function etapes()
     {
 
         if (isConnected() == false) {
             redirect("Users/accueil");
         } else {
-
-
-
             $this->form_validation->set_rules('nom_user', 'Nom', 'trim|required');
             $this->form_validation->set_rules('prenom_user', 'Prenom', 'trim|required');
             $this->form_validation->set_rules('age_user', 'Age', 'trim|required|in_list[18-25ans,25-35ans,35-50ans,50-75ans,75-99ans,99-ou-plus]');
@@ -51,12 +48,9 @@ class Famille extends CI_Controller
             $this->form_validation->set_rules('details_animaux_vie', 'Details animaux', 'trim');
             $this->form_validation->set_rules('disponible_veto', 'Disponible veto', 'trim|required');
 
-
-
             /* ------------------------- */
             /* Formulaire valide */
             /* ------------------------- */
-
             if ($this->form_validation->run() === TRUE) {
                 $nom_user = $this->input->post('nom_user');
                 $prenom_user = $this->input->post('prenom_user');
@@ -99,7 +93,6 @@ class Famille extends CI_Controller
                 $details_animaux_vie = $this->input->post('details_animaux_vie');
                 $disponible_veto = $this->input->post('disponible_veto');
 
-
                 /* ------------------------- */
                 /* Variable chargé dans le model, Chat_Model */
                 /* ------------------------- */
@@ -134,10 +127,9 @@ class Famille extends CI_Controller
                     $disponible_veto,
 
                 );
-
                 redirect("Famille/success");
             }
-            $this->load->view('form/formfamille');
+            $this->load->view('form/etapes');
         }
     }
 

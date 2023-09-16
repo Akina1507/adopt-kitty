@@ -210,9 +210,7 @@ class Users extends CI_Controller
                 $this->load->view('espace_user/mdp_recup');
             } else {
                 $mdp = md5($this->input->post('mdp'));
-
                 $this->User_Model->update_mdp($mdp, $mdp_recup);
-
 
                 $data['popup'] = true;
                 $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';

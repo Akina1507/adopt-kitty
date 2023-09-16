@@ -6,7 +6,7 @@
 <div class="container form-container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
-            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille/formfamille'); ?>" method="post">
+            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille/etapes'); ?>" method="post">
                 <div class="step-header d-flex mb-2">
                     <span class="steplevel active d-flex justify-content-center">Etape 1</span>
                     <span class="steplevel d-flex justify-content-center">Etape 2</span>

@@ -1,5 +1,4 @@
 <?php
-//Formulaire de connexion 
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Assos extends CI_Controller
