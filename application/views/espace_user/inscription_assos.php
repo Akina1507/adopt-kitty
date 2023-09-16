@@ -65,7 +65,7 @@
                 <br>
                 <div class="row">
                     <div class="col d-flex justify-content-between">
-                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/accueil") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
                     <?php echo form_close(); ?>

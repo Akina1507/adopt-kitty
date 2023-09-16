@@ -29,7 +29,7 @@
 
             <div class="col d-flex flex-column justify-content-center align-items-center ">
                 <?php if (isConnected() == false) { ?>
-                    <a class="btn custom-btn" href="<?= base_url("Users/home") ?>">Connexion / Inscription</a>
+                    <a class="btn custom-btn" href="<?= base_url("Users/accueil") ?>">Connexion / Inscription</a>
                 <?php } else { ?>
                     <div class=" align-items-center">
                         <!-- Icone connexion -->

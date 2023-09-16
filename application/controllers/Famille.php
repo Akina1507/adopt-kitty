@@ -12,7 +12,7 @@ class Famille extends CI_Controller
     {
 
         if (isConnected() == false) {
-            redirect("Users/home");
+            redirect("Users/accueil");
         } else {
 
 

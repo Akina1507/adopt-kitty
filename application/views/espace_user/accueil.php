@@ -3,7 +3,7 @@ include(APPPATH . "views/include/header.php")
 ?>
 
 <!--------------------------- 
-     Vue home bouton + lien 
+     Vue accueil bouton + lien 
     --------------------------->
 <div class="col-12 fond" style="height: 85vh;">
 

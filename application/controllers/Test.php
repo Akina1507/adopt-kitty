@@ -71,7 +71,7 @@ class Adopt extends CI_Controller
 
     public function index()
     {
-        $this->load->view('espace_user/home');
+        $this->load->view('espace_user/accueil');
     }
 
     public function recherche()

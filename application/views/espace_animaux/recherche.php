@@ -31,24 +31,24 @@ include(APPPATH . "views/include/header.php")
                                                     echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
         </a>
         <div>
-        <?php
-        $images = array(
-            'image2.jpg', 'image8.jpg', 'image11.jpg', 'image4.jpg',
-            'image5.jpg', 'image6.jpg', 'image7.jpg', 'image1.jpg',
-            'image9.jpg', 'image10.jpg', 'image3.jpg', 'image12.jpg'
-        );
+            <?php
+            $images = array(
+                'image2.jpg', 'image8.jpg', 'image11.jpg', 'mikado.jpg',
+                'image5.jpg', 'image6.jpg', 'image7.jpg', 'image1.jpg',
+                'pattenrond.jpg', 'image10.jpg', 'image3.jpg', 'image12.jpg'
+            );
 
-        $numColumns = 4;
-        foreach (array_chunk($images, $numColumns) as $row) {
-            echo '<div class="row">';
-            foreach ($row as $image) {
-                echo '<div class="col-md-3">';
-                echo '<img src="' . base_url('/assets/img/' . $image) . '" alt="image">';
+            $numColumns = 4;
+            foreach (array_chunk($images, $numColumns) as $row) {
+                echo '<div class="row">';
+                foreach ($row as $image) {
+                    echo '<div class="col-md-3">';
+                    echo '<img src="' . base_url('/assets/img/' . $image) . '" alt="image">';
+                    echo '</div>';
+                }
                 echo '</div>';
             }
-            echo '</div>';
-        }
-        ?>
+            ?>
         </div>
     </div>
 </div>

@@ -8,12 +8,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 p-5 container-login bg-white bordered">
-                
-            
+
+
                 <h4 class="text-center">Connexion</h4>
                 <h6 class="text-center">Utilisateurs</h6>
                 <div class="form-group">
-                
+
                     <div class="field">
                         <label class="label-login" for="email">Email</label>
                         <br>
@@ -29,7 +29,7 @@
                 <br>
                 <div class="row justify-content-between">
                     <div class="col d-flex justify-content-between">
-                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/accueil") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                 <?= form_error('formulaire'); ?>
             </div>
         </div>
-        </div>
     </div>
+</div>
 </div>
 <?php
 include(APPPATH . "views/include/footer.php")

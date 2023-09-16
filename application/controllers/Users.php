@@ -5,25 +5,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Users extends CI_Controller
 {
-    /* ------------------------- */
-    /* Ne doit plus exister => Config */
-    /* ------------------------- */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('User_Model');
-        $this->load->library('form_validation');
-    }
+
 
     public function index()
     {
         $this->load->view('espace_animaux/recherche');
+
+        $this->load->model('User_Model');
+        $this->load->library('form_validation');
     }
 
 
-    public function home()
+    public function accueil()
     {
-        $this->load->view('espace_user/home');
+        $this->load->view('espace_user/accueil');
     }
 
     /* ----------------------- */

@@ -14,7 +14,7 @@ include(APPPATH . "views/include/header.php")
                 <br>
                 <?php if (isset($popup) && $popup === true) { ?>
                     <h6>Vous allez recevoir un lien pour votre nouveau mot de passe sur votre boite mail !</h6>
-                    <?php header('refresh:10;url=' . base_url('Users/login')); ?>
+                    <?php header('refresh:10;url=' . base_url('Users/accueil')); ?>
                 <?php } ?>
                 <?php if (isset($popupError) && $popupError === true) { ?>
                     <h5>L'email saisi n'existe pas dans la base de données, Réessayez.</h5>
@@ -32,7 +32,7 @@ include(APPPATH . "views/include/header.php")
                 <br>
                 <div class="row">
                     <div class="col d-flex justify-content-between">
-                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/accueil") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
                 </div>
