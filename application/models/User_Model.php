@@ -4,6 +4,7 @@ class User_Model extends CI_Model
 {
 
     protected $table = 'users';
+
     public function cb_users($email, $mdp)
     {
         $query = $this->db->where('email', $email)
