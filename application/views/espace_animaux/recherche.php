@@ -33,43 +33,43 @@ include(APPPATH . "views/include/header.php")
         <div class="row">
             <div class="col-md-4">
                 <div class="card-group"> <!-- Avoir que 4 images de chats par lignes -->
-                    <div class="card">
-                        <img class="col-3 card-img-top" src="/adopt-kitty/assets/img/mikado.jpg" alt="Card image cap">
+                    <div class="col-3 card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/mikado.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Mikado</h5>
                             <p class="card-text">Male - Siamois</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="col-3 card-img-top" src="/adopt-kitty/assets/img/pattenrond.jpg" alt="Card image cap">
+                    <div class="col-3 card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/pattenrond.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Pattenrond</h5>
                             <p class="card-text">Male - Europeen</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="col-3 card-img-top" src="/adopt-kitty/assets/img/image2.jpg" alt="Card image cap">
+                    <div class="col-3  card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/image2.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Capucine</h5>
                             <p class="card-text">Femelle - Sacré de birmanie</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="col-3 card-img-top" src="/adopt-kitty/assets/img/image11.jpg" alt="Card image cap">
+                    <div class="col-3  card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/image11.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Spirou</h5>
                             <p class="card-text">Male - Croisé</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="col-3 card-img-top" src="/adopt-kitty/assets/img/image8.jpg" alt="Card image cap">
+                    <div class="col-3  card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/image8.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Tango</h5>
                             <p class="card-text">Male - Croisé</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class=" col-3 card-img-top" src="/adopt-kitty/assets/img/image10.jpg" alt="Card image cap">
+                    <div class="col-3  card">
+                        <img class="card-img-top" src="/adopt-kitty/assets/img/image10.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Ultia</h5>
                             <p class="card-text">Femelle - Europeen</p>
