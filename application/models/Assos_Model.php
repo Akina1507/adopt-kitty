@@ -18,7 +18,7 @@ class Assos_Model extends CI_Model
             ->where('nom_assos', $nom_assos)
             ->where('mdp_assos', $mdp_assos)
             ->where('email_assos', $email_assos)
-            ->where('mdp_recup_assos', $number)
+            ->where('recup_mdp_assos', $number)
             ->where('adresse_assos', $adresse_assos)
             ->where('ville_assos', $ville_assos)
             ->where('codepostal_assos', $codepostal_assos)
@@ -52,8 +52,9 @@ class Assos_Model extends CI_Model
         return $this->db->insert('associations', $data);
     }
 
-    public function exist_email($email_assos)
+    public function exist_email_assos($email_assos)
     {
+
         $this->db->where('email_assos', $email_assos);
         $query = $this->db->get('associations');
         if ($query->num_rows() > 0) {
@@ -70,7 +71,7 @@ class Assos_Model extends CI_Model
     public function new_number($number, $email_assos)
     {
         $data = array(
-            'mdp_recup_assos' => $number
+            'recup_mdp_assos' => $number
         );
 
         $this->db->where('email_assos', $email_assos);
@@ -82,7 +83,7 @@ class Assos_Model extends CI_Model
 
     public function number_exist($number)
     {
-        $query = $this->db->get_where('associations', array('mdp_recup_assos' => $number));
+        $query = $this->db->get_where('associations', array('recup_mdp_assos' => $number));
         return $query->num_rows() == 1;
     }
 
@@ -110,10 +111,9 @@ class Assos_Model extends CI_Model
     {
         $data = array(
             'mdp_assos' => $mdp_assos,
-            'mdp_recup_assos' => NULL
+            'recup_mdp_assos' => NULL
         );
-
-        $this->db->where('mdp_recup_assos', $mdp_recup_assos);
+        $this->db->where('recup_mdp_assos', $mdp_recup_assos);
         $this->db->update('associations', $data);
     }
 }

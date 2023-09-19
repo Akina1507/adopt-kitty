@@ -123,22 +123,22 @@ class Assos extends CI_Controller
     /* ---------------------------------------------------- */
     public function mail()
     {
-        $this->form_validation->set_rules('email_assos', 'Email', 'trim|required|valid_email', array(
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', array(
             'valid_email' => 'L\'adresse mail doit être valide'
         ));
 
-        $email_assos = $this->input->post('email_assos');
+        $email_assos = $this->input->post('email');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('espace_user/mail');
         } else {
-            if ($this->Assos_Model->exist_email($email_assos)) {
+            if ($this->Assos_Model->exist_email_assos($email_assos)) {
 
                 $number = bin2hex(random_bytes(30));
                 $this->Assos_Model->new_number($number, $email_assos);
 
 
-                $this->load->config('email_assos');
+                $this->load->config('email');
                 $from = $this->config->item('smtp_user');
 
 

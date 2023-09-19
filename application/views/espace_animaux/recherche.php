@@ -36,97 +36,28 @@ include(APPPATH . "views/include/header.php")
 </a>
 <div class="container">
     <div class="row">
-        <div class="col-3 card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/mikado.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Mikado</h5>
-                <p class="card-text">Male - Siamois</p>
+        <?php
+        foreach ($chat_annonce as $chat_annonce) { ?>
+            <div class="col-3  card">
+                <img class="card-img-top custom-img" src="/adopt-kitty/uploads/annonce/<?= $chat_annonce['image_chat'] ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class=" card-title"><?=
+                                            $chat_annonce['nom_animal']
+                                            ?></h5>
+                    <p class="text-capitalize card-text"><?=
+                                                            $chat_annonce['sexe_animal'] . ' - ' . $chat_annonce['race_animal']
+                                                            ?></p>
+                </div>
             </div>
-        </div>
-        <div class="col-3 card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/pattenrond.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Pattenrond</h5>
-                <p class="card-text">Male - Europeen</p>
-            </div>
-        </div>
-        <div class="col-3  card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image2.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Capucine</h5>
-                <p class="card-text">Femelle - Sacré de birmanie</p>
-            </div>
-        </div>
-        <div class="col-3 card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image11.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Spirou</h5>
-                <p class="card-text">Male - Croisé</p>
-            </div>
-        </div>
-        <div class="col-3  card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image8.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Tango</h5>
-                <p class="card-text">Male - Croisé</p>
-            </div>
-        </div>
-        <div class="col-3  card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image10.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Ultia</h5>
-                <p class="card-text">Femelle - Europeen</p>
-            </div>
-        </div>
-        <div class="col-3  card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image6.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Ultia</h5>
-                <p class="card-text">Femelle - Europeen</p>
-            </div>
-        </div>
-        <div class="col-3  card">
-            <img class="card-img-top custom-img" src="/adopt-kitty/assets/img/image5.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Ultia</h5>
-                <p class="card-text">Femelle - Europeen</p>
-            </div>
-        </div>
+        <?php  } ?>
     </div>
 </div>
-</div>
 
 
-<?php
-foreach ($chat_annonce as $chat_annonce) { ?>
-    <div class="col-3  card">
-        <img class="card-img-top custom-img" src="/adopt-kitty/upload/annonce/<?php $chat_annonce['image_chat'] ?>" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title"><?php
-                                    $chat_annonce['nom_animal']
-                                    ?></h5>
-            <p class="card-text">Femelle - Europeen</p>
-        </div>
-    </div>
-    </div>
-<?php  }
-/* $images = array(
-                    'image2.jpg', 'image8.jpg', 'image11.jpg', 'mikado.jpg',
-                    'image5.jpg', 'image6.jpg', 'image7.jpg', 'image1.jpg',
-                    'pattenrond.jpg', 'image10.jpg', 'image3.jpg', 'image12.jpg'
-                );
 
-                $numColumns = 4;
-                foreach (array_chunk($images, $numColumns) as $row) {
-                    echo '<div class="row">';
-                    foreach ($row as $image) {
-                        echo '<div class="col-md-3">';
-                        echo '<img src="' . base_url('/assets/img/' . $image) . '" alt="image">';
-                        echo '</div>';
-                    }
-                    echo '</div>';
-                } */
-?>
+
+
+
 <?php
 include(APPPATH . "views/include/footer.php")
 ?>

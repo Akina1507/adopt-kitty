@@ -33,7 +33,7 @@
                 </div>
                 <br>
                 <div class="col d-flex justify-content-between text-center">
-                    <a href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
+                    <a href="<?= base_url("Assos/mail") ?>">Mot de passe oublié ?</a>
                     <a href="<?= base_url("Assos/inscription_assos") ?>">Créer un compte</a>
                 </div>
                 <?php echo form_close(); ?>
