@@ -101,4 +101,12 @@ class User_Model extends CI_Model
         $this->db->where('recup_mdp', $mdp_recup);
         $this->db->update('users', $data);
     }
+
+    public function get_annonce()
+    {
+        $this->db->select('*');
+        $this->db->from('annonce');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

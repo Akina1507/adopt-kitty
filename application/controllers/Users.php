@@ -9,10 +9,9 @@ class Users extends CI_Controller
 
     public function index()
     {
-        $this->load->view('espace_animaux/recherche');
-
-        $this->load->model('User_Model');
-        $this->load->library('form_validation');
+        $chat_annonce = $this->User_Model->get_annonce();
+        $data['chat_annonce'] = $chat_annonce;
+        $this->load->view('espace_animaux/recherche', $data);
     }
 
 
