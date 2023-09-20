@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="email_user">Email :</label>
-                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email" required>
+                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="votreadresse@email.com" required>
                             <h6 class="invalid-from-error"><?= form_error('email_user'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="tel_user">Téléphone :</label>
-                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="+33" required>
                             <h6 class="invalid-from-error"><?= form_error('tel_user'); ?></h6>
                         </div>
 

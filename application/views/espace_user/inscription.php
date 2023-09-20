@@ -37,7 +37,7 @@
                         <br>
                         <label class="label-login" for="email">Adresse email</label>
                         <br>
-                        <input class="form-control" type="email" id="email" name="email" required>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="votreadresse@email.com" required>
                         <h6><?php echo form_error('email'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp">Mot de passe</label>

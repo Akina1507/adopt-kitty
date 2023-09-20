@@ -15,7 +15,7 @@
                     <div class="field">
                         <label class="label-login" for="email_assos">Email</label>
                         <br>
-                        <input class="form-control" type="text" id="email_assos" name="email_assos" required>
+                        <input class="form-control" type="text" id="email_assos" name="email_assos" placeholder="votreadresse@email.com" required>
                         <h6><?php echo form_error('email_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>

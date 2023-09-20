@@ -41,12 +41,12 @@
                         <br>
                         <label class="label-login" for="email_assos">Adresse email</label>
                         <br>
-                        <input class="form-control" type="email" id="email_assos" name="email_assos" required>
+                        <input class="form-control" type="email" id="email_assos" name="email_assos" placeholder="votreadresse@email.com" required>
                         <h6><?php echo form_error('email_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="tel_assos">Numéro de téléphone</label>
                         <br>
-                        <input class="form-control" type="number" id="tel_assos" name="tel_assos" required>
+                        <input class="form-control" type="number" id="tel_assos" name="tel_assos" placeholder="+33"required>
                         <h6><?php echo form_error('tel_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>

@@ -64,14 +64,16 @@ class Assos extends CI_Controller
             $this->form_validation->set_rules('ville_assos', 'Ville association', 'trim|required', array(
                 'required' => 'Le nom de ville doit être renseigné',
             ));
-            $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required', array(
+            $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required|exact_length[5]', array(
                 'required' => 'Le code postal doit être renseigné',
+                'exact_length' => 'Le code postal doit contenir 5 chiffres seulement.'
             ));
-            $this->form_validation->set_rules('email_assos', 'Email association', 'trim|required|valid_email', array(
-                'valid_email' => 'L\'email doit être valide'
-            ));
-            $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required', array(
+            $this->form_validation->set_rules('email_assos', 'Email association', 'trim|required|valid_email|is_unique[associations.email_assos]');
+            
+            $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required|regex_match[(06|07|08|09|03)]|exact_length[10]', array(
                 'required' => 'Le numero de telephone doit être renseigné',
+                'regex_match' => 'Le numéro de téléphone doit obligatoirement commencer par (06, 07, 08, 09 ou 03).',
+                'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'
             ));
             $this->form_validation->set_rules('mdp_assos', 'Mot de passe', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
