@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 16 sep. 2023 à 14:12
+-- Généré le : ven. 22 sep. 2023 à 15:51
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -32,35 +32,35 @@ USE `user_projet`;
 DROP TABLE IF EXISTS `adoption`;
 CREATE TABLE IF NOT EXISTS `adoption` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `civile_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prenom_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adresse_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `codepostal_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ville_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `raison_adopt` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `accueil_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chiens_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chats_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `oiseaux_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `autres_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `others_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `animaux_domestiques` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exp_animaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_logement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exterieur_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_exterieur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `situation_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_famille` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `activite_conjoint` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `enfants_foyer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nbr_enfants` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `temps_activite` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `civile_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `raison_adopt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `accueil_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiens_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chats_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `oiseaux_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `autres_radio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `others_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `animaux_domestiques` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exp_animaux` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_logement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exterieur_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_exterieur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `situation_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_famille` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activite_conjoint` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `enfants_foyer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nbr_enfants` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `temps_activite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -97,19 +97,25 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `non_radio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'oui',
   `description_animal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `annonce`
 --
 
 INSERT INTO `annonce` (`id`, `nom_animal`, `puce_animal`, `image_chat`, `espece_animal`, `race_animal`, `naissance_animal`, `sexe_animal`, `lieu_animal`, `chiens_radio`, `chats_radio`, `enfants_radio`, `non_radio`, `description_animal`) VALUES
-(1, 'Tango', '9980467', 'da8b88b008f4c693cfd53f0a70155dd7435c4a9c.jpg', 'chat', 'europeen', '2021-11-25', 'male', 'Refuge Spa de Laon', 'chiens', 'non', 'non', 'oui', 'Tango est un chat craintif, qui aura besoin de temps et de patience pour le mettre en confiance\r\nNon compatible avec les chiens'),
+(1, 'Tango', '9980467', 'da8b88b008f4c693cfd53f0a70155dd7435c4a9c.jpg', 'chat', 'chartreux', '2021-11-25', 'male', 'Refuge Spa de Laon', 'chiens', 'non', 'non', 'oui', 'Tango est un chat craintif, qui aura besoin de temps et de patience pour le mettre en confiance\r\nNon compatible avec les chiens'),
 (2, 'Frimousse', '095678', 'd5aaa50532a735b5970ca7e8be29648fb4232344.jpg', 'chat', 'europeen', '2020-03-03', 'male', 'Snpa Rouen', 'chiens', 'non', 'non', 'oui', 'C\'est un minou affectueux, calme et joueur. Nous aimerions qu\'il puisse enfin trouver sa famille, pour la vie.\r\nNon compatible avec les chiens.'),
 (3, 'Bamboo', '22567', '333ed0aabeb94292d195e071bc4dc8b0a65a7eb9.jpg', 'chat', 'europeen', '2017-06-20', 'male', 'Snpa Rouen', 'non', 'non', 'non', 'oui', 'Bamboo est un très gentil matou qui se montre très câlins et toujours en demande d\'attention. Il est d\'un tempérament calme et aime passer son temps à observer son environnement.\r\nRéglisse pourra vivre avec tous types d\'animaux et les jeunes enfants'),
 (4, 'Capucine', '674802', '6da300c06ec6045c8e55373484cb9cb6fa8a7c6c.jpg', 'chat', 'sacre-de-birmanie', '2019-06-02', 'femelle', 'Ronron Association', 'non', 'non', 'enfants', 'oui', 'Capucine est une chatte très caline et joueuse, elle est très pipelette\r\nElle est impatiente de trouver sa famille pour la vie\r\nIncompatible avec les jeunes enfants'),
+(20, 'Olga', '807897', '39fd822b9daaf043bf885ef944d9f3667a2d4eaf.jpg', 'chat', 'europeen', '2023-02-14', 'femelle', 'Les amis des betes', 'non', 'non', 'non', 'oui', 'mignonne, gentil et adore passer des moments de jeux'),
+(21, 'Daisy', '589793', '89f46cb62b65a473e781b3725b2b55ba4d183f1d.jpg', 'chat', 'europeen', '2018-11-16', 'femelle', 'Refuge SPA de Laon', 'chiens', 'non', 'non', 'oui', 'Assez timide au debut mais elle devient caline par la suite\r\nNon compatible avec les chiens'),
 (5, 'Mikado', '895649', '9259a7522c8b49d78cd61e7108e66f1f0f5fb88a.jpg', 'chat', 'siamois', '2022-07-07', 'male', 'Ronron Association', 'non', 'non', 'non', 'oui', 'Mikado est très joueur et sociable, il adore les plumes et les souris\nIl est compatible avec tous types d\'animaux et les jeunes enfants\nMikado sera très heureux de trouver une famille pour toujours.'),
-(6, 'Spirou', '9864899', '731ddaa6dcc25c44faef8b28cc34aa8ea8a7e7d6.jpg', 'chat', 'croise', '2021-04-01', 'male', 'Ronron Association', 'chiens', 'non', 'non', 'oui', 'Spirou est un chat très câlin et plutôt calme et joueur. Luffy devra vivre en appartement ou en maison avec un extérieur de préférence.\r\nIncompatible avec les chiens');
+(6, 'Spirou', '9864899', '731ddaa6dcc25c44faef8b28cc34aa8ea8a7e7d6.jpg', 'chat', 'croise', '2021-04-01', 'male', 'Ronron Association', 'chiens', 'non', 'non', 'oui', 'Spirou est un chat très câlin et plutôt calme et joueur. Luffy devra vivre en appartement ou en maison avec un extérieur de préférence.\r\nIncompatible avec les chiens'),
+(22, 'Harry', '798098', '4829aca8546e02bba8a827d53015fe1657a49156.jpg', 'chat', 'croise', '2016-03-27', 'male', 'SNPA Rouen', 'non', 'non', 'enfants', 'oui', 'Curieux et gentil , un extérieur serait préférable pour Harry pour qu\'il puisse se balader librement.\r\nNon compatible avec les enfants de moins de 5 ans'),
+(23, 'Eden', '8976806', 'c3e49cdaa4599cb2b829cb1b457e3f2e3453bb3b.jpg', 'chat', 'croise', '2021-09-11', 'male', 'Les amis des betes', 'non', 'non', 'non', 'oui', 'Eden, est FIV c\'est a dire qu\'il a le sida du chat, il peut être avec des chats FIV comme lui.\r\nIl est préférable que Eden reste a l\'intérieur avec sa maladie.\r\nAmical et très calin envers les humains et les autres chats FIV'),
+(26, 'Iris', '709760', '03a0fb7990cdfbab567eaf9ae2205198493d8273.jpg', 'chat', 'croise', '2023-03-02', 'femelle', 'Refuge SPA de Laon', 'chiens', 'non', 'non', 'oui', 'Iris est très curieuse mais assez craintive au debut mais avec de la patiente elle acceptera la main humaine.\r\nNon compatible avec les chiens'),
+(27, 'Luna', '809607', 'ab67b685db02ff498dce82bbd2980dc5322632ad.jpg', 'chat', 'chartreux', '2022-12-29', 'femelle', 'Ronron Association', 'non', 'non', 'non', 'oui', 'Luna est très joueuse, adore les friandises au saumon et les plumes.\r\nCompatible avec tout le monde');
 
 -- --------------------------------------------------------
 
@@ -120,16 +126,16 @@ INSERT INTO `annonce` (`id`, `nom_animal`, `puce_animal`, `image_chat`, `espece_
 DROP TABLE IF EXISTS `associations`;
 CREATE TABLE IF NOT EXISTS `associations` (
   `id_assos` int NOT NULL AUTO_INCREMENT,
-  `nom_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adresse_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ville_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `codepostal_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adresse_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codepostal_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mdp_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `recup_mdp_assos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `recup_mdp_assos` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_assos`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `associations`
@@ -137,8 +143,9 @@ CREATE TABLE IF NOT EXISTS `associations` (
 
 INSERT INTO `associations` (`id_assos`, `nom_assos`, `adresse_assos`, `ville_assos`, `codepostal_assos`, `email_assos`, `tel_assos`, `mdp_assos`, `recup_mdp_assos`) VALUES
 (1, 'Ronron Association', '122 bis rue du Barbâtre', 'Reims', '51100', 'ronronassociation@gmail.com', '0789546734', 'd7d6c0ef4c0eee70a4d4b910d8366bc7', ''),
-(2, 'Refuge SPA de Laon', 'Chemin de la Croix de Chivy', 'Laon', '02000', 'choupachoups223@gmail.com', '0323204254', '558a4bb107bed9c54e4edd25fbf36e14', ''),
-(3, 'SNPA Rouen', '7 bis Avenue Jacques Chastellain Île Lacroix', 'Rouen', '76000', 'snpa2@orange.fr', '0235702036', '142b1c0a181ada4fd4d7e0e7a6e210d9', '');
+(2, 'Refuge SPA de Laon', 'Chemin de la Croix de Chivy', 'Laon', '02000', 'refuge.spa-laon@free.fr', '0323204254', '558a4bb107bed9c54e4edd25fbf36e14', ''),
+(3, 'SNPA Rouen', '7 bis Avenue Jacques Chastellain Île Lacroix', 'Rouen', '76000', 'snpa2@orange.fr', '0235702036', '142b1c0a181ada4fd4d7e0e7a6e210d9', ''),
+(8, 'Les amis des betes', '27 rue de la Brûlée', 'Troyes', '10000', 'contact@amisdesbetes10.fr', '0325455420', '4a7cd7fea771992543375f2129de8f32', '');
 
 -- --------------------------------------------------------
 
@@ -237,7 +244,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prenom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mdp` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -250,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `nom`, `prenom`, `email`, `mdp`, `recup_mdp`) VALUES
-(1, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'be5d9ba998a9412a49a6e9d4fcedf931', NULL),
+(1, 'Marie', 'Wietrich', 'Marie-Sarah', 'mswietrich1507@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '59cbc5ceb765a8b9dde2ffcacd265d3d348c0e7d9af4d6812931a1a9a341'),
 (2, 'Lucie Lefevre', 'lefevre', 'Lucie', 'lefevre.lucie0509@outlook.com', 'f3349e834612f39a29db3711368d5adb', NULL),
 (3, 'aMillier', 'Millier', 'Adrien', 'adrien.millier9867@gmail.com', '31624c3cd83c63243d74c03bb005d4ad', NULL),
 (4, 'cmaxime', 'Chevalier', 'Maxiem', 'chvlier-maxime@orange.fr', 'c403bcce7a1faedcb8cc45ad8478d73c', NULL),
