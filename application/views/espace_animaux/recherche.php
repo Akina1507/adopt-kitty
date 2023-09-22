@@ -39,7 +39,9 @@ include(APPPATH . "views/include/header.php")
         <?php
         foreach ($chat_annonce as $chat_annonce) { ?>
             <div class="col-3  card">
-                <img class="card-img-top custom-img" src="/adopt-kitty/uploads/annonce/<?= $chat_annonce['image_chat'] ?>" alt="Card image cap">
+                <a href="<?= base_url("Annonce/fiches_chats/" . $chat_annonce['nom_animal'] . '/') . $chat_annonce['id'] ?>">
+                    <img class="card-img-top custom-img" src="/adopt-kitty/uploads/annonce/<?= $chat_annonce['image_chat'] ?>" alt="Card image cap">
+                </a>
                 <div class="card-body">
                     <h5 class=" card-title"><?=
                                             $chat_annonce['nom_animal']

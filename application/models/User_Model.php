@@ -109,4 +109,13 @@ class User_Model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function get_fiche($id)
+    {
+        $this->db->select('*');
+        $this->db->from('annonce');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

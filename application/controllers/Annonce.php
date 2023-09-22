@@ -114,4 +114,11 @@ class Annonce extends CI_Controller
         header('refresh:10;url=' . base_url('Users'));
         $this->load->view('form/success');
     }
+
+    public function fiches_chats($id)
+    {
+        $chat_fiche = $this->User_Model->get_fiche($id);
+        $data['chat_fiche'] = $chat_fiche;
+        $this->load->view('espace_animaux/card_chat', $data);
+    }
 }
