@@ -15,7 +15,7 @@
                     <div class="field">
                         <label class="label-login" for="email_assos">Email</label>
                         <br>
-                        <input class="form-control" type="text" id="email_assos" name="email_assos" required>
+                        <input class="form-control" type="text" id="email_assos" name="email_assos" placeholder="votreadresse@email.com" required>
                         <h6><?php echo form_error('email_assos'); ?></h6>
                         <br>
                         <label class="label-login" for="mdp_assos">Mot de passe</label>
@@ -26,16 +26,15 @@
                 </div>
                 <br>
                 <div class="row justify-content-between">
-                    <div class="col">
+                    <div class="col d-flex justify-content-between">
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/accueil") ?>">Retour</a>
                         <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
-                    <div class="col  text-center">
-                        <a class="btn btn-outline-dark fw-bold m-1" style="font-size: 15px;" href="<?= base_url("Users/mail") ?>">Mot de passe oublié ?</a>
-                        <a href="<?= base_url("Assos/inscription_assos") ?>">Créer un compte</a>
-                    </div>
                 </div>
-                <div class="col">
-                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
+                <br>
+                <div class="col d-flex justify-content-between text-center">
+                    <a href="<?= base_url("Assos/mail") ?>">Mot de passe oublié ?</a>
+                    <a href="<?= base_url("Assos/inscription_assos") ?>">Créer un compte</a>
                 </div>
                 <?php echo form_close(); ?>
                 <?php echo form_error('formulaire'); ?>

@@ -1,22 +1,23 @@
 <?php
 //Formulaire de connexion 
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Users extends CI_Controller
 {
-    /* ------------------------- */
-    /* Ne doit plus exister => Config */
-    /* ------------------------- */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('User_Model');
-        $this->load->library('form_validation');
-    }
+
 
     public function index()
     {
-        $this->load->view('espace_animaux/recherche');
+        $chat_annonce = $this->User_Model->get_annonce();
+        $data['chat_annonce'] = $chat_annonce;
+        $this->load->view('espace_animaux/recherche', $data);
+    }
+
+
+    public function accueil()
+    {
+        $this->load->view('espace_user/accueil');
     }
 
     /* ----------------------- */
@@ -161,14 +162,20 @@ class Users extends CI_Controller
 
                 //config de l'envoi du mail avec form validation
 
-                $link = anchor('/codeigniterarthur/connexion/change_mdp/'  . $number, 'Reinitialiser votre mot de passe');
+                $link = anchor('/Users/mdp_recup/'  . $number, 'Reinitialiser votre mot de passe');
 
                 //Contenu du mail une fois envoyé
                 $this->email->from($from, 'Adopt Kitty');
                 $this->email->to($email);
                 $this->email->subject('Mot de passe oublié');
-                $this->email->message('Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty. <br> 
-                <img src="assets/img/adopt-kitty-logo.png" alt="Logo Adopt Kitty">');
+                $this->email->set_mailtype('html');
+                $img_url = base_url('assets/img/adopt-kitty-logo.png');
+                $this->email->attach($img_url);
+                $message = '<html><body>';
+                $message .= '<h4>Bonjour ' . $email . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty.</h4>';
+                $message .= '<img src="cid:' . basename($img_url) . '" alt="Image">';
+                $message .= '</body></html>';
+                $this->email->message($message);
 
 
 
@@ -189,35 +196,28 @@ class Users extends CI_Controller
     /* ---------------------------------------------------- */
     /* Recupération mdp par chiffres aléatoires */
     /* ---------------------------------------------------- */
-    public function change_mdp($number = '')
+
+
+    public function mdp_recup($mdp_recup = '')
     {
-        if ($this->User_Model->number_exist($number)) {
-            $this->form_validation->set_rules('mdp', 'changement mdp', 'trim|required', array(
-                'trim' => 'Le mot de passe doit être valide',
-                'required' => 'Le mot de passe n\'est pas renseigné'
-            ));
+        if ($this->User_Model->number_exist($mdp_recup)) {
+            $this->form_validation->set_rules('mdp', 'mdp', 'trim|required');
+            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]');
 
-            if ($this->form_validation->run() == TRUE) {
-                $mdp = md5($this->input->post('mdp'));
 
-                if ($this->User_Model->change_mdp($mdp, $number)) {
-                    echo 'La requête est valide';
-                } else {
-                    echo ('La requête est invalide');
-                }
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('espace_user/mdp_recup');
             } else {
-                $this->load->view('espace_user/change_mdp');
+                $mdp = md5($this->input->post('mdp'));
+                $this->User_Model->update_mdp($mdp, $mdp_recup);
+
+                $data['popup'] = true;
+                $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
+                $this->load->view('espace_user/mdp_recup', $data);
             }
         } else {
             header('refresh:5;url=' . base_url('Users'));
             echo 'La clé de récupération n\'est pas valide';
         }
-    }
-
-
-
-    public function home()
-    {
-        $this->load->view('espace_user/home');
     }
 }

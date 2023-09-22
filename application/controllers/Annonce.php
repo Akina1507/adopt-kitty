@@ -11,7 +11,7 @@ class Annonce extends CI_Controller
     public function annonce()
     {
         if (isConnected() == false) {
-            redirect("Users/home");
+            redirect("Users/accueil");
         } else {
             $data['races'] = $this->Chat_Model->get_races();
 

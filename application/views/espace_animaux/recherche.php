@@ -1,7 +1,12 @@
 <?php
 include(APPPATH . "views/include/header.php")
 ?>
-
+<style>
+    .custom-img {
+        max-width: 304;
+        height: 400px;
+    }
+</style>
 
 <div class="justify-content-center">
     <h5>Je recherche un
@@ -25,33 +30,33 @@ include(APPPATH . "views/include/header.php")
     </h5>
 </div>
 </head>
-<div class="col justify-content-center">
-    <div class="image-container d-flex justify-content-center flex-wrap ">
-        <a class="btn btn-outline-dark m-1" href="<?php
-                                                    echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
-        </a>
-        <div class="custom-btn">
-        <?php
-        $images = array(
-            'image2.jpg', 'image8.jpg', 'image11.jpg', 'image4.jpg',
-            'image5.jpg', 'image6.jpg', 'image7.jpg', 'image1.jpg',
-            'image9.jpg', 'image10.jpg', 'image3.jpg', 'image12.jpg'
-        );
 
-        $numColumns = 4;
-        foreach (array_chunk($images, $numColumns) as $row) {
-            echo '<div class="row">';
-            foreach ($row as $image) {
-                echo '<div class="col-md-3">';
-                echo '<img src="' . base_url('/assets/img/' . $image) . '" alt="image">';
-                echo '</div>';
-            }
-            echo '</div>';
-        }
-        ?>
-        </div>
+<a class="btn btn-outline-dark m-1" href="<?php
+                                            echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
+</a>
+<div class="container">
+    <div class="row">
+        <?php
+        foreach ($chat_annonce as $chat_annonce) { ?>
+            <div class="col-3  card">
+                <img class="card-img-top custom-img" src="/adopt-kitty/uploads/annonce/<?= $chat_annonce['image_chat'] ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class=" card-title"><?=
+                                            $chat_annonce['nom_animal']
+                                            ?></h5>
+                    <p class="text-capitalize card-text"><?=
+                                                            $chat_annonce['sexe_animal'] . ' - ' . $chat_annonce['race_animal']
+                                                            ?></p>
+                </div>
+            </div>
+        <?php  } ?>
     </div>
 </div>
+
+
+
+
+
 
 <?php
 include(APPPATH . "views/include/footer.php")

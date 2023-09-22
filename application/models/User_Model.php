@@ -4,6 +4,7 @@ class User_Model extends CI_Model
 {
 
     protected $table = 'users';
+
     public function cb_users($email, $mdp)
     {
         $query = $this->db->where('email', $email)
@@ -51,9 +52,13 @@ class User_Model extends CI_Model
     /* savoir si le mail existe */
     /* ------------------------ */
 
-    public function new_number($number)
+    public function new_number($number, $email)
     {
-        $data = array('recup_mdp' => $number);
+        $data = array(
+            'recup_mdp' => $number
+        );
+
+        $this->db->where('email', $email);
         $this->db->update('users', $data);
     }
     /* -------------------------------------------------------------------- */
@@ -64,13 +69,6 @@ class User_Model extends CI_Model
     {
         $query = $this->db->get_where('users', array('recup_mdp' => $number));
         return $query->num_rows() == 1;
-    }
-
-    public function change_mdp($number, $mdp)
-    {
-        $data = array('mdp' => $mdp);
-        $this->db->where('recup_mdp', $number);
-        $this->db->update('users', $data);
     }
 
 
@@ -87,5 +85,28 @@ class User_Model extends CI_Model
         } else {
             return false;
         }
+    }
+
+
+    /* ------------------------ */
+    /* Update de l'ancien mdp en nouveau */
+    /* ------------------------ */
+    public function update_mdp($mdp, $mdp_recup)
+    {
+        $data = array(
+            'mdp' => $mdp,
+            'recup_mdp' => NULL
+        );
+
+        $this->db->where('recup_mdp', $mdp_recup);
+        $this->db->update('users', $data);
+    }
+
+    public function get_annonce()
+    {
+        $this->db->select('*');
+        $this->db->from('annonce');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }

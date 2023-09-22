@@ -1,5 +1,4 @@
 <?php
-//Formulaire de connexion 
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Assos extends CI_Controller
@@ -65,14 +64,16 @@ class Assos extends CI_Controller
             $this->form_validation->set_rules('ville_assos', 'Ville association', 'trim|required', array(
                 'required' => 'Le nom de ville doit être renseigné',
             ));
-            $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required', array(
+            $this->form_validation->set_rules('codepostal_assos', 'Code postal association', 'trim|required|exact_length[5]', array(
                 'required' => 'Le code postal doit être renseigné',
+                'exact_length' => 'Le code postal doit contenir 5 chiffres seulement.'
             ));
-            $this->form_validation->set_rules('email_assos', 'Email association', 'trim|required|valid_email', array(
-                'valid_email' => 'L\'email doit être valide'
-            ));
-            $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required', array(
+            $this->form_validation->set_rules('email_assos', 'Email association', 'trim|required|valid_email|is_unique[associations.email_assos]');
+            
+            $this->form_validation->set_rules('tel_assos', 'Telephone association', 'trim|required|regex_match[(06|07|08|09|03)]|exact_length[10]', array(
                 'required' => 'Le numero de telephone doit être renseigné',
+                'regex_match' => 'Le numéro de téléphone doit obligatoirement commencer par (06, 07, 08, 09 ou 03).',
+                'exact_length' => 'Le champ doit contenir exactement 10 chiffres.'
             ));
             $this->form_validation->set_rules('mdp_assos', 'Mot de passe', 'trim|required', array(
                 'trim' => 'Le mot de passe doit être valide',
@@ -116,6 +117,93 @@ class Assos extends CI_Controller
                     redirect('Assos/inscription_assos');
                 }
             }
+        }
+    }
+
+    /* ---------------------------------------------------- */
+    /* Envoi email pour recupérer le mdp */
+    /* ---------------------------------------------------- */
+    public function mail()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', array(
+            'valid_email' => 'L\'adresse mail doit être valide'
+        ));
+
+        $email_assos = $this->input->post('email');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('espace_user/mail');
+        } else {
+            if ($this->Assos_Model->exist_email_assos($email_assos)) {
+
+                $number = bin2hex(random_bytes(30));
+                $this->Assos_Model->new_number($number, $email_assos);
+
+
+                $this->load->config('email');
+                $from = $this->config->item('smtp_user');
+
+
+                //config de l'envoi du mail avec form validation
+
+                $link = anchor('/Assos/mdp_recup/'  . $number, 'Reinitialiser votre mot de passe');
+
+                //Contenu du mail une fois envoyé
+                $this->email->from($from, 'Adopt Kitty');
+                $this->email->to($email_assos);
+                $this->email->subject('Mot de passe oublié');
+                $this->email->set_mailtype('html');
+                $img_url = base_url('assets/img/adopt-kitty-logo.png');
+                $this->email->attach($img_url);
+                $message = '<html><body>';
+                $message .= '<h4>Bonjour ' . $email_assos . ',<br> <br> Merci de cliquer sur le lien ci-dessous afin de modifier votre mot de passe :<br>' . $link . '<br> <br>Cordialement.<br> <br> Adopt Kitty.</h4>';
+                $message .= '<img src="cid:' . basename($img_url) . '" alt="Image">';
+                $message .= '</body></html>';
+                $this->email->message($message);
+
+
+
+                //Pop up affiché une fois que l'email a été envoyé : true 
+                if ($this->email->send()) {
+                    $popup = true;
+                    $this->load->view('espace_user/mail', compact('popup'));
+                } else {
+                    echo "Le mail n'a pas été envoyé";
+                }
+            } else {
+                $this->load->view('espace_user/mail', array('popupError' => true));
+            }
+        }
+    }
+
+
+    /* ---------------------------------------------------- */
+    /* Recupération mdp par chiffres aléatoires */
+    /* ---------------------------------------------------- */
+
+
+    public function mdp_recup($mdp_recup_assos = '')
+    {
+        if ($this->Assos_Model->number_exist($mdp_recup_assos)) {
+            $this->form_validation->set_rules('mdp', 'mdp', 'trim|required');
+            $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]');
+
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('espace_user/mdp_recup');
+            } else {
+                $mdp_assos = md5($this->input->post('mdp_assos'));
+
+                $this->Assos_Model->update_mdp_assos($mdp_assos, $mdp_recup_assos);
+
+
+                $data['popup'] = true;
+                $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
+                $this->load->view('espace_user/mdp_recup', $data);
+            }
+        } else {
+            header('refresh:5;url=' . base_url('Assos'));
+            echo 'La clé de récupération n\'est pas valide';
         }
     }
 }

@@ -216,7 +216,7 @@
                             <h6 class="invalid-from-error"><?= form_error('others_animaux'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="animaux_domestiques">Avez-vous déjà eu des animaux domestiques ?</label>
+                            <label for="animaux_domestiques">Avez-vous déjà eu des animaux domestiques auparavent?</label>
                             <select class="form-select" name="animaux_domestiques" id="animaux_domestiques" required>
                                 <option value="">Sélectionnez</option>
                                 <option value="chiens">Chiens</option>
@@ -295,6 +295,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_famille'); ?></h6>
                         </div>
@@ -306,6 +307,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_conjoint'); ?></h6>
                         </div>
@@ -354,7 +356,7 @@
 
                         <div class="d-flex btn-row">
                             <button class="btn btn-outline-dark fw-bold m-1" id="prevBtn" onclick="nextPrev(-1)" type="button">Précédent</button>
-                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="button">Envoyer</button>
+                            <button class="btn btn-outline-dark fw-bold m-1" id="submitButton" onclick="validateAndSubmit()" type="submit">Envoyer</button>
                         </div>
                     </div>
             </form>

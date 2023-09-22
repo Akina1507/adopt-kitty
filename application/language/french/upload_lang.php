@@ -53,4 +53,4 @@ $lang['upload_destination_error'] = 'Un problème est survenu lors de la tentati
 $lang['upload_no_filepath'] = 'Le chemin de téléchargement ne semble pas être valide.';
 $lang['upload_no_file_types'] = 'Vous n\'avez spécifié aucun type de fichier autorisé.';
 $lang['upload_bad_filename'] = 'Le nom de fichier que vous avez soumis existe déjà sur le serveur.';
-$lang['upload_not_writable'] = 'Le dossier de destination du téléchargement ne semble pas être inscriptible.'
+$lang['upload_not_writable'] = 'Le dossier de destination du téléchargement ne semble pas être inscriptible.';

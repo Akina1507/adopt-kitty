@@ -24,10 +24,12 @@
                         <br>
                         <input class="form-control" type="text" id="nom" name="nom" required>
                         <h6><?php echo form_error('nom'); ?></h6>
+                        <br>
                         <label class="label-login" for="prenom">Prénom</label>
                         <br>
                         <input class="form-control" type="text" id="prenom" name="prenom" required>
                         <h6><?php echo form_error('prenom'); ?></h6>
+                        <br>
                         <label class="label-login" for="pseudo">Nom d'utilisateur</label>
                         <br>
                         <input class="form-control" type="text" id="pseudo" name="pseudo" required>
@@ -35,8 +37,9 @@
                         <br>
                         <label class="label-login" for="email">Adresse email</label>
                         <br>
-                        <input class="form-control" type="email" id="email" name="email" required>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="votreadresse@email.com" required>
                         <h6><?php echo form_error('email'); ?></h6>
+                        <br>
                         <label class="label-login" for="mdp">Mot de passe</label>
                         <br>
                         <input class="form-control" type="password" id="mdp" name="mdp" required>
@@ -46,25 +49,21 @@
                         <br>
                         <input class="form-control" type="password" id="mdp_confirm" name="mdp_confirm" required>
                         <h6><?php echo form_error('mdp_confirm'); ?></h6>
-                        <br>
 
                     </div>
                 </div>
                 <br>
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="connexion">
+                <div class="row">
+                    <div class="col d-flex justify-content-between">
+                        <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/accueil") ?>">Retour</a>
+                        <input class="btn btn-outline-dark fw-bold m-1" type="submit" name="envoyer">
                     </div>
+                    <?php echo form_close(); ?>
+                    <?php echo form_error('formulaire'); ?>
                 </div>
-                <div class="col">
-                    <a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/home") ?>">Retour</a>
-                </div>
-                <?php echo form_close(); ?>
-                <?php echo form_error('formulaire'); ?>
             </div>
         </div>
     </div>
-</div>
-<?php
-include(APPPATH . "views/include/footer.php")
-?>
+    <?php
+    include(APPPATH . "views/include/footer.php")
+    ?>

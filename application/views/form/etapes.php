@@ -6,7 +6,7 @@
 <div class="container form-container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
-            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille/formfamille'); ?>" method="post">
+            <form class="upe-mutistep-form needs-validation" novalidate id="Upemultistepsform" action="<?= site_url('Famille/etapes'); ?>" method="post">
                 <div class="step-header d-flex mb-2">
                     <span class="steplevel active d-flex justify-content-center">Etape 1</span>
                     <span class="steplevel d-flex justify-content-center">Etape 2</span>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="email_user">Email :</label>
-                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="Votre adresse email" required>
+                            <input class="form-control" type="email" name="email_user" id="email_user" placeholder="votreadresse@email.com" required>
                             <h6 class="invalid-from-error"><?= form_error('email_user'); ?></h6>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="tel_user">Téléphone :</label>
-                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="Votre numéro de téléphone" required>
+                            <input class="form-control" type="number" name="tel_user" id="tel_user" placeholder="+33" required>
                             <h6 class="invalid-from-error"><?= form_error('tel_user'); ?></h6>
                         </div>
 
@@ -121,6 +121,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_famille'); ?></h6>
                         </div>
@@ -132,6 +133,7 @@
                                 <option value="salarie">Salarié(e)</option>
                                 <option value="etudiant">Étudiant</option>
                                 <option value="handicape">Handicapé</option>
+                                <option value="retraite">Retraité</option>
                             </select>
                             <h6 class="invalid-from-error"><?= form_error('activite_conjoint'); ?></h6>
                         </div>
