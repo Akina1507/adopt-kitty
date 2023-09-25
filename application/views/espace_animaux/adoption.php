@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="col-mb-12">
                                     <input class="form-check-input required-radio" type="radio" name="chiens_radio" id="chiens_radio_3" value="3">
-                                    <label class="form-check-label" for="chiens_radio_3">3</label>
+                                    <label class="form-check-label" for="chiens_radio_3">3 et +</label>
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('chiens_radio'); ?></h6>
                             </div>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-mb-12">
                                     <input class="form-check-input" type="radio" name="chats_radio" id="chats_radio_3" value="3">
-                                    <label class="form-check-label" for="chats_radio_3">3</label>
+                                    <label class="form-check-label" for="chats_radio_3">3 et +</label>
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('chats_radio'); ?></h6>
                             </div>
@@ -182,7 +182,7 @@
                                 </div>
                                 <div class="col-mb-12">
                                     <input class="form-check-input" type="radio" name="oiseaux_radio" id="oiseaux_radio_3" value="3">
-                                    <label class="form-check-label" for="oiseaux_radio_3">3</label>
+                                    <label class="form-check-label" for="oiseaux_radio_3">3 et +</label>
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('oiseaux_radio'); ?></h6>
                             </div>
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="col-mb-12">
                                     <input class="form-check-input" type="radio" name="autres_radio" id="autres_radio_3" value="3">
-                                    <label class="form-check-label" for="autres_radio_3">3</label>
+                                    <label class="form-check-label" for="autres_radio_3">3 et +</label>
                                 </div>
                                 <h6 class="invalid-from-error"><?= form_error('autres_radio'); ?></h6>
                             </div>

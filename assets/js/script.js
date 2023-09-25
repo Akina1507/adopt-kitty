@@ -118,20 +118,27 @@ function showFieldErrors() {
 //Systeme pour afficher/masquer type_exterieur en fonction d'exterieur_user
 document.addEventListener("DOMContentLoaded", function () {
 	var exterieurUserSelect = document.getElementById("exterieur_user");
-
+// variable qui prend en compte la div
 	var typeExterieurDiv = document.getElementById("type_exterieur_div");
 	var typeExterieur = document.getElementById("type_exterieur");
 
+	// événement exterieurUserSelect, se déclenche a chaque fois que la valeur du champ de sélection change.
 	exterieurUserSelect.addEventListener("change", function () {
 		if (
+			// si l'option est "non" ou "aucune"
 			exterieurUserSelect.value === "non" ||
 			exterieurUserSelect.value === ""
 		) {
+			// Alors typeExterieurDiv est masqué avec la classe d-none
 			typeExterieurDiv.classList = "col-md-6 mb-3 d-none";
+			// n'est pas requis 
 			typeExterieur.required = false;
+			// et son contenu est vidé
 			typeExterieur.value = "";
 		} else {
+			// Alors typeExterieurDiv n'est pas masqué avec la classe d-block
 			typeExterieurDiv.classList = "col-md-6 mb-3 d-block";
+			// est requis 
 			typeExterieur.required = true;
 		}
 	});
