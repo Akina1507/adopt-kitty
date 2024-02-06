@@ -13,13 +13,13 @@ include(APPPATH . "views/include/header.php")
 			<div class="mx-5">
 				<a class="btn btn-outline-dark m-1" href="<?php
 															echo base_url("Users/login") ?>">Utilisateurs
-					<img src="/adopt-kitty/assets/img/icons_users" alt="">
+					<img src="/adopt-kitty-1/assets/img/icons_users" alt="">
 				</a>
 			</div>
 			<div class="mx-5">
 				<a class="btn btn-outline-dark m-1" href="<?php
 															echo base_url("Assos/login_assos") ?>">Associations
-					<img src="/adopt-kitty/assets/img/icons_assos" alt="">
+					<img src="/adopt-kitty-1/assets/img/icons_assos" alt="">
 				</a>
 			</div>
 		</div>
