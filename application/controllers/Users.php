@@ -11,7 +11,8 @@ class Users extends CI_Controller
     {
         $chat_annonce = $this->User_Model->get_annonce();
         $data['chat_annonce'] = $chat_annonce;
-        $this->load->view('espace_animaux/recherche', $data);
+        $this->layout->set_titre('Adopt_kitty | Accueil');
+        $this->layout->view('espace_animaux/recherche', $data);
     }
 
 
@@ -54,10 +55,12 @@ class Users extends CI_Controller
                     redirect("Users");
                 } else {
                     $data['info_connexion'] = 'error';
-                    $this->load->view('espace_user/login', $data);
+                    $this->layout->set_titre('Adopt_kitty | Connexion');
+                    $this->layout->view('espace_user/login', $data);
                 }
             } else {
-                $this->load->view('espace_user/login');
+                $this->layout->set_titre('Adopt_kitty | Connexion');
+                $this->layout->view('espace_user/login');
             }
         }
     }
@@ -124,7 +127,8 @@ class Users extends CI_Controller
                 $this->User_Model->create_user($data);
                 $data['popup'] = true;
                 $data['success_message'] = 'Vous êtes bien inscrit, vous pouvez dès maintenant vous connecter !';
-                $this->load->view('espace_user/inscription', $data);
+                $this->layout->set_titre('Adopt_kitty | Inscription');
+                $this->layout->view('espace_user/inscription', $data);
             }
         }
     }
@@ -136,7 +140,8 @@ class Users extends CI_Controller
         ));
         $email = $this->input->post('email');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('espace_user/mail');
+            $this->layout->set_titre('Adopt_kitty | Mot de ^passe oublié');
+            $this->layout->view('espace_user/mail');
         } else {
             if ($this->User_Model->exist_email($email)) {
                 $number = bin2hex(random_bytes(30));
@@ -159,12 +164,14 @@ class Users extends CI_Controller
 
                 if ($this->email->send()) {
                     $popup = true;
-                    $this->load->view('espace_user/mail', compact('popup'));
+                    $this->layout->set_titre('Adopt_kitty | Mot de passe oublié');
+                $this->layout->view('espace_user/mail', compact('popup'));
                 } else {
                     echo "Le mail n'a pas été envoyé";
                 }
             } else {
-                $this->load->view('espace_user/mail', array('popupError' => true));
+                $this->layout->set_titre('Adopt_kitty | Mot de passe oublié');
+                $this->layout->view('espace_user/mail', array('popupError' => true));
             }
         }
     }
@@ -182,13 +189,15 @@ class Users extends CI_Controller
             $this->form_validation->set_rules('mdp_confirm', 'Confirmation du mot de passe', 'trim|required|matches[mdp]');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('espace_user/mdp_recup');
+                $this->layout->set_titre('Adopt_kitty | Récupération mdp');
+            $this->layout->view('espace_user/mdp_recup');
             } else {
                 $mdp = md5($this->input->post('mdp'));
                 $this->User_Model->update_mdp($mdp, $mdp_recup);
                 $data['popup'] = true;
                 $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
-                $this->load->view('espace_user/mdp_recup', $data);
+                $this->layout->set_titre('Adopt_kitty | Récupération mdp');
+                $this->layout->view('espace_user/mdp_recup' ,$data);
             }
         } else {
             header('refresh:5;url=' . base_url('Users'));

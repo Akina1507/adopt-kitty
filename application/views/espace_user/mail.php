@@ -1,7 +1,3 @@
-<?php
-include(APPPATH . "views/include/header.php")
-?>
-
 <!--------------------------- 
      Recuperation mot de passe + Envoie de mail 
               --------------------------------->
@@ -42,6 +38,3 @@ include(APPPATH . "views/include/header.php")
         </div>
     </div>
 </div>
-<?php
-include(APPPATH . "views/include/footer.php")
-?>

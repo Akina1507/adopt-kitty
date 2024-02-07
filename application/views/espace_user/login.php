@@ -1,5 +1,3 @@
-<?php include(APPPATH . "views/include/header.php") ?>
-
 <!--------------------------- 
          Vue Connexion 
     --------------------------->
@@ -45,6 +43,3 @@
     </div>
 </div>
 </div>
-<?php
-include(APPPATH . "views/include/footer.php")
-?>

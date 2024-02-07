@@ -38,10 +38,12 @@ class Assos extends CI_Controller
                 redirect("Users");
             } else {
                 $data['info_connexion'] = 'error';
-                $this->load->view('espace_user/login_assos', $data);
+                $this->layout->set_titre('Adopt_kitty | Connexion Association');
+                $this->layout->view('espace_user/login_assos', $data);
             }
         } else {
-            $this->load->view('espace_user/login_assos');
+            $this->layout->set_titre('Adopt_kitty | Connexion Association');
+            $this->layout->view('espace_user/login_assos');
         }
     }
 
@@ -86,7 +88,8 @@ class Assos extends CI_Controller
             ));
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('espace_user/inscription_assos');
+                $this->layout->set_titre('Adopt_kitty | Inscription Association');
+                $this->layout->view('espace_user/inscription_assos');
             } else {
                 $nom_assos = $this->input->post('nom_assos');
                 $adresse_assos = $this->input->post('adresse_assos');
@@ -112,7 +115,8 @@ class Assos extends CI_Controller
                 if ($result) {
                     $data['popup'] = true;
                     $data['success_message'] = 'Vous êtes bien inscrit en tant qu\'association, vous pouvez dès maintenant vous connecter !';
-                    $this->load->view('espace_user/inscription_assos', $data);
+                    $this->layout->set_titre('Adopt_kitty | Inscription Association');
+                    $this->layout->view('espace_user/inscription_assos', $data);
                 } else {
                     redirect('Assos/inscription_assos');
                 }
@@ -132,7 +136,8 @@ class Assos extends CI_Controller
         $email_assos = $this->input->post('email');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('espace_user/mail');
+            $this->layout->set_titre('Adopt_kitty | Mail Association');
+            $this->layout->view('espace_user/mail_assos');
         } else {
             if ($this->Assos_Model->exist_email_assos($email_assos)) {
 
@@ -166,12 +171,14 @@ class Assos extends CI_Controller
                 //Pop up affiché une fois que l'email a été envoyé : true 
                 if ($this->email->send()) {
                     $popup = true;
-                    $this->load->view('espace_user/mail', compact('popup'));
+                    $this->layout->set_titre('Adopt_kitty | Mail Association');
+                    $this->layout->view('espace_user/mail_assos', compact('popup'));
                 } else {
                     echo "Le mail n'a pas été envoyé";
                 }
             } else {
-                $this->load->view('espace_user/mail', array('popupError' => true));
+                $this->layout->set_titre('Adopt_kitty | Mail Association');
+                $this->layout->view('espace_user/mail_assos', array('popupError' => true));
             }
         }
     }
@@ -190,7 +197,8 @@ class Assos extends CI_Controller
 
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('espace_user/mdp_recup');
+                $this->layout->set_titre('Adopt_kitty | Mot de passe oublié Association');
+                $this->layout->view('espace_user/mdp_assos');
             } else {
                 $mdp_assos = md5($this->input->post('mdp_assos'));
 
@@ -199,7 +207,8 @@ class Assos extends CI_Controller
 
                 $data['popup'] = true;
                 $data['success_message'] = 'Vous avez bien enregistré votre nouveau mot de passe. Vous pouvez dès maintenant vous connecter !';
-                $this->load->view('espace_user/mdp_recup', $data);
+                $this->layout->set_titre('Adopt_kitty | Mot de passe oublié Association');
+                $this->layout->view('espace_user/mdp_assos', $data);
             }
         } else {
             header('refresh:5;url=' . base_url('Assos'));

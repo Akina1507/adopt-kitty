@@ -1,6 +1,3 @@
-<?php
-include(APPPATH . "views/include/header.php")
-?>
 <style>
     .custom-img {
         max-width: 304;
@@ -54,12 +51,3 @@ include(APPPATH . "views/include/header.php")
         <?php  } ?>
     </div>
 </div>
-
-
-
-
-
-
-<?php
-include(APPPATH . "views/include/footer.php")
-?>

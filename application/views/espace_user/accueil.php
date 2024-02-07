@@ -1,7 +1,3 @@
-<?php
-include(APPPATH . "views/include/header.php")
-?>
-
 <!--------------------------- 
      Vue accueil bouton + lien 
     --------------------------->
@@ -25,8 +21,3 @@ include(APPPATH . "views/include/header.php")
 		</div>
 	</div>
 </div>
-
-
-<?php
-include(APPPATH . "views/include/footer.php")
-?>

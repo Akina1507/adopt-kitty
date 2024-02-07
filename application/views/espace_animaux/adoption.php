@@ -1,8 +1,3 @@
-<?php include(APPPATH . "views/include/header.php") ?>
-
-
-
-
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
@@ -363,11 +358,6 @@
         </div>
     </div>
 </div>
-
-
-<?php include(APPPATH . "views/include/footer.php") ?>
-
-
 
 <script>
     // Pop up pour les champs non rempli etape 2
