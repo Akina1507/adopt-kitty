@@ -1,0 +1,4 @@
+<title><?= $titre ?></title>
+
+
+<?= $output ?>
