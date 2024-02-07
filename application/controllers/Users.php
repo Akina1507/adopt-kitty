@@ -12,14 +12,14 @@ class Users extends CI_Controller
         $chat_annonce = $this->User_Model->get_annonce();
         $data['chat_annonce'] = $chat_annonce;
         $this->layout->set_titre('Adopt_kitty | Accueil');
-        $this->layout->view('espace_animaux/recherche', $data);
+        $this->layout->view('espace_user/accueil', $data);
     }
 
 
     public function accueil()
     {
         $this->layout->set_titre('Adopt_kitty | Accueil');
-        $this->layout->view('espace_user/accueil');
+        $this->layout->view('espace_user/choix_connexion');
     }
 
     /* ----------------------- */
