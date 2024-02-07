@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="col d-flex justify-content-center align-items-center ">
-            <a href="<?= base_url("Users") ?>"><img class="logo" src="./assets/img/adopt-kitty-logo" width="200" height="180"></a>
+            <a href="<?= base_url("Users") ?>"><img class="logo" src="./assets/img/adopt-kitty-logo.png" width="200" height="180"></a>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url("Users") ?>">Adopter un animal</a>
