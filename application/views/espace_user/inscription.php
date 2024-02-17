@@ -1,5 +1,3 @@
-<?php include(APPPATH . "views/include/header.php") ?>
-
 <!--------------------------- 
    Inscription utilisateurs + Pop up message succès 
                         --------------------------->
@@ -64,6 +62,3 @@
             </div>
         </div>
     </div>
-    <?php
-    include(APPPATH . "views/include/footer.php")
-    ?>

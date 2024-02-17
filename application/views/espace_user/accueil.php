@@ -1,32 +1,53 @@
-<?php
-include(APPPATH . "views/include/header.php")
-?>
+<style>
+    .custom-img {
+        max-width: 304;
+        height: 400px;
+    }
+</style>
 
-<!--------------------------- 
-     Vue accueil bouton + lien 
-    --------------------------->
-<div class="col-12 fond" style="height: 85vh;">
-
-	<div class=" d-flex p-5 flex-column justify-content-center">
-		<h4 class="p-5 text-center">Je suis..</h4>
-		<div class="d-flex p-2 text-center justify-content-center bordered">
-			<div class="mx-5">
-				<a class="btn btn-outline-dark m-1" href="<?php
-															echo base_url("Users/login") ?>">Utilisateurs
-					<img src="/adopt-kitty-1/assets/img/icons_users" alt="">
-				</a>
-			</div>
-			<div class="mx-5">
-				<a class="btn btn-outline-dark m-1" href="<?php
-															echo base_url("Assos/login_assos") ?>">Associations
-					<img src="/adopt-kitty-1/assets/img/icons_assos" alt="">
-				</a>
-			</div>
-		</div>
-	</div>
+<div class="justify-content-center">
+    <h5>Je recherche un
+        <select name="list_search" id="list_search" required>
+            <option value="chat">Chat</option>
+            <option value="chien">Chien</option>
+        </select>
+        Proche de
+        <select name="list_ville" id="list_ville" required>
+            <option value="paris">Paris</option>
+            <option value="reims">Reims</option>
+        </select>
+        Maximun à
+        <select name="list_km" id="list_km" required>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="150">150</option>
+            <option value="200">200</option>
+        </select>
+        Km
+    </h5>
 </div>
+</head>
 
-
-<?php
-include(APPPATH . "views/include/footer.php")
-?>
+<a class="btn btn-outline-dark m-1" href="<?php
+                                            echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
+</a>
+<div class="container">
+    <div class="row">
+        <?php
+        foreach ($chat_annonce as $chat_annonce) { ?>
+            <div class="col-3  card">
+                <a href="<?= base_url("Annonce/fiches_chats/" . $chat_annonce['nom_animal'] . '/') . $chat_annonce['id'] ?>">
+                    <img class="card-img-top custom-img" src="./uploads/annonce/<?= $chat_annonce['image_chat'] ?>" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class=" card-title"><?=
+                                            $chat_annonce['nom_animal']
+                                            ?></h5>
+                    <p class="text-capitalize card-text"><?=
+                                                            $chat_annonce['sexe_animal'] . ' - ' . $chat_annonce['race_animal']
+                                                            ?></p>
+                </div>
+            </div>
+        <?php  } ?>
+    </div>
+</div>

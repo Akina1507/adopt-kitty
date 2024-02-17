@@ -57,7 +57,8 @@ class Annonce extends CI_Controller
                 $this->Chat_Model->create_annonce($databdd);
                 redirect("Annonce/success");
             } else {
-                $this->load->view('espace_assos/annonce', $data);
+                $this->layout->set_titre('Adopt_kitty | Annonces Association');
+                $this->layout->view('espace_assos/annonce');
             }
         }
     }
@@ -82,7 +83,8 @@ class Annonce extends CI_Controller
     public function success()
     {
         header('refresh:10;url=' . base_url('Users'));
-        $this->load->view('form/success');
+        $this->layout->set_titre('Adopt_kitty | Succès Association');
+        $this->layout->view('form/success');
     }
 
     public function fiches_chats($id)
@@ -92,6 +94,7 @@ class Annonce extends CI_Controller
         // $data affiche les données du chat
         $data['chat_fiche'] = $chat_fiche;
         // on affiche la vue
-        $this->load->view('espace_animaux/card_chat', $data);
+        $this->layout->set_titre('Adopt_kitty | Succès Association');
+        $this->layout->view('espace_animaux/card_chat' , $data);
     }
 }

@@ -129,7 +129,8 @@ class Adopt extends CI_Controller
                         
                         redirect("Adopt/success");
                     } else {
-                    $this->load->view('espace_animaux/adoption');
+                        $this->layout->set_titre('Adopt_kitty | Adoptions');
+                        $this->layout->view('espace_animaux/adoption');
                 }
             }
         
@@ -140,7 +141,8 @@ class Adopt extends CI_Controller
             public function success()
             {
                 header('refresh:10;url=' . base_url('Users'));
-                $this->load->view('form/success');
+                $this->layout->set_titre('Adopt_kitty | Succès');
+                $this->layout->view('form/success');
             }
         }
         

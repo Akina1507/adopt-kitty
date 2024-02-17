@@ -129,13 +129,15 @@ class Famille extends CI_Controller
                 );
                 redirect("Famille/success");
             }
-            $this->load->view('form/etapes');
+            $this->layout->set_titre('Adopt_kitty | Etapes');
+            $this->layout->view('form/etapes');
         }
     }
 
     public function success()
     {
         header('refresh:10;url=' . base_url('Users'));
-        $this->load->view('form/success');
+        $this->layout->set_titre('Adopt_kitty | Succès');
+        $this->layout->view('form/success');
     }
 }
