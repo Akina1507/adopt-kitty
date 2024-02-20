@@ -1,5 +1,3 @@
-<?php include(APPPATH . "views/include/header.php") ?>
-
 <!--------------------------- 
      Mise en page + étape 1 
     --------------------------->
