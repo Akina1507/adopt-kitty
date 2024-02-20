@@ -18,7 +18,7 @@ class Users extends CI_Controller
 
     public function accueil()
     {
-        $this->layout->set_titre('Adopt_kitty | Accueil');
+        $this->layout->set_titre('Adopt_kitty | Famille');
         $this->layout->view('espace_user/choix_connexion');
     }
 

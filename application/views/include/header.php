@@ -13,25 +13,41 @@
 
 <body>
     <div class="container">
-        <div class="col d-flex justify-content-center align-items-center ">
-            <a href="<?= base_url("") ?>"><img class="logo" src="./assets/img/adopt-kitty-logo.png" width="200" height="180"></a>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("") ?>">Adopter un animal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("Famille/etapes") ?>">Devenir famille d'accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url("Annonce/annonce") ?>">Poster une annonce</a>
-                </li>
+    <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+  <img src="<?= base_url("assets/img/adopt-kitty-logo.png") ?>" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?= base_url("") ?>">Home</a>
+        </li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Accès rapide
+          </a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Je souhaite adopter un animal</a></li>
+                <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Devenir bénévole</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Nous contacter</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
             </ul>
-
-            <div class="col d-flex flex-column justify-content-center align-items-center ">
-                <?php if (isConnected() == false) { ?>
-                    <a class="btn custom-btn" href="<?= base_url("Users/accueil") ?>">Connexion / Inscription</a>
-                <?php } else { ?>
-                    <div class=" align-items-center">
+        </li>
+      </ul> 
+      <ul class="navbar-nav">
+      <li class="nav-item">
+      <?php if (isConnected() == false) { ?>
+          <a class="nav-link active" aria-current="page" href="<?= base_url("Users/login") ?>">Connexion / Inscription</a>
+        </li>
+        <?php } else { ?>
+          
+        <div class=" align-items-center">
                         <!-- Icone connexion -->
                         <i class="bi bi-person-circle"></i>
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -41,53 +57,7 @@
                     </div>
                     <?= $this->session->userdata("nom") . " " . $this->session->userdata("prenom");
                     ?>
-
-
-            </div>
-            <a class="btn custom-btn" href="<?= base_url("Users/deconnect") ?>">Deconnexion</a>
+                    <a href="<?= base_url("Users/deconnect") ?>">Deconnexion</a>
         <?php } ?>
-        </div>
-    </div>
-    </div>
-
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-  <img src="./assets/img/adopt-kitty-logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Annonces
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Voir les Annonces</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Famille d'accueil</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Informations
-          </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Nous contacter</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">FAQ</a></li>
-            </ul>
-        </li>
-      </ul> 
-      <ul class="navbar-nav">
-      <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Connexion / Inscription</a>
-        </li>
     </ul>
     </div>
-  </div>
-</nav>

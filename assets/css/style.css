@@ -63,10 +63,6 @@
 	background-color: #c0c0c0;
 }
 
-.custom-btn {
-	color: black;
-	background-color: #6591a5;
-}
 
 .col-md-4 .send-btn {
 	color: black;
@@ -123,14 +119,9 @@
 	text-decoration: none;
 }
 
-.nav-link:hover {
-	color: #3d5486;
-	background: linear-gradient(to right, #6591a5, #c0c0c0);
+.container-fluid{
+	background: white;
 }
-
-
-
-
 
 
 
