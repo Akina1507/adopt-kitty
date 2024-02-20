@@ -13,7 +13,6 @@
 
 <body>
     <div class="container">
-
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
   <img src="<?= base_url("assets/img/adopt-kitty-logo.png") ?>" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
@@ -62,5 +61,3 @@
         <?php } ?>
     </ul>
     </div>
-  </div>
-</nav>
