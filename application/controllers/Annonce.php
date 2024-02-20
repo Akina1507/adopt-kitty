@@ -89,7 +89,6 @@ class Annonce extends CI_Controller
 
     public function fiches_chats($nomchat, $id)
     {
-        print($id);
         // on appelle get_fiche du modèle "User_Model" pour récupérer les informations du chat en fonction de son id
         $chat_fiche = $this->User_Model->get_fiche($id);
         // $data affiche les données du chat
