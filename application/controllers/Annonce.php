@@ -87,14 +87,15 @@ class Annonce extends CI_Controller
         $this->layout->view('form/success');
     }
 
-    public function fiches_chats($id)
+    public function fiches_chats($nomchat, $id)
     {
+        print($id);
         // on appelle get_fiche du modèle "User_Model" pour récupérer les informations du chat en fonction de son id
         $chat_fiche = $this->User_Model->get_fiche($id);
         // $data affiche les données du chat
-        $data['chat_fiche'] = $chat_fiche;
-        // on affiche la vue
+        $data['chat_fiche'] = $chat_fiche;       
+         // on affiche la vue
         $this->layout->set_titre('Adopt_kitty | Succès Association');
-        $this->layout->view('espace_animaux/card_chat' , $data);
+        $this->layout->view('espace_animaux/card_chat',  $data);
     }
 }
