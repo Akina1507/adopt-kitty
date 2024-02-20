@@ -28,9 +28,6 @@
 </div>
 </head>
 
-<a class="btn btn-outline-dark m-1" href="<?php
-                                            echo base_url("Adopt/adoption") ?>">Rencontrer cet animal
-</a>
 <div class="container">
     <div class="row">
         <?php

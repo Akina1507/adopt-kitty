@@ -1,5 +1,4 @@
 <h1>Informations du Chat</h1>
-<p>Nom du chat :</p>
 
 <?php foreach ($chat_fiche as $chat_annonce) { ?>
     <div class="col-3  card">
@@ -12,3 +11,6 @@
         </div>
     </div>
 <?php  } ?>
+    <div>
+        <a class="btn btn-outline-dark m-1" href="<?php echo base_url("Adopt/adoption") ?>">Rencontrer cet animal</a>
+    </div>
