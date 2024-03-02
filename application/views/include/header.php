@@ -32,7 +32,7 @@
                 <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="<?= base_url("/Famille/etapes") ?>">Devenir bénévole</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Nous contacter</a></li>
+                <li><a class="dropdown-item" href="<?= base_url("/Users/contact") ?>">Nous contacter</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">FAQ</a></li>
             </ul>
