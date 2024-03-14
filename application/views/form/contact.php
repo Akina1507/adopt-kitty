@@ -33,6 +33,12 @@
     <input class="form-control" type="number" name="phone_user" id="phone_user" placeholder="+33" required>
         <h6 class="invalid-from-error"><?= form_error('phone_user'); ?></h6>
 </div>
+<div class="col-mb-4">
+      <div data-mdb-input-init class="form-outline">
+        <label for="sujet_user">Sujet :</label>
+        <input class="form-control" type="text" name="sujet_user" id="sujet_user" placeholder="Votre sujet" required>
+        <h6 class="invalid-from-error"><?= form_error('sujet_user'); ?></h6>
+      </div>
 <div class="col-md-12 mb-3">
     <label for="message_contact">Votre message</label>
     <textarea class="form-control" name="message_contact" id="message_contact" placeholder="Votre message..." required></textarea>
@@ -42,5 +48,5 @@
     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
     <label class="form-check-label" for="invalidCheck">Accepter les conditions générales</label>
 </div>
-  <button type="submit" class="btn btn-primary">Envoyer</button>
+<a class="btn btn-outline-dark fw-bold m-1" href="<?= base_url("Users/contact_email") ?>">Envoyer</a>
 </form>

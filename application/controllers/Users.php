@@ -146,7 +146,7 @@ class Users extends CI_Controller
         ));
         $email = $this->input->post('email');
         if ($this->form_validation->run() == FALSE) {
-            $this->layout->set_titre('Adopt_kitty | Mot de ^passe oublié');
+            $this->layout->set_titre('Adopt_kitty | Mot de passe oublié');
             $this->layout->view('espace_user/mail');
         } else {
             if ($this->User_Model->exist_email($email)) {
@@ -208,6 +208,65 @@ class Users extends CI_Controller
         } else {
             header('refresh:5;url=' . base_url('Users'));
             echo 'La clé de récupération n\'est pas valide';
+        }
+    }
+
+
+
+
+    public function contact_email() {
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', array(
+            'valid_email' => 'L\'adresse mail doit être valide'
+        ));
+    
+        // Valide le formulaire
+        if ($this->form_validation->run() == FALSE) {
+            // Gestion des erreurs de validation du formulaire
+            // Vous pouvez afficher des messages d'erreur ou rediriger l'utilisateur vers une page d'erreur
+            $this->layout->set_titre('Adopt_kitty | Contactez-nous');
+            $this->layout->view('espace_user/mail');
+        } else {
+            // Récupérer les données du formulaire
+            $nom_user = $this->input->post('nom_user');
+            $prenom_user = $this->input->post('prenom_user');
+            $nom_entreprise = $this->input->post('nom_entreprise');
+            $email_user = $this->input->post('email_user');
+            $phone_user = $this->input->post('phone_user');
+            $sujet_user = $this->input->post('sujet_user');
+            $message_contact = $this->input->post('message_contact');
+    
+            // Configuration pour l'envoi de l'email
+            $config = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'smtp.gmail.com', // Serveur SMTP de La Poste
+                'smtp_port' => 465, // Port SMTP sécurisé
+                'smtp_user' => 'adopt-kitty@laposte.net', 
+                'smtp_pass' => 'Marie-Sarah1507@!-', 
+                'smtp_crypto' => 'ssl',
+                'mailtype' => 'html',
+                'charset' => 'utf-8',
+                'newline' => "\r\n"
+            );
+    
+            // Charger la bibliothèque d'email avec la configuration
+            $this->load->library('email', $config);
+            $from = $this->config->item('smtp_user');
+            // Préparer le contenu de l'email
+            $this->email->from( $from,'Adopt Kitty');
+            $this->email->to('mswietrich1507@gmail.com'); // Remplacez ceci par votre adresse email
+            $this->email->subject($sujet_user);
+            $this->email->message($message_contact);
+    
+            // Envoyer l'email
+            if ($this->email->send()) {
+                // Affichez un message de succès ou redirigez l'utilisateur vers une page de confirmation
+                $popup = true;
+                $this->layout->set_titre('Adopt_kitty | Contactez-nous');
+                $this->layout->view('espace_user/mail', compact('popup'));
+            } else {
+                // En cas d'échec de l'envoi de l'email, affichez un message d'erreur
+                echo "Le mail n'a pas été envoyé";
+            }
         }
     }
 }
